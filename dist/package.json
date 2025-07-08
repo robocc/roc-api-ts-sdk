@@ -1,0 +1,22 @@
+{
+  "name": "@robocc/roc-api",
+  "version": "8.19.6-selene-6",
+  "description": "RocApi client Typescript library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robocc/roc-api-ts-sdk"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "sdk",
+    "client",
+    "api",
+    "robocc"
+  ],
+  "author": "Robocc Team",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ws": "^8.13.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@robocc/roc-api",
+  "version": "8.19.6-selene-6",
+  "description": "RocApi client Typescript library",
+  "scripts": {
+    "build": "npx tsc && node tasks/package.js",
+    "watch": "mkdir dist && node tasks/package.js && npx tsc --watch",
+    "dev": "node tasks/package.js dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robocc/roc-api-ts-sdk"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {".": "./dist/index.js", "./*": "./dist/*.js"},
+  "keywords": [
+    "sdk",
+    "client",
+    "api",
+    "robocc"
+  ],
+  "author": "Robocc Team",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "eslint": "^8.45.0",
+    "fs-extra": "^11.1.1",
+    "prettier": "^3.0.0",
+    "typedoc": "^0.25.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "ws": "^8.13.0"
+  }
+}

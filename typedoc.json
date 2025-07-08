@@ -1,0 +1,20 @@
+{
+    "name": "RocApi documentation",
+    "entryPoints": [
+        "src"
+    ],
+    "excludeInternal": true,
+    "exclude": [
+        "src/index.ts"
+    ],
+    "entryPointStrategy": "expand",
+    "excludeTags": [
+        "@property",
+        "@member"
+    ],
+    "navigation": {
+        "includeCategories": true,
+        "includeGroups": true
+    },
+    "categorizeByGroup": true
+}
