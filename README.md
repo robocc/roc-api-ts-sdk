@@ -30,4 +30,4 @@ Replace `host` option to connect to remote API via device IP (usually on port 85
 
 ## Documentation
 
-You can find documenation at https://docs.robocc.com/roc-api-ts/8.19.9-selene-9/
+You can find documenation at https://docs.robocc.com/roc-api-ts/8.19.0-selene-10/

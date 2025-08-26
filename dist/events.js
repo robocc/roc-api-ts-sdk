@@ -771,28 +771,6 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["ModuleType"] = 7017] = "ModuleType";
     /**
-      * **Tablet is in charge**
-      *
-      * Tablet on vehicle is in charge
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    TopicEventCode[TopicEventCode["TabletInCharge"] = 7018] = "TabletInCharge";
-    /**
-      * **Plugged tablet required**
-      *
-      * Need to plug tablet on the vehicle
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    TopicEventCode[TopicEventCode["PluggedTabletRequired"] = 7019] = "PluggedTabletRequired";
-    /**
       * **Vehicle delay configuration**
       *
       * Vehicle delay configuration
@@ -837,9 +815,9 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["OnlyRelease"] = 7023] = "OnlyRelease";
     /**
-      * **Vehicle direction**
+      * **Vehicle direction - mast position**
       *
-      * Vehicle direction
+      * Vehicle direction - mast position
       
       * @data {@link VehDirection}
       * @category Configuration
@@ -847,6 +825,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["VehDirection"] = 7024] = "VehDirection";
+    /**
+      * **Dock direction**
+      *
+      * Dock direction
+      
+      * @data {@link VehDirection}
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["DockDirection"] = 7076] = "DockDirection";
     /**
       * **Daily stats**
       *
@@ -1012,6 +1001,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["BadLiftPosition"] = 7040] = "BadLiftPosition";
+    /**
+      * **Bad lift configuration**
+      *
+      * Bad lift configuration
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["BadLiftConfiguration"] = 7078] = "BadLiftConfiguration";
     /**
       * **Allow move from dock**
       *
@@ -1397,6 +1397,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["LiftError"] = 7075] = "LiftError";
+    /**
+      * **Invalid data list**
+      *
+      * Lift of invalid data
+      
+      * @data {@link InvalidDataBySection}[]
+      * @category State
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["InvalidDataList"] = 7077] = "InvalidDataList";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -1808,13 +1819,12 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.InMultiDestinations]: [],
     [TopicEventCode.VehsInfos]: [],
     [TopicEventCode.ModuleType]: [],
-    [TopicEventCode.TabletInCharge]: [],
-    [TopicEventCode.PluggedTabletRequired]: [],
     [TopicEventCode.VehDelayConfig]: [],
     [TopicEventCode.ButtonsInfos]: [],
     [TopicEventCode.MissionTitle]: [],
     [TopicEventCode.OnlyRelease]: [],
     [TopicEventCode.VehDirection]: [],
+    [TopicEventCode.DockDirection]: [],
     [TopicEventCode.DailyStats]: [],
     [TopicEventCode.ImportConfigDone]: [],
     [TopicEventCode.AppVersion]: [],
@@ -1830,6 +1840,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.IsTouchScreen]: [],
     [TopicEventCode.DockedPoseConfigs]: [],
     [TopicEventCode.BadLiftPosition]: [],
+    [TopicEventCode.BadLiftConfiguration]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
     [TopicEventCode.SoftVersions]: [],
     [TopicEventCode.NewSoftVersions]: [],
@@ -1865,6 +1876,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.PortRedirections]: [],
     [TopicEventCode.ExternalSpeaker]: [],
     [TopicEventCode.LiftError]: [],
+    [TopicEventCode.InvalidDataList]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */

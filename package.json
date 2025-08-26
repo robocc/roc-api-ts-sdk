@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "8.19.9-selene-9",
+  "version": "8.19.0-selene-10",
   "description": "RocApi client Typescript library",
   "scripts": {
     "build": "npx tsc && node tasks/package.js",

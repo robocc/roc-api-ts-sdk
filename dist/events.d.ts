@@ -1,6 +1,6 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, InvalidDataBySection, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
 import { Path, AutopilotSequence, OperatingHours } from "./types";
 import { NetworkStatus, NetworkGlobalStatus, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
@@ -771,28 +771,6 @@ export declare enum TopicEventCode {
     */
     ModuleType = 7017,
     /**
-      * **Tablet is in charge**
-      *
-      * Tablet on vehicle is in charge
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    TabletInCharge = 7018,
-    /**
-      * **Plugged tablet required**
-      *
-      * Need to plug tablet on the vehicle
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    PluggedTabletRequired = 7019,
-    /**
       * **Vehicle delay configuration**
       *
       * Vehicle delay configuration
@@ -837,9 +815,9 @@ export declare enum TopicEventCode {
     */
     OnlyRelease = 7023,
     /**
-      * **Vehicle direction**
+      * **Vehicle direction - mast position**
       *
-      * Vehicle direction
+      * Vehicle direction - mast position
       
       * @data {@link VehDirection}
       * @category Configuration
@@ -847,6 +825,17 @@ export declare enum TopicEventCode {
       
     */
     VehDirection = 7024,
+    /**
+      * **Dock direction**
+      *
+      * Dock direction
+      
+      * @data {@link VehDirection}
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    DockDirection = 7076,
     /**
       * **Daily stats**
       *
@@ -1012,6 +1001,17 @@ export declare enum TopicEventCode {
       
     */
     BadLiftPosition = 7040,
+    /**
+      * **Bad lift configuration**
+      *
+      * Bad lift configuration
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    BadLiftConfiguration = 7078,
     /**
       * **Allow move from dock**
       *
@@ -1396,7 +1396,18 @@ export declare enum TopicEventCode {
       * @group Vehicle
       
     */
-    LiftError = 7075
+    LiftError = 7075,
+    /**
+      * **Invalid data list**
+      *
+      * Lift of invalid data
+      
+      * @data {@link InvalidDataBySection}[]
+      * @category State
+      * @group Vehicle
+      
+    */
+    InvalidDataList = 7077
 }
 /** @internal */
 export declare enum ResultEventCode {
@@ -1818,13 +1829,12 @@ export declare const initEventTopicCallbacks: () => {
     7015: never[];
     7016: never[];
     7017: never[];
-    7018: never[];
-    7019: never[];
     7020: never[];
     7021: never[];
     7022: never[];
     7023: never[];
     7024: never[];
+    7076: never[];
     7025: never[];
     7026: never[];
     7027: never[];
@@ -1840,6 +1850,7 @@ export declare const initEventTopicCallbacks: () => {
     7037: never[];
     7039: never[];
     7040: never[];
+    7078: never[];
     7041: never[];
     7042: never[];
     7043: never[];
@@ -1875,6 +1886,7 @@ export declare const initEventTopicCallbacks: () => {
     7073: never[];
     7074: never[];
     7075: never[];
+    7077: never[];
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
@@ -2095,13 +2107,12 @@ export type EventDataType = {
     [TopicEventCode.InMultiDestinations]: DeepRequired<boolean>;
     [TopicEventCode.VehsInfos]: DeepRequired<VehInfos[]>;
     [TopicEventCode.ModuleType]: DeepRequired<ModuleType>;
-    [TopicEventCode.TabletInCharge]: DeepRequired<boolean>;
-    [TopicEventCode.PluggedTabletRequired]: DeepRequired<boolean>;
     [TopicEventCode.VehDelayConfig]: DeepRequired<VehDelayConfig>;
     [TopicEventCode.ButtonsInfos]: DeepRequired<ButtonInfos[]>;
     [TopicEventCode.MissionTitle]: DeepRequired<string>;
     [TopicEventCode.OnlyRelease]: DeepRequired<boolean>;
     [TopicEventCode.VehDirection]: DeepRequired<VehDirection>;
+    [TopicEventCode.DockDirection]: DeepRequired<VehDirection>;
     [TopicEventCode.DailyStats]: DeepRequired<DailyStats>;
     [TopicEventCode.ImportConfigDone]: DeepRequired<InstallConfigDone>;
     [TopicEventCode.AppVersion]: DeepRequired<string>;
@@ -2117,6 +2128,7 @@ export type EventDataType = {
     [TopicEventCode.IsTouchScreen]: DeepRequired<boolean>;
     [TopicEventCode.DockedPoseConfigs]: DeepRequired<DockedPoseConfig[]>;
     [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>;
+    [TopicEventCode.BadLiftConfiguration]: DeepRequired<boolean>;
     [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>;
     [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>;
     [TopicEventCode.NewSoftVersions]: DeepRequired<boolean>;
@@ -2152,4 +2164,5 @@ export type EventDataType = {
     [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>;
     [TopicEventCode.ExternalSpeaker]: DeepRequired<boolean>;
     [TopicEventCode.LiftError]: DeepRequired<boolean>;
+    [TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>;
 };

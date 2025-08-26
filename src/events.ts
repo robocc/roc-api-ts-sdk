@@ -1,7 +1,7 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { OutcomeCode } from "./outcomes";
 import { DeepRequired } from "./types";
-import { HumanInterventionRequired,LedCommand,Site,OngoingAction,SiteLight,SiteRaw,Map,MapRaw,MapElements,MapWithoutImages,RoutesGraph,RoutesVertex,RoutesEdge,RoutesSettings,Module,ModuleDescription,PortRedirection,ModuleConfiguration,MapLight,ForbiddenArea,CustomArea,SavedPose,Fiducial,ChargingStation,DockedPose,Marker,TeleopCmd,Pose,Position,BatteryState,User,MoveStep,DiagnosticElement,DiagnosticError,AutopilotConfig,AutopilotIndexedStep,AutopilotStepMoveParams,AutopilotStep,LedSoundAnimBehaviour,Areas,Behaviour,DockingState,SoundScenarioVolume,WifiAp,NetworkWanState,ExternalPortRedirection,LiftStatus,Group,SoftVersions,ControllerConstraint,MissionConfigDestination,MissionConfig,ButtonConfig,WaitingPose,LoraMessage,CustomCommand,ControllerLoraContact,ControllerLora,MapElementRestriction,DockedPoseConfig,RocMapElementConfig,ControllerLoraContactConfig,VehConfig,VehInfosStats,VehInfos,VehDelayConfig,ButtonInfos,ManagerMissions,Mission,DailyStats,MissionStep,InstallConfigDone,ResponseDeadlineConfig,Log,CompleteData,StatsData,ExportedStats,RocUser,TimelineStep,VehTimelineData,CallByButton,HirByType,DestByUuid,NbByOutcome,StandardStats,StandardStatsByUuid,HeatMapData,SlotHours,ModuleParams,ManagerMap,UpdateStatus,SubscribeResult,FollowMeParams,AuthUserResult,LoginParams,LoginResult,ExportSitesParamsItem,ExportSitesResultItem,UpdateChargingStationConfigParams,UpdateDockedPoseConfigParams,SetUserParams,SetObtCbtParams,SetChargingStationResult,SetSavedPoseResult,SetDockedPoseResult,SetForbiddenAreaResult,SetCustomAreaResult,CheckPoseParams,Check3dBoxParamsPoint,Check3dBoxParams,SimAddShelfParams,SetCustomLedParams,SetCustomSoundParams,MappingGetLastResult,SimSetDiffDriveStateParams,SetScenarioSoundMaxVolumeParamsItem,SetModuleParamsParams,VehToPoseParamsProgressChecker,VehToPoseParams,VehToPoseFeedback,VehToChargingStationParams,VehToChargingStationFeedback,VehToChargingStationApproachParams,VehToChargingStationApproachFeedback,VehToDockedPoseParamsShelfParameters,VehToDockedPoseParams,VehToDockedPoseFeedback,VehToDockedPoseApproachParams,VehToDockedPoseApproachFeedback,VehToSavedPoseParamsSuccessParams,VehToSavedPoseParams,VehToSavedPoseFeedback,VehToSegmentParams,VehToSegmentFeedback,SetVehiclePoseParams,SetVehiclePoseFeedback,SetMapFeedback,SetActiveMapFeedback,GetMarkersFeedback,InstallModuleParams,InstallModuleFeedback,DisableModuleFeedback,RecoveryFeedback,ResetDatabaseFeedback,GetPathParams,GetPathResult,GetPathFeedback,MappingStartParams,MappingStartFeedback,MappingStopFeedback,EraseActiveMapParams,EraseActiveMapFeedback,ReloadMapFeedback,MergeMapsParams,MergeMapsFeedback,NetworkWanConfigParams,NetworkRedirectPortParams,SystemRestartParams,AddCallButtonParams,AddRestockingButtonParams,AddMultidestinationButtonParams,AddOrderedMultidestinationButtonParams,AddVehParams,AddPortRedirectionParams,UpdatePortRedirectionParams,DeletePortRedirectionParams,ControllerLoraSetContactConfigParams,NextStepMissionWithMessageParams,SetMultidestinationParams,SetMultidestinationWithMessagesParamsUuidsItem,SetMultidestinationWithMessagesParams,GetStatsParams,GetLightStatsParams,ExportStatsParams,GetVehsTimelineParams,AddRocUserParams,UpdateRocUserParams,CreateMissionParams,ExtendMissionParams,StartButtonMissionParams,EnableFollowMeParams,FollowMeStatusEventData,SoundCommandEventData,VehicleDirectionEventData,MappingErrorEventData,SafetyDiagnosticEventData,VelocityEventData,VehToFeedbackEventData,UpdateStatusEventData } from "./types";
+import { HumanInterventionRequired,LedCommand,Site,OngoingAction,SiteLight,SiteRaw,Map,MapRaw,MapElements,MapWithoutImages,RoutesGraph,RoutesVertex,RoutesEdge,RoutesSettings,Module,ModuleDescription,PortRedirection,ModuleConfiguration,MapLight,ForbiddenArea,CustomArea,SavedPose,Fiducial,ChargingStation,DockedPose,Marker,TeleopCmd,Pose,Position,BatteryState,User,MoveStep,DiagnosticElement,DiagnosticError,AutopilotConfig,AutopilotIndexedStep,AutopilotStepMoveParams,AutopilotStep,LedSoundAnimBehaviour,Areas,Behaviour,DockingState,SoundScenarioVolume,WifiAp,NetworkWanState,InvalidDataBySection,InvalidData,ExternalPortRedirection,LiftStatus,Group,SoftVersions,ControllerConstraint,MissionConfigDestination,MissionConfig,ButtonConfig,WaitingPose,LoraMessage,CustomCommand,ControllerLoraContact,ControllerLora,MapElementRestriction,DockedPoseConfig,RocMapElementConfig,ControllerLoraContactConfig,VehConfig,VehInfosStats,VehInfos,VehDelayConfig,ButtonInfos,ManagerMissions,Mission,DailyStats,MissionStep,InstallConfigDone,ResponseDeadlineConfig,Log,CompleteData,StatsData,ExportedStats,RocUser,TimelineStep,VehTimelineData,CallByButton,HirByType,DestByUuid,NbByOutcome,StandardStats,StandardStatsByUuid,HeatMapData,SlotHours,ModuleParams,ManagerMap,UpdateStatus,SubscribeResult,FollowMeParams,AuthUserResult,LoginParams,LoginResult,ExportSitesParamsItem,ExportSitesResultItem,UpdateChargingStationConfigParams,UpdateDockedPoseConfigParams,SetUserParams,SetObtCbtParams,SetChargingStationResult,SetSavedPoseResult,SetDockedPoseResult,SetForbiddenAreaResult,SetCustomAreaResult,CheckPoseParams,Check3dBoxParamsPoint,Check3dBoxParams,SimAddShelfParams,SetCustomLedParams,SetCustomSoundParams,MappingGetLastResult,SimSetDiffDriveStateParams,SetScenarioSoundMaxVolumeParamsItem,SetModuleParamsParams,VehToPoseParamsProgressChecker,VehToPoseParams,VehToPoseFeedback,VehToChargingStationParams,VehToChargingStationFeedback,VehToChargingStationApproachParams,VehToChargingStationApproachFeedback,VehToDockedPoseParamsShelfParameters,VehToDockedPoseParams,VehToDockedPoseFeedback,VehToDockedPoseApproachParams,VehToDockedPoseApproachFeedback,VehToSavedPoseParamsSuccessParams,VehToSavedPoseParams,VehToSavedPoseFeedback,VehToSegmentParams,VehToSegmentFeedback,SetVehiclePoseParams,SetVehiclePoseFeedback,SetMapFeedback,SetActiveMapFeedback,GetMarkersFeedback,InstallModuleParams,InstallModuleFeedback,DisableModuleFeedback,RecoveryFeedback,ResetDatabaseFeedback,GetPathParams,GetPathResult,GetPathFeedback,MappingStartParams,MappingStartFeedback,MappingStopFeedback,EraseActiveMapParams,EraseActiveMapFeedback,ReloadMapFeedback,MergeMapsParams,MergeMapsFeedback,NetworkWanConfigParams,NetworkRedirectPortParams,SystemRestartParams,AddCallButtonParams,AddRestockingButtonParams,AddMultidestinationButtonParams,AddOrderedMultidestinationButtonParams,AddVehParams,AddPortRedirectionParams,UpdatePortRedirectionParams,DeletePortRedirectionParams,ControllerLoraSetContactConfigParams,NextStepMissionWithMessageParams,SetMultidestinationParams,SetMultidestinationWithMessagesParamsUuidsItem,SetMultidestinationWithMessagesParams,GetStatsParams,GetLightStatsParams,ExportStatsParams,GetVehsTimelineParams,AddRocUserParams,UpdateRocUserParams,CreateMissionParams,ExtendMissionParams,StartButtonMissionParams,FollowMeStatusEventData,SoundCommandEventData,VehicleDirectionEventData,MappingErrorEventData,SafetyDiagnosticEventData,VelocityEventData,VehToFeedbackEventData,UpdateStatusEventData } from "./types";
 import { Path,MoveSequence,AutopilotSequence,SoundLoopNumber,OperatingHours } from "./types";
 import { NetworkProtocol,MoveStepMoveType,DiagnosticElementType,DiagnosticElementError,DiagnosticCriticalLevel,AutopilotStepMoveParamsTargetType,AutopilotStepMoveParamsOnError,AutopilotStepType,Direction,OnOff,DirectionStrict,FollowMode,VehToDockedStepCode,DockingStatus,FollowMeStatus,DockingType,VehToStepCode,LedAnim,LedCornerAnim,SoundSample,PoseReference,NetworkType,NetworkStatus,NetworkGlobalStatus,SoundScenario,ContactState,DockedPoseStationType,LoraControllerCommand,ContactType,ContactNonc,ContactTrigger,RelayAction,VehStatus,ModuleType,VehDirection,MapElementType,AuthenticatedType,LogSeverity,LogType,UpdateStatusStatus,SetMapFeedbackCurrentStepCode,SetActiveMapFeedbackCurrentStepCode,InstallModuleFeedbackCurrentStepCode,DisableModuleFeedbackCurrentStepCode,ResetDatabaseFeedbackCurrentStepCode,MappingStopFeedbackCurrentStepCode,EraseActiveMapFeedbackCurrentStepCode,ReloadMapFeedbackCurrentStepCode,MergeMapsFeedbackCurrentStepCode,SystemRestartParamsStage,AutopilotStepResultEventData,AutopilotStatusEventData,UpdateStatusEventDataStatus } from "./types";
 
@@ -775,28 +775,6 @@ export enum TopicEventCode {
     */
     ModuleType = 7017,
     /**
-      * **Tablet is in charge**
-      *
-      * Tablet on vehicle is in charge
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    TabletInCharge = 7018,
-    /**
-      * **Plugged tablet required**
-      *
-      * Need to plug tablet on the vehicle
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    PluggedTabletRequired = 7019,
-    /**
       * **Vehicle delay configuration**
       *
       * Vehicle delay configuration
@@ -841,9 +819,9 @@ export enum TopicEventCode {
     */
     OnlyRelease = 7023,
     /**
-      * **Vehicle direction**
+      * **Vehicle direction - mast position**
       *
-      * Vehicle direction
+      * Vehicle direction - mast position
       
       * @data {@link VehDirection}
       * @category Configuration
@@ -851,6 +829,17 @@ export enum TopicEventCode {
       
     */
     VehDirection = 7024,
+    /**
+      * **Dock direction**
+      *
+      * Dock direction
+      
+      * @data {@link VehDirection}
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    DockDirection = 7076,
     /**
       * **Daily stats**
       *
@@ -1016,6 +1005,17 @@ export enum TopicEventCode {
       
     */
     BadLiftPosition = 7040,
+    /**
+      * **Bad lift configuration**
+      *
+      * Bad lift configuration
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    BadLiftConfiguration = 7078,
     /**
       * **Allow move from dock**
       *
@@ -1401,6 +1401,17 @@ export enum TopicEventCode {
       
     */
     LiftError = 7075,
+    /**
+      * **Invalid data list**
+      *
+      * Lift of invalid data
+      
+      * @data {@link InvalidDataBySection}[]
+      * @category State
+      * @group Vehicle
+      
+    */
+    InvalidDataList = 7077,
     
 }
 /** @internal */
@@ -1832,13 +1843,12 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.InMultiDestinations]: [],
     [TopicEventCode.VehsInfos]: [],
     [TopicEventCode.ModuleType]: [],
-    [TopicEventCode.TabletInCharge]: [],
-    [TopicEventCode.PluggedTabletRequired]: [],
     [TopicEventCode.VehDelayConfig]: [],
     [TopicEventCode.ButtonsInfos]: [],
     [TopicEventCode.MissionTitle]: [],
     [TopicEventCode.OnlyRelease]: [],
     [TopicEventCode.VehDirection]: [],
+    [TopicEventCode.DockDirection]: [],
     [TopicEventCode.DailyStats]: [],
     [TopicEventCode.ImportConfigDone]: [],
     [TopicEventCode.AppVersion]: [],
@@ -1854,6 +1864,7 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.IsTouchScreen]: [],
     [TopicEventCode.DockedPoseConfigs]: [],
     [TopicEventCode.BadLiftPosition]: [],
+    [TopicEventCode.BadLiftConfiguration]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
     [TopicEventCode.SoftVersions]: [],
     [TopicEventCode.NewSoftVersions]: [],
@@ -1889,6 +1900,7 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.PortRedirections]: [],
     [TopicEventCode.ExternalSpeaker]: [],
     [TopicEventCode.LiftError]: [],
+    [TopicEventCode.InvalidDataList]: [],
     
 })
 
@@ -2035,13 +2047,12 @@ export type EventDataType = {
 [TopicEventCode.InMultiDestinations]: DeepRequired<boolean>
 [TopicEventCode.VehsInfos]: DeepRequired<VehInfos[]>
 [TopicEventCode.ModuleType]: DeepRequired<ModuleType>
-[TopicEventCode.TabletInCharge]: DeepRequired<boolean>
-[TopicEventCode.PluggedTabletRequired]: DeepRequired<boolean>
 [TopicEventCode.VehDelayConfig]: DeepRequired<VehDelayConfig>
 [TopicEventCode.ButtonsInfos]: DeepRequired<ButtonInfos[]>
 [TopicEventCode.MissionTitle]: DeepRequired<string>
 [TopicEventCode.OnlyRelease]: DeepRequired<boolean>
 [TopicEventCode.VehDirection]: DeepRequired<VehDirection>
+[TopicEventCode.DockDirection]: DeepRequired<VehDirection>
 [TopicEventCode.DailyStats]: DeepRequired<DailyStats>
 [TopicEventCode.ImportConfigDone]: DeepRequired<InstallConfigDone>
 [TopicEventCode.AppVersion]: DeepRequired<string>
@@ -2057,6 +2068,7 @@ export type EventDataType = {
 [TopicEventCode.IsTouchScreen]: DeepRequired<boolean>
 [TopicEventCode.DockedPoseConfigs]: DeepRequired<DockedPoseConfig[]>
 [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>
+[TopicEventCode.BadLiftConfiguration]: DeepRequired<boolean>
 [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>
 [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>
 [TopicEventCode.NewSoftVersions]: DeepRequired<boolean>
@@ -2092,4 +2104,5 @@ export type EventDataType = {
 [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>
 [TopicEventCode.ExternalSpeaker]: DeepRequired<boolean>
 [TopicEventCode.LiftError]: DeepRequired<boolean>
+[TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>
 }
