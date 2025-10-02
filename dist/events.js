@@ -1024,6 +1024,17 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["AllowMoveFromDock"] = 7041] = "AllowMoveFromDock";
     /**
+      * **Allow multiple mission for the same button**
+      *
+      * Allow multiple mission for the same button
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Manager
+      
+    */
+    TopicEventCode[TopicEventCode["AllowMultipleMissions"] = 7080] = "AllowMultipleMissions";
+    /**
       * **Softwares versions**
       *
       * Softwares versions
@@ -1254,6 +1265,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["LiftHaveBoxOn"] = 7067] = "LiftHaveBoxOn";
+    /**
+      * **Lift box is a shelf**
+      *
+      * Lift box is a shelf
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["LiftIsShelfOn"] = 7079] = "LiftIsShelfOn";
     /**
       * **Current origin**
       *
@@ -1842,6 +1864,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.BadLiftPosition]: [],
     [TopicEventCode.BadLiftConfiguration]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
+    [TopicEventCode.AllowMultipleMissions]: [],
     [TopicEventCode.SoftVersions]: [],
     [TopicEventCode.NewSoftVersions]: [],
     [TopicEventCode.WaitingContact]: [],
@@ -1863,6 +1886,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.LiftConnected]: [],
     [TopicEventCode.LiftState]: [],
     [TopicEventCode.LiftHaveBoxOn]: [],
+    [TopicEventCode.LiftIsShelfOn]: [],
     [TopicEventCode.CurrentOrigin]: [],
     [TopicEventCode.SleepScreen]: [],
     [TopicEventCode.MapElementConfigs]: [],

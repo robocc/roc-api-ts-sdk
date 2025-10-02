@@ -75,7 +75,7 @@ export declare enum OutcomeCode {
     CANCELED_ON_VEH = 100,
     MAINTENANCE_MODE_ACTIVATE = 101,
     NOT_A_MANAGER = 102,
-    NOT_A_ROCL = 103,
+    NOT_A_ROC_P = 103,
     INVALID_DATA = 104
 }
 /** @internal */

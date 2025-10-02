@@ -76,7 +76,7 @@ export enum OutcomeCode {
   CANCELED_ON_VEH = 100,
   MAINTENANCE_MODE_ACTIVATE = 101,
   NOT_A_MANAGER = 102,
-  NOT_A_ROCL = 103,
+  NOT_A_ROC_P = 103,
   INVALID_DATA = 104,
   
 }
@@ -160,7 +160,7 @@ export const OutcomeCodeDescription = {
   [OutcomeCode.CANCELED_ON_VEH]: "CANCELED_ON_VEH",
   [OutcomeCode.MAINTENANCE_MODE_ACTIVATE]: "MAINTENANCE_MODE_ACTIVATE",
   [OutcomeCode.NOT_A_MANAGER]: "NOT_A_MANAGER",
-  [OutcomeCode.NOT_A_ROCL]: "NOT_A_ROCL",
+  [OutcomeCode.NOT_A_ROC_P]: "NOT_A_ROC_P",
   [OutcomeCode.INVALID_DATA]: "INVALID_DATA",
   
 }

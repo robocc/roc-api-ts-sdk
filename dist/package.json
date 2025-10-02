@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "8.19.0-selene-10",
+  "version": "8.20.1-thanatos-1",
   "description": "RocApi client Typescript library",
   "repository": {
     "type": "git",

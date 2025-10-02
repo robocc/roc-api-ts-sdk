@@ -1028,6 +1028,17 @@ export enum TopicEventCode {
     */
     AllowMoveFromDock = 7041,
     /**
+      * **Allow multiple mission for the same button**
+      *
+      * Allow multiple mission for the same button
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Manager
+      
+    */
+    AllowMultipleMissions = 7080,
+    /**
       * **Softwares versions**
       *
       * Softwares versions
@@ -1258,6 +1269,17 @@ export enum TopicEventCode {
       
     */
     LiftHaveBoxOn = 7067,
+    /**
+      * **Lift box is a shelf**
+      *
+      * Lift box is a shelf
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    LiftIsShelfOn = 7079,
     /**
       * **Current origin**
       *
@@ -1866,6 +1888,7 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.BadLiftPosition]: [],
     [TopicEventCode.BadLiftConfiguration]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
+    [TopicEventCode.AllowMultipleMissions]: [],
     [TopicEventCode.SoftVersions]: [],
     [TopicEventCode.NewSoftVersions]: [],
     [TopicEventCode.WaitingContact]: [],
@@ -1887,6 +1910,7 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.LiftConnected]: [],
     [TopicEventCode.LiftState]: [],
     [TopicEventCode.LiftHaveBoxOn]: [],
+    [TopicEventCode.LiftIsShelfOn]: [],
     [TopicEventCode.CurrentOrigin]: [],
     [TopicEventCode.SleepScreen]: [],
     [TopicEventCode.MapElementConfigs]: [],
@@ -2070,6 +2094,7 @@ export type EventDataType = {
 [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>
 [TopicEventCode.BadLiftConfiguration]: DeepRequired<boolean>
 [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>
+[TopicEventCode.AllowMultipleMissions]: DeepRequired<boolean>
 [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>
 [TopicEventCode.NewSoftVersions]: DeepRequired<boolean>
 [TopicEventCode.WaitingContact]: DeepRequired<boolean>
@@ -2091,6 +2116,7 @@ export type EventDataType = {
 [TopicEventCode.LiftConnected]: DeepRequired<boolean>
 [TopicEventCode.LiftState]: DeepRequired<LiftStatus>
 [TopicEventCode.LiftHaveBoxOn]: DeepRequired<boolean>
+[TopicEventCode.LiftIsShelfOn]: DeepRequired<boolean>
 [TopicEventCode.CurrentOrigin]: DeepRequired<number>
 [TopicEventCode.SleepScreen]: DeepRequired<boolean>
 [TopicEventCode.MapElementConfigs]: DeepRequired<RocMapElementConfig[]>

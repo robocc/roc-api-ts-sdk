@@ -1024,6 +1024,17 @@ export declare enum TopicEventCode {
     */
     AllowMoveFromDock = 7041,
     /**
+      * **Allow multiple mission for the same button**
+      *
+      * Allow multiple mission for the same button
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Manager
+      
+    */
+    AllowMultipleMissions = 7080,
+    /**
       * **Softwares versions**
       *
       * Softwares versions
@@ -1254,6 +1265,17 @@ export declare enum TopicEventCode {
       
     */
     LiftHaveBoxOn = 7067,
+    /**
+      * **Lift box is a shelf**
+      *
+      * Lift box is a shelf
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    LiftIsShelfOn = 7079,
     /**
       * **Current origin**
       *
@@ -1852,6 +1874,7 @@ export declare const initEventTopicCallbacks: () => {
     7040: never[];
     7078: never[];
     7041: never[];
+    7080: never[];
     7042: never[];
     7043: never[];
     7044: never[];
@@ -1873,6 +1896,7 @@ export declare const initEventTopicCallbacks: () => {
     7060: never[];
     7061: never[];
     7067: never[];
+    7079: never[];
     7062: never[];
     7063: never[];
     7064: never[];
@@ -2130,6 +2154,7 @@ export type EventDataType = {
     [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>;
     [TopicEventCode.BadLiftConfiguration]: DeepRequired<boolean>;
     [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>;
+    [TopicEventCode.AllowMultipleMissions]: DeepRequired<boolean>;
     [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>;
     [TopicEventCode.NewSoftVersions]: DeepRequired<boolean>;
     [TopicEventCode.WaitingContact]: DeepRequired<boolean>;
@@ -2151,6 +2176,7 @@ export type EventDataType = {
     [TopicEventCode.LiftConnected]: DeepRequired<boolean>;
     [TopicEventCode.LiftState]: DeepRequired<LiftStatus>;
     [TopicEventCode.LiftHaveBoxOn]: DeepRequired<boolean>;
+    [TopicEventCode.LiftIsShelfOn]: DeepRequired<boolean>;
     [TopicEventCode.CurrentOrigin]: DeepRequired<number>;
     [TopicEventCode.SleepScreen]: DeepRequired<boolean>;
     [TopicEventCode.MapElementConfigs]: DeepRequired<RocMapElementConfig[]>;
