@@ -1,8 +1,8 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, InvalidDataBySection, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, SystemInfo, InvalidDataBySection, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
 import { Path, AutopilotSequence, OperatingHours } from "./types";
-import { NetworkStatus, NetworkGlobalStatus, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
+import { NetworkStatus, NetworkGlobalStatus, StopSource, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
     AuthOK = -7,
     AuthError = -6,
@@ -253,6 +253,17 @@ export declare enum TopicEventCode {
       
     */
     SafetyDiagnostic = 84,
+    /**
+      * **Mapping feature operational**
+      *
+      * Wether a mapping can be performed or not
+      
+      * @data {@link boolean}
+      * @category Diagnostic
+      * @group Vehicle
+      
+    */
+    MappingFeatureOperational = 140,
     /**
       * **Human intervention required**
       *
@@ -583,6 +594,28 @@ export declare enum TopicEventCode {
       
     */
     LidarMarkers = 135,
+    /**
+      * **Stop sources**
+      *
+      * Sources that is currently stopping vehicle motion
+      
+      * @data {@link StopSource}[]
+      * @category Vehicle state
+      * @group Vehicle
+      
+    */
+    StopSources = 143,
+    /**
+      * **System information**
+      *
+      * System information
+      
+      * @data {@link SystemInfo}
+      * @category Diagnostic
+      * @group Vehicle
+      
+    */
+    SystemInfo = 144,
     /**
       * **Connected to vehicle**
       *
@@ -1434,6 +1467,12 @@ export declare enum TopicEventCode {
 /** @internal */
 export declare enum ResultEventCode {
     /**
+      * **Check 3D box result**
+      *
+      * Result of check 3D box
+    */
+    Check3dBoxResult = 142,
+    /**
       * **Veh to pose result**
       *
       * Result of move order to pose
@@ -1594,10 +1633,22 @@ export declare enum ResultEventCode {
       *
       * Result of network hotspot enable operation
     */
-    NetworkHotspotEnableResult = 80
+    NetworkHotspotEnableResult = 80,
+    /**
+      * **Generate forbidden area result**
+      *
+      * Result of generate forbidden area operation
+    */
+    GenerateForbiddenAreasResult = 139
 }
 /** @internal */
 export declare enum FeedbackEventCode {
+    /**
+      * **Check 3D box feedback**
+      *
+      * Feedback on current check 3D box
+    */
+    Check3dBoxFeedback = 141,
     /**
       * **Veh to pose feedback**
       *
@@ -1759,7 +1810,13 @@ export declare enum FeedbackEventCode {
       *
       * Feedback on network hotspot enable operation
     */
-    NetworkHotspotEnableFeedback = 79
+    NetworkHotspotEnableFeedback = 79,
+    /**
+      * **Generate forbidden area feedback**
+      *
+      * Feedback on generate forbidden area operation
+    */
+    GenerateForbiddenAreasFeedback = 137
 }
 /** @internal */
 export interface EventMsg<T> {
@@ -1804,6 +1861,7 @@ export declare const initEventTopicCallbacks: () => {
     83: never[];
     95: never[];
     84: never[];
+    140: never[];
     86: never[];
     68: never[];
     69: never[];
@@ -1834,6 +1892,8 @@ export declare const initEventTopicCallbacks: () => {
     133: never[];
     134: never[];
     135: never[];
+    143: never[];
+    144: never[];
     7000: never[];
     7001: never[];
     7002: never[];
@@ -1914,6 +1974,10 @@ export declare const initEventTopicCallbacks: () => {
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
+    142: {
+        resolve: undefined;
+        reject: undefined;
+    };
     3: {
         resolve: undefined;
         reject: undefined;
@@ -2022,9 +2086,14 @@ export declare const initEventResultCallbacks: () => {
         resolve: undefined;
         reject: undefined;
     };
+    139: {
+        resolve: undefined;
+        reject: undefined;
+    };
 };
 /** @internal */
 export declare const initEventFeedbackCallbacks: () => {
+    141: undefined;
     2: undefined;
     111: undefined;
     93: undefined;
@@ -2052,6 +2121,7 @@ export declare const initEventFeedbackCallbacks: () => {
     75: undefined;
     77: undefined;
     79: undefined;
+    137: undefined;
 };
 /** @internal */
 export type EventDataType = {
@@ -2084,6 +2154,7 @@ export type EventDataType = {
     [TopicEventCode.MaintenanceMode]: DeepRequired<boolean>;
     [TopicEventCode.SoundIsPlaying]: DeepRequired<boolean>;
     [TopicEventCode.SafetyDiagnostic]: DeepRequired<SafetyDiagnosticEventData>;
+    [TopicEventCode.MappingFeatureOperational]: DeepRequired<boolean>;
     [TopicEventCode.HumanInterventionRequired]: DeepRequired<HumanInterventionRequired>;
     [TopicEventCode.AutopilotStepResult]: DeepRequired<AutopilotStepResultEventData>;
     [TopicEventCode.AutopilotStatus]: DeepRequired<AutopilotStatusEventData>;
@@ -2114,6 +2185,8 @@ export type EventDataType = {
     [TopicEventCode.LidarFromRobot]: DeepRequired<Position[]>;
     [TopicEventCode.LidarInMap]: DeepRequired<Position[]>;
     [TopicEventCode.LidarMarkers]: DeepRequired<Marker[]>;
+    [TopicEventCode.StopSources]: DeepRequired<StopSource[]>;
+    [TopicEventCode.SystemInfo]: DeepRequired<SystemInfo>;
     [TopicEventCode.ConnectedToVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsManager]: DeepRequired<boolean>;

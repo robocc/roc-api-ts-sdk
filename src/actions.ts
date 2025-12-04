@@ -1,14 +1,23 @@
 import { ResultEventCode, FeedbackEventCode, EventCallback } from "./events";
 import { OutcomeCode } from "./outcomes";
 import { DeepRequired, BaseAPI } from "./types";
-import { HumanInterventionRequired,LedCommand,Site,OngoingAction,SiteLight,SiteRaw,Map,MapRaw,MapElements,MapWithoutImages,RoutesGraph,RoutesVertex,RoutesEdge,RoutesSettings,Module,ModuleDescription,PortRedirection,ModuleConfiguration,MapLight,ForbiddenArea,CustomArea,SavedPose,Fiducial,ChargingStation,DockedPose,Marker,TeleopCmd,Pose,Position,BatteryState,User,MoveStep,DiagnosticElement,DiagnosticError,AutopilotConfig,AutopilotIndexedStep,AutopilotStepMoveParams,AutopilotStep,LedSoundAnimBehaviour,Areas,Behaviour,DockingState,SoundScenarioVolume,WifiAp,NetworkWanState,InvalidDataBySection,InvalidData,ExternalPortRedirection,LiftStatus,Group,SoftVersions,ControllerConstraint,MissionConfigDestination,MissionConfig,ButtonConfig,WaitingPose,LoraMessage,CustomCommand,ControllerLoraContact,ControllerLora,MapElementRestriction,DockedPoseConfig,RocMapElementConfig,ControllerLoraContactConfig,VehConfig,VehInfosStats,VehInfos,VehDelayConfig,ButtonInfos,ManagerMissions,Mission,DailyStats,MissionStep,InstallConfigDone,ResponseDeadlineConfig,Log,CompleteData,StatsData,ExportedStats,RocUser,TimelineStep,VehTimelineData,CallByButton,HirByType,DestByUuid,NbByOutcome,StandardStats,StandardStatsByUuid,HeatMapData,SlotHours,ModuleParams,ManagerMap,UpdateStatus,SubscribeResult,FollowMeParams,AuthUserResult,LoginParams,LoginResult,ExportSitesParamsItem,ExportSitesResultItem,UpdateChargingStationConfigParams,UpdateDockedPoseConfigParams,SetUserParams,SetObtCbtParams,SetChargingStationResult,SetSavedPoseResult,SetDockedPoseResult,SetForbiddenAreaResult,SetCustomAreaResult,CheckPoseParams,Check3dBoxParamsPoint,Check3dBoxParams,SimAddShelfParams,SetCustomLedParams,SetCustomSoundParams,MappingGetLastResult,SimSetDiffDriveStateParams,SetScenarioSoundMaxVolumeParamsItem,SetModuleParamsParams,VehToPoseParamsProgressChecker,VehToPoseParams,VehToPoseFeedback,VehToChargingStationParams,VehToChargingStationFeedback,VehToChargingStationApproachParams,VehToChargingStationApproachFeedback,VehToDockedPoseParamsShelfParameters,VehToDockedPoseParams,VehToDockedPoseFeedback,VehToDockedPoseApproachParams,VehToDockedPoseApproachFeedback,VehToSavedPoseParamsSuccessParams,VehToSavedPoseParams,VehToSavedPoseFeedback,VehToSegmentParams,VehToSegmentFeedback,SetVehiclePoseParams,SetVehiclePoseFeedback,SetMapFeedback,SetActiveMapFeedback,GetMarkersFeedback,InstallModuleParams,InstallModuleFeedback,DisableModuleFeedback,RecoveryFeedback,ResetDatabaseFeedback,GetPathParams,GetPathResult,GetPathFeedback,MappingStartParams,MappingStartFeedback,MappingStopFeedback,EraseActiveMapParams,EraseActiveMapFeedback,ReloadMapFeedback,MergeMapsParams,MergeMapsFeedback,NetworkWanConfigParams,NetworkRedirectPortParams,SystemRestartParams,AddCallButtonParams,AddRestockingButtonParams,AddMultidestinationButtonParams,AddOrderedMultidestinationButtonParams,AddVehParams,AddPortRedirectionParams,UpdatePortRedirectionParams,DeletePortRedirectionParams,ControllerLoraSetContactConfigParams,NextStepMissionWithMessageParams,SetMultidestinationParams,SetMultidestinationWithMessagesParamsUuidsItem,SetMultidestinationWithMessagesParams,GetStatsParams,GetLightStatsParams,ExportStatsParams,GetVehsTimelineParams,AddRocUserParams,UpdateRocUserParams,CreateMissionParams,ExtendMissionParams,StartButtonMissionParams,FollowMeStatusEventData,SoundCommandEventData,VehicleDirectionEventData,MappingErrorEventData,SafetyDiagnosticEventData,VelocityEventData,VehToFeedbackEventData,UpdateStatusEventData } from "./types";
+import { HumanInterventionRequired,LedCommand,Site,OngoingAction,SiteLight,SiteRaw,Map,MapRaw,MapElements,MapWithoutImages,RoutesGraph,RoutesVertex,RoutesEdge,RoutesSettings,Module,ModuleDescription,PortRedirection,ModuleConfiguration,MapLight,ForbiddenArea,CustomArea,SavedPose,Fiducial,ChargingStation,DockedPose,Marker,TeleopCmd,Pose,Position,BatteryState,User,MoveStep,DiagnosticElement,DiagnosticError,AutopilotConfig,AutopilotIndexedStep,AutopilotStepMoveParams,AutopilotStep,LedSoundAnimBehaviour,Areas,Behaviour,DockingState,SoundScenarioVolume,WifiAp,NetworkWanState,SystemInfo,InvalidDataBySection,InvalidData,ExternalPortRedirection,LiftStatus,Group,SoftVersions,ControllerConstraint,MissionConfigDestination,MissionConfig,ButtonConfig,WaitingPose,LoraMessage,CustomCommand,ControllerLoraContact,ControllerLora,MapElementRestriction,DockedPoseConfig,RocMapElementConfig,ControllerLoraContactConfig,VehConfig,VehInfosStats,VehInfos,VehDelayConfig,ButtonInfos,ManagerMissions,Mission,DailyStats,MissionStep,InstallConfigDone,ResponseDeadlineConfig,Log,CompleteData,StatsData,ExportedStats,RocUser,TimelineStep,VehTimelineData,CallByButton,HirByType,DestByUuid,NbByOutcome,StandardStats,StandardStatsByUuid,HeatMapData,SlotHours,ModuleParams,ManagerMap,UpdateStatus,SubscribeResult,FollowMeParams,AuthUserResult,LoginParams,LoginResult,ExportSitesParamsItem,ExportSitesResultItem,UpdateChargingStationConfigParams,UpdateDockedPoseConfigParams,SetUserParams,SetObtCbtParams,SetChargingStationResult,SetSavedPoseResult,SetDockedPoseResult,SetForbiddenAreaResult,SetCustomAreaResult,CheckPoseParams,Check3dBoxParamsPoint,Check3dBoxParamsMarker,Check3dBoxParams,Check3dBoxActionParamsPoint,Check3dBoxActionParamsMarker,Check3dBoxActionParams,Check3dBoxActionFeedback,SimAddShelfParams,SetCustomLedParams,SetCustomSoundParams,SimSetDiffDriveStateParams,SetScenarioSoundMaxVolumeParamsItem,SetModuleParamsParams,VehToPoseParamsProgressChecker,VehToPoseParams,VehToPoseFeedback,VehToChargingStationParams,VehToChargingStationFeedback,VehToChargingStationApproachParams,VehToChargingStationApproachFeedback,VehToDockedPoseParamsShelfParameters,VehToDockedPoseParams,VehToDockedPoseFeedback,VehToDockedPoseApproachParams,VehToDockedPoseApproachFeedback,VehToSavedPoseParamsSuccessParams,VehToSavedPoseParams,VehToSavedPoseFeedback,VehToSegmentParams,VehToSegmentFeedback,SetVehiclePoseParams,SetVehiclePoseFeedback,SetMapFeedback,SetActiveMapFeedback,GetMarkersFeedback,InstallModuleParams,InstallModuleFeedback,DisableModuleFeedback,RecoveryFeedback,ResetDatabaseFeedback,GetPathParams,GetPathResult,GetPathFeedback,MappingStartParams,MappingStartFeedback,MappingStopResult,MappingStopFeedback,EraseActiveMapParams,EraseActiveMapFeedback,ReloadMapFeedback,MergeMapsParams,MergeMapsFeedback,NetworkWanConfigParams,NetworkRedirectPortParams,SystemRestartParams,GenerateForbiddenAreasParams,GetShelvesParams,AddCallButtonParams,AddRestockingButtonParams,AddMultidestinationButtonParams,AddOrderedMultidestinationButtonParams,AddVehParams,AddPortRedirectionParams,UpdatePortRedirectionParams,DeletePortRedirectionParams,ControllerLoraSetContactConfigParams,NextStepMissionWithMessageParams,SetMultidestinationParams,SetMultidestinationWithMessagesParamsUuidsItem,SetMultidestinationWithMessagesParams,GetStatsParams,GetLightStatsParams,ExportStatsParams,GetVehsTimelineParams,AddRocUserParams,UpdateRocUserParams,CreateMissionParams,ExtendMissionParams,StartButtonMissionParams,FollowMeStatusEventData,SoundCommandEventData,VehicleDirectionEventData,MappingErrorEventData,SafetyDiagnosticEventData,VelocityEventData,VehToFeedbackEventData,UpdateStatusEventData } from "./types";
 import { Path,MoveSequence,AutopilotSequence,SoundLoopNumber,OperatingHours } from "./types";
-import { NetworkProtocol,MoveStepMoveType,DiagnosticElementType,DiagnosticElementError,DiagnosticCriticalLevel,AutopilotStepMoveParamsTargetType,AutopilotStepMoveParamsOnError,AutopilotStepType,Direction,OnOff,DirectionStrict,FollowMode,VehToDockedStepCode,DockingStatus,FollowMeStatus,DockingType,VehToStepCode,LedAnim,LedCornerAnim,SoundSample,PoseReference,NetworkType,NetworkStatus,NetworkGlobalStatus,SoundScenario,ContactState,DockedPoseStationType,LoraControllerCommand,ContactType,ContactNonc,ContactTrigger,RelayAction,VehStatus,ModuleType,VehDirection,MapElementType,AuthenticatedType,LogSeverity,LogType,UpdateStatusStatus,SetMapFeedbackCurrentStepCode,SetActiveMapFeedbackCurrentStepCode,InstallModuleFeedbackCurrentStepCode,DisableModuleFeedbackCurrentStepCode,ResetDatabaseFeedbackCurrentStepCode,MappingStopFeedbackCurrentStepCode,EraseActiveMapFeedbackCurrentStepCode,ReloadMapFeedbackCurrentStepCode,MergeMapsFeedbackCurrentStepCode,SystemRestartParamsStage,AutopilotStepResultEventData,AutopilotStatusEventData,UpdateStatusEventDataStatus } from "./types";
+import { NetworkProtocol,MoveStepMoveType,DiagnosticElementType,DiagnosticElementError,DiagnosticCriticalLevel,AutopilotStepMoveParamsTargetType,AutopilotStepMoveParamsOnError,AutopilotStepType,Direction,OnOff,DirectionStrict,FollowMode,VehToDockedStepCode,DockingStatus,FollowMeStatus,DockingType,VehToStepCode,LedAnim,LedCornerAnim,SoundSample,PoseReference,NetworkType,NetworkStatus,NetworkGlobalStatus,SoundScenario,StopSource,ComputerType,McuType,MotorType,ContactState,DockedPoseStationType,LoraControllerCommand,ContactType,ContactNonc,ContactTrigger,RelayAction,VehStatus,ModuleType,VehDirection,MapElementType,AuthenticatedType,LogSeverity,LogType,UpdateStatusStatus,SetMapFeedbackCurrentStepCode,SetActiveMapFeedbackCurrentStepCode,InstallModuleFeedbackCurrentStepCode,DisableModuleFeedbackCurrentStepCode,ResetDatabaseFeedbackCurrentStepCode,MappingStopFeedbackCurrentStepCode,EraseActiveMapFeedbackCurrentStepCode,ReloadMapFeedbackCurrentStepCode,MergeMapsFeedbackCurrentStepCode,SystemRestartParamsStage,MappingErrorEventDataOutcome,AutopilotStepResultEventData,AutopilotStatusEventData,UpdateStatusEventDataStatus } from "./types";
 
 
 /* Enums for all actions */
 /** @internal */
 export enum ActionOperationCode {
+    /**
+      * **Check 3D box**
+      *
+      * Check if a box is free 
+      * @group Navigation
+      * @category Navigation
+      
+      */
+      Check3dBoxAction = 141,
     /**
       * **Veh to pose**
       *
@@ -252,12 +261,22 @@ export enum ActionOperationCode {
       
       */
       NetworkWanScanAps = 79,
+    /**
+      * **Generate forbidden areas**
+      *
+      * Automatically creates forbidden areas for the active map 
+      * @group Map
+      * @category Forbidden area
+      
+      */
+      GenerateForbiddenAreas = 139,
     
 }
 
 /* Lookup tables for feedback and results */
 /** @internal */
 export const actionResultCode = {
+    [ActionOperationCode.Check3dBoxAction]: ResultEventCode.Check3dBoxResult,
     [ActionOperationCode.VehToPose]: ResultEventCode.VehToPoseResult,
     [ActionOperationCode.VehToChargingStation]: ResultEventCode.VehToChargingStationResult,
     [ActionOperationCode.VehToChargingStationApproach]: ResultEventCode.VehToChargingStationApproachResult,
@@ -285,10 +304,12 @@ export const actionResultCode = {
     [ActionOperationCode.NetworkWanEnable]: ResultEventCode.NetworkWanEnableResult,
     [ActionOperationCode.NetworkHotspotEnable]: ResultEventCode.NetworkHotspotEnableResult,
     [ActionOperationCode.NetworkWanScanAps]: ResultEventCode.NetworkWanScanApsResult,
+    [ActionOperationCode.GenerateForbiddenAreas]: ResultEventCode.GenerateForbiddenAreasResult,
     
 }
 /** @internal */
 export const actionFeedbackCode = {
+    [ActionOperationCode.Check3dBoxAction]: FeedbackEventCode.Check3dBoxFeedback,
     [ActionOperationCode.VehToPose]: FeedbackEventCode.VehToPoseFeedback,
     [ActionOperationCode.VehToChargingStation]: FeedbackEventCode.VehToChargingStationFeedback,
     [ActionOperationCode.VehToChargingStationApproach]: FeedbackEventCode.VehToChargingStationApproachFeedback,
@@ -316,6 +337,7 @@ export const actionFeedbackCode = {
     [ActionOperationCode.NetworkWanEnable]: FeedbackEventCode.NetworkWanEnableFeedback,
     [ActionOperationCode.NetworkHotspotEnable]: FeedbackEventCode.NetworkHotspotEnableFeedback,
     [ActionOperationCode.NetworkWanScanAps]: FeedbackEventCode.NetworkWanScanApsFeedback,
+    [ActionOperationCode.GenerateForbiddenAreas]: FeedbackEventCode.GenerateForbiddenAreasFeedback,
     
 }
 
@@ -342,6 +364,7 @@ export interface ActionPromiseCallbacks {
 }
 /** @internal */
 export const initActionOperationCallbacks = () => ({
+    [ActionOperationCode.Check3dBoxAction]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.VehToPose]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.VehToChargingStation]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.VehToChargingStationApproach]: { resolve: undefined, reject: undefined },
@@ -369,12 +392,14 @@ export const initActionOperationCallbacks = () => ({
     [ActionOperationCode.NetworkWanEnable]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.NetworkHotspotEnable]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.NetworkWanScanAps]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.GenerateForbiddenAreas]: { resolve: undefined, reject: undefined },
     
 })
 
 /* Param, feedback and results types */
 /** @internal */
 export type ActionParamsType = {
+[ActionOperationCode.Check3dBoxAction]: Check3dBoxActionParams
 [ActionOperationCode.VehToPose]: VehToPoseParams
 [ActionOperationCode.VehToChargingStation]: VehToChargingStationParams
 [ActionOperationCode.VehToChargingStationApproach]: VehToChargingStationApproachParams
@@ -402,10 +427,12 @@ export type ActionParamsType = {
 [ActionOperationCode.NetworkWanEnable]: boolean
 [ActionOperationCode.NetworkHotspotEnable]: boolean
 [ActionOperationCode.NetworkWanScanAps]: null
+[ActionOperationCode.GenerateForbiddenAreas]: GenerateForbiddenAreasParams
 }
 
 /** @internal */
 export type ActionFeedbackType = {
+[ActionOperationCode.Check3dBoxAction]: DeepRequired<Check3dBoxActionFeedback>
 [ActionOperationCode.VehToPose]: DeepRequired<VehToPoseFeedback>
 [ActionOperationCode.VehToChargingStation]: DeepRequired<VehToChargingStationFeedback>
 [ActionOperationCode.VehToChargingStationApproach]: DeepRequired<VehToChargingStationApproachFeedback>
@@ -433,10 +460,12 @@ export type ActionFeedbackType = {
 [ActionOperationCode.NetworkWanEnable]: DeepRequired<null>
 [ActionOperationCode.NetworkHotspotEnable]: DeepRequired<null>
 [ActionOperationCode.NetworkWanScanAps]: DeepRequired<WifiAp[]>
+[ActionOperationCode.GenerateForbiddenAreas]: DeepRequired<null>
 }
 
 /** @internal */
 export type ActionResultType = {
+[ActionOperationCode.Check3dBoxAction]: DeepRequired<boolean>
 [ActionOperationCode.VehToPose]: DeepRequired<null>
 [ActionOperationCode.VehToChargingStation]: DeepRequired<null>
 [ActionOperationCode.VehToChargingStationApproach]: DeepRequired<null>
@@ -456,7 +485,7 @@ export type ActionResultType = {
 [ActionOperationCode.ResetDatabase]: DeepRequired<null>
 [ActionOperationCode.GetPath]: DeepRequired<GetPathResult>
 [ActionOperationCode.MappingStart]: DeepRequired<null>
-[ActionOperationCode.MappingStop]: DeepRequired<number>
+[ActionOperationCode.MappingStop]: DeepRequired<MappingStopResult>
 [ActionOperationCode.EraseActiveMap]: DeepRequired<null>
 [ActionOperationCode.ReloadMap]: DeepRequired<null>
 [ActionOperationCode.MergeMaps]: DeepRequired<null>
@@ -464,11 +493,30 @@ export type ActionResultType = {
 [ActionOperationCode.NetworkWanEnable]: DeepRequired<null>
 [ActionOperationCode.NetworkHotspotEnable]: DeepRequired<null>
 [ActionOperationCode.NetworkWanScanAps]: DeepRequired<WifiAp[]>
+[ActionOperationCode.GenerateForbiddenAreas]: DeepRequired<ForbiddenArea[]>
 }
 
 /* Mixin */
 /** @internal */
 export abstract class ActionsMixin extends BaseAPI {
+    /** 
+    * **Check 3D box**
+    *
+    * Check if a box is free 
+    * @category Navigation
+    * @group Navigation
+    
+    * @param check_pose_data Pose parameters. Don't send params to use the current robot pose
+    * @param feedback_cb - Feedback callback of action  
+    
+    * @data Promise<{@link boolean}> 
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
+    */
+    Check3dBoxAction(check_pose_data: Check3dBoxActionParams,feedback_cb?: EventCallback<Check3dBoxActionFeedback>) { 
+      return this.callAction(ActionOperationCode.Check3dBoxAction, 
+                            check_pose_data,
+                            feedback_cb); 
+    }
     /** 
     * **Veh to pose**
     *
@@ -480,7 +528,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
     */
     VehToPose(veh_to_pose_params: VehToPoseParams,feedback_cb?: EventCallback<VehToPoseFeedback>) { 
       return this.callAction(ActionOperationCode.VehToPose, 
@@ -498,7 +546,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
     */
     VehToChargingStation(veh_to_charging_station_params: VehToChargingStationParams,feedback_cb?: EventCallback<VehToChargingStationFeedback>) { 
       return this.callAction(ActionOperationCode.VehToChargingStation, 
@@ -516,7 +564,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
     */
     VehToChargingStationApproach(veh_to_charging_station_params: VehToChargingStationApproachParams,feedback_cb?: EventCallback<VehToChargingStationApproachFeedback>) { 
       return this.callAction(ActionOperationCode.VehToChargingStationApproach, 
@@ -534,7 +582,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
     */
     VehToDockedPose(veh_to_docked_pose_params: VehToDockedPoseParams,feedback_cb?: EventCallback<VehToDockedPoseFeedback>) { 
       return this.callAction(ActionOperationCode.VehToDockedPose, 
@@ -552,7 +600,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
     */
     VehToDockedPoseApproach(veh_to_docked_pose_params: VehToDockedPoseApproachParams,feedback_cb?: EventCallback<VehToDockedPoseApproachFeedback>) { 
       return this.callAction(ActionOperationCode.VehToDockedPoseApproach, 
@@ -570,7 +618,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
     */
     VehToSavedPose(veh_to_saved_pose_params: VehToSavedPoseParams,feedback_cb?: EventCallback<VehToSavedPoseFeedback>) { 
       return this.callAction(ActionOperationCode.VehToSavedPose, 
@@ -588,7 +636,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
     */
     VehToSegment(veh_to_segment_params: VehToSegmentParams,feedback_cb?: EventCallback<VehToSegmentFeedback>) { 
       return this.callAction(ActionOperationCode.VehToSegment, 
@@ -606,7 +654,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
     */
     SetVehiclePose(set_vehicle_pose_params: SetVehiclePoseParams,feedback_cb?: EventCallback<SetVehiclePoseFeedback>) { 
       return this.callAction(ActionOperationCode.SetVehiclePose, 
@@ -624,7 +672,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link number}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
     */
     SetMap(map: Map,feedback_cb?: EventCallback<SetMapFeedback>) { 
       return this.callAction(ActionOperationCode.SetMap, 
@@ -642,7 +690,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
     */
     SetActiveMap(map_id: number,feedback_cb?: EventCallback<SetActiveMapFeedback>) { 
       return this.callAction(ActionOperationCode.SetActiveMap, 
@@ -660,7 +708,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
     */
     Undock(override_battery_safety?: boolean,feedback_cb?: EventCallback<string>) { 
       return this.callAction(ActionOperationCode.Undock, 
@@ -678,7 +726,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
     */
     UndockFromShelf(d?: number,feedback_cb?: EventCallback<string>) { 
       return this.callAction(ActionOperationCode.UndockFromShelf, 
@@ -696,7 +744,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link Marker}[]> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
     */
     GetMarkers(pose_reference: PoseReference,feedback_cb?: EventCallback<GetMarkersFeedback>) { 
       return this.callAction(ActionOperationCode.GetMarkers, 
@@ -714,7 +762,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
     */
     InstallModule(module_data: InstallModuleParams,feedback_cb?: EventCallback<InstallModuleFeedback>) { 
       return this.callAction(ActionOperationCode.InstallModule, 
@@ -732,7 +780,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
     */
     DisableModule(feedback_cb?: EventCallback<DisableModuleFeedback>) { 
       return this.callAction(ActionOperationCode.DisableModule, 
@@ -750,7 +798,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
     */
     Recovery(feedback_cb?: EventCallback<RecoveryFeedback>) { 
       return this.callAction(ActionOperationCode.Recovery, 
@@ -768,7 +816,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
     */
     ResetDatabase(feedback_cb?: EventCallback<ResetDatabaseFeedback>) { 
       return this.callAction(ActionOperationCode.ResetDatabase, 
@@ -786,7 +834,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link GetPathResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
     */
     GetPath(get_path_params: GetPathParams,feedback_cb?: EventCallback<GetPathFeedback>) { 
       return this.callAction(ActionOperationCode.GetPath, 
@@ -804,7 +852,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
     */
     MappingStart(mapping_params: MappingStartParams,feedback_cb?: EventCallback<MappingStartFeedback>) { 
       return this.callAction(ActionOperationCode.MappingStart, 
@@ -821,8 +869,8 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param save_map Save mapping
     * @param feedback_cb - Feedback callback of action  
     
-    * @data Promise<{@link number}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
+    * @data Promise<{@link MappingStopResult}> 
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
     */
     MappingStop(save_map: boolean,feedback_cb?: EventCallback<MappingStopFeedback>) { 
       return this.callAction(ActionOperationCode.MappingStop, 
@@ -840,7 +888,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
     */
     EraseActiveMap(erase_params: EraseActiveMapParams,feedback_cb?: EventCallback<EraseActiveMapFeedback>) { 
       return this.callAction(ActionOperationCode.EraseActiveMap, 
@@ -858,7 +906,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
     */
     ReloadMap(feedback_cb?: EventCallback<ReloadMapFeedback>) { 
       return this.callAction(ActionOperationCode.ReloadMap, 
@@ -876,7 +924,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
     */
     MergeMaps(d: MergeMapsParams,feedback_cb?: EventCallback<MergeMapsFeedback>) { 
       return this.callAction(ActionOperationCode.MergeMaps, 
@@ -894,7 +942,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
     */
     NetworkWanConfig(wan_config: NetworkWanConfigParams,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.NetworkWanConfig, 
@@ -912,7 +960,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
     */
     NetworkWanEnable(enable: boolean,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.NetworkWanEnable, 
@@ -930,7 +978,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
     */
     NetworkHotspotEnable(enable: boolean,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.NetworkHotspotEnable, 
@@ -948,11 +996,29 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link WifiAp}[]> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.2-thanatos-2/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
     */
     NetworkWanScanAps(feedback_cb?: EventCallback<WifiAp[]>) { 
       return this.callAction(ActionOperationCode.NetworkWanScanAps, 
                             null,
+                            feedback_cb); 
+    }
+    /** 
+    * **Generate forbidden areas**
+    *
+    * Automatically creates forbidden areas for the active map 
+    * @category Forbidden area
+    * @group Map
+    
+    * @param d Parameters for auto generate forbidden areas
+    * @param feedback_cb - Feedback callback of action  
+    
+    * @data Promise<{@link ForbiddenArea}[]> 
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
+    */
+    GenerateForbiddenAreas(d: GenerateForbiddenAreasParams,feedback_cb?: EventCallback<null>) { 
+      return this.callAction(ActionOperationCode.GenerateForbiddenAreas, 
+                            d,
                             feedback_cb); 
     }
 };

@@ -254,6 +254,17 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["SafetyDiagnostic"] = 84] = "SafetyDiagnostic";
     /**
+      * **Mapping feature operational**
+      *
+      * Wether a mapping can be performed or not
+      
+      * @data {@link boolean}
+      * @category Diagnostic
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["MappingFeatureOperational"] = 140] = "MappingFeatureOperational";
+    /**
       * **Human intervention required**
       *
       * Human intervention required event, human_intervention_required field is set to true if human assistance needed to unlock robot, the others boolean defines which kind of intervention is required 👨🏽‍🔧
@@ -583,6 +594,28 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["LidarMarkers"] = 135] = "LidarMarkers";
+    /**
+      * **Stop sources**
+      *
+      * Sources that is currently stopping vehicle motion
+      
+      * @data {@link StopSource}[]
+      * @category Vehicle state
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["StopSources"] = 143] = "StopSources";
+    /**
+      * **System information**
+      *
+      * System information
+      
+      * @data {@link SystemInfo}
+      * @category Diagnostic
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["SystemInfo"] = 144] = "SystemInfo";
     /**
       * **Connected to vehicle**
       *
@@ -1435,6 +1468,12 @@ var TopicEventCode;
 var ResultEventCode;
 (function (ResultEventCode) {
     /**
+      * **Check 3D box result**
+      *
+      * Result of check 3D box
+    */
+    ResultEventCode[ResultEventCode["Check3dBoxResult"] = 142] = "Check3dBoxResult";
+    /**
       * **Veh to pose result**
       *
       * Result of move order to pose
@@ -1596,10 +1635,22 @@ var ResultEventCode;
       * Result of network hotspot enable operation
     */
     ResultEventCode[ResultEventCode["NetworkHotspotEnableResult"] = 80] = "NetworkHotspotEnableResult";
+    /**
+      * **Generate forbidden area result**
+      *
+      * Result of generate forbidden area operation
+    */
+    ResultEventCode[ResultEventCode["GenerateForbiddenAreasResult"] = 139] = "GenerateForbiddenAreasResult";
 })(ResultEventCode || (exports.ResultEventCode = ResultEventCode = {}));
 /** @internal */
 var FeedbackEventCode;
 (function (FeedbackEventCode) {
+    /**
+      * **Check 3D box feedback**
+      *
+      * Feedback on current check 3D box
+    */
+    FeedbackEventCode[FeedbackEventCode["Check3dBoxFeedback"] = 141] = "Check3dBoxFeedback";
     /**
       * **Veh to pose feedback**
       *
@@ -1762,6 +1813,12 @@ var FeedbackEventCode;
       * Feedback on network hotspot enable operation
     */
     FeedbackEventCode[FeedbackEventCode["NetworkHotspotEnableFeedback"] = 79] = "NetworkHotspotEnableFeedback";
+    /**
+      * **Generate forbidden area feedback**
+      *
+      * Feedback on generate forbidden area operation
+    */
+    FeedbackEventCode[FeedbackEventCode["GenerateForbiddenAreasFeedback"] = 137] = "GenerateForbiddenAreasFeedback";
 })(FeedbackEventCode || (exports.FeedbackEventCode = FeedbackEventCode = {}));
 /** @internal */
 const initEventTopicCallbacks = () => ({
@@ -1794,6 +1851,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.MaintenanceMode]: [],
     [TopicEventCode.SoundIsPlaying]: [],
     [TopicEventCode.SafetyDiagnostic]: [],
+    [TopicEventCode.MappingFeatureOperational]: [],
     [TopicEventCode.HumanInterventionRequired]: [],
     [TopicEventCode.AutopilotStepResult]: [],
     [TopicEventCode.AutopilotStatus]: [],
@@ -1824,6 +1882,8 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.LidarFromRobot]: [],
     [TopicEventCode.LidarInMap]: [],
     [TopicEventCode.LidarMarkers]: [],
+    [TopicEventCode.StopSources]: [],
+    [TopicEventCode.SystemInfo]: [],
     [TopicEventCode.ConnectedToVeh]: [],
     [TopicEventCode.IsVeh]: [],
     [TopicEventCode.IsManager]: [],
@@ -1905,6 +1965,7 @@ const initEventTopicCallbacks = () => ({
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */
 const initEventResultCallbacks = () => ({
+    [ResultEventCode.Check3dBoxResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.VehToPoseResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.VehToSegmentResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SetVehiclePoseResult]: { resolve: undefined, reject: undefined },
@@ -1932,10 +1993,12 @@ const initEventResultCallbacks = () => ({
     [ResultEventCode.NetworkWanEnableResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.NetworkWanScanApsResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.NetworkHotspotEnableResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.GenerateForbiddenAreasResult]: { resolve: undefined, reject: undefined },
 });
 exports.initEventResultCallbacks = initEventResultCallbacks;
 /** @internal */
 const initEventFeedbackCallbacks = () => ({
+    [FeedbackEventCode.Check3dBoxFeedback]: undefined,
     [FeedbackEventCode.VehToPoseFeedback]: undefined,
     [FeedbackEventCode.VehToSegmentFeedback]: undefined,
     [FeedbackEventCode.SetVehiclePoseFeedback]: undefined,
@@ -1963,5 +2026,6 @@ const initEventFeedbackCallbacks = () => ({
     [FeedbackEventCode.NetworkWanEnableFeedback]: undefined,
     [FeedbackEventCode.NetworkWanScanApsFeedback]: undefined,
     [FeedbackEventCode.NetworkHotspotEnableFeedback]: undefined,
+    [FeedbackEventCode.GenerateForbiddenAreasFeedback]: undefined,
 });
 exports.initEventFeedbackCallbacks = initEventFeedbackCallbacks;
