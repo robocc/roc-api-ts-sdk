@@ -578,7 +578,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link boolean}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
     */
     Check3dBoxAction(check_pose_data: Check3dBoxActionParams, feedback_cb?: EventCallback<Check3dBoxActionFeedback>): Promise<{
         promise: Promise<DeepRequired<boolean>>;
@@ -594,7 +594,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
     */
     VehToPose(veh_to_pose_params: VehToPoseParams, feedback_cb?: EventCallback<VehToPoseFeedback>): Promise<{
         promise: Promise<null>;
@@ -610,7 +610,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
     */
     VehToChargingStation(veh_to_charging_station_params: VehToChargingStationParams, feedback_cb?: EventCallback<VehToChargingStationFeedback>): Promise<{
         promise: Promise<null>;
@@ -626,7 +626,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
     */
     VehToChargingStationApproach(veh_to_charging_station_params: VehToChargingStationApproachParams, feedback_cb?: EventCallback<VehToChargingStationApproachFeedback>): Promise<{
         promise: Promise<null>;
@@ -642,7 +642,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
     */
     VehToDockedPose(veh_to_docked_pose_params: VehToDockedPoseParams, feedback_cb?: EventCallback<VehToDockedPoseFeedback>): Promise<{
         promise: Promise<null>;
@@ -658,7 +658,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
     */
     VehToDockedPoseApproach(veh_to_docked_pose_params: VehToDockedPoseApproachParams, feedback_cb?: EventCallback<VehToDockedPoseApproachFeedback>): Promise<{
         promise: Promise<null>;
@@ -674,7 +674,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
     */
     VehToSavedPose(veh_to_saved_pose_params: VehToSavedPoseParams, feedback_cb?: EventCallback<VehToSavedPoseFeedback>): Promise<{
         promise: Promise<null>;
@@ -690,7 +690,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
     */
     VehToSegment(veh_to_segment_params: VehToSegmentParams, feedback_cb?: EventCallback<VehToSegmentFeedback>): Promise<{
         promise: Promise<null>;
@@ -706,7 +706,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
     */
     SetVehiclePose(set_vehicle_pose_params: SetVehiclePoseParams, feedback_cb?: EventCallback<SetVehiclePoseFeedback>): Promise<{
         promise: Promise<null>;
@@ -722,7 +722,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link number}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
     */
     SetMap(map: Map, feedback_cb?: EventCallback<SetMapFeedback>): Promise<{
         promise: Promise<number>;
@@ -738,7 +738,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
     */
     SetActiveMap(map_id: number, feedback_cb?: EventCallback<SetActiveMapFeedback>): Promise<{
         promise: Promise<null>;
@@ -754,7 +754,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
     */
     Undock(override_battery_safety?: boolean, feedback_cb?: EventCallback<string>): Promise<{
         promise: Promise<null>;
@@ -770,7 +770,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
     */
     UndockFromShelf(d?: number, feedback_cb?: EventCallback<string>): Promise<{
         promise: Promise<null>;
@@ -786,7 +786,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link Marker}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
     */
     GetMarkers(pose_reference: PoseReference, feedback_cb?: EventCallback<GetMarkersFeedback>): Promise<{
         promise: Promise<DeepRequired<Marker>[]>;
@@ -802,7 +802,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
     */
     InstallModule(module_data: InstallModuleParams, feedback_cb?: EventCallback<InstallModuleFeedback>): Promise<{
         promise: Promise<null>;
@@ -818,7 +818,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
     */
     DisableModule(feedback_cb?: EventCallback<DisableModuleFeedback>): Promise<{
         promise: Promise<null>;
@@ -834,7 +834,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
     */
     Recovery(feedback_cb?: EventCallback<RecoveryFeedback>): Promise<{
         promise: Promise<null>;
@@ -850,7 +850,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
     */
     ResetDatabase(feedback_cb?: EventCallback<ResetDatabaseFeedback>): Promise<{
         promise: Promise<null>;
@@ -866,7 +866,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link GetPathResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
     */
     GetPath(get_path_params: GetPathParams, feedback_cb?: EventCallback<GetPathFeedback>): Promise<{
         promise: Promise<DeepRequired<GetPathResult>>;
@@ -882,7 +882,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
     */
     MappingStart(mapping_params: MappingStartParams, feedback_cb?: EventCallback<MappingStartFeedback>): Promise<{
         promise: Promise<null>;
@@ -898,7 +898,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link MappingStopResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
     */
     MappingStop(save_map: boolean, feedback_cb?: EventCallback<MappingStopFeedback>): Promise<{
         promise: Promise<DeepRequired<MappingStopResult>>;
@@ -914,7 +914,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
     */
     EraseActiveMap(erase_params: EraseActiveMapParams, feedback_cb?: EventCallback<EraseActiveMapFeedback>): Promise<{
         promise: Promise<null>;
@@ -930,7 +930,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
     */
     ReloadMap(feedback_cb?: EventCallback<ReloadMapFeedback>): Promise<{
         promise: Promise<null>;
@@ -946,7 +946,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
     */
     MergeMaps(d: MergeMapsParams, feedback_cb?: EventCallback<MergeMapsFeedback>): Promise<{
         promise: Promise<null>;
@@ -962,7 +962,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
     */
     NetworkWanConfig(wan_config: NetworkWanConfigParams, feedback_cb?: EventCallback<null>): Promise<{
         promise: Promise<null>;
@@ -978,7 +978,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
     */
     NetworkWanEnable(enable: boolean, feedback_cb?: EventCallback<null>): Promise<{
         promise: Promise<null>;
@@ -994,7 +994,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
     */
     NetworkHotspotEnable(enable: boolean, feedback_cb?: EventCallback<null>): Promise<{
         promise: Promise<null>;
@@ -1010,7 +1010,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link WifiAp}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
     */
     NetworkWanScanAps(feedback_cb?: EventCallback<WifiAp[]>): Promise<{
         promise: Promise<DeepRequired<WifiAp>[]>;
@@ -1026,7 +1026,7 @@ export declare abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link ForbiddenArea}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
     */
     GenerateForbiddenAreas(d: GenerateForbiddenAreasParams, feedback_cb?: EventCallback<null>): Promise<{
         promise: Promise<DeepRequired<ForbiddenArea>[]>;

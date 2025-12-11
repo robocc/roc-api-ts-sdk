@@ -30,4 +30,4 @@ Replace `host` option to connect to remote API via device IP (usually on port 85
 
 ## Documentation
 
-You can find documenation at https://docs.robocc.com/roc-api-ts/8.20.3-thanatos-3/
+You can find documenation at https://docs.robocc.com/roc-api-ts/8.20.4-thanatos-4/
