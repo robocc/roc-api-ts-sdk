@@ -1,8 +1,8 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, SystemInfo, InvalidDataBySection, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, SystemInfo, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
 import { Path, AutopilotSequence, OperatingHours } from "./types";
-import { NetworkStatus, NetworkGlobalStatus, StopSource, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
+import { NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
     AuthOK = -7,
     AuthError = -6,
@@ -93,7 +93,7 @@ export declare enum TopicEventCode {
       *
       * Sound scenario ID 🔉
       
-      * @data {@link number}
+      * @data {@link SoundScenario}
       * @category Sound
       * @group Vehicle
       
@@ -111,16 +111,16 @@ export declare enum TopicEventCode {
     */
     SoundCommand = 104,
     /**
-      * **Sound muted**
+      * **External speaker**
       *
-      * Sound is muted
+      * Use an external speaker for sound
       
       * @data {@link boolean}
       * @category Sound
       * @group Vehicle
       
     */
-    SoundMuted = 136,
+    SoundExternalSpeaker = 136,
     /**
       * **Vehicle direction**
       *
@@ -616,6 +616,39 @@ export declare enum TopicEventCode {
       
     */
     SystemInfo = 144,
+    /**
+      * **Secuirty configuration**
+      *
+      * Security information
+      
+      * @data {@link Security}
+      * @category System
+      * @group Vehicle
+      
+    */
+    Security = 145,
+    /**
+      * **Blocked ip**
+      *
+      * Last blocked ip
+      
+      * @data {@link string}
+      * @category System
+      * @group Vehicle
+      
+    */
+    BlockedIp = 146,
+    /**
+      * **List of sound**
+      *
+      * List of sound in library
+      
+      * @data {@link string}[]
+      * @category Sound
+      * @group Database
+      
+    */
+    SoundSamples = 149,
     /**
       * **Connected to vehicle**
       *
@@ -1413,7 +1446,7 @@ export declare enum TopicEventCode {
       *
       * Default Wait Release Sound
       
-      * @data {@link number}
+      * @data {@link string}
       * @category Configuration
       * @group Vehicle
       
@@ -1462,7 +1495,51 @@ export declare enum TopicEventCode {
       * @group Vehicle
       
     */
-    InvalidDataList = 7077
+    InvalidDataList = 7077,
+    /**
+      * **Waiting sounds**
+      *
+      * List of waiting sound
+      
+      * @data {@link WaitingSound}[]
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    WaitingSounds = 7081,
+    /**
+      * **Event sounds**
+      *
+      * List of event sound
+      
+      * @data {@link EventSound}[]
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    EventsSounds = 7082,
+    /**
+      * **ROC Security**
+      *
+      * ROC Security
+      
+      * @data {@link RocSecurity}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    RocSecurity = 7083,
+    /**
+      * **Hotspot enabled**
+      *
+      * Hotspot enabled
+      
+      * @data {@link boolean}
+      * @category Network
+      * @group ROC
+      
+    */
+    HotspotEnabled = 7084
 }
 /** @internal */
 export declare enum ResultEventCode {
@@ -1639,7 +1716,13 @@ export declare enum ResultEventCode {
       *
       * Result of generate forbidden area operation
     */
-    GenerateForbiddenAreasResult = 139
+    GenerateForbiddenAreasResult = 139,
+    /**
+      * **Add sound result**
+      *
+      * Result of add sound operation
+    */
+    AddSoundResult = 148
 }
 /** @internal */
 export declare enum FeedbackEventCode {
@@ -1816,7 +1899,13 @@ export declare enum FeedbackEventCode {
       *
       * Feedback on generate forbidden area operation
     */
-    GenerateForbiddenAreasFeedback = 137
+    GenerateForbiddenAreasFeedback = 137,
+    /**
+      * **Add sound feedback**
+      *
+      * Feedback on add sound operation
+    */
+    AddSoundFeedback = 147
 }
 /** @internal */
 export interface EventMsg<T> {
@@ -1894,6 +1983,9 @@ export declare const initEventTopicCallbacks: () => {
     135: never[];
     143: never[];
     144: never[];
+    145: never[];
+    146: never[];
+    149: never[];
     7000: never[];
     7001: never[];
     7002: never[];
@@ -1971,6 +2063,10 @@ export declare const initEventTopicCallbacks: () => {
     7074: never[];
     7075: never[];
     7077: never[];
+    7081: never[];
+    7082: never[];
+    7083: never[];
+    7084: never[];
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
@@ -2090,6 +2186,10 @@ export declare const initEventResultCallbacks: () => {
         resolve: undefined;
         reject: undefined;
     };
+    148: {
+        resolve: undefined;
+        reject: undefined;
+    };
 };
 /** @internal */
 export declare const initEventFeedbackCallbacks: () => {
@@ -2122,6 +2222,7 @@ export declare const initEventFeedbackCallbacks: () => {
     77: undefined;
     79: undefined;
     137: undefined;
+    147: undefined;
 };
 /** @internal */
 export type EventDataType = {
@@ -2139,9 +2240,9 @@ export type EventDataType = {
     [TopicEventCode.FollowMeStatus]: DeepRequired<FollowMeStatusEventData>;
     [TopicEventCode.NavigationStarted]: DeepRequired<boolean>;
     [TopicEventCode.LedCommand]: DeepRequired<LedCommand>;
-    [TopicEventCode.SoundScenario]: DeepRequired<number>;
+    [TopicEventCode.SoundScenario]: DeepRequired<SoundScenario>;
     [TopicEventCode.SoundCommand]: DeepRequired<SoundCommandEventData>;
-    [TopicEventCode.SoundMuted]: DeepRequired<boolean>;
+    [TopicEventCode.SoundExternalSpeaker]: DeepRequired<boolean>;
     [TopicEventCode.VehicleDirection]: DeepRequired<VehicleDirectionEventData>;
     [TopicEventCode.Freewheel]: DeepRequired<boolean>;
     [TopicEventCode.OngoingAction]: DeepRequired<OngoingAction>;
@@ -2187,6 +2288,9 @@ export type EventDataType = {
     [TopicEventCode.LidarMarkers]: DeepRequired<Marker[]>;
     [TopicEventCode.StopSources]: DeepRequired<StopSource[]>;
     [TopicEventCode.SystemInfo]: DeepRequired<SystemInfo>;
+    [TopicEventCode.Security]: DeepRequired<Security>;
+    [TopicEventCode.BlockedIp]: DeepRequired<string>;
+    [TopicEventCode.SoundSamples]: DeepRequired<string[]>;
     [TopicEventCode.ConnectedToVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsManager]: DeepRequired<boolean>;
@@ -2259,9 +2363,13 @@ export type EventDataType = {
     [TopicEventCode.InPauseTitle]: DeepRequired<string>;
     [TopicEventCode.FollowMeAllowed]: DeepRequired<boolean>;
     [TopicEventCode.MaxButtonIdSearch]: DeepRequired<number>;
-    [TopicEventCode.DefaultWaitReleaseSound]: DeepRequired<number>;
+    [TopicEventCode.DefaultWaitReleaseSound]: DeepRequired<string>;
     [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>;
     [TopicEventCode.ExternalSpeaker]: DeepRequired<boolean>;
     [TopicEventCode.LiftError]: DeepRequired<boolean>;
     [TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>;
+    [TopicEventCode.WaitingSounds]: DeepRequired<WaitingSound[]>;
+    [TopicEventCode.EventsSounds]: DeepRequired<EventSound[]>;
+    [TopicEventCode.RocSecurity]: DeepRequired<RocSecurity>;
+    [TopicEventCode.HotspotEnabled]: DeepRequired<boolean>;
 };

@@ -72,11 +72,13 @@ export declare enum OutcomeCode {
     ONLY_FOR_MODULE = 70,
     CHECK_BOX_FAILED = 71,
     INVALID_CHECK_BOX = 72,
+    NO_EXTERNAL_SPEAKER = 73,
     CANCELED_ON_VEH = 100,
     MAINTENANCE_MODE_ACTIVATE = 101,
     NOT_A_MANAGER = 102,
     NOT_A_ROC_P = 103,
-    INVALID_DATA = 104
+    INVALID_DATA = 104,
+    BLOCKED_AUTH = 105
 }
 /** @internal */
 export declare const OutcomeCodeDescription: {
@@ -153,9 +155,11 @@ export declare const OutcomeCodeDescription: {
     70: string;
     71: string;
     72: string;
+    73: string;
     100: string;
     101: string;
     102: string;
     103: string;
     104: string;
+    105: string;
 };

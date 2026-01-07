@@ -77,11 +77,13 @@ var OutcomeCode;
     OutcomeCode[OutcomeCode["ONLY_FOR_MODULE"] = 70] = "ONLY_FOR_MODULE";
     OutcomeCode[OutcomeCode["CHECK_BOX_FAILED"] = 71] = "CHECK_BOX_FAILED";
     OutcomeCode[OutcomeCode["INVALID_CHECK_BOX"] = 72] = "INVALID_CHECK_BOX";
+    OutcomeCode[OutcomeCode["NO_EXTERNAL_SPEAKER"] = 73] = "NO_EXTERNAL_SPEAKER";
     OutcomeCode[OutcomeCode["CANCELED_ON_VEH"] = 100] = "CANCELED_ON_VEH";
     OutcomeCode[OutcomeCode["MAINTENANCE_MODE_ACTIVATE"] = 101] = "MAINTENANCE_MODE_ACTIVATE";
     OutcomeCode[OutcomeCode["NOT_A_MANAGER"] = 102] = "NOT_A_MANAGER";
     OutcomeCode[OutcomeCode["NOT_A_ROC_P"] = 103] = "NOT_A_ROC_P";
     OutcomeCode[OutcomeCode["INVALID_DATA"] = 104] = "INVALID_DATA";
+    OutcomeCode[OutcomeCode["BLOCKED_AUTH"] = 105] = "BLOCKED_AUTH";
 })(OutcomeCode || (exports.OutcomeCode = OutcomeCode = {}));
 /* String description (TODO: i18n) */
 /** @internal */
@@ -159,9 +161,11 @@ exports.OutcomeCodeDescription = {
     [OutcomeCode.ONLY_FOR_MODULE]: "ONLY_FOR_MODULE",
     [OutcomeCode.CHECK_BOX_FAILED]: "CHECK_BOX_FAILED",
     [OutcomeCode.INVALID_CHECK_BOX]: "INVALID_CHECK_BOX",
+    [OutcomeCode.NO_EXTERNAL_SPEAKER]: "NO_EXTERNAL_SPEAKER",
     [OutcomeCode.CANCELED_ON_VEH]: "CANCELED_ON_VEH",
     [OutcomeCode.MAINTENANCE_MODE_ACTIVATE]: "MAINTENANCE_MODE_ACTIVATE",
     [OutcomeCode.NOT_A_MANAGER]: "NOT_A_MANAGER",
     [OutcomeCode.NOT_A_ROC_P]: "NOT_A_ROC_P",
     [OutcomeCode.INVALID_DATA]: "INVALID_DATA",
+    [OutcomeCode.BLOCKED_AUTH]: "BLOCKED_AUTH",
 };

@@ -93,7 +93,7 @@ var TopicEventCode;
       *
       * Sound scenario ID 🔉
       
-      * @data {@link number}
+      * @data {@link SoundScenario}
       * @category Sound
       * @group Vehicle
       
@@ -111,16 +111,16 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["SoundCommand"] = 104] = "SoundCommand";
     /**
-      * **Sound muted**
+      * **External speaker**
       *
-      * Sound is muted
+      * Use an external speaker for sound
       
       * @data {@link boolean}
       * @category Sound
       * @group Vehicle
       
     */
-    TopicEventCode[TopicEventCode["SoundMuted"] = 136] = "SoundMuted";
+    TopicEventCode[TopicEventCode["SoundExternalSpeaker"] = 136] = "SoundExternalSpeaker";
     /**
       * **Vehicle direction**
       *
@@ -616,6 +616,39 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["SystemInfo"] = 144] = "SystemInfo";
+    /**
+      * **Secuirty configuration**
+      *
+      * Security information
+      
+      * @data {@link Security}
+      * @category System
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["Security"] = 145] = "Security";
+    /**
+      * **Blocked ip**
+      *
+      * Last blocked ip
+      
+      * @data {@link string}
+      * @category System
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["BlockedIp"] = 146] = "BlockedIp";
+    /**
+      * **List of sound**
+      *
+      * List of sound in library
+      
+      * @data {@link string}[]
+      * @category Sound
+      * @group Database
+      
+    */
+    TopicEventCode[TopicEventCode["SoundSamples"] = 149] = "SoundSamples";
     /**
       * **Connected to vehicle**
       *
@@ -1413,7 +1446,7 @@ var TopicEventCode;
       *
       * Default Wait Release Sound
       
-      * @data {@link number}
+      * @data {@link string}
       * @category Configuration
       * @group Vehicle
       
@@ -1463,6 +1496,50 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["InvalidDataList"] = 7077] = "InvalidDataList";
+    /**
+      * **Waiting sounds**
+      *
+      * List of waiting sound
+      
+      * @data {@link WaitingSound}[]
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["WaitingSounds"] = 7081] = "WaitingSounds";
+    /**
+      * **Event sounds**
+      *
+      * List of event sound
+      
+      * @data {@link EventSound}[]
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["EventsSounds"] = 7082] = "EventsSounds";
+    /**
+      * **ROC Security**
+      *
+      * ROC Security
+      
+      * @data {@link RocSecurity}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["RocSecurity"] = 7083] = "RocSecurity";
+    /**
+      * **Hotspot enabled**
+      *
+      * Hotspot enabled
+      
+      * @data {@link boolean}
+      * @category Network
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["HotspotEnabled"] = 7084] = "HotspotEnabled";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -1641,6 +1718,12 @@ var ResultEventCode;
       * Result of generate forbidden area operation
     */
     ResultEventCode[ResultEventCode["GenerateForbiddenAreasResult"] = 139] = "GenerateForbiddenAreasResult";
+    /**
+      * **Add sound result**
+      *
+      * Result of add sound operation
+    */
+    ResultEventCode[ResultEventCode["AddSoundResult"] = 148] = "AddSoundResult";
 })(ResultEventCode || (exports.ResultEventCode = ResultEventCode = {}));
 /** @internal */
 var FeedbackEventCode;
@@ -1819,6 +1902,12 @@ var FeedbackEventCode;
       * Feedback on generate forbidden area operation
     */
     FeedbackEventCode[FeedbackEventCode["GenerateForbiddenAreasFeedback"] = 137] = "GenerateForbiddenAreasFeedback";
+    /**
+      * **Add sound feedback**
+      *
+      * Feedback on add sound operation
+    */
+    FeedbackEventCode[FeedbackEventCode["AddSoundFeedback"] = 147] = "AddSoundFeedback";
 })(FeedbackEventCode || (exports.FeedbackEventCode = FeedbackEventCode = {}));
 /** @internal */
 const initEventTopicCallbacks = () => ({
@@ -1838,7 +1927,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.LedCommand]: [],
     [TopicEventCode.SoundScenario]: [],
     [TopicEventCode.SoundCommand]: [],
-    [TopicEventCode.SoundMuted]: [],
+    [TopicEventCode.SoundExternalSpeaker]: [],
     [TopicEventCode.VehicleDirection]: [],
     [TopicEventCode.Freewheel]: [],
     [TopicEventCode.OngoingAction]: [],
@@ -1884,6 +1973,9 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.LidarMarkers]: [],
     [TopicEventCode.StopSources]: [],
     [TopicEventCode.SystemInfo]: [],
+    [TopicEventCode.Security]: [],
+    [TopicEventCode.BlockedIp]: [],
+    [TopicEventCode.SoundSamples]: [],
     [TopicEventCode.ConnectedToVeh]: [],
     [TopicEventCode.IsVeh]: [],
     [TopicEventCode.IsManager]: [],
@@ -1961,6 +2053,10 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.ExternalSpeaker]: [],
     [TopicEventCode.LiftError]: [],
     [TopicEventCode.InvalidDataList]: [],
+    [TopicEventCode.WaitingSounds]: [],
+    [TopicEventCode.EventsSounds]: [],
+    [TopicEventCode.RocSecurity]: [],
+    [TopicEventCode.HotspotEnabled]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */
@@ -1994,6 +2090,7 @@ const initEventResultCallbacks = () => ({
     [ResultEventCode.NetworkWanScanApsResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.NetworkHotspotEnableResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.GenerateForbiddenAreasResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.AddSoundResult]: { resolve: undefined, reject: undefined },
 });
 exports.initEventResultCallbacks = initEventResultCallbacks;
 /** @internal */
@@ -2027,5 +2124,6 @@ const initEventFeedbackCallbacks = () => ({
     [FeedbackEventCode.NetworkWanScanApsFeedback]: undefined,
     [FeedbackEventCode.NetworkHotspotEnableFeedback]: undefined,
     [FeedbackEventCode.GenerateForbiddenAreasFeedback]: undefined,
+    [FeedbackEventCode.AddSoundFeedback]: undefined,
 });
 exports.initEventFeedbackCallbacks = initEventFeedbackCallbacks;
