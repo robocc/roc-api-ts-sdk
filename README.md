@@ -30,4 +30,4 @@ Replace `host` option to connect to remote API via device IP (usually on port 85
 
 ## Documentation
 
-You can find documenation at https://docs.robocc.com/roc-api-ts/8.26.1-zeus-1/
+You can find documenation at https://docs.robocc.com/roc-api-ts/8.26.2-zeus-2/
