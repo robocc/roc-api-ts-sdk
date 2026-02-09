@@ -1,9 +1,9 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { OutcomeCode } from "./outcomes";
 import { DeepRequired } from "./types";
-import { Security,HumanInterventionRequired,LedCommand,Site,OngoingAction,SiteLight,SiteRaw,Map,MapRaw,MapElements,MapWithoutImages,RoutesGraph,RoutesVertex,RoutesEdge,RoutesSettings,Module,ModuleDescription,PortRedirection,ModuleConfiguration,MapLight,ForbiddenArea,CustomArea,SavedPose,Fiducial,ChargingStation,DockedPose,Marker,TeleopCmd,Pose,Position,BatteryState,User,MoveStep,DiagnosticElement,DiagnosticError,AutopilotConfig,AutopilotIndexedStep,AutopilotStepMoveParams,AutopilotStep,LedSoundAnimBehaviour,Areas,Behaviour,DockingState,SoundScenarioVolume,SoundScenarioSample,WifiAp,NetworkWanState,SystemInfo,RocSecurity,InvalidDataBySection,InvalidData,WaitingSound,EventSound,ExternalPortRedirection,LiftStatus,Group,SoftVersions,ControllerConstraint,MissionConfigDestination,MissionConfig,ButtonConfig,WaitingPose,LoraMessage,CustomCommand,ControllerLoraContact,ControllerLora,MapElementRestriction,DockedPoseConfig,RocMapElementConfig,ControllerLoraContactConfig,VehConfig,VehInfosStats,VehInfos,VehDelayConfig,ButtonInfos,ManagerMissions,Mission,DailyStats,MissionStep,InstallConfigDone,ResponseDeadlineConfig,Log,CompleteData,StatsData,ExportedStats,RocUser,TimelineStep,VehTimelineData,CallByButton,HirByType,DestByUuid,NbByOutcome,StandardStats,StandardStatsByUuid,HeatMapData,SlotHours,ModuleParams,ManagerMap,UpdateStatus,SubscribeResult,FollowMeParams,AuthUserResult,LoginParams,LoginResult,ImportSiteResult,ImportSoundsConfigResult,ExportSiteParams2,ExportSitesParams1Item,ExportSitesParams2SitesItem,ExportSitesParams2,ExportSitesResultItem,UpdateChargingStationConfigParams,UpdateDockedPoseConfigParams,SetUserParams,SetObtCbtParams,SetChargingStationResult,SetSavedPoseResult,SetDockedPoseResult,SetForbiddenAreaResult,SetCustomAreaResult,CheckPoseParams,Check3dBoxParamsPoint,Check3dBoxParamsMarker,Check3dBoxParams,Check3dBoxActionParamsPoint,Check3dBoxActionParamsMarker,Check3dBoxActionParams,Check3dBoxActionFeedback,SimAddShelfParams,SetCustomLedParams,SetCustomSoundParams,SimSetDiffDriveStateParams,SetModuleParamsParams,VehToPoseParamsProgressChecker,VehToPoseParams,VehToPoseFeedback,VehToChargingStationParams,VehToChargingStationFeedback,VehToChargingStationApproachParams,VehToChargingStationApproachFeedback,VehToDockedPoseParamsShelfParameters,VehToDockedPoseParams,VehToDockedPoseFeedback,VehToDockedPoseApproachParams,VehToDockedPoseApproachFeedback,VehToSavedPoseParamsSuccessParams,VehToSavedPoseParams,VehToSavedPoseFeedback,VehToSegmentParams,VehToSegmentFeedback,SetVehiclePoseParams,SetVehiclePoseFeedback,SetMapFeedback,SetActiveMapFeedback,GetMarkersFeedback,InstallModuleParams,InstallModuleFeedback,DisableModuleFeedback,RecoveryFeedback,ResetDatabaseFeedback,GetPathParams,GetPathResult,GetPathFeedback,MappingStartParams,MappingStartFeedback,MappingStopResult,MappingStopFeedback,EraseActiveMapParams,EraseActiveMapFeedback,ReloadMapFeedback,MergeMapsParams,MergeMapsFeedback,NetworkWanConfigParams,NetworkRedirectPortParams,SystemRestartParams,GenerateForbiddenAreasParams,GetShelvesParams,AddSoundParams,AddSoundFeedback,AddCallButtonParams,AddRestockingButtonParams,AddMultidestinationButtonParams,AddOrderedMultidestinationButtonParams,AddVehParams,AddPortRedirectionParams,UpdatePortRedirectionParams,DeletePortRedirectionParams,ControllerLoraSetContactConfigParams,NextStepMissionWithMessageParams,SetMultidestinationParams,SetMultidestinationWithMessagesParamsUuidsItem,SetMultidestinationWithMessagesParams,GetStatsParams,GetLightStatsParams,ExportStatsParams,GetVehsTimelineParams,AddRocUserParams,UpdateRocUserParams,CreateMissionParams,ExtendMissionParams,StartButtonMissionParams,FollowMeStatusEventData,SoundCommandEventData,VehicleDirectionEventData,MappingErrorEventData,SafetyDiagnosticEventData,VelocityEventData,VehToFeedbackEventData,UpdateStatusEventData } from "./types";
+import { Security,HumanInterventionRequired,LedCommand,Site,OngoingAction,SiteLight,SiteRaw,Map,MapRaw,MapElements,MapWithoutImages,RoutesGraph,RoutesVertex,RoutesEdge,RoutesSettings,Module,ModuleDescription,PortRedirection,ModuleConfiguration,MapLight,ForbiddenArea,CustomArea,SavedPose,Fiducial,ChargingStation,DockedPose,Marker,TeleopCmd,Pose,Position,BatteryState,User,MoveStep,DiagnosticElement,DiagnosticError,AutopilotConfig,AutopilotStepParamsMove,AutopilotStepParams,AutopilotStep,LedSoundAnimBehaviour,Areas,Behaviour,DockingState,SoundScenarioVolume,SoundScenarioSample,WifiAp,NetworkWanState,SystemInfo,RocSecurity,InvalidDataBySection,InvalidData,WaitingSound,EventSound,ExternalPortRedirection,LiftStatus,Group,SoftVersions,ControllerConstraint,MissionConfigDestination,MissionConfig,ButtonConfig,WaitingPose,LoraMessage,CustomCommand,ControllerLoraContact,ControllerLora,MapElementRestriction,DockedPoseConfig,RocMapElementConfig,ControllerLoraContactConfig,VehConfig,VehInfosStats,VehInfos,VehDelayConfig,ButtonInfos,ManagerMissions,Mission,DailyStats,MissionStep,InstallConfigDone,ResponseDeadlineConfig,Log,CompleteData,StatsData,ExportedStats,RocUser,TimelineStep,VehTimelineData,CallByButton,HirByType,DestByUuid,NbByOutcome,StandardStats,StandardStatsByUuid,HeatMapData,SlotHours,ModuleParams,ManagerMap,UpdateStatus,SubscribeResult,FollowMeParams,AuthUserResult,LoginParams,LoginResult,ImportSiteResult,ImportSoundsConfigResult,ExportSiteParams2,ExportSitesParams1Item,ExportSitesParams2SitesItem,ExportSitesParams2,ExportSitesResultItem,UpdateChargingStationConfigParams,UpdateDockedPoseConfigParams,SetUserParams,SetObtCbtParams,SetChargingStationResult,SetSavedPoseResult,SetDockedPoseResult,SetForbiddenAreaResult,SetCustomAreaResult,CheckPoseParams,Check3dBoxParamsPoint,Check3dBoxParamsMarker,Check3dBoxParams,Check3dBoxActionParamsPoint,Check3dBoxActionParamsMarker,Check3dBoxActionParams,Check3dBoxActionFeedback,SimAddShelfParams,SetCustomLedParams,SetCustomSoundParams,SimSetDiffDriveStateParams,SetModuleParamsParams,VehToPoseParamsProgressChecker,VehToPoseParams,VehToPoseFeedback,VehToChargingStationParams,VehToChargingStationFeedback,VehToChargingStationApproachParams,VehToChargingStationApproachFeedback,VehToDockedPoseParamsShelfParameters,VehToDockedPoseParams,VehToDockedPoseFeedback,VehToDockedPoseApproachParams,VehToDockedPoseApproachFeedback,VehToSavedPoseParamsSuccessParams,VehToSavedPoseParams,VehToSavedPoseFeedback,VehToSegmentParams,VehToSegmentFeedback,SetVehiclePoseParams,SetVehiclePoseFeedback,SetMapFeedback,SetActiveMapFeedback,GetMarkersFeedback,InstallModuleParams,InstallModuleFeedback,DisableModuleFeedback,RecoveryFeedback,ResetDatabaseFeedback,GetPathParams,GetPathResult,GetPathFeedback,MappingStartParams,MappingStartFeedback,MappingStopResult,MappingStopFeedback,EraseActiveMapParams,EraseActiveMapFeedback,ReloadMapFeedback,MergeMapsParams,MergeMapsFeedback,NetworkWanConfigParams,NetworkRedirectPortParams,SystemRestartParams,GenerateForbiddenAreasParams,GetShelvesParams,AddSoundParams,AddSoundFeedback,AddCallButtonParams,AddRestockingButtonParams,AddMultidestinationButtonParams,AddOrderedMultidestinationButtonParams,AddVehParams,AddPortRedirectionParams,UpdatePortRedirectionParams,DeletePortRedirectionParams,ControllerLoraSetContactConfigParams,NextStepMissionWithMessageParams,SetMultidestinationParams,SetMultidestinationWithMessagesParamsUuidsItem,SetMultidestinationWithMessagesParams,GetStatsParams,GetLightStatsParams,ExportStatsParams,GetVehsTimelineParams,AddRocUserParams,UpdateRocUserParams,CreateMissionParams,ExtendMissionParams,StartButtonMissionParams,FollowMeStatusEventData,SoundCommandEventData,VehicleDirectionEventData,MappingErrorEventData,SafetyDiagnosticEventData,VelocityEventData,VehToFeedbackEventData,UpdateStatusEventData } from "./types";
 import { Path,MoveSequence,AutopilotSequence,SoundLoopNumber,OperatingHours } from "./types";
-import { NetworkProtocol,MoveStepMoveType,DiagnosticElementType,DiagnosticElementError,DiagnosticCriticalLevel,AutopilotStepMoveParamsTargetType,AutopilotStepMoveParamsOnError,AutopilotStepType,Direction,OnOff,DirectionStrict,FollowMode,VehToDockedStepCode,DockingStatus,FollowMeStatus,DockingType,VehToStepCode,LedAnim,LedCornerAnim,PoseReference,NetworkType,NetworkStatus,NetworkGlobalStatus,SoundScenario,StopSource,ComputerType,McuType,MotorType,RocEvent,ContactState,DockedPoseStationType,LoraControllerCommand,ContactType,ContactNonc,ContactTrigger,RelayAction,VehStatus,ModuleType,VehDirection,MapElementType,AuthenticatedType,LogSeverity,LogType,UpdateStatusStatus,SetMapFeedbackCurrentStepCode,SetActiveMapFeedbackCurrentStepCode,InstallModuleFeedbackCurrentStepCode,DisableModuleFeedbackCurrentStepCode,ResetDatabaseFeedbackCurrentStepCode,MappingStopFeedbackCurrentStepCode,EraseActiveMapFeedbackCurrentStepCode,ReloadMapFeedbackCurrentStepCode,MergeMapsFeedbackCurrentStepCode,SystemRestartParamsStage,MappingErrorEventDataOutcome,AutopilotStepResultEventData,AutopilotStatusEventData,UpdateStatusEventDataStatus } from "./types";
+import { NetworkProtocol,MoveStepMoveType,DiagnosticElementType,DiagnosticElementError,DiagnosticCriticalLevel,AutopilotStepType,AutopilotTargetType,AutopilotOnError,Direction,OnOff,DirectionStrict,FollowMode,VehToDockedStepCode,DockingStatus,FollowMeStatus,DockingType,VehToStepCode,LedAnim,LedCornerAnim,PoseReference,NetworkType,NetworkStatus,NetworkGlobalStatus,SoundScenario,StopSource,ComputerType,McuType,MotorType,RocEvent,ContactState,DockedPoseStationType,LoraControllerCommand,ContactType,ContactNonc,ContactTrigger,RelayAction,VehStatus,ModuleType,VehDirection,MapElementType,AuthenticatedType,LogSeverity,LogType,UpdateStatusStatus,SetMapFeedbackCurrentStepCode,SetActiveMapFeedbackCurrentStepCode,InstallModuleFeedbackCurrentStepCode,DisableModuleFeedbackCurrentStepCode,ResetDatabaseFeedbackCurrentStepCode,MappingStopFeedbackCurrentStepCode,EraseActiveMapFeedbackCurrentStepCode,ReloadMapFeedbackCurrentStepCode,MergeMapsFeedbackCurrentStepCode,SystemRestartParamsStage,MappingErrorEventDataOutcome,AutopilotStepResultEventData,AutopilotStatusEventData,UpdateStatusEventDataStatus } from "./types";
 
 /* Enums for each type of event */
 export enum TopicEventCode {
@@ -306,7 +306,7 @@ export enum TopicEventCode {
       *
       * Autopilot current step executed on the vehicle
       
-      * @data {@link AutopilotIndexedStep}
+      * @data {@link AutopilotStep}
       * @category Autopilot
       * @group Navigation
       
@@ -460,7 +460,7 @@ export enum TopicEventCode {
       *
       * Vehicle active module, false if not active module
       
-      * @data {@link false | Module}
+      * @data {@link Module}
       * @category Module
       * @group Module
       
@@ -1553,7 +1553,7 @@ export enum ResultEventCode {
       *
       * Result of check 3D box
     */
-    Check3dBoxResult = 142,
+    Check3dBoxActionResult = 142,
     /**
       * **Veh to pose result**
       *
@@ -1738,7 +1738,7 @@ export enum FeedbackEventCode {
       *
       * Feedback on current check 3D box
     */   
-    Check3dBoxFeedback = 141,
+    Check3dBoxActionFeedback = 141,
     /**
       * **Veh to pose feedback**
       *
@@ -2086,7 +2086,7 @@ export const initEventTopicCallbacks = () =>
 
 /** @internal */
 export const initEventResultCallbacks = () => ({
-    [ResultEventCode.Check3dBoxResult]: {resolve: undefined, reject: undefined},
+    [ResultEventCode.Check3dBoxActionResult]: {resolve: undefined, reject: undefined},
     [ResultEventCode.VehToPoseResult]: {resolve: undefined, reject: undefined},
     [ResultEventCode.VehToSegmentResult]: {resolve: undefined, reject: undefined},
     [ResultEventCode.SetVehiclePoseResult]: {resolve: undefined, reject: undefined},
@@ -2121,7 +2121,7 @@ export const initEventResultCallbacks = () => ({
 
 /** @internal */
 export const initEventFeedbackCallbacks = () => ({
-    [FeedbackEventCode.Check3dBoxFeedback]: undefined,
+    [FeedbackEventCode.Check3dBoxActionFeedback]: undefined,
     [FeedbackEventCode.VehToPoseFeedback]: undefined,
     [FeedbackEventCode.VehToSegmentFeedback]: undefined,
     [FeedbackEventCode.SetVehiclePoseFeedback]: undefined,
@@ -2190,7 +2190,7 @@ export type EventDataType = {
 [TopicEventCode.HumanInterventionRequired]: DeepRequired<HumanInterventionRequired>
 [TopicEventCode.AutopilotStepResult]: DeepRequired<AutopilotStepResultEventData>
 [TopicEventCode.AutopilotStatus]: DeepRequired<AutopilotStatusEventData>
-[TopicEventCode.AutopilotCurrentStep]: DeepRequired<AutopilotIndexedStep>
+[TopicEventCode.AutopilotCurrentStep]: DeepRequired<AutopilotStep>
 [TopicEventCode.AutopilotConfig]: DeepRequired<AutopilotSequence>
 [TopicEventCode.NetworkGlobalStatus]: DeepRequired<NetworkGlobalStatus>
 [TopicEventCode.NetworkWanState]: DeepRequired<NetworkWanState>
@@ -2204,7 +2204,7 @@ export type EventDataType = {
 [TopicEventCode.CurrentActivePath]: DeepRequired<Path>
 [TopicEventCode.InternalData]: DeepRequired<string>
 [TopicEventCode.CycleStarted]: DeepRequired<boolean>
-[TopicEventCode.ActiveModule]: DeepRequired<false | Module>
+[TopicEventCode.ActiveModule]: DeepRequired<Module>
 [TopicEventCode.ActiveModuleConfiguration]: DeepRequired<ModuleConfiguration>
 [TopicEventCode.RoutesGraphObstacles]: DeepRequired<Position[]>
 [TopicEventCode.Sleeping]: DeepRequired<boolean>

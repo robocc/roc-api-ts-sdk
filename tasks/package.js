@@ -13,7 +13,6 @@ async function main() {
   // write out simplified package.json
   pkg.main = "index.js";
   pkg.types = "index.d.ts";
-  pkg.version = `${process.env.ROBOCC_API_VERSION}`;
   delete pkg.scripts;
   delete pkg.devDependencies;
   delete pkg.style;

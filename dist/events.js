@@ -302,7 +302,7 @@ var TopicEventCode;
       *
       * Autopilot current step executed on the vehicle
       
-      * @data {@link AutopilotIndexedStep}
+      * @data {@link AutopilotStep}
       * @category Autopilot
       * @group Navigation
       
@@ -456,7 +456,7 @@ var TopicEventCode;
       *
       * Vehicle active module, false if not active module
       
-      * @data {@link false | Module}
+      * @data {@link Module}
       * @category Module
       * @group Module
       
@@ -1549,7 +1549,7 @@ var ResultEventCode;
       *
       * Result of check 3D box
     */
-    ResultEventCode[ResultEventCode["Check3dBoxResult"] = 142] = "Check3dBoxResult";
+    ResultEventCode[ResultEventCode["Check3dBoxActionResult"] = 142] = "Check3dBoxActionResult";
     /**
       * **Veh to pose result**
       *
@@ -1733,7 +1733,7 @@ var FeedbackEventCode;
       *
       * Feedback on current check 3D box
     */
-    FeedbackEventCode[FeedbackEventCode["Check3dBoxFeedback"] = 141] = "Check3dBoxFeedback";
+    FeedbackEventCode[FeedbackEventCode["Check3dBoxActionFeedback"] = 141] = "Check3dBoxActionFeedback";
     /**
       * **Veh to pose feedback**
       *
@@ -2061,7 +2061,7 @@ const initEventTopicCallbacks = () => ({
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */
 const initEventResultCallbacks = () => ({
-    [ResultEventCode.Check3dBoxResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.Check3dBoxActionResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.VehToPoseResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.VehToSegmentResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SetVehiclePoseResult]: { resolve: undefined, reject: undefined },
@@ -2095,7 +2095,7 @@ const initEventResultCallbacks = () => ({
 exports.initEventResultCallbacks = initEventResultCallbacks;
 /** @internal */
 const initEventFeedbackCallbacks = () => ({
-    [FeedbackEventCode.Check3dBoxFeedback]: undefined,
+    [FeedbackEventCode.Check3dBoxActionFeedback]: undefined,
     [FeedbackEventCode.VehToPoseFeedback]: undefined,
     [FeedbackEventCode.VehToSegmentFeedback]: undefined,
     [FeedbackEventCode.SetVehiclePoseFeedback]: undefined,

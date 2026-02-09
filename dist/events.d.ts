@@ -1,6 +1,6 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotIndexedStep, Areas, DockingState, NetworkWanState, SystemInfo, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotStep, Areas, DockingState, NetworkWanState, SystemInfo, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
 import { Path, AutopilotSequence, OperatingHours } from "./types";
 import { NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
@@ -302,7 +302,7 @@ export declare enum TopicEventCode {
       *
       * Autopilot current step executed on the vehicle
       
-      * @data {@link AutopilotIndexedStep}
+      * @data {@link AutopilotStep}
       * @category Autopilot
       * @group Navigation
       
@@ -456,7 +456,7 @@ export declare enum TopicEventCode {
       *
       * Vehicle active module, false if not active module
       
-      * @data {@link false | Module}
+      * @data {@link Module}
       * @category Module
       * @group Module
       
@@ -1548,7 +1548,7 @@ export declare enum ResultEventCode {
       *
       * Result of check 3D box
     */
-    Check3dBoxResult = 142,
+    Check3dBoxActionResult = 142,
     /**
       * **Veh to pose result**
       *
@@ -1731,7 +1731,7 @@ export declare enum FeedbackEventCode {
       *
       * Feedback on current check 3D box
     */
-    Check3dBoxFeedback = 141,
+    Check3dBoxActionFeedback = 141,
     /**
       * **Veh to pose feedback**
       *
@@ -2259,7 +2259,7 @@ export type EventDataType = {
     [TopicEventCode.HumanInterventionRequired]: DeepRequired<HumanInterventionRequired>;
     [TopicEventCode.AutopilotStepResult]: DeepRequired<AutopilotStepResultEventData>;
     [TopicEventCode.AutopilotStatus]: DeepRequired<AutopilotStatusEventData>;
-    [TopicEventCode.AutopilotCurrentStep]: DeepRequired<AutopilotIndexedStep>;
+    [TopicEventCode.AutopilotCurrentStep]: DeepRequired<AutopilotStep>;
     [TopicEventCode.AutopilotConfig]: DeepRequired<AutopilotSequence>;
     [TopicEventCode.NetworkGlobalStatus]: DeepRequired<NetworkGlobalStatus>;
     [TopicEventCode.NetworkWanState]: DeepRequired<NetworkWanState>;
@@ -2273,7 +2273,7 @@ export type EventDataType = {
     [TopicEventCode.CurrentActivePath]: DeepRequired<Path>;
     [TopicEventCode.InternalData]: DeepRequired<string>;
     [TopicEventCode.CycleStarted]: DeepRequired<boolean>;
-    [TopicEventCode.ActiveModule]: DeepRequired<false | Module>;
+    [TopicEventCode.ActiveModule]: DeepRequired<Module>;
     [TopicEventCode.ActiveModuleConfiguration]: DeepRequired<ModuleConfiguration>;
     [TopicEventCode.RoutesGraphObstacles]: DeepRequired<Position[]>;
     [TopicEventCode.Sleeping]: DeepRequired<boolean>;
