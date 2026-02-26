@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "8.26.7-zeus-7",
+  "version": "8.26.8-zeus-8",
   "description": "RocApi client Typescript library",
   "scripts": {
     "build": "npx tsc && node tasks/package.js",

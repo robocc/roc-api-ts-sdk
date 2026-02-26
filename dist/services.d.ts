@@ -3314,7 +3314,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetVehId RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetVehId RoboccDocs} for further information
     */
     GetVehId(): Promise<string>;
     /**
@@ -3327,7 +3327,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param event_code Event code
     
     * @data {@link SubscribeResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Subscribe RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Subscribe RoboccDocs} for further information
     */
     Subscribe(event_code: number): Promise<DeepRequired<SubscribeResult>>;
     /**
@@ -3340,7 +3340,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param event_code Event code
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Unsubscribe RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Unsubscribe RoboccDocs} for further information
     */
     Unsubscribe(event_code: number): Promise<null>;
     /**
@@ -3353,7 +3353,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UnsubscribeAll RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UnsubscribeAll RoboccDocs} for further information
     */
     UnsubscribeAll(): Promise<null>;
     /**
@@ -3366,7 +3366,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#CancelActions RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#CancelActions RoboccDocs} for further information
     */
     CancelActions(): Promise<null>;
     /**
@@ -3379,7 +3379,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param teleop_cmd Teleop command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Teleop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Teleop RoboccDocs} for further information
     */
     Teleop(teleop_cmd: TeleopCmd): Promise<null>;
     /**
@@ -3392,7 +3392,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param teleop_cmd Teleop command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#TeleopAssistedWithMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#TeleopAssistedWithMap RoboccDocs} for further information
     */
     TeleopAssistedWithMap(teleop_cmd: TeleopCmd): Promise<null>;
     /**
@@ -3405,7 +3405,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param teleop_cmd Teleop command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#TeleopAssistedWithoutMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#TeleopAssistedWithoutMap RoboccDocs} for further information
     */
     TeleopAssistedWithoutMap(teleop_cmd: TeleopCmd): Promise<null>;
     /**
@@ -3418,7 +3418,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Start Stop command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#FollowMe RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#FollowMe RoboccDocs} for further information
     */
     FollowMe(d: FollowMeParams): Promise<null>;
     /**
@@ -3431,7 +3431,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Direction of person to follow
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#FollowMeResetTracking RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#FollowMeResetTracking RoboccDocs} for further information
     */
     FollowMeResetTracking(d: Direction): Promise<null>;
     /**
@@ -3444,7 +3444,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Follow mode
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#FollowMeSetMode RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#FollowMeSetMode RoboccDocs} for further information
     */
     FollowMeSetMode(d: FollowMode): Promise<null>;
     /**
@@ -3457,7 +3457,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Start Stop command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetSleeping RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetSleeping RoboccDocs} for further information
     */
     SetSleeping(enable: boolean): Promise<null>;
     /**
@@ -3470,7 +3470,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Start Stop command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetHibernate RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetHibernate RoboccDocs} for further information
     */
     SetHibernate(enable: boolean): Promise<null>;
     /**
@@ -3483,7 +3483,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param auth_data API Key
     
     * @data {@link AuthUserResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AuthUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AuthUser RoboccDocs} for further information
     */
     AuthUser(auth_data: string): Promise<DeepRequired<AuthUserResult>>;
     /**
@@ -3496,7 +3496,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param api_key API Key
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AuthModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AuthModule RoboccDocs} for further information
     */
     AuthModule(api_key: string): Promise<null>;
     /**
@@ -3509,7 +3509,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Sink RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Sink RoboccDocs} for further information
     */
     Sink(): Promise<null>;
     /**
@@ -3522,7 +3522,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Enable or disable fragmented message
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetUseFragmentedMessage RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetUseFragmentedMessage RoboccDocs} for further information
     */
     SetUseFragmentedMessage(enable: boolean): Promise<null>;
     /**
@@ -3535,7 +3535,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Logout RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Logout RoboccDocs} for further information
     */
     Logout(): Promise<null>;
     /**
@@ -3548,7 +3548,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param login_data Parameters
     
     * @data {@link LoginResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Login RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Login RoboccDocs} for further information
     */
     Login(login_data: LoginParams): Promise<DeepRequired<LoginResult>>;
     /**
@@ -3561,7 +3561,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable_teleop Set or not teleop active
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetTeleopActive RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetTeleopActive RoboccDocs} for further information
     */
     SetTeleopActive(enable_teleop: boolean): Promise<null>;
     /**
@@ -3574,7 +3574,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link boolean}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetTeleopActive RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetTeleopActive RoboccDocs} for further information
     */
     GetTeleopActive(): Promise<DeepRequired<boolean>>;
     /**
@@ -3587,7 +3587,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param site_b64 Base 64 of export file
     
     * @data {@link ImportSiteResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ImportSite RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ImportSite RoboccDocs} for further information
     */
     ImportSite(site_b64: string): Promise<DeepRequired<ImportSiteResult>>;
     /**
@@ -3600,7 +3600,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param site_b64 Base 64 of export file
     
     * @data {@link ImportSoundsConfigResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ImportSoundsConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ImportSoundsConfig RoboccDocs} for further information
     */
     ImportSoundsConfig(site_b64: string): Promise<DeepRequired<ImportSoundsConfigResult>>;
     /**
@@ -3613,7 +3613,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param id_site
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ExportSite RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ExportSite RoboccDocs} for further information
     */
     ExportSite(id_site: number | ExportSiteParams2): Promise<string>;
     /**
@@ -3626,7 +3626,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param export_sites_data
     
     * @data {@link ExportSitesResultItem}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ExportSites RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ExportSites RoboccDocs} for further information
     */
     ExportSites(export_sites_data: ExportSitesParams1Item[] | ExportSitesParams2): Promise<DeepRequired<ExportSitesResultItem>[]>;
     /**
@@ -3639,7 +3639,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param marker Marker
     
     * @data {@link ChargingStation}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetNewChargingStationFromMarker RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetNewChargingStationFromMarker RoboccDocs} for further information
     */
     GetNewChargingStationFromMarker(marker: Marker): Promise<DeepRequired<ChargingStation>>;
     /**
@@ -3652,7 +3652,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param marker Marker
     
     * @data {@link DockedPose}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetNewDockedPoseFromMarker RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetNewDockedPoseFromMarker RoboccDocs} for further information
     */
     GetNewDockedPoseFromMarker(marker: Marker): Promise<DeepRequired<DockedPose>>;
     /**
@@ -3665,7 +3665,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param charging_station_data Charging station object and distances
     
     * @data {@link ChargingStation}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateChargingStationConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateChargingStationConfig RoboccDocs} for further information
     */
     UpdateChargingStationConfig(charging_station_data: UpdateChargingStationConfigParams): Promise<DeepRequired<ChargingStation>>;
     /**
@@ -3678,7 +3678,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param docked_pose_data Docked pose object and distances
     
     * @data {@link DockedPose}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateDockedPoseConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateDockedPoseConfig RoboccDocs} for further information
     */
     UpdateDockedPoseConfig(docked_pose_data: UpdateDockedPoseConfigParams): Promise<DeepRequired<DockedPose>>;
     /**
@@ -3691,7 +3691,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param sound_is_playing Set sound is playing
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimSetSoundIsPlaying RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimSetSoundIsPlaying RoboccDocs} for further information
     */
     SimSetSoundIsPlaying(sound_is_playing: boolean): Promise<null>;
     /**
@@ -3704,7 +3704,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param external_speaker Set external speaker present
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimuSetExternalSpeaker RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimuSetExternalSpeaker RoboccDocs} for further information
     */
     SimuSetExternalSpeaker(external_speaker: boolean): Promise<null>;
     /**
@@ -3717,7 +3717,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param user User data
     
     * @data {@link number}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetUser RoboccDocs} for further information
     */
     SetUser(user: SetUserParams): Promise<number>;
     /**
@@ -3730,7 +3730,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param user_id Id user
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteUser RoboccDocs} for further information
     */
     DeleteUser(user_id: number): Promise<null>;
     /**
@@ -3743,7 +3743,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param obt_cbt Battery parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetObtCbt RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetObtCbt RoboccDocs} for further information
     */
     SetObtCbt(obt_cbt: SetObtCbtParams): Promise<null>;
     /**
@@ -3756,7 +3756,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link User}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ListUsers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ListUsers RoboccDocs} for further information
     */
     ListUsers(): Promise<DeepRequired<User>[]>;
     /**
@@ -3769,7 +3769,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param user_id id user
     
     * @data {@link User}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetUser RoboccDocs} for further information
     */
     GetUser(user_id: number): Promise<DeepRequired<User>>;
     /**
@@ -3782,7 +3782,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link SiteRaw}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ListSites RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ListSites RoboccDocs} for further information
     */
     ListSites(): Promise<DeepRequired<SiteRaw>[]>;
     /**
@@ -3795,7 +3795,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link SiteLight}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ListSitesWithMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ListSitesWithMaps RoboccDocs} for further information
     */
     ListSitesWithMaps(): Promise<DeepRequired<SiteLight>[]>;
     /**
@@ -3808,7 +3808,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param site_id id site
     
     * @data {@link SiteRaw}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetSite RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetSite RoboccDocs} for further information
     */
     GetSite(site_id: number): Promise<DeepRequired<SiteRaw>>;
     /**
@@ -3821,7 +3821,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param site_id id site
     
     * @data {@link SiteLight}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetSiteWithMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetSiteWithMaps RoboccDocs} for further information
     */
     GetSiteWithMaps(site_id: number): Promise<DeepRequired<SiteLight>>;
     /**
@@ -3834,7 +3834,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param map_id id map
     
     * @data {@link Map}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetMap RoboccDocs} for further information
     */
     GetMap(map_id: number): Promise<DeepRequired<Map>>;
     /**
@@ -3847,7 +3847,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link SiteRaw}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetActiveSite RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetActiveSite RoboccDocs} for further information
     */
     GetActiveSite(): Promise<DeepRequired<SiteRaw>>;
     /**
@@ -3860,7 +3860,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link SiteRaw}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetActiveSiteWithMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetActiveSiteWithMaps RoboccDocs} for further information
     */
     GetActiveSiteWithMaps(): Promise<DeepRequired<SiteRaw>>;
     /**
@@ -3873,7 +3873,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param site site
     
     * @data {@link number}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetSite RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetSite RoboccDocs} for further information
     */
     SetSite(site: Site): Promise<number>;
     /**
@@ -3886,7 +3886,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param site_id Id site
     
     * @data {@link MapRaw}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ListMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ListMaps RoboccDocs} for further information
     */
     ListMaps(site_id: number): Promise<DeepRequired<MapRaw>[]>;
     /**
@@ -3899,7 +3899,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link Map}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetActiveMap RoboccDocs} for further information
     */
     GetActiveMap(): Promise<DeepRequired<Map>>;
     /**
@@ -3912,7 +3912,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetActiveMapImgRaw RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetActiveMapImgRaw RoboccDocs} for further information
     */
     GetActiveMapImgRaw(): Promise<string>;
     /**
@@ -3925,7 +3925,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param map_id id map
     
     * @data {@link MapElements}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetMapElements RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetMapElements RoboccDocs} for further information
     */
     GetMapElements(map_id: number): Promise<DeepRequired<MapElements>>;
     /**
@@ -3938,7 +3938,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link MapElements}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetActiveMapElements RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetActiveMapElements RoboccDocs} for further information
     */
     GetActiveMapElements(): Promise<DeepRequired<MapElements>>;
     /**
@@ -3951,7 +3951,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param map_id id map
     
     * @data {@link MapWithoutImages}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetMapWithoutImages RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetMapWithoutImages RoboccDocs} for further information
     */
     GetMapWithoutImages(map_id: number): Promise<DeepRequired<MapWithoutImages>>;
     /**
@@ -3964,7 +3964,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link MapWithoutImages}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetActiveMapWithoutImages RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetActiveMapWithoutImages RoboccDocs} for further information
     */
     GetActiveMapWithoutImages(): Promise<DeepRequired<MapWithoutImages>>;
     /**
@@ -3977,7 +3977,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param id_site Id site
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteSite RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteSite RoboccDocs} for further information
     */
     DeleteSite(id_site: number): Promise<null>;
     /**
@@ -3990,7 +3990,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param id_map Id map
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteMap RoboccDocs} for further information
     */
     DeleteMap(id_map: number): Promise<null>;
     /**
@@ -4003,7 +4003,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param charging_station Charging station
     
     * @data {@link SetChargingStationResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetChargingStation RoboccDocs} for further information
     */
     SetChargingStation(charging_station: ChargingStation): Promise<DeepRequired<SetChargingStationResult>>;
     /**
@@ -4016,7 +4016,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param saved_pose Saved pose
     
     * @data {@link SetSavedPoseResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetSavedPose RoboccDocs} for further information
     */
     SetSavedPose(saved_pose: SavedPose): Promise<DeepRequired<SetSavedPoseResult>>;
     /**
@@ -4029,7 +4029,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param docked_pose Docked pose,
     
     * @data {@link SetDockedPoseResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetDockedPose RoboccDocs} for further information
     */
     SetDockedPose(docked_pose: DockedPose): Promise<DeepRequired<SetDockedPoseResult>>;
     /**
@@ -4042,7 +4042,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param forbidden_area Forbidden area
     
     * @data {@link SetForbiddenAreaResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetForbiddenArea RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetForbiddenArea RoboccDocs} for further information
     */
     SetForbiddenArea(forbidden_area: ForbiddenArea): Promise<DeepRequired<SetForbiddenAreaResult>>;
     /**
@@ -4055,7 +4055,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param custom_area Custom area
     
     * @data {@link SetCustomAreaResult}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetCustomArea RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetCustomArea RoboccDocs} for further information
     */
     SetCustomArea(custom_area: CustomArea): Promise<DeepRequired<SetCustomAreaResult>>;
     /**
@@ -4068,7 +4068,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param charging_station Id charging station
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteChargingStation RoboccDocs} for further information
     */
     DeleteChargingStation(charging_station: number): Promise<null>;
     /**
@@ -4081,7 +4081,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param saved_pose_id Id saved pose
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteSavedPose RoboccDocs} for further information
     */
     DeleteSavedPose(saved_pose_id: number): Promise<null>;
     /**
@@ -4094,7 +4094,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param docked_pose_id Id docked pose
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteDockedPose RoboccDocs} for further information
     */
     DeleteDockedPose(docked_pose_id: number): Promise<null>;
     /**
@@ -4107,7 +4107,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param forbidden_area_id Id forbidden area
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteForbiddenArea RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteForbiddenArea RoboccDocs} for further information
     */
     DeleteForbiddenArea(forbidden_area_id: number): Promise<null>;
     /**
@@ -4120,7 +4120,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param custom_area_id Id custom area
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteCustomArea RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteCustomArea RoboccDocs} for further information
     */
     DeleteCustomArea(custom_area_id: number): Promise<null>;
     /**
@@ -4133,7 +4133,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param check_pose_data Pose parameters. Don't send params to use the current robot pose
     
     * @data {@link boolean}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#CheckPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#CheckPose RoboccDocs} for further information
     */
     CheckPose(check_pose_data?: CheckPoseParams): Promise<DeepRequired<boolean>>;
     /**
@@ -4146,7 +4146,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param check_pose_data Pose parameters. Don't send params to use the current robot pose
     
     * @data {@link boolean}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Check3dBox RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Check3dBox RoboccDocs} for further information
     */
     Check3dBox(check_pose_data: Check3dBoxParams): Promise<DeepRequired<boolean>>;
     /**
@@ -4159,7 +4159,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimResetWord RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimResetWord RoboccDocs} for further information
     */
     SimResetWord(): Promise<null>;
     /**
@@ -4172,7 +4172,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
     */
     SimAddShelf(d: SimAddShelfParams): Promise<null>;
     /**
@@ -4185,7 +4185,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimClearShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimClearShelf RoboccDocs} for further information
     */
     SimClearShelf(): Promise<null>;
     /**
@@ -4198,7 +4198,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetModuleData RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetModuleData RoboccDocs} for further information
     */
     GetModuleData(): Promise<string>;
     /**
@@ -4211,7 +4211,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param module_data Data
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetModuleData RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetModuleData RoboccDocs} for further information
     */
     SetModuleData(module_data: string): Promise<null>;
     /**
@@ -4224,7 +4224,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetInternalData RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetInternalData RoboccDocs} for further information
     */
     GetInternalData(): Promise<string>;
     /**
@@ -4237,7 +4237,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param internal_data Data
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetInternalData RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetInternalData RoboccDocs} for further information
     */
     SetInternalData(internal_data: string): Promise<null>;
     /**
@@ -4250,7 +4250,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#StartCycle RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#StartCycle RoboccDocs} for further information
     */
     StartCycle(): Promise<null>;
     /**
@@ -4263,7 +4263,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Mode on
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetCarMode RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetCarMode RoboccDocs} for further information
     */
     SetCarMode(enable: boolean): Promise<null>;
     /**
@@ -4276,7 +4276,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param led_cmd Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetCustomLed RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetCustomLed RoboccDocs} for further information
     */
     SetCustomLed(led_cmd: SetCustomLedParams): Promise<null>;
     /**
@@ -4289,7 +4289,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param sound_cmd Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetCustomSound RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetCustomSound RoboccDocs} for further information
     */
     SetCustomSound(sound_cmd: SetCustomSoundParams): Promise<null>;
     /**
@@ -4302,7 +4302,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#NavigationStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#NavigationStop RoboccDocs} for further information
     */
     NavigationStop(): Promise<null>;
     /**
@@ -4315,7 +4315,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetSoftVersion RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetSoftVersion RoboccDocs} for further information
     */
     GetSoftVersion(): Promise<string>;
     /**
@@ -4328,7 +4328,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param power_consumption Power consumption
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimBatterySetPowerConsumption RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimBatterySetPowerConsumption RoboccDocs} for further information
     */
     SimBatterySetPowerConsumption(power_consumption: number): Promise<null>;
     /**
@@ -4341,7 +4341,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param charge_power_delivery Charge power delivery
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimBatterySetChargePower RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimBatterySetChargePower RoboccDocs} for further information
     */
     SimBatterySetChargePower(charge_power_delivery: number): Promise<null>;
     /**
@@ -4354,7 +4354,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param battery_percentage Battery percentage
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimBatterySetPercentage RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimBatterySetPercentage RoboccDocs} for further information
     */
     SimBatterySetPercentage(battery_percentage: number): Promise<null>;
     /**
@@ -4367,7 +4367,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param battery_charging Charger is on
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimBatterySetChargerOn RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimBatterySetChargerOn RoboccDocs} for further information
     */
     SimBatterySetChargerOn(battery_charging: boolean): Promise<null>;
     /**
@@ -4380,7 +4380,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Mode maintenance on
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetMaintenanceMode RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetMaintenanceMode RoboccDocs} for further information
     */
     SetMaintenanceMode(enable: boolean): Promise<null>;
     /**
@@ -4393,7 +4393,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Prohibit movement
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetProhibitMovement RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetProhibitMovement RoboccDocs} for further information
     */
     SetProhibitMovement(enable: boolean): Promise<null>;
     /**
@@ -4406,7 +4406,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param diff_drive_state Diff driver state
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SimSetDiffDriveState RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SimSetDiffDriveState RoboccDocs} for further information
     */
     SimSetDiffDriveState(diff_drive_state: SimSetDiffDriveStateParams): Promise<null>;
     /**
@@ -4419,7 +4419,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param password New password
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#NetworkHotspotSetPassword RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#NetworkHotspotSetPassword RoboccDocs} for further information
     */
     NetworkHotspotSetPassword(password: string): Promise<null>;
     /**
@@ -4432,7 +4432,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link WifiAp}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#NetworkWifiListAps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#NetworkWifiListAps RoboccDocs} for further information
     */
     NetworkWifiListAps(): Promise<DeepRequired<WifiAp>[]>;
     /**
@@ -4445,7 +4445,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link DiagnosticElement}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetElementsList RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetElementsList RoboccDocs} for further information
     */
     GetElementsList(): Promise<DeepRequired<DiagnosticElement>[]>;
     /**
@@ -4458,7 +4458,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param sequence Configuration
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AutopilotSetConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AutopilotSetConfig RoboccDocs} for further information
     */
     AutopilotSetConfig(sequence: AutopilotSequence): Promise<null>;
     /**
@@ -4471,7 +4471,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param resume Resume
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AutopilotStart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AutopilotStart RoboccDocs} for further information
     */
     AutopilotStart(resume: boolean): Promise<null>;
     /**
@@ -4484,7 +4484,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AutopilotStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AutopilotStop RoboccDocs} for further information
     */
     AutopilotStop(): Promise<null>;
     /**
@@ -4497,7 +4497,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param sound_scenarios Array of scenarios and associated volumes
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetScenarioSoundMaxVolume RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetScenarioSoundMaxVolume RoboccDocs} for further information
     */
     SetScenarioSoundMaxVolume(sound_scenarios: SoundScenarioVolume[]): Promise<null>;
     /**
@@ -4510,7 +4510,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link SoundScenarioVolume}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetScenarioSoundMaxVolume RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetScenarioSoundMaxVolume RoboccDocs} for further information
     */
     GetScenarioSoundMaxVolume(): Promise<DeepRequired<SoundScenarioVolume>[]>;
     /**
@@ -4523,7 +4523,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param sound_samples Array of scenarios and associated samples
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetScenarioSoundSamples RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetScenarioSoundSamples RoboccDocs} for further information
     */
     SetScenarioSoundSamples(sound_samples: SoundScenarioSample[]): Promise<null>;
     /**
@@ -4536,7 +4536,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link SoundScenarioSample}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetScenarioSoundSamples RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetScenarioSoundSamples RoboccDocs} for further information
     */
     GetScenarioSoundSamples(): Promise<DeepRequired<SoundScenarioSample>[]>;
     /**
@@ -4549,7 +4549,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param module_params Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetModuleParams RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetModuleParams RoboccDocs} for further information
     */
     SetModuleParams(module_params: SetModuleParamsParams): Promise<null>;
     /**
@@ -4562,7 +4562,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#NetworkRedirectPort RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#NetworkRedirectPort RoboccDocs} for further information
     */
     NetworkRedirectPort(d: NetworkRedirectPortParams): Promise<null>;
     /**
@@ -4575,7 +4575,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ForceUpdate RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ForceUpdate RoboccDocs} for further information
     */
     ForceUpdate(): Promise<null>;
     /**
@@ -4588,7 +4588,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Enable/disable
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetAutomaticUpdates RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetAutomaticUpdates RoboccDocs} for further information
     */
     SetAutomaticUpdates(enable: boolean): Promise<null>;
     /**
@@ -4601,7 +4601,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Enable/disable
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#EnableDynamicFilters RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#EnableDynamicFilters RoboccDocs} for further information
     */
     EnableDynamicFilters(enable: boolean): Promise<null>;
     /**
@@ -4614,7 +4614,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters for restart
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SystemRestart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SystemRestart RoboccDocs} for further information
     */
     SystemRestart(d: SystemRestartParams): Promise<null>;
     /**
@@ -4627,7 +4627,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SystemRequestFlashRoboteq RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SystemRequestFlashRoboteq RoboccDocs} for further information
     */
     SystemRequestFlashRoboteq(): Promise<null>;
     /**
@@ -4640,7 +4640,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SystemRequestFlashMcu RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SystemRequestFlashMcu RoboccDocs} for further information
     */
     SystemRequestFlashMcu(): Promise<null>;
     /**
@@ -4653,7 +4653,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Shelf size
     
     * @data {@link Pose}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetShelves RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetShelves RoboccDocs} for further information
     */
     GetShelves(d: GetShelvesParams): Promise<DeepRequired<Pose>[]>;
     /**
@@ -4666,7 +4666,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Security configuration
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetSecurity RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetSecurity RoboccDocs} for further information
     */
     SetSecurity(d: Security): Promise<null>;
     /**
@@ -4679,7 +4679,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Name of sound to delete
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteSound RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteSound RoboccDocs} for further information
     */
     DeleteSound(d: string): Promise<null>;
     /**
@@ -4692,7 +4692,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddCallButton RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddCallButton RoboccDocs} for further information
     */
     AddCallButton(d: AddCallButtonParams): Promise<null>;
     /**
@@ -4705,7 +4705,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddRestockingButton RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddRestockingButton RoboccDocs} for further information
     */
     AddRestockingButton(d: AddRestockingButtonParams): Promise<null>;
     /**
@@ -4718,7 +4718,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddMultidestinationButton RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddMultidestinationButton RoboccDocs} for further information
     */
     AddMultidestinationButton(d: AddMultidestinationButtonParams): Promise<null>;
     /**
@@ -4731,7 +4731,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddOrderedMultidestinationButton RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddOrderedMultidestinationButton RoboccDocs} for further information
     */
     AddOrderedMultidestinationButton(d: AddOrderedMultidestinationButtonParams): Promise<null>;
     /**
@@ -4744,7 +4744,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateButton RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateButton RoboccDocs} for further information
     */
     UpdateButton(d: ButtonConfig): Promise<null>;
     /**
@@ -4757,7 +4757,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Button LoRa ID
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteButton RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteButton RoboccDocs} for further information
     */
     DeleteButton(d: number): Promise<null>;
     /**
@@ -4770,7 +4770,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddVeh RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddVeh RoboccDocs} for further information
     */
     AddVeh(d: AddVehParams): Promise<null>;
     /**
@@ -4783,7 +4783,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Vehicle LoRa ID
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteVeh RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteVeh RoboccDocs} for further information
     */
     DeleteVeh(d: number): Promise<null>;
     /**
@@ -4796,7 +4796,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Is vehicle
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetIsVeh RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetIsVeh RoboccDocs} for further information
     */
     SetIsVeh(d: boolean): Promise<null>;
     /**
@@ -4809,7 +4809,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Is manager
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetIsManager RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetIsManager RoboccDocs} for further information
     */
     SetIsManager(d: boolean): Promise<null>;
     /**
@@ -4822,7 +4822,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Module type
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetModuleType RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetModuleType RoboccDocs} for further information
     */
     SetModuleType(d: ModuleType): Promise<null>;
     /**
@@ -4835,7 +4835,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Vehicle direction
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetVehDirection RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetVehDirection RoboccDocs} for further information
     */
     SetVehDirection(d: VehDirection): Promise<null>;
     /**
@@ -4848,7 +4848,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Dock direction
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetDockDirection RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetDockDirection RoboccDocs} for further information
     */
     SetDockDirection(d: VehDirection): Promise<null>;
     /**
@@ -4861,7 +4861,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ReleaseShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ReleaseShelf RoboccDocs} for further information
     */
     ReleaseShelf(): Promise<null>;
     /**
@@ -4874,7 +4874,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ReleaseShelfAndRelease RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ReleaseShelfAndRelease RoboccDocs} for further information
     */
     ReleaseShelfAndRelease(): Promise<null>;
     /**
@@ -4887,7 +4887,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d LoRa ID
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetIdModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetIdModule RoboccDocs} for further information
     */
     SetIdModule(d: number): Promise<null>;
     /**
@@ -4900,7 +4900,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d LoRA SP
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetLoraSp RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetLoraSp RoboccDocs} for further information
     */
     SetLoraSp(d: number): Promise<null>;
     /**
@@ -4913,7 +4913,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Waiting pose
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddWaitingPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddWaitingPose RoboccDocs} for further information
     */
     AddWaitingPose(d: WaitingPose): Promise<null>;
     /**
@@ -4926,7 +4926,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Waiting pose
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateWaitingPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateWaitingPose RoboccDocs} for further information
     */
     UpdateWaitingPose(d: WaitingPose): Promise<null>;
     /**
@@ -4939,7 +4939,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Waiting pose Uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteWaitingPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteWaitingPose RoboccDocs} for further information
     */
     DeleteWaitingPose(d: number): Promise<null>;
     /**
@@ -4952,7 +4952,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Port redirection
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddPortRedirection RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddPortRedirection RoboccDocs} for further information
     */
     AddPortRedirection(d: AddPortRedirectionParams): Promise<null>;
     /**
@@ -4965,7 +4965,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Port redirection
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdatePortRedirection RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdatePortRedirection RoboccDocs} for further information
     */
     UpdatePortRedirection(d: UpdatePortRedirectionParams): Promise<null>;
     /**
@@ -4978,7 +4978,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeletePortRedirection RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeletePortRedirection RoboccDocs} for further information
     */
     DeletePortRedirection(d: DeletePortRedirectionParams): Promise<null>;
     /**
@@ -4991,7 +4991,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Custom command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddCustomCommand RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddCustomCommand RoboccDocs} for further information
     */
     AddCustomCommand(d: CustomCommand): Promise<null>;
     /**
@@ -5004,7 +5004,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Custom command
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateCustomCommand RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateCustomCommand RoboccDocs} for further information
     */
     UpdateCustomCommand(d: CustomCommand): Promise<null>;
     /**
@@ -5017,7 +5017,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Saved pose uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteCustomCommand RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteCustomCommand RoboccDocs} for further information
     */
     DeleteCustomCommand(d: number): Promise<null>;
     /**
@@ -5030,7 +5030,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Controller LoRa
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddControllerLora RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddControllerLora RoboccDocs} for further information
     */
     AddControllerLora(d: ControllerLora): Promise<null>;
     /**
@@ -5043,7 +5043,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Controller LoRa
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateControllerLora RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateControllerLora RoboccDocs} for further information
     */
     UpdateControllerLora(d: ControllerLora): Promise<null>;
     /**
@@ -5056,7 +5056,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Saved pose Uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteControllerLora RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteControllerLora RoboccDocs} for further information
     */
     DeleteControllerLora(d: number): Promise<null>;
     /**
@@ -5069,7 +5069,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Map element restriction
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddMapElementRestriction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddMapElementRestriction RoboccDocs} for further information
     */
     AddMapElementRestriction(d: MapElementRestriction): Promise<null>;
     /**
@@ -5082,7 +5082,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Map element restriction
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateMapElementRestriction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateMapElementRestriction RoboccDocs} for further information
     */
     UpdateMapElementRestriction(d: MapElementRestriction): Promise<null>;
     /**
@@ -5095,7 +5095,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteMapElementRestriction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteMapElementRestriction RoboccDocs} for further information
     */
     DeleteMapElementRestriction(d: number): Promise<null>;
     /**
@@ -5108,7 +5108,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Docked pose config
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddRocDockedPoseConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddRocDockedPoseConfig RoboccDocs} for further information
     */
     AddRocDockedPoseConfig(d: DockedPoseConfig): Promise<null>;
     /**
@@ -5121,7 +5121,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Docked pose config
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateRocDockedPoseConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateRocDockedPoseConfig RoboccDocs} for further information
     */
     UpdateRocDockedPoseConfig(d: DockedPoseConfig): Promise<null>;
     /**
@@ -5134,7 +5134,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteRocDockedPoseConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteRocDockedPoseConfig RoboccDocs} for further information
     */
     DeleteRocDockedPoseConfig(d: number): Promise<null>;
     /**
@@ -5147,7 +5147,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Map element config
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddRocMapElementConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddRocMapElementConfig RoboccDocs} for further information
     */
     AddRocMapElementConfig(d: RocMapElementConfig): Promise<null>;
     /**
@@ -5160,7 +5160,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Map element config
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateRocMapElementConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateRocMapElementConfig RoboccDocs} for further information
     */
     UpdateRocMapElementConfig(d: RocMapElementConfig): Promise<null>;
     /**
@@ -5173,7 +5173,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteRocMapElementConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteRocMapElementConfig RoboccDocs} for further information
     */
     DeleteRocMapElementConfig(d: number): Promise<null>;
     /**
@@ -5186,7 +5186,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Controller id
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ControllerLoraGetContactsConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ControllerLoraGetContactsConfig RoboccDocs} for further information
     */
     ControllerLoraGetContactsConfig(d: number): Promise<null>;
     /**
@@ -5199,7 +5199,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ControllerLoraSetContactConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ControllerLoraSetContactConfig RoboccDocs} for further information
     */
     ControllerLoraSetContactConfig(d: ControllerLoraSetContactConfigParams): Promise<null>;
     /**
@@ -5212,7 +5212,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Predefined messages
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetPredefinedMessages RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetPredefinedMessages RoboccDocs} for further information
     */
     SetPredefinedMessages(d: string[]): Promise<null>;
     /**
@@ -5225,7 +5225,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Delays
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetVehicleDelayConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetVehicleDelayConfig RoboccDocs} for further information
     */
     SetVehicleDelayConfig(d: VehDelayConfig): Promise<null>;
     /**
@@ -5238,7 +5238,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Response deadline in ms
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetVehicleResponseDeadline RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetVehicleResponseDeadline RoboccDocs} for further information
     */
     SetVehicleResponseDeadline(d: number): Promise<null>;
     /**
@@ -5251,7 +5251,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Response deadline in ms
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetDefaultResponseDeadline RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetDefaultResponseDeadline RoboccDocs} for further information
     */
     SetDefaultResponseDeadline(d: number): Promise<null>;
     /**
@@ -5264,7 +5264,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Release RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Release RoboccDocs} for further information
     */
     Release(): Promise<null>;
     /**
@@ -5277,7 +5277,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Uuid of next step
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#NextStepMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#NextStepMission RoboccDocs} for further information
     */
     NextStepMission(d: number): Promise<null>;
     /**
@@ -5290,7 +5290,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#NextStepMissionWithMessage RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#NextStepMissionWithMessage RoboccDocs} for further information
     */
     NextStepMissionWithMessage(d: NextStepMissionWithMessageParams): Promise<null>;
     /**
@@ -5303,7 +5303,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d List of uuids of next steps
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#MultidestinationMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#MultidestinationMission RoboccDocs} for further information
     */
     MultidestinationMission(d: number[]): Promise<null>;
     /**
@@ -5316,7 +5316,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#PauseMove RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#PauseMove RoboccDocs} for further information
     */
     PauseMove(): Promise<null>;
     /**
@@ -5329,7 +5329,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ResumeMove RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ResumeMove RoboccDocs} for further information
     */
     ResumeMove(): Promise<null>;
     /**
@@ -5342,7 +5342,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#CancelMove RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#CancelMove RoboccDocs} for further information
     */
     CancelMove(): Promise<null>;
     /**
@@ -5355,7 +5355,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#Reboot RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#Reboot RoboccDocs} for further information
     */
     Reboot(): Promise<null>;
     /**
@@ -5368,7 +5368,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d In config mode
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetInConfigMode RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetInConfigMode RoboccDocs} for further information
     */
     SetInConfigMode(d: boolean): Promise<null>;
     /**
@@ -5381,7 +5381,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d In maintenance mode
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetInMaintenanceMode RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetInMaintenanceMode RoboccDocs} for further information
     */
     SetInMaintenanceMode(d: boolean): Promise<null>;
     /**
@@ -5394,7 +5394,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Touch screen
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetTouchScreen RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetTouchScreen RoboccDocs} for further information
     */
     SetTouchScreen(d: boolean): Promise<null>;
     /**
@@ -5407,7 +5407,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Allow move from dock
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetAllowMoveFromDock RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetAllowMoveFromDock RoboccDocs} for further information
     */
     SetAllowMoveFromDock(d: boolean): Promise<null>;
     /**
@@ -5420,7 +5420,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Allow multiple mission for the same button
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetAllowMultipleMissions RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetAllowMultipleMissions RoboccDocs} for further information
     */
     SetAllowMultipleMissions(d: boolean): Promise<null>;
     /**
@@ -5433,7 +5433,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Activate
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetModuleSleeping RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetModuleSleeping RoboccDocs} for further information
     */
     SetModuleSleeping(d: boolean): Promise<null>;
     /**
@@ -5446,7 +5446,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Activate
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetModuleHibernate RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetModuleHibernate RoboccDocs} for further information
     */
     SetModuleHibernate(d: boolean): Promise<null>;
     /**
@@ -5459,7 +5459,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Activate
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetSleepScreen RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetSleepScreen RoboccDocs} for further information
     */
     SetSleepScreen(d: boolean): Promise<null>;
     /**
@@ -5472,7 +5472,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Use external speaker
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UseExternalSpeaker RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UseExternalSpeaker RoboccDocs} for further information
     */
     UseExternalSpeaker(d: boolean): Promise<null>;
     /**
@@ -5485,7 +5485,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Operating hours
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetOperatingHours RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetOperatingHours RoboccDocs} for further information
     */
     SetOperatingHours(d: OperatingHours): Promise<null>;
     /**
@@ -5498,7 +5498,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d New password
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetHmiPassword RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetHmiPassword RoboccDocs} for further information
     */
     SetHmiPassword(d: string): Promise<null>;
     /**
@@ -5511,7 +5511,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Password to check
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#CheckHmiPassword RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#CheckHmiPassword RoboccDocs} for further information
     */
     CheckHmiPassword(d: string): Promise<null>;
     /**
@@ -5524,7 +5524,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Button LoRa ID
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetHighPriority RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetHighPriority RoboccDocs} for further information
     */
     SetHighPriority(d: number): Promise<null>;
     /**
@@ -5537,7 +5537,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Button LoRa ID
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetNormalPriority RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetNormalPriority RoboccDocs} for further information
     */
     SetNormalPriority(d: number): Promise<null>;
     /**
@@ -5550,7 +5550,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Button LoRa ID
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#RemoveMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#RemoveMission RoboccDocs} for further information
     */
     RemoveMission(d: number): Promise<null>;
     /**
@@ -5563,7 +5563,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetMultidestination RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetMultidestination RoboccDocs} for further information
     */
     SetMultidestination(d: SetMultidestinationParams): Promise<null>;
     /**
@@ -5576,7 +5576,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetMultidestinationWithMessages RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetMultidestinationWithMessages RoboccDocs} for further information
     */
     SetMultidestinationWithMessages(d: SetMultidestinationWithMessagesParams): Promise<null>;
     /**
@@ -5589,7 +5589,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d File content
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ImportConfiguration RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ImportConfiguration RoboccDocs} for further information
     */
     ImportConfiguration(d: string): Promise<null>;
     /**
@@ -5602,7 +5602,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ExportConfiguration RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ExportConfiguration RoboccDocs} for further information
     */
     ExportConfiguration(): Promise<string>;
     /**
@@ -5615,7 +5615,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     * @data {@link StatsData}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetStats RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetStats RoboccDocs} for further information
     */
     GetStats(d: GetStatsParams): Promise<DeepRequired<StatsData>>;
     /**
@@ -5628,7 +5628,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     * @data {@link DailyStats}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetLightStats RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetLightStats RoboccDocs} for further information
     */
     GetLightStats(d: GetLightStatsParams): Promise<DeepRequired<DailyStats>>;
     /**
@@ -5641,7 +5641,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     * @data {@link ExportedStats}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ExportStats RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ExportStats RoboccDocs} for further information
     */
     ExportStats(d: ExportStatsParams): Promise<DeepRequired<ExportedStats>>;
     /**
@@ -5654,7 +5654,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link Map}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetMapsForStats RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetMapsForStats RoboccDocs} for further information
     */
     GetMapsForStats(): Promise<DeepRequired<Map>[]>;
     /**
@@ -5667,7 +5667,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     * @data {@link VehTimelineData}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetVehsTimeline RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetVehsTimeline RoboccDocs} for further information
     */
     GetVehsTimeline(d: GetVehsTimelineParams): Promise<DeepRequired<VehTimelineData>[]>;
     /**
@@ -5680,7 +5680,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ResetStats RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ResetStats RoboccDocs} for further information
     */
     ResetStats(): Promise<null>;
     /**
@@ -5693,7 +5693,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#LiftMoveDown RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#LiftMoveDown RoboccDocs} for further information
     */
     LiftMoveDown(): Promise<null>;
     /**
@@ -5706,7 +5706,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#LiftMoveUp RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#LiftMoveUp RoboccDocs} for further information
     */
     LiftMoveUp(): Promise<null>;
     /**
@@ -5719,7 +5719,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#LiftStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#LiftStop RoboccDocs} for further information
     */
     LiftStop(): Promise<null>;
     /**
@@ -5732,7 +5732,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Desired height
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#LiftMoveTo RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#LiftMoveTo RoboccDocs} for further information
     */
     LiftMoveTo(d: number): Promise<null>;
     /**
@@ -5745,7 +5745,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Tare height
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#LiftSetTareHeight RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#LiftSetTareHeight RoboccDocs} for further information
     */
     LiftSetTareHeight(d: number): Promise<null>;
     /**
@@ -5758,7 +5758,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Real height
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#LiftSetRealHeight RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#LiftSetRealHeight RoboccDocs} for further information
     */
     LiftSetRealHeight(d: number): Promise<null>;
     /**
@@ -5771,7 +5771,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#StopRetrying RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#StopRetrying RoboccDocs} for further information
     */
     StopRetrying(): Promise<null>;
     /**
@@ -5784,7 +5784,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddRocUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddRocUser RoboccDocs} for further information
     */
     AddRocUser(d: AddRocUserParams): Promise<null>;
     /**
@@ -5797,7 +5797,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateRocUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateRocUser RoboccDocs} for further information
     */
     UpdateRocUser(d: UpdateRocUserParams): Promise<null>;
     /**
@@ -5810,7 +5810,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d ID User
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#RemoveRocUser RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#RemoveRocUser RoboccDocs} for further information
     */
     RemoveRocUser(d: number): Promise<null>;
     /**
@@ -5823,7 +5823,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link RocUser}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ListRocUsers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ListRocUsers RoboccDocs} for further information
     */
     ListRocUsers(): Promise<DeepRequired<RocUser>[]>;
     /**
@@ -5836,7 +5836,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link string}
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetRocId RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetRocId RoboccDocs} for further information
     */
     GetRocId(): Promise<string>;
     /**
@@ -5849,7 +5849,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateSoftVersions RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateSoftVersions RoboccDocs} for further information
     */
     UpdateSoftVersions(): Promise<null>;
     /**
@@ -5862,7 +5862,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d New password
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#HotspotSetPassword RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#HotspotSetPassword RoboccDocs} for further information
     */
     HotspotSetPassword(d: string): Promise<null>;
     /**
@@ -5875,7 +5875,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Enable
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#HotspotEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#HotspotEnable RoboccDocs} for further information
     */
     HotspotEnable(d: boolean): Promise<null>;
     /**
@@ -5888,7 +5888,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#CreateMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#CreateMission RoboccDocs} for further information
     */
     CreateMission(d: CreateMissionParams): Promise<null>;
     /**
@@ -5901,7 +5901,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ExtendMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ExtendMission RoboccDocs} for further information
     */
     ExtendMission(d: ExtendMissionParams): Promise<null>;
     /**
@@ -5914,7 +5914,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Parameters
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#StartButtonMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#StartButtonMission RoboccDocs} for further information
     */
     StartButtonMission(d: StartButtonMissionParams): Promise<null>;
     /**
@@ -5927,7 +5927,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Id module
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#ReleaseModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#ReleaseModule RoboccDocs} for further information
     */
     ReleaseModule(d: number): Promise<null>;
     /**
@@ -5940,7 +5940,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Group
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AddGroup RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AddGroup RoboccDocs} for further information
     */
     AddGroup(d: Group): Promise<null>;
     /**
@@ -5953,7 +5953,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Group
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#UpdateGroup RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#UpdateGroup RoboccDocs} for further information
     */
     UpdateGroup(d: Group): Promise<null>;
     /**
@@ -5966,7 +5966,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Main uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#DeleteGroup RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#DeleteGroup RoboccDocs} for further information
     */
     DeleteGroup(d: number): Promise<null>;
     /**
@@ -5979,7 +5979,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Sub step uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SubStepMission RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SubStepMission RoboccDocs} for further information
     */
     SubStepMission(d: number): Promise<null>;
     /**
@@ -5992,7 +5992,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#RocSoftForceUpdate RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#RocSoftForceUpdate RoboccDocs} for further information
     */
     RocSoftForceUpdate(): Promise<null>;
     /**
@@ -6005,7 +6005,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param enable Enable/disable
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#RocSoftSetAutomaticUpdates RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#RocSoftSetAutomaticUpdates RoboccDocs} for further information
     */
     RocSoftSetAutomaticUpdates(enable: boolean): Promise<null>;
     /**
@@ -6018,7 +6018,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetTareModuleParams RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetTareModuleParams RoboccDocs} for further information
     */
     SetTareModuleParams(d: ModuleParams): Promise<null>;
     /**
@@ -6031,7 +6031,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetLoadedModuleParams RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetLoadedModuleParams RoboccDocs} for further information
     */
     SetLoadedModuleParams(d: ModuleParams): Promise<null>;
     /**
@@ -6044,7 +6044,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Allow
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#AllowFollowMe RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#AllowFollowMe RoboccDocs} for further information
     */
     AllowFollowMe(d: boolean): Promise<null>;
     /**
@@ -6057,7 +6057,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Max button id
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetMaxButtonIdSearch RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetMaxButtonIdSearch RoboccDocs} for further information
     */
     SetMaxButtonIdSearch(d: number): Promise<null>;
     /**
@@ -6070,7 +6070,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Default sound
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetDefaultWaitReleaseSound RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetDefaultWaitReleaseSound RoboccDocs} for further information
     */
     SetDefaultWaitReleaseSound(d: string): Promise<null>;
     /**
@@ -6083,7 +6083,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Map uuid
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetManagerActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetManagerActiveMap RoboccDocs} for further information
     */
     SetManagerActiveMap(d: number): Promise<null>;
     /**
@@ -6096,7 +6096,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     
     
     * @data {@link ManagerMap}[]
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#GetManagerMapsList RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#GetManagerMapsList RoboccDocs} for further information
     */
     GetManagerMapsList(): Promise<DeepRequired<ManagerMap>[]>;
     /**
@@ -6109,7 +6109,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Waiting sound list
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetWaitingSounds RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetWaitingSounds RoboccDocs} for further information
     */
     SetWaitingSounds(d: WaitingSound[]): Promise<null>;
     /**
@@ -6122,7 +6122,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Event sound list
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetEventsSounds RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetEventsSounds RoboccDocs} for further information
     */
     SetEventsSounds(d: EventSound[]): Promise<null>;
     /**
@@ -6135,7 +6135,7 @@ export declare abstract class ServicesMixin extends BaseAPI {
     * @param d Security
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.7-zeus-7/classes/RocApi.RocApi.html#SetRocSecurity RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.8-zeus-8/classes/RocApi.RocApi.html#SetRocSecurity RoboccDocs} for further information
     */
     SetRocSecurity(d: RocSecurity): Promise<null>;
 }
