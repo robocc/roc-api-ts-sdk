@@ -1072,17 +1072,6 @@ export enum TopicEventCode {
     */
     BadLiftPosition = 7040,
     /**
-      * **Bad lift configuration**
-      *
-      * Bad lift configuration
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    BadLiftConfiguration = 7078,
-    /**
       * **Allow move from dock**
       *
       * Allow move from dock
@@ -1479,20 +1468,9 @@ export enum TopicEventCode {
     */
     ExternalSpeaker = 7074,
     /**
-      * **Error on lift**
-      *
-      * Error on lift
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    LiftError = 7075,
-    /**
       * **Invalid data list**
       *
-      * Lift of invalid data
+      * List of invalid data
       
       * @data {@link InvalidDataBySection}[]
       * @category State
@@ -2038,7 +2016,6 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.IsTouchScreen]: [],
     [TopicEventCode.DockedPoseConfigs]: [],
     [TopicEventCode.BadLiftPosition]: [],
-    [TopicEventCode.BadLiftConfiguration]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
     [TopicEventCode.AllowMultipleMissions]: [],
     [TopicEventCode.SoftVersions]: [],
@@ -2075,7 +2052,6 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.DefaultWaitReleaseSound]: [],
     [TopicEventCode.PortRedirections]: [],
     [TopicEventCode.ExternalSpeaker]: [],
-    [TopicEventCode.LiftError]: [],
     [TopicEventCode.InvalidDataList]: [],
     [TopicEventCode.WaitingSounds]: [],
     [TopicEventCode.EventsSounds]: [],
@@ -2260,7 +2236,6 @@ export type EventDataType = {
 [TopicEventCode.IsTouchScreen]: DeepRequired<boolean>
 [TopicEventCode.DockedPoseConfigs]: DeepRequired<DockedPoseConfig[]>
 [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>
-[TopicEventCode.BadLiftConfiguration]: DeepRequired<boolean>
 [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>
 [TopicEventCode.AllowMultipleMissions]: DeepRequired<boolean>
 [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>
@@ -2297,7 +2272,6 @@ export type EventDataType = {
 [TopicEventCode.DefaultWaitReleaseSound]: DeepRequired<string>
 [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>
 [TopicEventCode.ExternalSpeaker]: DeepRequired<boolean>
-[TopicEventCode.LiftError]: DeepRequired<boolean>
 [TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>
 [TopicEventCode.WaitingSounds]: DeepRequired<WaitingSound[]>
 [TopicEventCode.EventsSounds]: DeepRequired<EventSound[]>

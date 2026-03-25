@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "8.26.8-zeus-8",
+  "version": "8.26.9-zeus-9",
   "description": "RocApi client Typescript library",
   "repository": {
     "type": "git",

@@ -1068,17 +1068,6 @@ export declare enum TopicEventCode {
     */
     BadLiftPosition = 7040,
     /**
-      * **Bad lift configuration**
-      *
-      * Bad lift configuration
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    BadLiftConfiguration = 7078,
-    /**
       * **Allow move from dock**
       *
       * Allow move from dock
@@ -1475,20 +1464,9 @@ export declare enum TopicEventCode {
     */
     ExternalSpeaker = 7074,
     /**
-      * **Error on lift**
-      *
-      * Error on lift
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    LiftError = 7075,
-    /**
       * **Invalid data list**
       *
-      * Lift of invalid data
+      * List of invalid data
       
       * @data {@link InvalidDataBySection}[]
       * @category State
@@ -2024,7 +2002,6 @@ export declare const initEventTopicCallbacks: () => {
     7037: never[];
     7039: never[];
     7040: never[];
-    7078: never[];
     7041: never[];
     7080: never[];
     7042: never[];
@@ -2061,7 +2038,6 @@ export declare const initEventTopicCallbacks: () => {
     7072: never[];
     7073: never[];
     7074: never[];
-    7075: never[];
     7077: never[];
     7081: never[];
     7082: never[];
@@ -2329,7 +2305,6 @@ export type EventDataType = {
     [TopicEventCode.IsTouchScreen]: DeepRequired<boolean>;
     [TopicEventCode.DockedPoseConfigs]: DeepRequired<DockedPoseConfig[]>;
     [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>;
-    [TopicEventCode.BadLiftConfiguration]: DeepRequired<boolean>;
     [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>;
     [TopicEventCode.AllowMultipleMissions]: DeepRequired<boolean>;
     [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>;
@@ -2366,7 +2341,6 @@ export type EventDataType = {
     [TopicEventCode.DefaultWaitReleaseSound]: DeepRequired<string>;
     [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>;
     [TopicEventCode.ExternalSpeaker]: DeepRequired<boolean>;
-    [TopicEventCode.LiftError]: DeepRequired<boolean>;
     [TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>;
     [TopicEventCode.WaitingSounds]: DeepRequired<WaitingSound[]>;
     [TopicEventCode.EventsSounds]: DeepRequired<EventSound[]>;

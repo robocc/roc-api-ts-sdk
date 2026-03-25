@@ -1068,17 +1068,6 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["BadLiftPosition"] = 7040] = "BadLiftPosition";
     /**
-      * **Bad lift configuration**
-      *
-      * Bad lift configuration
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    TopicEventCode[TopicEventCode["BadLiftConfiguration"] = 7078] = "BadLiftConfiguration";
-    /**
       * **Allow move from dock**
       *
       * Allow move from dock
@@ -1475,20 +1464,9 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["ExternalSpeaker"] = 7074] = "ExternalSpeaker";
     /**
-      * **Error on lift**
-      *
-      * Error on lift
-      
-      * @data {@link boolean}
-      * @category State
-      * @group Vehicle
-      
-    */
-    TopicEventCode[TopicEventCode["LiftError"] = 7075] = "LiftError";
-    /**
       * **Invalid data list**
       *
-      * Lift of invalid data
+      * List of invalid data
       
       * @data {@link InvalidDataBySection}[]
       * @category State
@@ -2014,7 +1992,6 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.IsTouchScreen]: [],
     [TopicEventCode.DockedPoseConfigs]: [],
     [TopicEventCode.BadLiftPosition]: [],
-    [TopicEventCode.BadLiftConfiguration]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
     [TopicEventCode.AllowMultipleMissions]: [],
     [TopicEventCode.SoftVersions]: [],
@@ -2051,7 +2028,6 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.DefaultWaitReleaseSound]: [],
     [TopicEventCode.PortRedirections]: [],
     [TopicEventCode.ExternalSpeaker]: [],
-    [TopicEventCode.LiftError]: [],
     [TopicEventCode.InvalidDataList]: [],
     [TopicEventCode.WaitingSounds]: [],
     [TopicEventCode.EventsSounds]: [],
