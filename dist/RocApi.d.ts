@@ -31,6 +31,9 @@ export declare class RocApi extends BaseAPI {
     constructor(options: RocApiOptions);
     protected _sendOperation(op_code: ServiceOperationCode | ActionOperationCode, params: any): void;
     protected _subscribeTopics(): void;
+    protected _unsubscribeTopics(): boolean;
+    /** RefreshTopicsSubscription RocApi */
+    refreshTopicsSubscription(): void;
     /** Start RocApi */
     start(): void;
     /** Subscribe to a topic event and attach callback */

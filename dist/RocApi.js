@@ -74,9 +74,27 @@ class RocApi extends types_1.BaseAPI {
             __classPrivateFieldGet(this, _RocApi_instances, "m", _RocApi_throw).call(this, events_1.TopicEventCode.Ready);
         }
     }
+    _unsubscribeTopics() {
+        if (__classPrivateFieldGet(this, _RocApi_wsstate, "f") != WebSocketState.AUTHENTIFIED)
+            return false;
+        try {
+            this._sendOperation(services_1.ServiceOperationCode.UnsubscribeAll, null);
+            this.subscribed = [];
+        }
+        catch (e) {
+            // console.debug("Unable to unsubscribe all for now");
+            return false;
+        }
+        return true;
+    }
     /*
      * Public methods
      */
+    /** RefreshTopicsSubscription RocApi */
+    refreshTopicsSubscription() {
+        this._unsubscribeTopics();
+        this._subscribeTopics();
+    }
     /** Start RocApi */
     start() {
         var _a;

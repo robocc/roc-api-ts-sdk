@@ -460,10 +460,28 @@ export class RocApi extends BaseAPI {
       this.#throw(TopicEventCode.Ready);
     }
   }
+  protected _unsubscribeTopics() {
+    if (this.#wsstate != WebSocketState.AUTHENTIFIED) return false;
+
+    try {
+      this._sendOperation(ServiceOperationCode.UnsubscribeAll, null);
+      this.subscribed = [];
+    } catch (e) {
+      // console.debug("Unable to unsubscribe all for now");
+      return false;
+    }
+    return true;
+  }
 
   /*
    * Public methods
    */
+
+  /** RefreshTopicsSubscription RocApi */
+  refreshTopicsSubscription() {
+    this._unsubscribeTopics();
+    this._subscribeTopics();
+  }
 
   /** Start RocApi */
   start() {

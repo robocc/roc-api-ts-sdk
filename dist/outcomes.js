@@ -7,7 +7,7 @@ var OutcomeCode;
     OutcomeCode[OutcomeCode["NO_ERROR"] = 0] = "NO_ERROR";
     OutcomeCode[OutcomeCode["FORMAT_ERROR_MISSING_PARAM"] = 1] = "FORMAT_ERROR_MISSING_PARAM";
     OutcomeCode[OutcomeCode["FORMAT_ERROR_INVALID_PARAM"] = 2] = "FORMAT_ERROR_INVALID_PARAM";
-    OutcomeCode[OutcomeCode["NOT_ALLOW"] = 3] = "NOT_ALLOW";
+    OutcomeCode[OutcomeCode["INSUFFICIENT_RIGHTS"] = 3] = "INSUFFICIENT_RIGHTS";
     OutcomeCode[OutcomeCode["COULD_NOT_PARSE_JSON"] = 4] = "COULD_NOT_PARSE_JSON";
     OutcomeCode[OutcomeCode["UNKNOWN_API_OPERATION"] = 5] = "UNKNOWN_API_OPERATION";
     OutcomeCode[OutcomeCode["NOT_YET_IMPLEMENTED"] = 6] = "NOT_YET_IMPLEMENTED";
@@ -91,7 +91,7 @@ exports.OutcomeCodeDescription = {
     [OutcomeCode.NO_ERROR]: "NO_ERROR",
     [OutcomeCode.FORMAT_ERROR_MISSING_PARAM]: "FORMAT_ERROR_MISSING_PARAM",
     [OutcomeCode.FORMAT_ERROR_INVALID_PARAM]: "FORMAT_ERROR_INVALID_PARAM",
-    [OutcomeCode.NOT_ALLOW]: "NOT_ALLOW",
+    [OutcomeCode.INSUFFICIENT_RIGHTS]: "INSUFFICIENT_RIGHTS",
     [OutcomeCode.COULD_NOT_PARSE_JSON]: "COULD_NOT_PARSE_JSON",
     [OutcomeCode.UNKNOWN_API_OPERATION]: "UNKNOWN_API_OPERATION",
     [OutcomeCode.NOT_YET_IMPLEMENTED]: "NOT_YET_IMPLEMENTED",

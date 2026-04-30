@@ -17,6 +17,78 @@ var ActionOperationCode;
       */
     ActionOperationCode[ActionOperationCode["Check3dBoxAction"] = 141] = "Check3dBoxAction";
     /**
+      * **Simulation - Reset gazebo world 🔄**
+      *
+      * Clear all simulation world's elements (charging stations, fiducials, cylinders, shelves, and walls), create all map config's elements and walls in simulation world, and reset vehicle's position to the preferred charging station. Used to remove the elements that were added to simulation world, but that are not saved in map config (or deleted).
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimResetWorld"] = 100] = "SimResetWorld";
+    /**
+      * **Simulation - Add charging station**
+      *
+      * Add a charging station and its marker to simulation world, with marker ID and pose passed as goal (not added to map config)
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimAddChargingStation"] = 151] = "SimAddChargingStation";
+    /**
+      * **Simulation - Add charging station**
+      *
+      * Add a fiducial (i.e. a lidar marker and its support) to simulation world, with marker ID and pose passed as goal (not added to map config)
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimAddFiducial"] = 152] = "SimAddFiducial";
+    /**
+      * **Simulation - Add shelf**
+      *
+      * Add a shelf to simulation world, with the size and pose passed as goal (not added to map config)
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimAddShelf"] = 126] = "SimAddShelf";
+    /**
+      * **Simulation - Add cylinder**
+      *
+      * Add a cylinder to simulation world, with size and pose passed as goal (used to simulate dynamic obstacles)
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimAddCylinder"] = 150] = "SimAddCylinder";
+    /**
+      * **Simulation - Clear cylinders**
+      *
+      * Remove all cylinders added to simulation world
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimClearCylinders"] = 153] = "SimClearCylinders";
+    /**
+      * **Simulation - Clear shelves**
+      *
+      * Remove all shelves from simulation world, no matter if they are saved or not in map config (map config not impacted)
+      * @group Simulation
+      * @category Simulation
+      
+      */
+    ActionOperationCode[ActionOperationCode["SimClearShelves"] = 127] = "SimClearShelves";
+    /**
+      * **Stop navigation**
+      *
+      * Stop the navigation on the vehicle, it will no longer be able to move autonomously ⛔
+      * @group Navigation
+      * @category Navigation
+      
+      */
+    ActionOperationCode[ActionOperationCode["StopNavigation"] = 56] = "StopNavigation";
+    /**
       * **Veh to pose**
       *
       * Ask vehicle to move to the given pose 🎯
@@ -282,6 +354,14 @@ var ActionOperationCode;
 /** @internal */
 exports.actionResultCode = {
     [ActionOperationCode.Check3dBoxAction]: events_1.ResultEventCode.Check3dBoxActionResult,
+    [ActionOperationCode.SimResetWorld]: events_1.ResultEventCode.SimResetWorldResult,
+    [ActionOperationCode.SimAddChargingStation]: events_1.ResultEventCode.SimAddChargingStationResult,
+    [ActionOperationCode.SimAddFiducial]: events_1.ResultEventCode.SimAddFiducialResult,
+    [ActionOperationCode.SimAddShelf]: events_1.ResultEventCode.SimAddShelfResult,
+    [ActionOperationCode.SimAddCylinder]: events_1.ResultEventCode.SimAddCylinderResult,
+    [ActionOperationCode.SimClearCylinders]: events_1.ResultEventCode.SimClearCylindersResult,
+    [ActionOperationCode.SimClearShelves]: events_1.ResultEventCode.SimClearShelvesResult,
+    [ActionOperationCode.StopNavigation]: events_1.ResultEventCode.StopNavigationResult,
     [ActionOperationCode.VehToPose]: events_1.ResultEventCode.VehToPoseResult,
     [ActionOperationCode.VehToChargingStation]: events_1.ResultEventCode.VehToChargingStationResult,
     [ActionOperationCode.VehToChargingStationApproach]: events_1.ResultEventCode.VehToChargingStationApproachResult,
@@ -315,6 +395,14 @@ exports.actionResultCode = {
 /** @internal */
 exports.actionFeedbackCode = {
     [ActionOperationCode.Check3dBoxAction]: events_1.FeedbackEventCode.Check3dBoxActionFeedback,
+    [ActionOperationCode.SimResetWorld]: events_1.FeedbackEventCode.SimResetWorldFeedback,
+    [ActionOperationCode.SimAddChargingStation]: events_1.FeedbackEventCode.SimAddChargingStationFeedback,
+    [ActionOperationCode.SimAddFiducial]: events_1.FeedbackEventCode.SimAddFiducialFeedback,
+    [ActionOperationCode.SimAddShelf]: events_1.FeedbackEventCode.SimAddShelfFeedback,
+    [ActionOperationCode.SimAddCylinder]: events_1.FeedbackEventCode.SimAddCylinderFeedback,
+    [ActionOperationCode.SimClearCylinders]: events_1.FeedbackEventCode.SimClearCylindersFeedback,
+    [ActionOperationCode.SimClearShelves]: events_1.FeedbackEventCode.SimClearShelvesFeedback,
+    [ActionOperationCode.StopNavigation]: events_1.FeedbackEventCode.StopNavigationFeedback,
     [ActionOperationCode.VehToPose]: events_1.FeedbackEventCode.VehToPoseFeedback,
     [ActionOperationCode.VehToChargingStation]: events_1.FeedbackEventCode.VehToChargingStationFeedback,
     [ActionOperationCode.VehToChargingStationApproach]: events_1.FeedbackEventCode.VehToChargingStationApproachFeedback,
@@ -348,6 +436,14 @@ exports.actionFeedbackCode = {
 /** @internal */
 const initActionOperationCallbacks = () => ({
     [ActionOperationCode.Check3dBoxAction]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimResetWorld]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimAddChargingStation]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimAddFiducial]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimAddShelf]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimAddCylinder]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimClearCylinders]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.SimClearShelves]: { resolve: undefined, reject: undefined },
+    [ActionOperationCode.StopNavigation]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.VehToPose]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.VehToChargingStation]: { resolve: undefined, reject: undefined },
     [ActionOperationCode.VehToChargingStationApproach]: { resolve: undefined, reject: undefined },
@@ -393,10 +489,138 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link boolean}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
     */
     Check3dBoxAction(check_pose_data, feedback_cb) {
         return this.callAction(ActionOperationCode.Check3dBoxAction, check_pose_data, feedback_cb);
+    }
+    /**
+    * **Simulation - Reset gazebo world 🔄**
+    *
+    * Clear all simulation world's elements (charging stations, fiducials, cylinders, shelves, and walls), create all map config's elements and walls in simulation world, and reset vehicle's position to the preferred charging station. Used to remove the elements that were added to simulation world, but that are not saved in map config (or deleted).
+    * @category Simulation
+    * @group Simulation
+    
+    
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimResetWorldResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimResetWorld RoboccDocs} for further information
+    */
+    SimResetWorld(feedback_cb) {
+        return this.callAction(ActionOperationCode.SimResetWorld, null, feedback_cb);
+    }
+    /**
+    * **Simulation - Add charging station**
+    *
+    * Add a charging station and its marker to simulation world, with marker ID and pose passed as goal (not added to map config)
+    * @category Simulation
+    * @group Simulation
+    
+    * @param d Parameters
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimAddChargingStationResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimAddChargingStation RoboccDocs} for further information
+    */
+    SimAddChargingStation(d, feedback_cb) {
+        return this.callAction(ActionOperationCode.SimAddChargingStation, d, feedback_cb);
+    }
+    /**
+    * **Simulation - Add charging station**
+    *
+    * Add a fiducial (i.e. a lidar marker and its support) to simulation world, with marker ID and pose passed as goal (not added to map config)
+    * @category Simulation
+    * @group Simulation
+    
+    * @param d Parameters
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimAddFiducialResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimAddFiducial RoboccDocs} for further information
+    */
+    SimAddFiducial(d, feedback_cb) {
+        return this.callAction(ActionOperationCode.SimAddFiducial, d, feedback_cb);
+    }
+    /**
+    * **Simulation - Add shelf**
+    *
+    * Add a shelf to simulation world, with the size and pose passed as goal (not added to map config)
+    * @category Simulation
+    * @group Simulation
+    
+    * @param sim_add_shelf_params Parameters
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimAddShelfResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
+    */
+    SimAddShelf(sim_add_shelf_params, feedback_cb) {
+        return this.callAction(ActionOperationCode.SimAddShelf, sim_add_shelf_params, feedback_cb);
+    }
+    /**
+    * **Simulation - Add cylinder**
+    *
+    * Add a cylinder to simulation world, with size and pose passed as goal (used to simulate dynamic obstacles)
+    * @category Simulation
+    * @group Simulation
+    
+    * @param sim_add_cylinder_params Parameters
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimAddCylinderResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimAddCylinder RoboccDocs} for further information
+    */
+    SimAddCylinder(sim_add_cylinder_params, feedback_cb) {
+        return this.callAction(ActionOperationCode.SimAddCylinder, sim_add_cylinder_params, feedback_cb);
+    }
+    /**
+    * **Simulation - Clear cylinders**
+    *
+    * Remove all cylinders added to simulation world
+    * @category Simulation
+    * @group Simulation
+    
+    
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimClearCylindersResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimClearCylinders RoboccDocs} for further information
+    */
+    SimClearCylinders(feedback_cb) {
+        return this.callAction(ActionOperationCode.SimClearCylinders, null, feedback_cb);
+    }
+    /**
+    * **Simulation - Clear shelves**
+    *
+    * Remove all shelves from simulation world, no matter if they are saved or not in map config (map config not impacted)
+    * @category Simulation
+    * @group Simulation
+    
+    
+    * @param feedback_cb - Feedback callback of action
+    
+    * @data Promise<{@link SimClearShelvesResult}>
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SimClearShelves RoboccDocs} for further information
+    */
+    SimClearShelves(feedback_cb) {
+        return this.callAction(ActionOperationCode.SimClearShelves, null, feedback_cb);
+    }
+    /**
+    * **Stop navigation**
+    *
+    * Stop the navigation on the vehicle, it will no longer be able to move autonomously ⛔
+    * @category Navigation
+    * @group Navigation
+    
+    
+    * @param feedback_cb - Feedback callback of action
+    
+    
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#StopNavigation RoboccDocs} for further information
+    */
+    StopNavigation(feedback_cb) {
+        return this.callAction(ActionOperationCode.StopNavigation, null, feedback_cb);
     }
     /**
     * **Veh to pose**
@@ -409,7 +633,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
     */
     VehToPose(veh_to_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToPose, veh_to_pose_params, feedback_cb);
@@ -425,7 +649,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
     */
     VehToChargingStation(veh_to_charging_station_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToChargingStation, veh_to_charging_station_params, feedback_cb);
@@ -441,7 +665,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
     */
     VehToChargingStationApproach(veh_to_charging_station_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToChargingStationApproach, veh_to_charging_station_params, feedback_cb);
@@ -457,7 +681,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
     */
     VehToDockedPose(veh_to_docked_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToDockedPose, veh_to_docked_pose_params, feedback_cb);
@@ -473,7 +697,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
     */
     VehToDockedPoseApproach(veh_to_docked_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToDockedPoseApproach, veh_to_docked_pose_params, feedback_cb);
@@ -489,7 +713,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
     */
     VehToSavedPose(veh_to_saved_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToSavedPose, veh_to_saved_pose_params, feedback_cb);
@@ -505,7 +729,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
     */
     VehToSegment(veh_to_segment_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToSegment, veh_to_segment_params, feedback_cb);
@@ -521,7 +745,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
     */
     SetVehiclePose(set_vehicle_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.SetVehiclePose, set_vehicle_pose_params, feedback_cb);
@@ -537,7 +761,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link number}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
     */
     SetMap(map, feedback_cb) {
         return this.callAction(ActionOperationCode.SetMap, map, feedback_cb);
@@ -553,7 +777,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
     */
     SetActiveMap(map_id, feedback_cb) {
         return this.callAction(ActionOperationCode.SetActiveMap, map_id, feedback_cb);
@@ -569,7 +793,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
     */
     Undock(override_battery_safety, feedback_cb) {
         return this.callAction(ActionOperationCode.Undock, override_battery_safety, feedback_cb);
@@ -585,7 +809,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
     */
     UndockFromShelf(d, feedback_cb) {
         return this.callAction(ActionOperationCode.UndockFromShelf, d, feedback_cb);
@@ -601,7 +825,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link Marker}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
     */
     GetMarkers(pose_reference, feedback_cb) {
         return this.callAction(ActionOperationCode.GetMarkers, pose_reference, feedback_cb);
@@ -617,7 +841,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
     */
     InstallModule(module_data, feedback_cb) {
         return this.callAction(ActionOperationCode.InstallModule, module_data, feedback_cb);
@@ -633,7 +857,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
     */
     DisableModule(feedback_cb) {
         return this.callAction(ActionOperationCode.DisableModule, null, feedback_cb);
@@ -649,7 +873,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
     */
     Recovery(feedback_cb) {
         return this.callAction(ActionOperationCode.Recovery, null, feedback_cb);
@@ -665,7 +889,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
     */
     ResetDatabase(feedback_cb) {
         return this.callAction(ActionOperationCode.ResetDatabase, null, feedback_cb);
@@ -681,7 +905,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link GetPathResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
     */
     GetPath(get_path_params, feedback_cb) {
         return this.callAction(ActionOperationCode.GetPath, get_path_params, feedback_cb);
@@ -697,7 +921,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
     */
     MappingStart(mapping_params, feedback_cb) {
         return this.callAction(ActionOperationCode.MappingStart, mapping_params, feedback_cb);
@@ -713,7 +937,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link MappingStopResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
     */
     MappingStop(save_map, feedback_cb) {
         return this.callAction(ActionOperationCode.MappingStop, save_map, feedback_cb);
@@ -729,7 +953,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
     */
     EraseActiveMap(erase_params, feedback_cb) {
         return this.callAction(ActionOperationCode.EraseActiveMap, erase_params, feedback_cb);
@@ -745,7 +969,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
     */
     ReloadMap(feedback_cb) {
         return this.callAction(ActionOperationCode.ReloadMap, null, feedback_cb);
@@ -761,7 +985,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
     */
     MergeMaps(d, feedback_cb) {
         return this.callAction(ActionOperationCode.MergeMaps, d, feedback_cb);
@@ -777,7 +1001,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
     */
     NetworkWanConfig(wan_config, feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkWanConfig, wan_config, feedback_cb);
@@ -793,7 +1017,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
     */
     NetworkWanEnable(enable, feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkWanEnable, enable, feedback_cb);
@@ -809,7 +1033,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
     */
     NetworkHotspotEnable(enable, feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkHotspotEnable, enable, feedback_cb);
@@ -825,7 +1049,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link WifiAp}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
     */
     NetworkWanScanAps(feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkWanScanAps, null, feedback_cb);
@@ -841,7 +1065,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link ForbiddenArea}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
     */
     GenerateForbiddenAreas(d, feedback_cb) {
         return this.callAction(ActionOperationCode.GenerateForbiddenAreas, d, feedback_cb);
@@ -857,7 +1081,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/8.26.0-zeus-10/classes/RocApi.RocApi.html#AddSound RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/classes/RocApi.RocApi.html#AddSound RoboccDocs} for further information
     */
     AddSound(add_sound_params, feedback_cb) {
         return this.callAction(ActionOperationCode.AddSound, add_sound_params, feedback_cb);

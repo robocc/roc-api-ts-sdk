@@ -67,16 +67,16 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["FollowMeStatus"] = 113] = "FollowMeStatus";
     /**
-      * **Navigation started**
+      * **Navigation state**
       *
-      * Triggered when navigation status is updated, boolean returns the status of navigation 🧭
+      * Triggered when navigation status is updated, int returns the status of navigation: unknown, stopped, starting, or started🧭
       
-      * @data {@link boolean}
+      * @data {@link NavigationState}
       * @category Navigation
       * @group Navigation
       
     */
-    TopicEventCode[TopicEventCode["NavigationStarted"] = 7] = "NavigationStarted";
+    TopicEventCode[TopicEventCode["NavigationState"] = 7] = "NavigationState";
     /**
       * **LED command**
       *
@@ -1035,17 +1035,6 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["MapElementRestrictions"] = 7036] = "MapElementRestrictions";
     /**
-      * **Is Touch Screen**
-      *
-      * Is Touch Screen
-      
-      * @data {@link boolean}
-      * @category Configuration
-      * @group ROC
-      
-    */
-    TopicEventCode[TopicEventCode["IsTouchScreen"] = 7037] = "IsTouchScreen";
-    /**
       * **Docked pose configurations**
       *
       * Docked pose configurations
@@ -1089,6 +1078,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["AllowMultipleMissions"] = 7080] = "AllowMultipleMissions";
+    /**
+      * **Show all destinations on home**
+      *
+      * Show all destinations on home
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["ShowAllDestinationsOnHome"] = 7085] = "ShowAllDestinationsOnHome";
     /**
       * **Softwares versions**
       *
@@ -1369,7 +1369,7 @@ var TopicEventCode;
       *
       * Controller LoRa Contacts configuration
       
-      * @data {@link ControllerLoraContactConfig}[]
+      * @data {@link ControllerLoraContactsConfig}
       * @category Configuration
       * @group Vehicle
       
@@ -1404,7 +1404,7 @@ var TopicEventCode;
       
       * @data {@link string}
       * @category Configuration
-      * @group Vehicle
+      * @group Vehicles
       
     */
     TopicEventCode[TopicEventCode["InPauseTitle"] = 7069] = "InPauseTitle";
@@ -1453,16 +1453,16 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["PortRedirections"] = 7073] = "PortRedirections";
     /**
-      * **External speaker**
+      * **Error on lift**
       *
-      * Use external speaker
+      * Error on lift
       
       * @data {@link boolean}
-      * @category Configuration
+      * @category State
       * @group Vehicle
       
     */
-    TopicEventCode[TopicEventCode["ExternalSpeaker"] = 7074] = "ExternalSpeaker";
+    TopicEventCode[TopicEventCode["LiftError"] = 7075] = "LiftError";
     /**
       * **Invalid data list**
       *
@@ -1518,6 +1518,61 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["HotspotEnabled"] = 7084] = "HotspotEnabled";
+    /**
+      * **Language**
+      *
+      * Langauge
+      
+      * @data {@link Language}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["Language"] = 7086] = "Language";
+    /**
+      * **Pairing enabled**
+      *
+      * Pairing enabled
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["PairingEnabled"] = 7087] = "PairingEnabled";
+    /**
+      * **Pairing list of equipment**
+      *
+      * Pairing list of equipment
+      
+      * @data {@link LoraEquipment}[]
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["PairingList"] = 7088] = "PairingList";
+    /**
+      * **Paired list of equipment**
+      *
+      * Paired list of equipment
+      
+      * @data {@link LoraEquipment}[]
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["PairedList"] = 7089] = "PairedList";
+    /**
+      * **Pairing ok**
+      *
+      * Pairing ok
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    TopicEventCode[TopicEventCode["PairingOk"] = 7090] = "PairingOk";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -1546,6 +1601,12 @@ var ResultEventCode;
       * Result of set vehicle pose operation
     */
     ResultEventCode[ResultEventCode["SetVehiclePoseResult"] = 94] = "SetVehiclePoseResult";
+    /**
+      * **Stop navigation result**
+      *
+      * Result of stop navigation operation
+    */
+    ResultEventCode[ResultEventCode["StopNavigationResult"] = 151] = "StopNavigationResult";
     /**
       * **Set map result**
       *
@@ -1702,6 +1763,48 @@ var ResultEventCode;
       * Result of add sound operation
     */
     ResultEventCode[ResultEventCode["AddSoundResult"] = 148] = "AddSoundResult";
+    /**
+      * **Add charging station result**
+      *
+      * Result of add charging station operation
+    */
+    ResultEventCode[ResultEventCode["SimAddChargingStationResult"] = 163] = "SimAddChargingStationResult";
+    /**
+      * **Add fiducial result**
+      *
+      * Result of add fiducial operation
+    */
+    ResultEventCode[ResultEventCode["SimAddFiducialResult"] = 165] = "SimAddFiducialResult";
+    /**
+      * **Add cylinder result**
+      *
+      * Result of add cylinder operation
+    */
+    ResultEventCode[ResultEventCode["SimAddCylinderResult"] = 155] = "SimAddCylinderResult";
+    /**
+      * **Add shelf result**
+      *
+      * Result of add shelf operation
+    */
+    ResultEventCode[ResultEventCode["SimAddShelfResult"] = 157] = "SimAddShelfResult";
+    /**
+      * **Clear cylinders result**
+      *
+      * Result of clear cylinders operation
+    */
+    ResultEventCode[ResultEventCode["SimClearCylindersResult"] = 161] = "SimClearCylindersResult";
+    /**
+      * **Clear shelves result**
+      *
+      * Result of clear shelves operation
+    */
+    ResultEventCode[ResultEventCode["SimClearShelvesResult"] = 159] = "SimClearShelvesResult";
+    /**
+      * **Reset sim world result**
+      *
+      * Result of reset sim world operation
+    */
+    ResultEventCode[ResultEventCode["SimResetWorldResult"] = 153] = "SimResetWorldResult";
 })(ResultEventCode || (exports.ResultEventCode = ResultEventCode = {}));
 /** @internal */
 var FeedbackEventCode;
@@ -1730,6 +1833,12 @@ var FeedbackEventCode;
       * Feedback on set vehicle pose operation
     */
     FeedbackEventCode[FeedbackEventCode["SetVehiclePoseFeedback"] = 93] = "SetVehiclePoseFeedback";
+    /**
+      * **Stop navigation feedback**
+      *
+      * Feedback on stop navigation operation
+    */
+    FeedbackEventCode[FeedbackEventCode["StopNavigationFeedback"] = 150] = "StopNavigationFeedback";
     /**
       * **Set map feedback**
       *
@@ -1886,6 +1995,48 @@ var FeedbackEventCode;
       * Feedback on add sound operation
     */
     FeedbackEventCode[FeedbackEventCode["AddSoundFeedback"] = 147] = "AddSoundFeedback";
+    /**
+      * **Add charging station feedback**
+      *
+      * Feedback on add charging station operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimAddChargingStationFeedback"] = 162] = "SimAddChargingStationFeedback";
+    /**
+      * **Add fiducial feedback**
+      *
+      * Feedback on add fiducial operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimAddFiducialFeedback"] = 164] = "SimAddFiducialFeedback";
+    /**
+      * **Add cylinder feedback**
+      *
+      * Feedback on add cylinder operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimAddCylinderFeedback"] = 154] = "SimAddCylinderFeedback";
+    /**
+      * **Add shelf feedback**
+      *
+      * Feedback on add shelf operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimAddShelfFeedback"] = 156] = "SimAddShelfFeedback";
+    /**
+      * **Clear cylinders feedback**
+      *
+      * Feedback on clear cylinders operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimClearCylindersFeedback"] = 160] = "SimClearCylindersFeedback";
+    /**
+      * **Clear shelves feedback**
+      *
+      * Feedback on clear shelves operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimClearShelvesFeedback"] = 158] = "SimClearShelvesFeedback";
+    /**
+      * **Reset sim world feedback**
+      *
+      * Feedback on reset sim world operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimResetWorldFeedback"] = 152] = "SimResetWorldFeedback";
 })(FeedbackEventCode || (exports.FeedbackEventCode = FeedbackEventCode = {}));
 /** @internal */
 const initEventTopicCallbacks = () => ({
@@ -1901,7 +2052,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.VehiclePose]: [],
     [TopicEventCode.DockingStatus]: [],
     [TopicEventCode.FollowMeStatus]: [],
-    [TopicEventCode.NavigationStarted]: [],
+    [TopicEventCode.NavigationState]: [],
     [TopicEventCode.LedCommand]: [],
     [TopicEventCode.SoundScenario]: [],
     [TopicEventCode.SoundCommand]: [],
@@ -1989,11 +2140,11 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.CustomCommands]: [],
     [TopicEventCode.ControllerLoras]: [],
     [TopicEventCode.MapElementRestrictions]: [],
-    [TopicEventCode.IsTouchScreen]: [],
     [TopicEventCode.DockedPoseConfigs]: [],
     [TopicEventCode.BadLiftPosition]: [],
     [TopicEventCode.AllowMoveFromDock]: [],
     [TopicEventCode.AllowMultipleMissions]: [],
+    [TopicEventCode.ShowAllDestinationsOnHome]: [],
     [TopicEventCode.SoftVersions]: [],
     [TopicEventCode.NewSoftVersions]: [],
     [TopicEventCode.WaitingContact]: [],
@@ -2027,12 +2178,17 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.MaxButtonIdSearch]: [],
     [TopicEventCode.DefaultWaitReleaseSound]: [],
     [TopicEventCode.PortRedirections]: [],
-    [TopicEventCode.ExternalSpeaker]: [],
+    [TopicEventCode.LiftError]: [],
     [TopicEventCode.InvalidDataList]: [],
     [TopicEventCode.WaitingSounds]: [],
     [TopicEventCode.EventsSounds]: [],
     [TopicEventCode.RocSecurity]: [],
     [TopicEventCode.HotspotEnabled]: [],
+    [TopicEventCode.Language]: [],
+    [TopicEventCode.PairingEnabled]: [],
+    [TopicEventCode.PairingList]: [],
+    [TopicEventCode.PairedList]: [],
+    [TopicEventCode.PairingOk]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */
@@ -2041,6 +2197,7 @@ const initEventResultCallbacks = () => ({
     [ResultEventCode.VehToPoseResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.VehToSegmentResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SetVehiclePoseResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.StopNavigationResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SetMapResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SetActiveMapResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.VehToChargingStationResult]: { resolve: undefined, reject: undefined },
@@ -2067,6 +2224,13 @@ const initEventResultCallbacks = () => ({
     [ResultEventCode.NetworkHotspotEnableResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.GenerateForbiddenAreasResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.AddSoundResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimAddChargingStationResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimAddFiducialResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimAddCylinderResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimAddShelfResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimClearCylindersResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimClearShelvesResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimResetWorldResult]: { resolve: undefined, reject: undefined },
 });
 exports.initEventResultCallbacks = initEventResultCallbacks;
 /** @internal */
@@ -2075,6 +2239,7 @@ const initEventFeedbackCallbacks = () => ({
     [FeedbackEventCode.VehToPoseFeedback]: undefined,
     [FeedbackEventCode.VehToSegmentFeedback]: undefined,
     [FeedbackEventCode.SetVehiclePoseFeedback]: undefined,
+    [FeedbackEventCode.StopNavigationFeedback]: undefined,
     [FeedbackEventCode.SetMapFeedback]: undefined,
     [FeedbackEventCode.SetActiveMapFeedback]: undefined,
     [FeedbackEventCode.VehToChargingStationFeedback]: undefined,
@@ -2101,5 +2266,12 @@ const initEventFeedbackCallbacks = () => ({
     [FeedbackEventCode.NetworkHotspotEnableFeedback]: undefined,
     [FeedbackEventCode.GenerateForbiddenAreasFeedback]: undefined,
     [FeedbackEventCode.AddSoundFeedback]: undefined,
+    [FeedbackEventCode.SimAddChargingStationFeedback]: undefined,
+    [FeedbackEventCode.SimAddFiducialFeedback]: undefined,
+    [FeedbackEventCode.SimAddCylinderFeedback]: undefined,
+    [FeedbackEventCode.SimAddShelfFeedback]: undefined,
+    [FeedbackEventCode.SimClearCylindersFeedback]: undefined,
+    [FeedbackEventCode.SimClearShelvesFeedback]: undefined,
+    [FeedbackEventCode.SimResetWorldFeedback]: undefined,
 });
 exports.initEventFeedbackCallbacks = initEventFeedbackCallbacks;

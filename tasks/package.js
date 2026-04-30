@@ -20,8 +20,6 @@ async function main() {
   delete pkg.private;
   delete pkg.exports;
   await fse.writeJSON(path.join(buildDir, "package.json"), pkg, { spaces: 2 });
-
-  await fse.copy(path.join(buildDir, "../.npmrc"), path.join(buildDir, ".npmrc"))
 }
 
 main().catch((err) => {

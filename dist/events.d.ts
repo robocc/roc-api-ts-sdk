@@ -1,8 +1,8 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotStep, Areas, DockingState, NetworkWanState, SystemInfo, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, ModuleParams, UpdateStatus, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotStep, Areas, DockingState, NetworkWanState, SystemInfo, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
 import { Path, AutopilotSequence, OperatingHours } from "./types";
-import { NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
+import { NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, NavigationState, Language, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
     AuthOK = -7,
     AuthError = -6,
@@ -67,16 +67,16 @@ export declare enum TopicEventCode {
     */
     FollowMeStatus = 113,
     /**
-      * **Navigation started**
+      * **Navigation state**
       *
-      * Triggered when navigation status is updated, boolean returns the status of navigation 🧭
+      * Triggered when navigation status is updated, int returns the status of navigation: unknown, stopped, starting, or started🧭
       
-      * @data {@link boolean}
+      * @data {@link NavigationState}
       * @category Navigation
       * @group Navigation
       
     */
-    NavigationStarted = 7,
+    NavigationState = 7,
     /**
       * **LED command**
       *
@@ -1035,17 +1035,6 @@ export declare enum TopicEventCode {
     */
     MapElementRestrictions = 7036,
     /**
-      * **Is Touch Screen**
-      *
-      * Is Touch Screen
-      
-      * @data {@link boolean}
-      * @category Configuration
-      * @group ROC
-      
-    */
-    IsTouchScreen = 7037,
-    /**
       * **Docked pose configurations**
       *
       * Docked pose configurations
@@ -1089,6 +1078,17 @@ export declare enum TopicEventCode {
       
     */
     AllowMultipleMissions = 7080,
+    /**
+      * **Show all destinations on home**
+      *
+      * Show all destinations on home
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    ShowAllDestinationsOnHome = 7085,
     /**
       * **Softwares versions**
       *
@@ -1369,7 +1369,7 @@ export declare enum TopicEventCode {
       *
       * Controller LoRa Contacts configuration
       
-      * @data {@link ControllerLoraContactConfig}[]
+      * @data {@link ControllerLoraContactsConfig}
       * @category Configuration
       * @group Vehicle
       
@@ -1404,7 +1404,7 @@ export declare enum TopicEventCode {
       
       * @data {@link string}
       * @category Configuration
-      * @group Vehicle
+      * @group Vehicles
       
     */
     InPauseTitle = 7069,
@@ -1453,16 +1453,16 @@ export declare enum TopicEventCode {
     */
     PortRedirections = 7073,
     /**
-      * **External speaker**
+      * **Error on lift**
       *
-      * Use external speaker
+      * Error on lift
       
       * @data {@link boolean}
-      * @category Configuration
+      * @category State
       * @group Vehicle
       
     */
-    ExternalSpeaker = 7074,
+    LiftError = 7075,
     /**
       * **Invalid data list**
       *
@@ -1517,7 +1517,62 @@ export declare enum TopicEventCode {
       * @group ROC
       
     */
-    HotspotEnabled = 7084
+    HotspotEnabled = 7084,
+    /**
+      * **Language**
+      *
+      * Langauge
+      
+      * @data {@link Language}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    Language = 7086,
+    /**
+      * **Pairing enabled**
+      *
+      * Pairing enabled
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    PairingEnabled = 7087,
+    /**
+      * **Pairing list of equipment**
+      *
+      * Pairing list of equipment
+      
+      * @data {@link LoraEquipment}[]
+      * @category Configuration
+      * @group ROC
+      
+    */
+    PairingList = 7088,
+    /**
+      * **Paired list of equipment**
+      *
+      * Paired list of equipment
+      
+      * @data {@link LoraEquipment}[]
+      * @category Configuration
+      * @group ROC
+      
+    */
+    PairedList = 7089,
+    /**
+      * **Pairing ok**
+      *
+      * Pairing ok
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group ROC
+      
+    */
+    PairingOk = 7090
 }
 /** @internal */
 export declare enum ResultEventCode {
@@ -1545,6 +1600,12 @@ export declare enum ResultEventCode {
       * Result of set vehicle pose operation
     */
     SetVehiclePoseResult = 94,
+    /**
+      * **Stop navigation result**
+      *
+      * Result of stop navigation operation
+    */
+    StopNavigationResult = 151,
     /**
       * **Set map result**
       *
@@ -1700,7 +1761,49 @@ export declare enum ResultEventCode {
       *
       * Result of add sound operation
     */
-    AddSoundResult = 148
+    AddSoundResult = 148,
+    /**
+      * **Add charging station result**
+      *
+      * Result of add charging station operation
+    */
+    SimAddChargingStationResult = 163,
+    /**
+      * **Add fiducial result**
+      *
+      * Result of add fiducial operation
+    */
+    SimAddFiducialResult = 165,
+    /**
+      * **Add cylinder result**
+      *
+      * Result of add cylinder operation
+    */
+    SimAddCylinderResult = 155,
+    /**
+      * **Add shelf result**
+      *
+      * Result of add shelf operation
+    */
+    SimAddShelfResult = 157,
+    /**
+      * **Clear cylinders result**
+      *
+      * Result of clear cylinders operation
+    */
+    SimClearCylindersResult = 161,
+    /**
+      * **Clear shelves result**
+      *
+      * Result of clear shelves operation
+    */
+    SimClearShelvesResult = 159,
+    /**
+      * **Reset sim world result**
+      *
+      * Result of reset sim world operation
+    */
+    SimResetWorldResult = 153
 }
 /** @internal */
 export declare enum FeedbackEventCode {
@@ -1728,6 +1831,12 @@ export declare enum FeedbackEventCode {
       * Feedback on set vehicle pose operation
     */
     SetVehiclePoseFeedback = 93,
+    /**
+      * **Stop navigation feedback**
+      *
+      * Feedback on stop navigation operation
+    */
+    StopNavigationFeedback = 150,
     /**
       * **Set map feedback**
       *
@@ -1883,7 +1992,49 @@ export declare enum FeedbackEventCode {
       *
       * Feedback on add sound operation
     */
-    AddSoundFeedback = 147
+    AddSoundFeedback = 147,
+    /**
+      * **Add charging station feedback**
+      *
+      * Feedback on add charging station operation
+    */
+    SimAddChargingStationFeedback = 162,
+    /**
+      * **Add fiducial feedback**
+      *
+      * Feedback on add fiducial operation
+    */
+    SimAddFiducialFeedback = 164,
+    /**
+      * **Add cylinder feedback**
+      *
+      * Feedback on add cylinder operation
+    */
+    SimAddCylinderFeedback = 154,
+    /**
+      * **Add shelf feedback**
+      *
+      * Feedback on add shelf operation
+    */
+    SimAddShelfFeedback = 156,
+    /**
+      * **Clear cylinders feedback**
+      *
+      * Feedback on clear cylinders operation
+    */
+    SimClearCylindersFeedback = 160,
+    /**
+      * **Clear shelves feedback**
+      *
+      * Feedback on clear shelves operation
+    */
+    SimClearShelvesFeedback = 158,
+    /**
+      * **Reset sim world feedback**
+      *
+      * Feedback on reset sim world operation
+    */
+    SimResetWorldFeedback = 152
 }
 /** @internal */
 export interface EventMsg<T> {
@@ -1999,11 +2150,11 @@ export declare const initEventTopicCallbacks: () => {
     7034: never[];
     7035: never[];
     7036: never[];
-    7037: never[];
     7039: never[];
     7040: never[];
     7041: never[];
     7080: never[];
+    7085: never[];
     7042: never[];
     7043: never[];
     7044: never[];
@@ -2037,12 +2188,17 @@ export declare const initEventTopicCallbacks: () => {
     7071: never[];
     7072: never[];
     7073: never[];
-    7074: never[];
+    7075: never[];
     7077: never[];
     7081: never[];
     7082: never[];
     7083: never[];
     7084: never[];
+    7086: never[];
+    7087: never[];
+    7088: never[];
+    7089: never[];
+    7090: never[];
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
@@ -2059,6 +2215,10 @@ export declare const initEventResultCallbacks: () => {
         reject: undefined;
     };
     94: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    151: {
         resolve: undefined;
         reject: undefined;
     };
@@ -2166,6 +2326,34 @@ export declare const initEventResultCallbacks: () => {
         resolve: undefined;
         reject: undefined;
     };
+    163: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    165: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    155: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    157: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    161: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    159: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    153: {
+        resolve: undefined;
+        reject: undefined;
+    };
 };
 /** @internal */
 export declare const initEventFeedbackCallbacks: () => {
@@ -2173,6 +2361,7 @@ export declare const initEventFeedbackCallbacks: () => {
     2: undefined;
     111: undefined;
     93: undefined;
+    150: undefined;
     20: undefined;
     29: undefined;
     31: undefined;
@@ -2199,6 +2388,13 @@ export declare const initEventFeedbackCallbacks: () => {
     79: undefined;
     137: undefined;
     147: undefined;
+    162: undefined;
+    164: undefined;
+    154: undefined;
+    156: undefined;
+    160: undefined;
+    158: undefined;
+    152: undefined;
 };
 /** @internal */
 export type EventDataType = {
@@ -2214,7 +2410,7 @@ export type EventDataType = {
     [TopicEventCode.VehiclePose]: DeepRequired<Pose>;
     [TopicEventCode.DockingStatus]: DeepRequired<DockingState>;
     [TopicEventCode.FollowMeStatus]: DeepRequired<FollowMeStatusEventData>;
-    [TopicEventCode.NavigationStarted]: DeepRequired<boolean>;
+    [TopicEventCode.NavigationState]: DeepRequired<NavigationState>;
     [TopicEventCode.LedCommand]: DeepRequired<LedCommand>;
     [TopicEventCode.SoundScenario]: DeepRequired<SoundScenario>;
     [TopicEventCode.SoundCommand]: DeepRequired<SoundCommandEventData>;
@@ -2302,11 +2498,11 @@ export type EventDataType = {
     [TopicEventCode.CustomCommands]: DeepRequired<CustomCommand[]>;
     [TopicEventCode.ControllerLoras]: DeepRequired<ControllerLora[]>;
     [TopicEventCode.MapElementRestrictions]: DeepRequired<MapElementRestriction[]>;
-    [TopicEventCode.IsTouchScreen]: DeepRequired<boolean>;
     [TopicEventCode.DockedPoseConfigs]: DeepRequired<DockedPoseConfig[]>;
     [TopicEventCode.BadLiftPosition]: DeepRequired<boolean>;
     [TopicEventCode.AllowMoveFromDock]: DeepRequired<boolean>;
     [TopicEventCode.AllowMultipleMissions]: DeepRequired<boolean>;
+    [TopicEventCode.ShowAllDestinationsOnHome]: DeepRequired<boolean>;
     [TopicEventCode.SoftVersions]: DeepRequired<SoftVersions>;
     [TopicEventCode.NewSoftVersions]: DeepRequired<boolean>;
     [TopicEventCode.WaitingContact]: DeepRequired<boolean>;
@@ -2332,7 +2528,7 @@ export type EventDataType = {
     [TopicEventCode.CurrentOrigin]: DeepRequired<number>;
     [TopicEventCode.SleepScreen]: DeepRequired<boolean>;
     [TopicEventCode.MapElementConfigs]: DeepRequired<RocMapElementConfig[]>;
-    [TopicEventCode.ControllerLoraContactsConfig]: DeepRequired<ControllerLoraContactConfig[]>;
+    [TopicEventCode.ControllerLoraContactsConfig]: DeepRequired<ControllerLoraContactsConfig>;
     [TopicEventCode.PredefinedMessages]: DeepRequired<string[]>;
     [TopicEventCode.MissionStepTitle]: DeepRequired<string>;
     [TopicEventCode.InPauseTitle]: DeepRequired<string>;
@@ -2340,10 +2536,15 @@ export type EventDataType = {
     [TopicEventCode.MaxButtonIdSearch]: DeepRequired<number>;
     [TopicEventCode.DefaultWaitReleaseSound]: DeepRequired<string>;
     [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>;
-    [TopicEventCode.ExternalSpeaker]: DeepRequired<boolean>;
+    [TopicEventCode.LiftError]: DeepRequired<boolean>;
     [TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>;
     [TopicEventCode.WaitingSounds]: DeepRequired<WaitingSound[]>;
     [TopicEventCode.EventsSounds]: DeepRequired<EventSound[]>;
     [TopicEventCode.RocSecurity]: DeepRequired<RocSecurity>;
     [TopicEventCode.HotspotEnabled]: DeepRequired<boolean>;
+    [TopicEventCode.Language]: DeepRequired<Language>;
+    [TopicEventCode.PairingEnabled]: DeepRequired<boolean>;
+    [TopicEventCode.PairingList]: DeepRequired<LoraEquipment[]>;
+    [TopicEventCode.PairedList]: DeepRequired<LoraEquipment[]>;
+    [TopicEventCode.PairingOk]: DeepRequired<boolean>;
 };
