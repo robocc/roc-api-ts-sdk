@@ -157,7 +157,7 @@ _RocApi_defaultOptions = new WeakMap(), _RocApi_ws = new WeakMap(), _RocApi_wsst
     __classPrivateFieldSet(this, _RocApi_wsstate, WebSocketState.OPENED, "f");
     __classPrivateFieldGet(this, _RocApi_instances, "m", _RocApi_throw).call(this, events_1.TopicEventCode.VehicleConnectionOpen);
     if (this.options.api_key) {
-        this._sendOperation(services_1.ServiceOperationCode.AuthUser, this.options.api_key);
+        this._sendOperation(services_1.ServiceOperationCode.Login, { "api_key": this.options.api_key });
     }
     else if (this.options.module_key) {
         this._sendOperation(services_1.ServiceOperationCode.AuthModule, this.options.module_key);
@@ -243,7 +243,10 @@ _RocApi_defaultOptions = new WeakMap(), _RocApi_ws = new WeakMap(), _RocApi_wsst
             case services_1.ServiceOperationCode.Sink:
             case services_1.ServiceOperationCode.SetUseFragmentedMessage:
                 break;
-            case services_1.ServiceOperationCode.AuthUser:
+            case services_1.ServiceOperationCode.Logout:
+                this._unsubscribeTopics();
+                break;
+            case services_1.ServiceOperationCode.AuthSession:
                 if (msg.outcome == outcomes_1.OutcomeCode.NO_ERROR) {
                     if ("data" in msg)
                         __classPrivateFieldGet(this, _RocApi_instances, "m", _RocApi_throw).call(this, events_1.TopicEventCode.AuthOK, msg.data);
@@ -254,7 +257,7 @@ _RocApi_defaultOptions = new WeakMap(), _RocApi_ws = new WeakMap(), _RocApi_wsst
                 if (msg.outcome == outcomes_1.OutcomeCode.NO_ERROR) {
                     __classPrivateFieldSet(this, _RocApi_wsstate, WebSocketState.AUTHENTIFIED, "f");
                     this._sendOperation(services_1.ServiceOperationCode.SetUseFragmentedMessage, true);
-                    this._subscribeTopics();
+                    this.refreshTopicsSubscription();
                 }
                 else {
                     if (msg.op_code == services_1.ServiceOperationCode.AuthModule &&
@@ -289,8 +292,7 @@ _RocApi_defaultOptions = new WeakMap(), _RocApi_ws = new WeakMap(), _RocApi_wsst
                 break;
             case services_1.ServiceOperationCode.Login:
                 if (msg.outcome == outcomes_1.OutcomeCode.NO_ERROR) {
-                    this.options.api_key = msg.data.api_key;
-                    this._sendOperation(services_1.ServiceOperationCode.AuthUser, this.options.api_key);
+                    this._sendOperation(services_1.ServiceOperationCode.AuthSession, msg.data.token);
                 }
             default:
                 if (msg.op_code in

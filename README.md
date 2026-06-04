@@ -30,4 +30,4 @@ Replace `host` option to connect to remote API via device IP (usually on port 85
 
 ## Documentation
 
-You can find documentation at https://docs.robocc.com/roc-api-ts/9.1.0-athena-0/
+You can find documentation at https://docs.robocc.com/roc-api-ts/9.1.1-athena-1/

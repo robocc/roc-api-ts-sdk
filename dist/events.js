@@ -628,6 +628,17 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["Security"] = 145] = "Security";
     /**
+      * **Chassis intrusion detection**
+      *
+      * Chassis intrusion detection status
+      
+      * @data {@link ChassisIntrusionStatus}
+      * @category System
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["ChassisIntrusionDetection"] = 166] = "ChassisIntrusionDetection";
+    /**
       * **Blocked ip**
       *
       * Last blocked ip
@@ -649,6 +660,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["SoundSamples"] = 149] = "SoundSamples";
+    /**
+      * **Security event**
+      *
+      * Security event
+      
+      * @data {@link SecurityEvent}
+      * @category Vehicle
+      * @group System
+      
+    */
+    TopicEventCode[TopicEventCode["SecurityEvent"] = 167] = "SecurityEvent";
     /**
       * **Connected to vehicle**
       *
@@ -1354,9 +1376,9 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["SleepScreen"] = 7063] = "SleepScreen";
     /**
-      * **Map element config**
+      * **Map elements config**
       *
-      * Map element config
+      * Map elements config
       
       * @data {@link RocMapElementConfig}[]
       * @category Configuration
@@ -1364,6 +1386,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["MapElementConfigs"] = 7064] = "MapElementConfigs";
+    /**
+      * **Areas config**
+      *
+      * Areas config
+      
+      * @data {@link RocAreaConfig}[]
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["AreaConfigs"] = 7091] = "AreaConfigs";
     /**
       * **Controller LoRa Contacts configuration**
       *
@@ -1573,6 +1606,28 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["PairingOk"] = 7090] = "PairingOk";
+    /**
+      * **Global emergency stop**
+      *
+      * Global emergency stop
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["GlobalEmergencyStop"] = 7092] = "GlobalEmergencyStop";
+    /**
+      * **Global emergency stop is muted**
+      *
+      * Global emergency stop is muted
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["GlobalEmergencyStopMuted"] = 7093] = "GlobalEmergencyStopMuted";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -2103,8 +2158,10 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.StopSources]: [],
     [TopicEventCode.SystemInfo]: [],
     [TopicEventCode.Security]: [],
+    [TopicEventCode.ChassisIntrusionDetection]: [],
     [TopicEventCode.BlockedIp]: [],
     [TopicEventCode.SoundSamples]: [],
+    [TopicEventCode.SecurityEvent]: [],
     [TopicEventCode.ConnectedToVeh]: [],
     [TopicEventCode.IsVeh]: [],
     [TopicEventCode.IsManager]: [],
@@ -2170,6 +2227,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.CurrentOrigin]: [],
     [TopicEventCode.SleepScreen]: [],
     [TopicEventCode.MapElementConfigs]: [],
+    [TopicEventCode.AreaConfigs]: [],
     [TopicEventCode.ControllerLoraContactsConfig]: [],
     [TopicEventCode.PredefinedMessages]: [],
     [TopicEventCode.MissionStepTitle]: [],
@@ -2189,6 +2247,8 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.PairingList]: [],
     [TopicEventCode.PairedList]: [],
     [TopicEventCode.PairingOk]: [],
+    [TopicEventCode.GlobalEmergencyStop]: [],
+    [TopicEventCode.GlobalEmergencyStopMuted]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */

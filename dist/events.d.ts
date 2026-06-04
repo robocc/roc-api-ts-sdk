@@ -1,8 +1,8 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotStep, Areas, DockingState, NetworkWanState, SystemInfo, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthUserResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { SecurityEvent, Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotStep, Areas, DockingState, NetworkWanState, SystemInfo, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, RocAreaConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, ManagerMissions, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthSessionResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
 import { Path, AutopilotSequence, OperatingHours } from "./types";
-import { NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, NavigationState, Language, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
+import { ChassisIntrusionStatus, NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, NavigationState, Language, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
     AuthOK = -7,
     AuthError = -6,
@@ -628,6 +628,17 @@ export declare enum TopicEventCode {
     */
     Security = 145,
     /**
+      * **Chassis intrusion detection**
+      *
+      * Chassis intrusion detection status
+      
+      * @data {@link ChassisIntrusionStatus}
+      * @category System
+      * @group Vehicle
+      
+    */
+    ChassisIntrusionDetection = 166,
+    /**
       * **Blocked ip**
       *
       * Last blocked ip
@@ -649,6 +660,17 @@ export declare enum TopicEventCode {
       
     */
     SoundSamples = 149,
+    /**
+      * **Security event**
+      *
+      * Security event
+      
+      * @data {@link SecurityEvent}
+      * @category Vehicle
+      * @group System
+      
+    */
+    SecurityEvent = 167,
     /**
       * **Connected to vehicle**
       *
@@ -1354,9 +1376,9 @@ export declare enum TopicEventCode {
     */
     SleepScreen = 7063,
     /**
-      * **Map element config**
+      * **Map elements config**
       *
-      * Map element config
+      * Map elements config
       
       * @data {@link RocMapElementConfig}[]
       * @category Configuration
@@ -1364,6 +1386,17 @@ export declare enum TopicEventCode {
       
     */
     MapElementConfigs = 7064,
+    /**
+      * **Areas config**
+      *
+      * Areas config
+      
+      * @data {@link RocAreaConfig}[]
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    AreaConfigs = 7091,
     /**
       * **Controller LoRa Contacts configuration**
       *
@@ -1572,7 +1605,29 @@ export declare enum TopicEventCode {
       * @group ROC
       
     */
-    PairingOk = 7090
+    PairingOk = 7090,
+    /**
+      * **Global emergency stop**
+      *
+      * Global emergency stop
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    GlobalEmergencyStop = 7092,
+    /**
+      * **Global emergency stop is muted**
+      *
+      * Global emergency stop is muted
+      
+      * @data {@link boolean}
+      * @category State
+      * @group Vehicle
+      
+    */
+    GlobalEmergencyStopMuted = 7093
 }
 /** @internal */
 export declare enum ResultEventCode {
@@ -2113,8 +2168,10 @@ export declare const initEventTopicCallbacks: () => {
     143: never[];
     144: never[];
     145: never[];
+    166: never[];
     146: never[];
     149: never[];
+    167: never[];
     7000: never[];
     7001: never[];
     7002: never[];
@@ -2180,6 +2237,7 @@ export declare const initEventTopicCallbacks: () => {
     7062: never[];
     7063: never[];
     7064: never[];
+    7091: never[];
     7065: never[];
     7066: never[];
     7068: never[];
@@ -2199,6 +2257,8 @@ export declare const initEventTopicCallbacks: () => {
     7088: never[];
     7089: never[];
     7090: never[];
+    7092: never[];
+    7093: never[];
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
@@ -2398,7 +2458,7 @@ export declare const initEventFeedbackCallbacks: () => {
 };
 /** @internal */
 export type EventDataType = {
-    [TopicEventCode.AuthOK]: DeepRequired<AuthUserResult>;
+    [TopicEventCode.AuthOK]: DeepRequired<AuthSessionResult>;
     [TopicEventCode.AuthError]: DeepRequired<null>;
     [TopicEventCode.VehicleConnectionError]: DeepRequired<null>;
     [TopicEventCode.VehicleConnectionOpen]: DeepRequired<null>;
@@ -2461,8 +2521,10 @@ export type EventDataType = {
     [TopicEventCode.StopSources]: DeepRequired<StopSource[]>;
     [TopicEventCode.SystemInfo]: DeepRequired<SystemInfo>;
     [TopicEventCode.Security]: DeepRequired<Security>;
+    [TopicEventCode.ChassisIntrusionDetection]: DeepRequired<ChassisIntrusionStatus>;
     [TopicEventCode.BlockedIp]: DeepRequired<string>;
     [TopicEventCode.SoundSamples]: DeepRequired<string[]>;
+    [TopicEventCode.SecurityEvent]: DeepRequired<SecurityEvent>;
     [TopicEventCode.ConnectedToVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsManager]: DeepRequired<boolean>;
@@ -2528,6 +2590,7 @@ export type EventDataType = {
     [TopicEventCode.CurrentOrigin]: DeepRequired<number>;
     [TopicEventCode.SleepScreen]: DeepRequired<boolean>;
     [TopicEventCode.MapElementConfigs]: DeepRequired<RocMapElementConfig[]>;
+    [TopicEventCode.AreaConfigs]: DeepRequired<RocAreaConfig[]>;
     [TopicEventCode.ControllerLoraContactsConfig]: DeepRequired<ControllerLoraContactsConfig>;
     [TopicEventCode.PredefinedMessages]: DeepRequired<string[]>;
     [TopicEventCode.MissionStepTitle]: DeepRequired<string>;
@@ -2547,4 +2610,6 @@ export type EventDataType = {
     [TopicEventCode.PairingList]: DeepRequired<LoraEquipment[]>;
     [TopicEventCode.PairedList]: DeepRequired<LoraEquipment[]>;
     [TopicEventCode.PairingOk]: DeepRequired<boolean>;
+    [TopicEventCode.GlobalEmergencyStop]: DeepRequired<boolean>;
+    [TopicEventCode.GlobalEmergencyStopMuted]: DeepRequired<boolean>;
 };

@@ -96,7 +96,7 @@ export class RocApi extends BaseAPI {
     this.#throw(TopicEventCode.VehicleConnectionOpen);
 
     if (this.options.api_key) {
-      this._sendOperation(ServiceOperationCode.AuthUser, this.options.api_key);
+      this._sendOperation(ServiceOperationCode.Login, { "api_key": this.options.api_key });
     } else if (this.options.module_key) {
       this._sendOperation(
         ServiceOperationCode.AuthModule,
@@ -226,7 +226,10 @@ export class RocApi extends BaseAPI {
         case ServiceOperationCode.Sink:
         case ServiceOperationCode.SetUseFragmentedMessage:
           break;
-        case ServiceOperationCode.AuthUser:
+        case ServiceOperationCode.Logout:
+          this._unsubscribeTopics();
+          break;
+        case ServiceOperationCode.AuthSession:
           if (msg.outcome == OutcomeCode.NO_ERROR) {
             if ("data" in msg)
               this.#throw(TopicEventCode.AuthOK, msg.data);
@@ -240,7 +243,7 @@ export class RocApi extends BaseAPI {
               ServiceOperationCode.SetUseFragmentedMessage,
               true
             );
-            this._subscribeTopics();
+            this.refreshTopicsSubscription();
           } else {
             if (
               msg.op_code == ServiceOperationCode.AuthModule &&
@@ -277,12 +280,9 @@ export class RocApi extends BaseAPI {
           break;
         case ServiceOperationCode.Login:
           if (msg.outcome == OutcomeCode.NO_ERROR) {
-            this.options.api_key = (
-              msg as ServiceOperationResponseMsg<LoginResult>
-            ).data.api_key;
             this._sendOperation(
-              ServiceOperationCode.AuthUser,
-              this.options.api_key
+              ServiceOperationCode.AuthSession,
+              (msg as ServiceOperationResponseMsg<LoginResult>).data.token
             );
           }
         default:
