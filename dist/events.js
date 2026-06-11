@@ -1628,6 +1628,39 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["GlobalEmergencyStopMuted"] = 7093] = "GlobalEmergencyStopMuted";
+    /**
+      * **Delay before promoting mission in priority**
+      *
+      * Delay before promoting mission in priority
+      
+      * @data {@link number}
+      * @category Configuration
+      * @group Manager
+      
+    */
+    TopicEventCode[TopicEventCode["DelayBeforePromotingMission"] = 7094] = "DelayBeforePromotingMission";
+    /**
+      * **Use sync buttons**
+      *
+      * If on, sync all buttons in same time
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Manager
+      
+    */
+    TopicEventCode[TopicEventCode["UseSyncButtons"] = 7095] = "UseSyncButtons";
+    /**
+      * **Sync buttons wait time**
+      *
+      * If sync buttons, wait time for replies
+      
+      * @data {@link number}
+      * @category Configuration
+      * @group Manager
+      
+    */
+    TopicEventCode[TopicEventCode["SyncButtonsWaitTime"] = 7096] = "SyncButtonsWaitTime";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -2249,6 +2282,9 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.PairingOk]: [],
     [TopicEventCode.GlobalEmergencyStop]: [],
     [TopicEventCode.GlobalEmergencyStopMuted]: [],
+    [TopicEventCode.DelayBeforePromotingMission]: [],
+    [TopicEventCode.UseSyncButtons]: [],
+    [TopicEventCode.SyncButtonsWaitTime]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */
