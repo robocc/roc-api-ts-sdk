@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "9.1.5-athena-5",
+  "version": "9.1.6-athena-6",
   "description": "RocApi client Typescript library",
   "repository": {
     "type": "git",
