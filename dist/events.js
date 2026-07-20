@@ -903,16 +903,16 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["OnlyRelease"] = 7023] = "OnlyRelease";
     /**
-      * **Vehicle direction - mast position**
+      * **Mast position**
       *
-      * Vehicle direction - mast position
+      * Mast position
       
       * @data {@link VehDirection}
       * @category Configuration
       * @group Vehicle
       
     */
-    TopicEventCode[TopicEventCode["VehDirection"] = 7024] = "VehDirection";
+    TopicEventCode[TopicEventCode["MastPosition"] = 7024] = "MastPosition";
     /**
       * **Dock direction**
       *
@@ -1661,6 +1661,17 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["SyncButtonsWaitTime"] = 7096] = "SyncButtonsWaitTime";
+    /**
+      * **Go to charge with crate allowed**
+      *
+      * Go to charge with crate allowed
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["ChargeWithCrateAllowed"] = 7097] = "ChargeWithCrateAllowed";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -2216,7 +2227,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.ButtonsInfos]: [],
     [TopicEventCode.MissionTitle]: [],
     [TopicEventCode.OnlyRelease]: [],
-    [TopicEventCode.VehDirection]: [],
+    [TopicEventCode.MastPosition]: [],
     [TopicEventCode.DockDirection]: [],
     [TopicEventCode.DailyStats]: [],
     [TopicEventCode.ImportConfigDone]: [],
@@ -2285,6 +2296,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.DelayBeforePromotingMission]: [],
     [TopicEventCode.UseSyncButtons]: [],
     [TopicEventCode.SyncButtonsWaitTime]: [],
+    [TopicEventCode.ChargeWithCrateAllowed]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */

@@ -1034,15 +1034,6 @@ export enum ServiceOperationCode {
     */
     SetModuleType = 7028,
     /**
-    * **Set vehicle direction**
-    *
-    * Set vehicle direction 
-    * @group Vehicle
-    * @category Configuration
-    
-    */
-    SetVehDirection = 7038,
-    /**
     * **Set dock direction**
     *
     * Set dock direction 
@@ -2041,6 +2032,15 @@ export enum ServiceOperationCode {
     
     */
     SetUseSyncButtons = 7133,
+    /**
+    * **Allow go to charge with crate**
+    *
+    * Allow go to charge with crate 
+    * @group Vehicle
+    * @category Configuration
+    
+    */
+    AllowChargeWithCrate = 7134,
 }
 
 /* Callbacks interfaces and init */
@@ -2179,7 +2179,6 @@ export const initServiceOperationCallbacks = () => ({
       [ServiceOperationCode.SetIsVeh]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.SetIsManager]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.SetModuleType]: { resolve: undefined, reject: undefined },
-      [ServiceOperationCode.SetVehDirection]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.SetDockDirection]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.ReleaseShelf]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.ReleaseShelfAndRelease]: { resolve: undefined, reject: undefined },
@@ -2291,6 +2290,7 @@ export const initServiceOperationCallbacks = () => ({
       [ServiceOperationCode.SetGlobalEmergencyStopMuted]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.SetDelayBeforePromotingMission]: { resolve: undefined, reject: undefined },
       [ServiceOperationCode.SetUseSyncButtons]: { resolve: undefined, reject: undefined },
+      [ServiceOperationCode.AllowChargeWithCrate]: { resolve: undefined, reject: undefined },
 })
 
 /* Params and results types */
@@ -2410,7 +2410,6 @@ export type ServiceParamsType = {
 [ServiceOperationCode.SetIsVeh]: boolean
 [ServiceOperationCode.SetIsManager]: boolean
 [ServiceOperationCode.SetModuleType]: ModuleType
-[ServiceOperationCode.SetVehDirection]: VehDirection
 [ServiceOperationCode.SetDockDirection]: VehDirection
 [ServiceOperationCode.ReleaseShelf]: null
 [ServiceOperationCode.ReleaseShelfAndRelease]: null
@@ -2522,6 +2521,7 @@ export type ServiceParamsType = {
 [ServiceOperationCode.SetGlobalEmergencyStopMuted]: boolean
 [ServiceOperationCode.SetDelayBeforePromotingMission]: number
 [ServiceOperationCode.SetUseSyncButtons]: SetUseSyncButtonsParams
+[ServiceOperationCode.AllowChargeWithCrate]: boolean
 }
 
 /** @internal */
@@ -2640,7 +2640,6 @@ export type ServiceResultType = {
 [ServiceOperationCode.SetIsVeh]: DeepRequired<null>
 [ServiceOperationCode.SetIsManager]: DeepRequired<null>
 [ServiceOperationCode.SetModuleType]: DeepRequired<null>
-[ServiceOperationCode.SetVehDirection]: DeepRequired<null>
 [ServiceOperationCode.SetDockDirection]: DeepRequired<null>
 [ServiceOperationCode.ReleaseShelf]: DeepRequired<null>
 [ServiceOperationCode.ReleaseShelfAndRelease]: DeepRequired<null>
@@ -2752,6 +2751,7 @@ export type ServiceResultType = {
 [ServiceOperationCode.SetGlobalEmergencyStopMuted]: DeepRequired<null>
 [ServiceOperationCode.SetDelayBeforePromotingMission]: DeepRequired<null>
 [ServiceOperationCode.SetUseSyncButtons]: DeepRequired<null>
+[ServiceOperationCode.AllowChargeWithCrate]: DeepRequired<null>
 }
 
 /* Services calls mixin */
@@ -2767,7 +2767,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetVehId RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetVehId RoboccDocs} for further information
       */
       GetVehId() { 
         return this.callService(ServiceOperationCode.GetVehId, null); 
@@ -2782,7 +2782,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param event_code Event code
       
       * @data {@link SubscribeResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Subscribe RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Subscribe RoboccDocs} for further information
       */
       Subscribe(event_code: number) { 
         return this.callService(ServiceOperationCode.Subscribe, event_code); 
@@ -2797,7 +2797,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param event_code Event code
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Unsubscribe RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Unsubscribe RoboccDocs} for further information
       */
       Unsubscribe(event_code: number) { 
         return this.callService(ServiceOperationCode.Unsubscribe, event_code); 
@@ -2812,7 +2812,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UnsubscribeAll RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UnsubscribeAll RoboccDocs} for further information
       */
       UnsubscribeAll() { 
         return this.callService(ServiceOperationCode.UnsubscribeAll, null); 
@@ -2827,7 +2827,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#CancelActions RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#CancelActions RoboccDocs} for further information
       */
       CancelActions() { 
         return this.callService(ServiceOperationCode.CancelActions, null); 
@@ -2842,7 +2842,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param teleop_cmd Teleop command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Teleop RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Teleop RoboccDocs} for further information
       */
       Teleop(teleop_cmd: TeleopCmd) { 
         return this.callService(ServiceOperationCode.Teleop, teleop_cmd); 
@@ -2857,7 +2857,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param teleop_cmd Teleop command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#TeleopAssistedWithMap RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#TeleopAssistedWithMap RoboccDocs} for further information
       */
       TeleopAssistedWithMap(teleop_cmd: TeleopCmd) { 
         return this.callService(ServiceOperationCode.TeleopAssistedWithMap, teleop_cmd); 
@@ -2872,7 +2872,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param teleop_cmd Teleop command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#TeleopAssistedWithoutMap RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#TeleopAssistedWithoutMap RoboccDocs} for further information
       */
       TeleopAssistedWithoutMap(teleop_cmd: TeleopCmd) { 
         return this.callService(ServiceOperationCode.TeleopAssistedWithoutMap, teleop_cmd); 
@@ -2887,7 +2887,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Start Stop command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#FollowMe RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#FollowMe RoboccDocs} for further information
       */
       FollowMe(d: FollowMeParams) { 
         return this.callService(ServiceOperationCode.FollowMe, d); 
@@ -2902,7 +2902,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Direction of person to follow
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#FollowMeResetTracking RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#FollowMeResetTracking RoboccDocs} for further information
       */
       FollowMeResetTracking(d: Direction) { 
         return this.callService(ServiceOperationCode.FollowMeResetTracking, d); 
@@ -2917,7 +2917,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Follow mode
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#FollowMeSetMode RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#FollowMeSetMode RoboccDocs} for further information
       */
       FollowMeSetMode(d: FollowMode) { 
         return this.callService(ServiceOperationCode.FollowMeSetMode, d); 
@@ -2932,7 +2932,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Start Stop command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetSleeping RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetSleeping RoboccDocs} for further information
       */
       SetSleeping(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetSleeping, enable); 
@@ -2947,7 +2947,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Start Stop command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetHibernate RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetHibernate RoboccDocs} for further information
       */
       SetHibernate(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetHibernate, enable); 
@@ -2962,7 +2962,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param auth_data Token
       
       * @data {@link AuthSessionResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AuthSession RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AuthSession RoboccDocs} for further information
       */
       AuthSession(auth_data: string) { 
         return this.callService(ServiceOperationCode.AuthSession, auth_data); 
@@ -2977,7 +2977,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AuthModule RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AuthModule RoboccDocs} for further information
       */
       AuthModule(d: AuthModuleParams) { 
         return this.callService(ServiceOperationCode.AuthModule, d); 
@@ -2992,7 +2992,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Sink RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Sink RoboccDocs} for further information
       */
       Sink() { 
         return this.callService(ServiceOperationCode.Sink, null); 
@@ -3007,7 +3007,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Enable or disable fragmented message
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetUseFragmentedMessage RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetUseFragmentedMessage RoboccDocs} for further information
       */
       SetUseFragmentedMessage(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetUseFragmentedMessage, enable); 
@@ -3022,7 +3022,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Logout RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Logout RoboccDocs} for further information
       */
       Logout() { 
         return this.callService(ServiceOperationCode.Logout, null); 
@@ -3037,7 +3037,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param login_data Send api_key or login and pwd
       
       * @data {@link LoginResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Login RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Login RoboccDocs} for further information
       */
       Login(login_data: LoginParams) { 
         return this.callService(ServiceOperationCode.Login, login_data); 
@@ -3052,7 +3052,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable_teleop Set or not teleop active
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetTeleopActive RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetTeleopActive RoboccDocs} for further information
       */
       SetTeleopActive(enable_teleop: boolean) { 
         return this.callService(ServiceOperationCode.SetTeleopActive, enable_teleop); 
@@ -3067,7 +3067,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link boolean} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetTeleopActive RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetTeleopActive RoboccDocs} for further information
       */
       GetTeleopActive() { 
         return this.callService(ServiceOperationCode.GetTeleopActive, null); 
@@ -3082,7 +3082,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param site_b64 Base 64 of export file
       
       * @data {@link ImportSiteResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ImportSite RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ImportSite RoboccDocs} for further information
       */
       ImportSite(site_b64: string) { 
         return this.callService(ServiceOperationCode.ImportSite, site_b64); 
@@ -3097,7 +3097,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param site_b64 Base 64 of export file
       
       * @data {@link ImportSoundsConfigResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ImportSoundsConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ImportSoundsConfig RoboccDocs} for further information
       */
       ImportSoundsConfig(site_b64: string) { 
         return this.callService(ServiceOperationCode.ImportSoundsConfig, site_b64); 
@@ -3112,7 +3112,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param id_site 
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExportSite RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExportSite RoboccDocs} for further information
       */
       ExportSite(id_site: number | ExportSiteParams2) { 
         return this.callService(ServiceOperationCode.ExportSite, id_site); 
@@ -3127,7 +3127,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param export_sites_data 
       
       * @data {@link ExportSitesResultItem}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExportSites RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExportSites RoboccDocs} for further information
       */
       ExportSites(export_sites_data: ExportSitesParams1Item[] | ExportSitesParams2) { 
         return this.callService(ServiceOperationCode.ExportSites, export_sites_data); 
@@ -3142,7 +3142,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param marker Marker
       
       * @data {@link ChargingStation} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetNewChargingStationFromMarker RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetNewChargingStationFromMarker RoboccDocs} for further information
       */
       GetNewChargingStationFromMarker(marker: Marker) { 
         return this.callService(ServiceOperationCode.GetNewChargingStationFromMarker, marker); 
@@ -3157,7 +3157,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param marker Marker
       
       * @data {@link DockedPose} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetNewDockedPoseFromMarker RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetNewDockedPoseFromMarker RoboccDocs} for further information
       */
       GetNewDockedPoseFromMarker(marker: Marker) { 
         return this.callService(ServiceOperationCode.GetNewDockedPoseFromMarker, marker); 
@@ -3172,7 +3172,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param charging_station_data Charging station object and distances
       
       * @data {@link ChargingStation} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateChargingStationConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateChargingStationConfig RoboccDocs} for further information
       */
       UpdateChargingStationConfig(charging_station_data: UpdateChargingStationConfigParams) { 
         return this.callService(ServiceOperationCode.UpdateChargingStationConfig, charging_station_data); 
@@ -3187,7 +3187,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param docked_pose_data Docked pose object and distances
       
       * @data {@link DockedPose} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateDockedPoseConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateDockedPoseConfig RoboccDocs} for further information
       */
       UpdateDockedPoseConfig(docked_pose_data: UpdateDockedPoseConfigParams) { 
         return this.callService(ServiceOperationCode.UpdateDockedPoseConfig, docked_pose_data); 
@@ -3202,7 +3202,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param sound_is_playing Set sound is playing
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimSetSoundIsPlaying RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimSetSoundIsPlaying RoboccDocs} for further information
       */
       SimSetSoundIsPlaying(sound_is_playing: boolean) { 
         return this.callService(ServiceOperationCode.SimSetSoundIsPlaying, sound_is_playing); 
@@ -3217,7 +3217,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param external_speaker Set external speaker present
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimuSetExternalSpeaker RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimuSetExternalSpeaker RoboccDocs} for further information
       */
       SimuSetExternalSpeaker(external_speaker: boolean) { 
         return this.callService(ServiceOperationCode.SimuSetExternalSpeaker, external_speaker); 
@@ -3232,7 +3232,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param user User data
       
       * @data {@link number} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetUser RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetUser RoboccDocs} for further information
       */
       SetUser(user: SetUserParams) { 
         return this.callService(ServiceOperationCode.SetUser, user); 
@@ -3247,7 +3247,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param user_id Id user
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteUser RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteUser RoboccDocs} for further information
       */
       DeleteUser(user_id: number) { 
         return this.callService(ServiceOperationCode.DeleteUser, user_id); 
@@ -3262,7 +3262,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param obt_cbt Battery parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetObtCbt RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetObtCbt RoboccDocs} for further information
       */
       SetObtCbt(obt_cbt: SetObtCbtParams) { 
         return this.callService(ServiceOperationCode.SetObtCbt, obt_cbt); 
@@ -3277,7 +3277,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link User}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ListUsers RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ListUsers RoboccDocs} for further information
       */
       ListUsers() { 
         return this.callService(ServiceOperationCode.ListUsers, null); 
@@ -3292,7 +3292,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param user_id id user
       
       * @data {@link User} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetUser RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetUser RoboccDocs} for further information
       */
       GetUser(user_id: number) { 
         return this.callService(ServiceOperationCode.GetUser, user_id); 
@@ -3307,7 +3307,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link SiteRaw}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ListSites RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ListSites RoboccDocs} for further information
       */
       ListSites() { 
         return this.callService(ServiceOperationCode.ListSites, null); 
@@ -3322,7 +3322,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link SiteLight}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ListSitesWithMaps RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ListSitesWithMaps RoboccDocs} for further information
       */
       ListSitesWithMaps() { 
         return this.callService(ServiceOperationCode.ListSitesWithMaps, null); 
@@ -3337,7 +3337,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param site_id id site
       
       * @data {@link SiteRaw} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetSite RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetSite RoboccDocs} for further information
       */
       GetSite(site_id: number) { 
         return this.callService(ServiceOperationCode.GetSite, site_id); 
@@ -3352,7 +3352,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param site_id id site
       
       * @data {@link SiteLight} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetSiteWithMaps RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetSiteWithMaps RoboccDocs} for further information
       */
       GetSiteWithMaps(site_id: number) { 
         return this.callService(ServiceOperationCode.GetSiteWithMaps, site_id); 
@@ -3367,7 +3367,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param map_id id map
       
       * @data {@link Map} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetMap RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetMap RoboccDocs} for further information
       */
       GetMap(map_id: number) { 
         return this.callService(ServiceOperationCode.GetMap, map_id); 
@@ -3382,7 +3382,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link SiteRaw} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetActiveSite RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetActiveSite RoboccDocs} for further information
       */
       GetActiveSite() { 
         return this.callService(ServiceOperationCode.GetActiveSite, null); 
@@ -3397,7 +3397,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link SiteRaw} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetActiveSiteWithMaps RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetActiveSiteWithMaps RoboccDocs} for further information
       */
       GetActiveSiteWithMaps() { 
         return this.callService(ServiceOperationCode.GetActiveSiteWithMaps, null); 
@@ -3412,7 +3412,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param site site
       
       * @data {@link number} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetSite RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetSite RoboccDocs} for further information
       */
       SetSite(site: Site) { 
         return this.callService(ServiceOperationCode.SetSite, site); 
@@ -3427,7 +3427,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param site_id Id site
       
       * @data {@link MapRaw}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ListMaps RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ListMaps RoboccDocs} for further information
       */
       ListMaps(site_id: number) { 
         return this.callService(ServiceOperationCode.ListMaps, site_id); 
@@ -3442,7 +3442,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link Map} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetActiveMap RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetActiveMap RoboccDocs} for further information
       */
       GetActiveMap() { 
         return this.callService(ServiceOperationCode.GetActiveMap, null); 
@@ -3457,7 +3457,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetActiveMapImgRaw RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetActiveMapImgRaw RoboccDocs} for further information
       */
       GetActiveMapImgRaw() { 
         return this.callService(ServiceOperationCode.GetActiveMapImgRaw, null); 
@@ -3472,7 +3472,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param map_id id map
       
       * @data {@link MapElements} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetMapElements RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetMapElements RoboccDocs} for further information
       */
       GetMapElements(map_id: number) { 
         return this.callService(ServiceOperationCode.GetMapElements, map_id); 
@@ -3487,7 +3487,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link MapElements} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetActiveMapElements RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetActiveMapElements RoboccDocs} for further information
       */
       GetActiveMapElements() { 
         return this.callService(ServiceOperationCode.GetActiveMapElements, null); 
@@ -3502,7 +3502,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param map_id id map
       
       * @data {@link MapWithoutImages} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetMapWithoutImages RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetMapWithoutImages RoboccDocs} for further information
       */
       GetMapWithoutImages(map_id: number) { 
         return this.callService(ServiceOperationCode.GetMapWithoutImages, map_id); 
@@ -3517,7 +3517,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link MapWithoutImages} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetActiveMapWithoutImages RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetActiveMapWithoutImages RoboccDocs} for further information
       */
       GetActiveMapWithoutImages() { 
         return this.callService(ServiceOperationCode.GetActiveMapWithoutImages, null); 
@@ -3532,7 +3532,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param id_site Id site
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteSite RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteSite RoboccDocs} for further information
       */
       DeleteSite(id_site: number) { 
         return this.callService(ServiceOperationCode.DeleteSite, id_site); 
@@ -3547,7 +3547,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param id_map Id map
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteMap RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteMap RoboccDocs} for further information
       */
       DeleteMap(id_map: number) { 
         return this.callService(ServiceOperationCode.DeleteMap, id_map); 
@@ -3562,7 +3562,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param charging_station Charging station
       
       * @data {@link SetChargingStationResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetChargingStation RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetChargingStation RoboccDocs} for further information
       */
       SetChargingStation(charging_station: ChargingStation) { 
         return this.callService(ServiceOperationCode.SetChargingStation, charging_station); 
@@ -3577,7 +3577,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param saved_pose Saved pose
       
       * @data {@link SetSavedPoseResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetSavedPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetSavedPose RoboccDocs} for further information
       */
       SetSavedPose(saved_pose: SavedPose) { 
         return this.callService(ServiceOperationCode.SetSavedPose, saved_pose); 
@@ -3592,7 +3592,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param docked_pose Docked pose,
       
       * @data {@link SetDockedPoseResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetDockedPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetDockedPose RoboccDocs} for further information
       */
       SetDockedPose(docked_pose: DockedPose) { 
         return this.callService(ServiceOperationCode.SetDockedPose, docked_pose); 
@@ -3607,7 +3607,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param forbidden_area Forbidden area
       
       * @data {@link SetForbiddenAreaResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetForbiddenArea RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetForbiddenArea RoboccDocs} for further information
       */
       SetForbiddenArea(forbidden_area: ForbiddenArea) { 
         return this.callService(ServiceOperationCode.SetForbiddenArea, forbidden_area); 
@@ -3622,7 +3622,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param custom_area Custom area
       
       * @data {@link SetCustomAreaResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetCustomArea RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetCustomArea RoboccDocs} for further information
       */
       SetCustomArea(custom_area: CustomArea) { 
         return this.callService(ServiceOperationCode.SetCustomArea, custom_area); 
@@ -3637,7 +3637,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param charging_station Id charging station
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteChargingStation RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteChargingStation RoboccDocs} for further information
       */
       DeleteChargingStation(charging_station: number) { 
         return this.callService(ServiceOperationCode.DeleteChargingStation, charging_station); 
@@ -3652,7 +3652,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param saved_pose_id Id saved pose
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteSavedPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteSavedPose RoboccDocs} for further information
       */
       DeleteSavedPose(saved_pose_id: number) { 
         return this.callService(ServiceOperationCode.DeleteSavedPose, saved_pose_id); 
@@ -3667,7 +3667,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param docked_pose_id Id docked pose
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteDockedPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteDockedPose RoboccDocs} for further information
       */
       DeleteDockedPose(docked_pose_id: number) { 
         return this.callService(ServiceOperationCode.DeleteDockedPose, docked_pose_id); 
@@ -3682,7 +3682,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param forbidden_area_id Id forbidden area
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteForbiddenArea RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteForbiddenArea RoboccDocs} for further information
       */
       DeleteForbiddenArea(forbidden_area_id: number) { 
         return this.callService(ServiceOperationCode.DeleteForbiddenArea, forbidden_area_id); 
@@ -3697,7 +3697,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param custom_area_id Id custom area
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteCustomArea RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteCustomArea RoboccDocs} for further information
       */
       DeleteCustomArea(custom_area_id: number) { 
         return this.callService(ServiceOperationCode.DeleteCustomArea, custom_area_id); 
@@ -3712,7 +3712,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param check_pose_data Pose parameters. Don't send params to use the current robot pose
       
       * @data {@link boolean} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#CheckPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#CheckPose RoboccDocs} for further information
       */
       CheckPose(check_pose_data?: CheckPoseParams) { 
         return this.callService(ServiceOperationCode.CheckPose, check_pose_data); 
@@ -3727,7 +3727,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param check_pose_data Pose parameters. Don't send params to use the current robot pose
       
       * @data {@link boolean} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Check3dBox RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Check3dBox RoboccDocs} for further information
       */
       Check3dBox(check_pose_data: Check3dBoxParams) { 
         return this.callService(ServiceOperationCode.Check3dBox, check_pose_data); 
@@ -3742,7 +3742,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetModuleData RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetModuleData RoboccDocs} for further information
       */
       GetModuleData() { 
         return this.callService(ServiceOperationCode.GetModuleData, null); 
@@ -3757,7 +3757,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param module_data Data
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetModuleData RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetModuleData RoboccDocs} for further information
       */
       SetModuleData(module_data: string) { 
         return this.callService(ServiceOperationCode.SetModuleData, module_data); 
@@ -3772,7 +3772,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetInternalData RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetInternalData RoboccDocs} for further information
       */
       GetInternalData() { 
         return this.callService(ServiceOperationCode.GetInternalData, null); 
@@ -3787,7 +3787,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param internal_data Data
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetInternalData RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetInternalData RoboccDocs} for further information
       */
       SetInternalData(internal_data: string) { 
         return this.callService(ServiceOperationCode.SetInternalData, internal_data); 
@@ -3802,7 +3802,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#StartCycle RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#StartCycle RoboccDocs} for further information
       */
       StartCycle() { 
         return this.callService(ServiceOperationCode.StartCycle, null); 
@@ -3817,7 +3817,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Mode on
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetCarMode RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetCarMode RoboccDocs} for further information
       */
       SetCarMode(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetCarMode, enable); 
@@ -3832,7 +3832,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param led_cmd Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetCustomLed RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetCustomLed RoboccDocs} for further information
       */
       SetCustomLed(led_cmd: SetCustomLedParams) { 
         return this.callService(ServiceOperationCode.SetCustomLed, led_cmd); 
@@ -3847,7 +3847,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param sound_cmd Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetCustomSound RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetCustomSound RoboccDocs} for further information
       */
       SetCustomSound(sound_cmd: SetCustomSoundParams) { 
         return this.callService(ServiceOperationCode.SetCustomSound, sound_cmd); 
@@ -3862,7 +3862,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetSoftVersion RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetSoftVersion RoboccDocs} for further information
       */
       GetSoftVersion() { 
         return this.callService(ServiceOperationCode.GetSoftVersion, null); 
@@ -3877,7 +3877,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param power_consumption Power consumption
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimBatterySetPowerConsumption RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimBatterySetPowerConsumption RoboccDocs} for further information
       */
       SimBatterySetPowerConsumption(power_consumption: number) { 
         return this.callService(ServiceOperationCode.SimBatterySetPowerConsumption, power_consumption); 
@@ -3892,7 +3892,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param charge_power_delivery Charge power delivery
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimBatterySetChargePower RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimBatterySetChargePower RoboccDocs} for further information
       */
       SimBatterySetChargePower(charge_power_delivery: number) { 
         return this.callService(ServiceOperationCode.SimBatterySetChargePower, charge_power_delivery); 
@@ -3907,7 +3907,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param battery_percentage Battery percentage
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimBatterySetPercentage RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimBatterySetPercentage RoboccDocs} for further information
       */
       SimBatterySetPercentage(battery_percentage: number) { 
         return this.callService(ServiceOperationCode.SimBatterySetPercentage, battery_percentage); 
@@ -3922,7 +3922,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param battery_charging Charger is on
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimBatterySetChargerOn RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimBatterySetChargerOn RoboccDocs} for further information
       */
       SimBatterySetChargerOn(battery_charging: boolean) { 
         return this.callService(ServiceOperationCode.SimBatterySetChargerOn, battery_charging); 
@@ -3937,7 +3937,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Mode maintenance on
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetMaintenanceMode RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetMaintenanceMode RoboccDocs} for further information
       */
       SetMaintenanceMode(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetMaintenanceMode, enable); 
@@ -3952,7 +3952,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Prohibit movement
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetProhibitMovement RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetProhibitMovement RoboccDocs} for further information
       */
       SetProhibitMovement(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetProhibitMovement, enable); 
@@ -3967,7 +3967,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param diff_drive_state Diff driver state
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SimSetDiffDriveState RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SimSetDiffDriveState RoboccDocs} for further information
       */
       SimSetDiffDriveState(diff_drive_state: SimSetDiffDriveStateParams) { 
         return this.callService(ServiceOperationCode.SimSetDiffDriveState, diff_drive_state); 
@@ -3982,7 +3982,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param password New password
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#NetworkHotspotSetPassword RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#NetworkHotspotSetPassword RoboccDocs} for further information
       */
       NetworkHotspotSetPassword(password: string) { 
         return this.callService(ServiceOperationCode.NetworkHotspotSetPassword, password); 
@@ -3997,7 +3997,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link WifiAp}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#NetworkWifiListAps RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#NetworkWifiListAps RoboccDocs} for further information
       */
       NetworkWifiListAps() { 
         return this.callService(ServiceOperationCode.NetworkWifiListAps, null); 
@@ -4012,7 +4012,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link DiagnosticElement}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetElementsList RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetElementsList RoboccDocs} for further information
       */
       GetElementsList() { 
         return this.callService(ServiceOperationCode.GetElementsList, null); 
@@ -4027,7 +4027,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param sequence Configuration
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AutopilotSetConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AutopilotSetConfig RoboccDocs} for further information
       */
       AutopilotSetConfig(sequence: AutopilotSequence) { 
         return this.callService(ServiceOperationCode.AutopilotSetConfig, sequence); 
@@ -4042,7 +4042,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param resume Resume
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AutopilotStart RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AutopilotStart RoboccDocs} for further information
       */
       AutopilotStart(resume: boolean) { 
         return this.callService(ServiceOperationCode.AutopilotStart, resume); 
@@ -4057,7 +4057,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AutopilotStop RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AutopilotStop RoboccDocs} for further information
       */
       AutopilotStop() { 
         return this.callService(ServiceOperationCode.AutopilotStop, null); 
@@ -4072,7 +4072,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param sound_scenarios Array of scenarios and associated volumes
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetScenarioSoundMaxVolume RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetScenarioSoundMaxVolume RoboccDocs} for further information
       */
       SetScenarioSoundMaxVolume(sound_scenarios: SoundScenarioVolume[]) { 
         return this.callService(ServiceOperationCode.SetScenarioSoundMaxVolume, sound_scenarios); 
@@ -4087,7 +4087,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link SoundScenarioVolume}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetScenarioSoundMaxVolume RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetScenarioSoundMaxVolume RoboccDocs} for further information
       */
       GetScenarioSoundMaxVolume() { 
         return this.callService(ServiceOperationCode.GetScenarioSoundMaxVolume, null); 
@@ -4102,7 +4102,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param sound_samples Array of scenarios and associated samples
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetScenarioSoundSamples RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetScenarioSoundSamples RoboccDocs} for further information
       */
       SetScenarioSoundSamples(sound_samples: SoundScenarioSample[]) { 
         return this.callService(ServiceOperationCode.SetScenarioSoundSamples, sound_samples); 
@@ -4117,7 +4117,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link SoundScenarioSample}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetScenarioSoundSamples RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetScenarioSoundSamples RoboccDocs} for further information
       */
       GetScenarioSoundSamples() { 
         return this.callService(ServiceOperationCode.GetScenarioSoundSamples, null); 
@@ -4132,7 +4132,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param inhibit Inhibit/uninhibit
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#InhibitSafetyAlertSoundScenario RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#InhibitSafetyAlertSoundScenario RoboccDocs} for further information
       */
       InhibitSafetyAlertSoundScenario(inhibit: boolean) { 
         return this.callService(ServiceOperationCode.InhibitSafetyAlertSoundScenario, inhibit); 
@@ -4147,7 +4147,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param module_params Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetModuleParams RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetModuleParams RoboccDocs} for further information
       */
       SetModuleParams(module_params: SetModuleParamsParams) { 
         return this.callService(ServiceOperationCode.SetModuleParams, module_params); 
@@ -4162,7 +4162,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#NetworkRedirectPort RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#NetworkRedirectPort RoboccDocs} for further information
       */
       NetworkRedirectPort(d: NetworkRedirectPortParams) { 
         return this.callService(ServiceOperationCode.NetworkRedirectPort, d); 
@@ -4177,7 +4177,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ForceUpdate RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ForceUpdate RoboccDocs} for further information
       */
       ForceUpdate() { 
         return this.callService(ServiceOperationCode.ForceUpdate, null); 
@@ -4192,7 +4192,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Enable/disable
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetAutomaticUpdates RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetAutomaticUpdates RoboccDocs} for further information
       */
       SetAutomaticUpdates(enable: boolean) { 
         return this.callService(ServiceOperationCode.SetAutomaticUpdates, enable); 
@@ -4207,7 +4207,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Enable/disable
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#EnableDynamicFilters RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#EnableDynamicFilters RoboccDocs} for further information
       */
       EnableDynamicFilters(enable: boolean) { 
         return this.callService(ServiceOperationCode.EnableDynamicFilters, enable); 
@@ -4222,7 +4222,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters for restart
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SystemRestart RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SystemRestart RoboccDocs} for further information
       */
       SystemRestart(d: SystemRestartParams) { 
         return this.callService(ServiceOperationCode.SystemRestart, d); 
@@ -4237,7 +4237,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SystemRequestFlashRoboteq RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SystemRequestFlashRoboteq RoboccDocs} for further information
       */
       SystemRequestFlashRoboteq() { 
         return this.callService(ServiceOperationCode.SystemRequestFlashRoboteq, null); 
@@ -4252,7 +4252,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SystemRequestFlashMcu RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SystemRequestFlashMcu RoboccDocs} for further information
       */
       SystemRequestFlashMcu() { 
         return this.callService(ServiceOperationCode.SystemRequestFlashMcu, null); 
@@ -4267,7 +4267,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Shelf size
       
       * @data {@link Pose}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetShelves RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetShelves RoboccDocs} for further information
       */
       GetShelves(d: GetShelvesParams) { 
         return this.callService(ServiceOperationCode.GetShelves, d); 
@@ -4282,7 +4282,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Name of sound to delete
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteSound RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteSound RoboccDocs} for further information
       */
       DeleteSound(d: string) { 
         return this.callService(ServiceOperationCode.DeleteSound, d); 
@@ -4297,7 +4297,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param disable Disable or enable request
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DisableCam3dMapping RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DisableCam3dMapping RoboccDocs} for further information
       */
       DisableCam3dMapping(disable: boolean) { 
         return this.callService(ServiceOperationCode.DisableCam3dMapping, disable); 
@@ -4312,7 +4312,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param disable Disable or enable request
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DisableUsSensorsMapping RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DisableUsSensorsMapping RoboccDocs} for further information
       */
       DisableUsSensorsMapping(disable: boolean) { 
         return this.callService(ServiceOperationCode.DisableUsSensorsMapping, disable); 
@@ -4327,7 +4327,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RearmChassisIntrusion RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RearmChassisIntrusion RoboccDocs} for further information
       */
       RearmChassisIntrusion() { 
         return this.callService(ServiceOperationCode.RearmChassisIntrusion, null); 
@@ -4342,7 +4342,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#LogoutHmi RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#LogoutHmi RoboccDocs} for further information
       */
       LogoutHmi() { 
         return this.callService(ServiceOperationCode.LogoutHmi, null); 
@@ -4357,7 +4357,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddButton RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddButton RoboccDocs} for further information
       */
       AddButton(d: AddButtonParams) { 
         return this.callService(ServiceOperationCode.AddButton, d); 
@@ -4372,7 +4372,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateButton RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateButton RoboccDocs} for further information
       */
       UpdateButton(d: ButtonConfig) { 
         return this.callService(ServiceOperationCode.UpdateButton, d); 
@@ -4387,7 +4387,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Button LoRa ID
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteButton RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteButton RoboccDocs} for further information
       */
       DeleteButton(d: number) { 
         return this.callService(ServiceOperationCode.DeleteButton, d); 
@@ -4402,7 +4402,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Veh LoRa ID
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddVeh RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddVeh RoboccDocs} for further information
       */
       AddVeh(d: number) { 
         return this.callService(ServiceOperationCode.AddVeh, d); 
@@ -4417,7 +4417,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Vehicle LoRa ID
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteVeh RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteVeh RoboccDocs} for further information
       */
       DeleteVeh(d: number) { 
         return this.callService(ServiceOperationCode.DeleteVeh, d); 
@@ -4432,7 +4432,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Is vehicle
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetIsVeh RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetIsVeh RoboccDocs} for further information
       */
       SetIsVeh(d: boolean) { 
         return this.callService(ServiceOperationCode.SetIsVeh, d); 
@@ -4447,7 +4447,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Is manager
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetIsManager RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetIsManager RoboccDocs} for further information
       */
       SetIsManager(d: boolean) { 
         return this.callService(ServiceOperationCode.SetIsManager, d); 
@@ -4462,25 +4462,10 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Module type
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetModuleType RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetModuleType RoboccDocs} for further information
       */
       SetModuleType(d: ModuleType) { 
         return this.callService(ServiceOperationCode.SetModuleType, d); 
-      }
-      /**
-      * **Set vehicle direction**
-      *
-      * Set vehicle direction 
-      * @category Configuration
-      * @group Vehicle
-      
-      * @param d Vehicle direction
-      
-      
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetVehDirection RoboccDocs} for further information
-      */
-      SetVehDirection(d: VehDirection) { 
-        return this.callService(ServiceOperationCode.SetVehDirection, d); 
       }
       /**
       * **Set dock direction**
@@ -4492,7 +4477,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Dock direction
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetDockDirection RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetDockDirection RoboccDocs} for further information
       */
       SetDockDirection(d: VehDirection) { 
         return this.callService(ServiceOperationCode.SetDockDirection, d); 
@@ -4507,7 +4492,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ReleaseShelf RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ReleaseShelf RoboccDocs} for further information
       */
       ReleaseShelf() { 
         return this.callService(ServiceOperationCode.ReleaseShelf, null); 
@@ -4522,7 +4507,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ReleaseShelfAndRelease RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ReleaseShelfAndRelease RoboccDocs} for further information
       */
       ReleaseShelfAndRelease() { 
         return this.callService(ServiceOperationCode.ReleaseShelfAndRelease, null); 
@@ -4537,7 +4522,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d LoRa ID
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetIdModule RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetIdModule RoboccDocs} for further information
       */
       SetIdModule(d: number) { 
         return this.callService(ServiceOperationCode.SetIdModule, d); 
@@ -4552,7 +4537,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d LoRA SP
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetLoraSp RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetLoraSp RoboccDocs} for further information
       */
       SetLoraSp(d: number) { 
         return this.callService(ServiceOperationCode.SetLoraSp, d); 
@@ -4567,7 +4552,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Waiting pose
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddWaitingPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddWaitingPose RoboccDocs} for further information
       */
       AddWaitingPose(d: WaitingPose) { 
         return this.callService(ServiceOperationCode.AddWaitingPose, d); 
@@ -4582,7 +4567,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Waiting pose
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateWaitingPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateWaitingPose RoboccDocs} for further information
       */
       UpdateWaitingPose(d: WaitingPose) { 
         return this.callService(ServiceOperationCode.UpdateWaitingPose, d); 
@@ -4597,7 +4582,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Waiting pose Uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteWaitingPose RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteWaitingPose RoboccDocs} for further information
       */
       DeleteWaitingPose(d: number) { 
         return this.callService(ServiceOperationCode.DeleteWaitingPose, d); 
@@ -4612,7 +4597,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Port redirection
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddPortRedirection RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddPortRedirection RoboccDocs} for further information
       */
       AddPortRedirection(d: ExternalPortRedirection) { 
         return this.callService(ServiceOperationCode.AddPortRedirection, d); 
@@ -4627,7 +4612,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Port redirection
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdatePortRedirection RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdatePortRedirection RoboccDocs} for further information
       */
       UpdatePortRedirection(d: UpdatePortRedirectionParams) { 
         return this.callService(ServiceOperationCode.UpdatePortRedirection, d); 
@@ -4642,7 +4627,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeletePortRedirection RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeletePortRedirection RoboccDocs} for further information
       */
       DeletePortRedirection(d: DeletePortRedirectionParams) { 
         return this.callService(ServiceOperationCode.DeletePortRedirection, d); 
@@ -4657,7 +4642,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Custom command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddCustomCommand RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddCustomCommand RoboccDocs} for further information
       */
       AddCustomCommand(d: CustomCommand) { 
         return this.callService(ServiceOperationCode.AddCustomCommand, d); 
@@ -4672,7 +4657,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Custom command
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateCustomCommand RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateCustomCommand RoboccDocs} for further information
       */
       UpdateCustomCommand(d: CustomCommand) { 
         return this.callService(ServiceOperationCode.UpdateCustomCommand, d); 
@@ -4687,7 +4672,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Saved pose uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteCustomCommand RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteCustomCommand RoboccDocs} for further information
       */
       DeleteCustomCommand(d: number) { 
         return this.callService(ServiceOperationCode.DeleteCustomCommand, d); 
@@ -4702,7 +4687,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Controller LoRa
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddControllerLora RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddControllerLora RoboccDocs} for further information
       */
       AddControllerLora(d: ControllerLora) { 
         return this.callService(ServiceOperationCode.AddControllerLora, d); 
@@ -4717,7 +4702,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Controller LoRa
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateControllerLora RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateControllerLora RoboccDocs} for further information
       */
       UpdateControllerLora(d: ControllerLora) { 
         return this.callService(ServiceOperationCode.UpdateControllerLora, d); 
@@ -4729,10 +4714,10 @@ export abstract class ServicesMixin extends BaseAPI {
       * @category Configuration
       * @group ROC
       
-      * @param d Saved pose Uuid
+      * @param d Controler Id
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteControllerLora RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteControllerLora RoboccDocs} for further information
       */
       DeleteControllerLora(d: number) { 
         return this.callService(ServiceOperationCode.DeleteControllerLora, d); 
@@ -4747,7 +4732,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Map element restriction
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddMapElementRestriction RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddMapElementRestriction RoboccDocs} for further information
       */
       AddMapElementRestriction(d: MapElementRestriction) { 
         return this.callService(ServiceOperationCode.AddMapElementRestriction, d); 
@@ -4762,7 +4747,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Map element restriction
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateMapElementRestriction RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateMapElementRestriction RoboccDocs} for further information
       */
       UpdateMapElementRestriction(d: MapElementRestriction) { 
         return this.callService(ServiceOperationCode.UpdateMapElementRestriction, d); 
@@ -4777,7 +4762,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteMapElementRestriction RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteMapElementRestriction RoboccDocs} for further information
       */
       DeleteMapElementRestriction(d: number) { 
         return this.callService(ServiceOperationCode.DeleteMapElementRestriction, d); 
@@ -4792,7 +4777,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Docked pose config
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddRocDockedPoseConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddRocDockedPoseConfig RoboccDocs} for further information
       */
       AddRocDockedPoseConfig(d: DockedPoseConfig) { 
         return this.callService(ServiceOperationCode.AddRocDockedPoseConfig, d); 
@@ -4807,7 +4792,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Docked pose config
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateRocDockedPoseConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateRocDockedPoseConfig RoboccDocs} for further information
       */
       UpdateRocDockedPoseConfig(d: DockedPoseConfig) { 
         return this.callService(ServiceOperationCode.UpdateRocDockedPoseConfig, d); 
@@ -4822,7 +4807,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteRocDockedPoseConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteRocDockedPoseConfig RoboccDocs} for further information
       */
       DeleteRocDockedPoseConfig(d: number) { 
         return this.callService(ServiceOperationCode.DeleteRocDockedPoseConfig, d); 
@@ -4837,7 +4822,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Map element config
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddRocMapElementConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddRocMapElementConfig RoboccDocs} for further information
       */
       AddRocMapElementConfig(d: RocMapElementConfig) { 
         return this.callService(ServiceOperationCode.AddRocMapElementConfig, d); 
@@ -4852,7 +4837,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Map element config
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateRocMapElementConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateRocMapElementConfig RoboccDocs} for further information
       */
       UpdateRocMapElementConfig(d: RocMapElementConfig) { 
         return this.callService(ServiceOperationCode.UpdateRocMapElementConfig, d); 
@@ -4867,7 +4852,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteRocMapElementConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteRocMapElementConfig RoboccDocs} for further information
       */
       DeleteRocMapElementConfig(d: number) { 
         return this.callService(ServiceOperationCode.DeleteRocMapElementConfig, d); 
@@ -4882,7 +4867,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Area config
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddRocAreaConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddRocAreaConfig RoboccDocs} for further information
       */
       AddRocAreaConfig(d: RocAreaConfig) { 
         return this.callService(ServiceOperationCode.AddRocAreaConfig, d); 
@@ -4897,7 +4882,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Area config
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateRocAreaConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateRocAreaConfig RoboccDocs} for further information
       */
       UpdateRocAreaConfig(d: RocAreaConfig) { 
         return this.callService(ServiceOperationCode.UpdateRocAreaConfig, d); 
@@ -4912,7 +4897,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteRocAreaConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteRocAreaConfig RoboccDocs} for further information
       */
       DeleteRocAreaConfig(d: number) { 
         return this.callService(ServiceOperationCode.DeleteRocAreaConfig, d); 
@@ -4927,7 +4912,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Controller id
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ControllerLoraGetContactsConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ControllerLoraGetContactsConfig RoboccDocs} for further information
       */
       ControllerLoraGetContactsConfig(d: number) { 
         return this.callService(ServiceOperationCode.ControllerLoraGetContactsConfig, d); 
@@ -4942,7 +4927,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ControllerLoraSetContactConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ControllerLoraSetContactConfig RoboccDocs} for further information
       */
       ControllerLoraSetContactConfig(d: ControllerLoraSetContactConfigParams) { 
         return this.callService(ServiceOperationCode.ControllerLoraSetContactConfig, d); 
@@ -4957,7 +4942,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Predefined messages
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetPredefinedMessages RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetPredefinedMessages RoboccDocs} for further information
       */
       SetPredefinedMessages(d: string[]) { 
         return this.callService(ServiceOperationCode.SetPredefinedMessages, d); 
@@ -4972,7 +4957,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Delays
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetVehicleDelayConfig RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetVehicleDelayConfig RoboccDocs} for further information
       */
       SetVehicleDelayConfig(d: VehDelayConfig) { 
         return this.callService(ServiceOperationCode.SetVehicleDelayConfig, d); 
@@ -4987,7 +4972,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Response deadline in ms
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetVehicleResponseDeadline RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetVehicleResponseDeadline RoboccDocs} for further information
       */
       SetVehicleResponseDeadline(d: number) { 
         return this.callService(ServiceOperationCode.SetVehicleResponseDeadline, d); 
@@ -5002,7 +4987,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Response deadline in ms
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetDefaultResponseDeadline RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetDefaultResponseDeadline RoboccDocs} for further information
       */
       SetDefaultResponseDeadline(d: number) { 
         return this.callService(ServiceOperationCode.SetDefaultResponseDeadline, d); 
@@ -5017,7 +5002,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Release RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Release RoboccDocs} for further information
       */
       Release() { 
         return this.callService(ServiceOperationCode.Release, null); 
@@ -5032,7 +5017,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Uuid of next step
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#NextStepMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#NextStepMission RoboccDocs} for further information
       */
       NextStepMission(d: number) { 
         return this.callService(ServiceOperationCode.NextStepMission, d); 
@@ -5047,7 +5032,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#NextStepMissionWithMessage RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#NextStepMissionWithMessage RoboccDocs} for further information
       */
       NextStepMissionWithMessage(d: NextStepMissionWithMessageParams) { 
         return this.callService(ServiceOperationCode.NextStepMissionWithMessage, d); 
@@ -5062,7 +5047,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#PauseMove RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#PauseMove RoboccDocs} for further information
       */
       PauseMove() { 
         return this.callService(ServiceOperationCode.PauseMove, null); 
@@ -5077,7 +5062,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ResumeMove RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ResumeMove RoboccDocs} for further information
       */
       ResumeMove() { 
         return this.callService(ServiceOperationCode.ResumeMove, null); 
@@ -5092,7 +5077,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#CancelMove RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#CancelMove RoboccDocs} for further information
       */
       CancelMove() { 
         return this.callService(ServiceOperationCode.CancelMove, null); 
@@ -5107,7 +5092,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#Reboot RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#Reboot RoboccDocs} for further information
       */
       Reboot() { 
         return this.callService(ServiceOperationCode.Reboot, null); 
@@ -5122,7 +5107,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d In config mode
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetInConfigMode RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetInConfigMode RoboccDocs} for further information
       */
       SetInConfigMode(d: boolean) { 
         return this.callService(ServiceOperationCode.SetInConfigMode, d); 
@@ -5137,7 +5122,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d In maintenance mode
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetInMaintenanceMode RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetInMaintenanceMode RoboccDocs} for further information
       */
       SetInMaintenanceMode(d: boolean) { 
         return this.callService(ServiceOperationCode.SetInMaintenanceMode, d); 
@@ -5152,7 +5137,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Allow move from dock
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetAllowMoveFromDock RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetAllowMoveFromDock RoboccDocs} for further information
       */
       SetAllowMoveFromDock(d: boolean) { 
         return this.callService(ServiceOperationCode.SetAllowMoveFromDock, d); 
@@ -5167,7 +5152,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Allow multiple mission for the same button
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetAllowMultipleMissions RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetAllowMultipleMissions RoboccDocs} for further information
       */
       SetAllowMultipleMissions(d: boolean) { 
         return this.callService(ServiceOperationCode.SetAllowMultipleMissions, d); 
@@ -5182,7 +5167,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Show all destinations on home
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetShowAllDestinationsOnHome RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetShowAllDestinationsOnHome RoboccDocs} for further information
       */
       SetShowAllDestinationsOnHome(d: boolean) { 
         return this.callService(ServiceOperationCode.SetShowAllDestinationsOnHome, d); 
@@ -5197,7 +5182,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Activate
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetModuleSleeping RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetModuleSleeping RoboccDocs} for further information
       */
       SetModuleSleeping(d: boolean) { 
         return this.callService(ServiceOperationCode.SetModuleSleeping, d); 
@@ -5212,7 +5197,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Activate
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetModuleHibernate RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetModuleHibernate RoboccDocs} for further information
       */
       SetModuleHibernate(d: boolean) { 
         return this.callService(ServiceOperationCode.SetModuleHibernate, d); 
@@ -5227,7 +5212,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Activate
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetSleepScreen RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetSleepScreen RoboccDocs} for further information
       */
       SetSleepScreen(d: boolean) { 
         return this.callService(ServiceOperationCode.SetSleepScreen, d); 
@@ -5242,7 +5227,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Operating hours
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetOperatingHours RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetOperatingHours RoboccDocs} for further information
       */
       SetOperatingHours(d: OperatingHours) { 
         return this.callService(ServiceOperationCode.SetOperatingHours, d); 
@@ -5257,7 +5242,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Password to check
       
       * @data {@link CheckHmiPasswordResult} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#CheckHmiPassword RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#CheckHmiPassword RoboccDocs} for further information
       */
       CheckHmiPassword(d: string) { 
         return this.callService(ServiceOperationCode.CheckHmiPassword, d); 
@@ -5272,7 +5257,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetMissionPriority RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetMissionPriority RoboccDocs} for further information
       */
       SetMissionPriority(d: SetMissionPriorityParams) { 
         return this.callService(ServiceOperationCode.SetMissionPriority, d); 
@@ -5287,7 +5272,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Mission ID
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RemoveMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RemoveMission RoboccDocs} for further information
       */
       RemoveMission(d: number) { 
         return this.callService(ServiceOperationCode.RemoveMission, d); 
@@ -5302,7 +5287,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Button LoRa ID
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RemoveButtonMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RemoveButtonMission RoboccDocs} for further information
       */
       RemoveButtonMission(d: number) { 
         return this.callService(ServiceOperationCode.RemoveButtonMission, d); 
@@ -5317,7 +5302,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Mission ID
       
       * @data {@link Mission} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetMission RoboccDocs} for further information
       */
       GetMission(d: number) { 
         return this.callService(ServiceOperationCode.GetMission, d); 
@@ -5332,7 +5317,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetMultidestination RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetMultidestination RoboccDocs} for further information
       */
       SetMultidestination(d: SetMultidestinationParams) { 
         return this.callService(ServiceOperationCode.SetMultidestination, d); 
@@ -5347,7 +5332,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetMultidestinationWithMessages RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetMultidestinationWithMessages RoboccDocs} for further information
       */
       SetMultidestinationWithMessages(d: SetMultidestinationWithMessagesParams) { 
         return this.callService(ServiceOperationCode.SetMultidestinationWithMessages, d); 
@@ -5362,7 +5347,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d File content
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ImportConfiguration RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ImportConfiguration RoboccDocs} for further information
       */
       ImportConfiguration(d: string) { 
         return this.callService(ServiceOperationCode.ImportConfiguration, d); 
@@ -5377,7 +5362,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExportConfiguration RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExportConfiguration RoboccDocs} for further information
       */
       ExportConfiguration() { 
         return this.callService(ServiceOperationCode.ExportConfiguration, null); 
@@ -5392,7 +5377,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d File content
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ImportUsers RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ImportUsers RoboccDocs} for further information
       */
       ImportUsers(d: string) { 
         return this.callService(ServiceOperationCode.ImportUsers, d); 
@@ -5407,7 +5392,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExportUsers RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExportUsers RoboccDocs} for further information
       */
       ExportUsers() { 
         return this.callService(ServiceOperationCode.ExportUsers, null); 
@@ -5422,7 +5407,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       * @data {@link StatsData} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetStats RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetStats RoboccDocs} for further information
       */
       GetStats(d: GetStatsParams) { 
         return this.callService(ServiceOperationCode.GetStats, d); 
@@ -5437,7 +5422,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       * @data {@link DailyStats} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetLightStats RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetLightStats RoboccDocs} for further information
       */
       GetLightStats(d: GetLightStatsParams) { 
         return this.callService(ServiceOperationCode.GetLightStats, d); 
@@ -5452,7 +5437,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       * @data {@link ExportedStats} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExportStats RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExportStats RoboccDocs} for further information
       */
       ExportStats(d: ExportStatsParams) { 
         return this.callService(ServiceOperationCode.ExportStats, d); 
@@ -5467,7 +5452,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link Map}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetMapsForStats RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetMapsForStats RoboccDocs} for further information
       */
       GetMapsForStats() { 
         return this.callService(ServiceOperationCode.GetMapsForStats, null); 
@@ -5482,7 +5467,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       * @data {@link VehTimelineData}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetVehsTimeline RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetVehsTimeline RoboccDocs} for further information
       */
       GetVehsTimeline(d: GetVehsTimelineParams) { 
         return this.callService(ServiceOperationCode.GetVehsTimeline, d); 
@@ -5497,7 +5482,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ResetStats RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ResetStats RoboccDocs} for further information
       */
       ResetStats() { 
         return this.callService(ServiceOperationCode.ResetStats, null); 
@@ -5512,7 +5497,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#LiftMoveDown RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#LiftMoveDown RoboccDocs} for further information
       */
       LiftMoveDown() { 
         return this.callService(ServiceOperationCode.LiftMoveDown, null); 
@@ -5527,7 +5512,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#LiftMoveUp RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#LiftMoveUp RoboccDocs} for further information
       */
       LiftMoveUp() { 
         return this.callService(ServiceOperationCode.LiftMoveUp, null); 
@@ -5542,7 +5527,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#LiftStop RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#LiftStop RoboccDocs} for further information
       */
       LiftStop() { 
         return this.callService(ServiceOperationCode.LiftStop, null); 
@@ -5557,7 +5542,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#StopRetrying RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#StopRetrying RoboccDocs} for further information
       */
       StopRetrying() { 
         return this.callService(ServiceOperationCode.StopRetrying, null); 
@@ -5572,7 +5557,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddRocUser RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddRocUser RoboccDocs} for further information
       */
       AddRocUser(d: AddRocUserParams) { 
         return this.callService(ServiceOperationCode.AddRocUser, d); 
@@ -5587,7 +5572,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateRocUser RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateRocUser RoboccDocs} for further information
       */
       UpdateRocUser(d: UpdateRocUserParams) { 
         return this.callService(ServiceOperationCode.UpdateRocUser, d); 
@@ -5602,7 +5587,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateActiveCredentials RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateActiveCredentials RoboccDocs} for further information
       */
       UpdateActiveCredentials(d: UpdateActiveCredentialsParams) { 
         return this.callService(ServiceOperationCode.UpdateActiveCredentials, d); 
@@ -5617,7 +5602,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d ID User
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RemoveRocUser RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RemoveRocUser RoboccDocs} for further information
       */
       RemoveRocUser(d: number) { 
         return this.callService(ServiceOperationCode.RemoveRocUser, d); 
@@ -5632,7 +5617,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link RocUser}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ListRocUsers RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ListRocUsers RoboccDocs} for further information
       */
       ListRocUsers() { 
         return this.callService(ServiceOperationCode.ListRocUsers, null); 
@@ -5647,7 +5632,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetRocId RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetRocId RoboccDocs} for further information
       */
       GetRocId() { 
         return this.callService(ServiceOperationCode.GetRocId, null); 
@@ -5662,7 +5647,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateSoftVersions RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateSoftVersions RoboccDocs} for further information
       */
       UpdateSoftVersions() { 
         return this.callService(ServiceOperationCode.UpdateSoftVersions, null); 
@@ -5677,7 +5662,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d New password
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#HotspotSetPassword RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#HotspotSetPassword RoboccDocs} for further information
       */
       HotspotSetPassword(d: string) { 
         return this.callService(ServiceOperationCode.HotspotSetPassword, d); 
@@ -5692,7 +5677,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Enable
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#HotspotEnable RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#HotspotEnable RoboccDocs} for further information
       */
       HotspotEnable(d: boolean) { 
         return this.callService(ServiceOperationCode.HotspotEnable, d); 
@@ -5707,7 +5692,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       * @data {@link number} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#CreateMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#CreateMission RoboccDocs} for further information
       */
       CreateMission(d: CreateMissionParams) { 
         return this.callService(ServiceOperationCode.CreateMission, d); 
@@ -5722,7 +5707,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExtendMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExtendMission RoboccDocs} for further information
       */
       ExtendMission(d: ExtendMissionParams) { 
         return this.callService(ServiceOperationCode.ExtendMission, d); 
@@ -5737,7 +5722,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Parameters
       
       * @data {@link number} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#StartButtonMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#StartButtonMission RoboccDocs} for further information
       */
       StartButtonMission(d: StartButtonMissionParams) { 
         return this.callService(ServiceOperationCode.StartButtonMission, d); 
@@ -5752,7 +5737,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Id module
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ReleaseModule RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ReleaseModule RoboccDocs} for further information
       */
       ReleaseModule(d: number) { 
         return this.callService(ServiceOperationCode.ReleaseModule, d); 
@@ -5767,7 +5752,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Group
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AddGroup RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AddGroup RoboccDocs} for further information
       */
       AddGroup(d: Group) { 
         return this.callService(ServiceOperationCode.AddGroup, d); 
@@ -5782,7 +5767,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Group
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#UpdateGroup RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#UpdateGroup RoboccDocs} for further information
       */
       UpdateGroup(d: Group) { 
         return this.callService(ServiceOperationCode.UpdateGroup, d); 
@@ -5797,7 +5782,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Main uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#DeleteGroup RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#DeleteGroup RoboccDocs} for further information
       */
       DeleteGroup(d: number) { 
         return this.callService(ServiceOperationCode.DeleteGroup, d); 
@@ -5812,7 +5797,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Sub step uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SubStepMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SubStepMission RoboccDocs} for further information
       */
       SubStepMission(d: number) { 
         return this.callService(ServiceOperationCode.SubStepMission, d); 
@@ -5827,7 +5812,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RocSoftForceUpdate RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RocSoftForceUpdate RoboccDocs} for further information
       */
       RocSoftForceUpdate() { 
         return this.callService(ServiceOperationCode.RocSoftForceUpdate, null); 
@@ -5842,7 +5827,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Enable/disable
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RocSoftSetAutomaticUpdates RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RocSoftSetAutomaticUpdates RoboccDocs} for further information
       */
       RocSoftSetAutomaticUpdates(enable: boolean) { 
         return this.callService(ServiceOperationCode.RocSoftSetAutomaticUpdates, enable); 
@@ -5857,7 +5842,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetTareModuleParams RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetTareModuleParams RoboccDocs} for further information
       */
       SetTareModuleParams(d: ModuleParams) { 
         return this.callService(ServiceOperationCode.SetTareModuleParams, d); 
@@ -5872,7 +5857,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetLoadedModuleParams RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetLoadedModuleParams RoboccDocs} for further information
       */
       SetLoadedModuleParams(d: ModuleParams) { 
         return this.callService(ServiceOperationCode.SetLoadedModuleParams, d); 
@@ -5887,7 +5872,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Allow
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AllowFollowMe RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AllowFollowMe RoboccDocs} for further information
       */
       AllowFollowMe(d: boolean) { 
         return this.callService(ServiceOperationCode.AllowFollowMe, d); 
@@ -5902,7 +5887,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Max button id
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetMaxButtonIdSearch RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetMaxButtonIdSearch RoboccDocs} for further information
       */
       SetMaxButtonIdSearch(d: number) { 
         return this.callService(ServiceOperationCode.SetMaxButtonIdSearch, d); 
@@ -5917,7 +5902,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Default sound
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetDefaultWaitReleaseSound RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetDefaultWaitReleaseSound RoboccDocs} for further information
       */
       SetDefaultWaitReleaseSound(d: string) { 
         return this.callService(ServiceOperationCode.SetDefaultWaitReleaseSound, d); 
@@ -5932,7 +5917,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Map uuid
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetManagerActiveMap RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetManagerActiveMap RoboccDocs} for further information
       */
       SetManagerActiveMap(d: number) { 
         return this.callService(ServiceOperationCode.SetManagerActiveMap, d); 
@@ -5947,7 +5932,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       * @data {@link ManagerMap}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetManagerMapsList RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetManagerMapsList RoboccDocs} for further information
       */
       GetManagerMapsList() { 
         return this.callService(ServiceOperationCode.GetManagerMapsList, null); 
@@ -5962,7 +5947,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Waiting sound list
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetWaitingSounds RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetWaitingSounds RoboccDocs} for further information
       */
       SetWaitingSounds(d: WaitingSound[]) { 
         return this.callService(ServiceOperationCode.SetWaitingSounds, d); 
@@ -5977,7 +5962,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Waiting sound
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetWaitingSound RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetWaitingSound RoboccDocs} for further information
       */
       SetWaitingSound(d: WaitingSound) { 
         return this.callService(ServiceOperationCode.SetWaitingSound, d); 
@@ -5992,7 +5977,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Event sound list
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetEventsSounds RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetEventsSounds RoboccDocs} for further information
       */
       SetEventsSounds(d: EventSound[]) { 
         return this.callService(ServiceOperationCode.SetEventsSounds, d); 
@@ -6007,7 +5992,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetLanguage RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetLanguage RoboccDocs} for further information
       */
       SetLanguage(d: Language) { 
         return this.callService(ServiceOperationCode.SetLanguage, d); 
@@ -6022,7 +6007,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param enable Enable/disable
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#EnablePairing RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#EnablePairing RoboccDocs} for further information
       */
       EnablePairing(enable: boolean) { 
         return this.callService(ServiceOperationCode.EnablePairing, enable); 
@@ -6037,7 +6022,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d LoRa ID of equipment
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#PairEquipement RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#PairEquipement RoboccDocs} for further information
       */
       PairEquipement(d: number) { 
         return this.callService(ServiceOperationCode.PairEquipement, d); 
@@ -6052,7 +6037,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d LoRa ID of equipment
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#RevokeEquipement RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#RevokeEquipement RoboccDocs} for further information
       */
       RevokeEquipement(d: number) { 
         return this.callService(ServiceOperationCode.RevokeEquipement, d); 
@@ -6067,7 +6052,7 @@ export abstract class ServicesMixin extends BaseAPI {
       
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#AskPair RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AskPair RoboccDocs} for further information
       */
       AskPair() { 
         return this.callService(ServiceOperationCode.AskPair, null); 
@@ -6082,7 +6067,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       * @data {@link SecurityLog}[] 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#GetSecurityLogging RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#GetSecurityLogging RoboccDocs} for further information
       */
       GetSecurityLogging(d: GetSecurityLoggingParams) { 
         return this.callService(ServiceOperationCode.GetSecurityLogging, d); 
@@ -6097,7 +6082,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       * @data {@link string} 
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#ExportSecurityLogging RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#ExportSecurityLogging RoboccDocs} for further information
       */
       ExportSecurityLogging(d: ExportSecurityLoggingParams) { 
         return this.callService(ServiceOperationCode.ExportSecurityLogging, d); 
@@ -6112,7 +6097,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Mute sound
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetGlobalEmergencyStopMuted RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetGlobalEmergencyStopMuted RoboccDocs} for further information
       */
       SetGlobalEmergencyStopMuted(d: boolean) { 
         return this.callService(ServiceOperationCode.SetGlobalEmergencyStopMuted, d); 
@@ -6127,7 +6112,7 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d Delay
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetDelayBeforePromotingMission RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetDelayBeforePromotingMission RoboccDocs} for further information
       */
       SetDelayBeforePromotingMission(d: number) { 
         return this.callService(ServiceOperationCode.SetDelayBeforePromotingMission, d); 
@@ -6142,9 +6127,24 @@ export abstract class ServicesMixin extends BaseAPI {
       * @param d 
       
       
-      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.7-athena-7/classes/RocApi.RocApi.html#SetUseSyncButtons RoboccDocs} for further information
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#SetUseSyncButtons RoboccDocs} for further information
       */
       SetUseSyncButtons(d: SetUseSyncButtonsParams) { 
         return this.callService(ServiceOperationCode.SetUseSyncButtons, d); 
+      }
+      /**
+      * **Allow go to charge with crate**
+      *
+      * Allow go to charge with crate 
+      * @category Configuration
+      * @group Vehicle
+      
+      * @param d Allow
+      
+      
+      * @see {@link https://docs.robocc.com/roc-api-ts/9.1.8-athena-8/classes/RocApi.RocApi.html#AllowChargeWithCrate RoboccDocs} for further information
+      */
+      AllowChargeWithCrate(d: boolean) { 
+        return this.callService(ServiceOperationCode.AllowChargeWithCrate, d); 
       }
 }

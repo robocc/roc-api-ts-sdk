@@ -903,16 +903,16 @@ export declare enum TopicEventCode {
     */
     OnlyRelease = 7023,
     /**
-      * **Vehicle direction - mast position**
+      * **Mast position**
       *
-      * Vehicle direction - mast position
+      * Mast position
       
       * @data {@link VehDirection}
       * @category Configuration
       * @group Vehicle
       
     */
-    VehDirection = 7024,
+    MastPosition = 7024,
     /**
       * **Dock direction**
       *
@@ -1660,7 +1660,18 @@ export declare enum TopicEventCode {
       * @group Manager
       
     */
-    SyncButtonsWaitTime = 7096
+    SyncButtonsWaitTime = 7096,
+    /**
+      * **Go to charge with crate allowed**
+      *
+      * Go to charge with crate allowed
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    ChargeWithCrateAllowed = 7097
 }
 /** @internal */
 export declare enum ResultEventCode {
@@ -2295,6 +2306,7 @@ export declare const initEventTopicCallbacks: () => {
     7094: never[];
     7095: never[];
     7096: never[];
+    7097: never[];
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
@@ -2582,7 +2594,7 @@ export type EventDataType = {
     [TopicEventCode.ButtonsInfos]: DeepRequired<ButtonInfos[]>;
     [TopicEventCode.MissionTitle]: DeepRequired<string>;
     [TopicEventCode.OnlyRelease]: DeepRequired<boolean>;
-    [TopicEventCode.VehDirection]: DeepRequired<VehDirection>;
+    [TopicEventCode.MastPosition]: DeepRequired<VehDirection>;
     [TopicEventCode.DockDirection]: DeepRequired<VehDirection>;
     [TopicEventCode.DailyStats]: DeepRequired<DailyStats>;
     [TopicEventCode.ImportConfigDone]: DeepRequired<InstallConfigDone>;
@@ -2651,4 +2663,5 @@ export type EventDataType = {
     [TopicEventCode.DelayBeforePromotingMission]: DeepRequired<number>;
     [TopicEventCode.UseSyncButtons]: DeepRequired<boolean>;
     [TopicEventCode.SyncButtonsWaitTime]: DeepRequired<number>;
+    [TopicEventCode.ChargeWithCrateAllowed]: DeepRequired<boolean>;
 };

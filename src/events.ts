@@ -907,16 +907,16 @@ export enum TopicEventCode {
     */
     OnlyRelease = 7023,
     /**
-      * **Vehicle direction - mast position**
+      * **Mast position**
       *
-      * Vehicle direction - mast position
+      * Mast position
       
       * @data {@link VehDirection}
       * @category Configuration
       * @group Vehicle
       
     */
-    VehDirection = 7024,
+    MastPosition = 7024,
     /**
       * **Dock direction**
       *
@@ -1665,6 +1665,17 @@ export enum TopicEventCode {
       
     */
     SyncButtonsWaitTime = 7096,
+    /**
+      * **Go to charge with crate allowed**
+      *
+      * Go to charge with crate allowed
+      
+      * @data {@link boolean}
+      * @category Configuration
+      * @group Vehicle
+      
+    */
+    ChargeWithCrateAllowed = 7097,
     
 }
 /** @internal */
@@ -2240,7 +2251,7 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.ButtonsInfos]: [],
     [TopicEventCode.MissionTitle]: [],
     [TopicEventCode.OnlyRelease]: [],
-    [TopicEventCode.VehDirection]: [],
+    [TopicEventCode.MastPosition]: [],
     [TopicEventCode.DockDirection]: [],
     [TopicEventCode.DailyStats]: [],
     [TopicEventCode.ImportConfigDone]: [],
@@ -2309,6 +2320,7 @@ export const initEventTopicCallbacks = () =>
     [TopicEventCode.DelayBeforePromotingMission]: [],
     [TopicEventCode.UseSyncButtons]: [],
     [TopicEventCode.SyncButtonsWaitTime]: [],
+    [TopicEventCode.ChargeWithCrateAllowed]: [],
     
 })
 
@@ -2489,7 +2501,7 @@ export type EventDataType = {
 [TopicEventCode.ButtonsInfos]: DeepRequired<ButtonInfos[]>
 [TopicEventCode.MissionTitle]: DeepRequired<string>
 [TopicEventCode.OnlyRelease]: DeepRequired<boolean>
-[TopicEventCode.VehDirection]: DeepRequired<VehDirection>
+[TopicEventCode.MastPosition]: DeepRequired<VehDirection>
 [TopicEventCode.DockDirection]: DeepRequired<VehDirection>
 [TopicEventCode.DailyStats]: DeepRequired<DailyStats>
 [TopicEventCode.ImportConfigDone]: DeepRequired<InstallConfigDone>
@@ -2558,4 +2570,5 @@ export type EventDataType = {
 [TopicEventCode.DelayBeforePromotingMission]: DeepRequired<number>
 [TopicEventCode.UseSyncButtons]: DeepRequired<boolean>
 [TopicEventCode.SyncButtonsWaitTime]: DeepRequired<number>
+[TopicEventCode.ChargeWithCrateAllowed]: DeepRequired<boolean>
 }
