@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>AutopilotOnError | RocApi documentation</title><meta name="description" content="Documentation for RocApi documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>PowerSupplyStatus | RocApi documentation</title><meta name="description" content="Documentation for RocApi documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -14,17 +14,17 @@
 <ul class="tsd-breadcrumb">
 <li><a href="../index.html">RocApi documentation</a></li>
 <li><a href="../modules/types.html">types</a></li>
-<li><a href="types.AutopilotOnError.html">AutopilotOnError</a></li></ul>
-<h1>Enumeration AutopilotOnError</h1></div>
+<li><a href="types.PowerSupplyStatus.html">PowerSupplyStatus</a></li></ul>
+<h1>Enumeration PowerSupplyStatus</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p><strong>Enum autopilot on error</strong></p>
-<p>List all on error options</p>
+<div class="tsd-comment tsd-typography"><p><strong>Enum power supply status</strong></p>
+<p>Enum power supply status</p>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><p><a href="https://docs.robocc.com/roc-api-ts/9.1.10-athena-10/enums/types.AutopilotOnError.html">RoboccDocs</a> for further information</p>
+<h4>See</h4><p><a href="https://docs.robocc.com/roc-api-ts/9.1.10-athena-10/enums/types.PowerSupplyStatus.html">RoboccDocs</a> for further information</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in types.ts:5199</li></ul></aside>
+<li>Defined in types.ts:5041</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -32,27 +32,54 @@
 <div class="tsd-accordion-details">
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Enumeration Members</h3>
-<div class="tsd-index-list"><a href="types.AutopilotOnError.html#NEXT_STEP" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>NEXT_<wbr/>STEP</span></a>
-<a href="types.AutopilotOnError.html#RETRY" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>RETRY</span></a>
+<div class="tsd-index-list"><a href="types.PowerSupplyStatus.html#CHARGING" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>CHARGING</span></a>
+<a href="types.PowerSupplyStatus.html#DISCHARGING" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>DISCHARGING</span></a>
+<a href="types.PowerSupplyStatus.html#FULL" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>FULL</span></a>
+<a href="types.PowerSupplyStatus.html#NOT_CHARGING" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>NOT_<wbr/>CHARGING</span></a>
+<a href="types.PowerSupplyStatus.html#UNKNOWN" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>UNKNOWN</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Enumeration Members</h2>
-<section class="tsd-panel tsd-member"><a id="NEXT_STEP" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>NEXT_<wbr/>STEP</span><a href="#NEXT_STEP" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-enum-member">NEXT_<wbr/>STEP</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0</span></div>
-<div class="tsd-comment tsd-typography"><p>On error, proceed next step</p>
+<section class="tsd-panel tsd-member"><a id="CHARGING" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>CHARGING</span><a href="#CHARGING" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-enum-member">CHARGING</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span></div>
+<div class="tsd-comment tsd-typography"><p>Charging</p>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in types.ts:5201</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="RETRY" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>RETRY</span><a href="#RETRY" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-enum-member">RETRY</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span></div>
-<div class="tsd-comment tsd-typography"><p>On error, retry</p>
+<li>Defined in types.ts:5045</li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="DISCHARGING" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>DISCHARGING</span><a href="#DISCHARGING" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-enum-member">DISCHARGING</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">2</span></div>
+<div class="tsd-comment tsd-typography"><p>Discharging</p>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in types.ts:5203</li></ul></aside></section></section></div>
+<li>Defined in types.ts:5047</li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="FULL" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>FULL</span><a href="#FULL" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-enum-member">FULL</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">4</span></div>
+<div class="tsd-comment tsd-typography"><p>Full</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in types.ts:5051</li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="NOT_CHARGING" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>NOT_<wbr/>CHARGING</span><a href="#NOT_CHARGING" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-enum-member">NOT_<wbr/>CHARGING</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">3</span></div>
+<div class="tsd-comment tsd-typography"><p>Not used</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in types.ts:5049</li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="UNKNOWN" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>UNKNOWN</span><a href="#UNKNOWN" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-enum-member">UNKNOWN</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0</span></div>
+<div class="tsd-comment tsd-typography"><p>Unknown, no data received from battery</p>
+</div>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in types.ts:5043</li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -72,8 +99,11 @@
 <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
 <div class="tsd-accordion-details">
 <ul>
-<li><a href="#NEXT_STEP" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>NEXT_<wbr/>STEP</span></a></li>
-<li><a href="#RETRY" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>RETRY</span></a></li></ul></div></details></div>
+<li><a href="#CHARGING" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>CHARGING</span></a></li>
+<li><a href="#DISCHARGING" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>DISCHARGING</span></a></li>
+<li><a href="#FULL" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>FULL</span></a></li>
+<li><a href="#NOT_CHARGING" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>NOT_<wbr/>CHARGING</span></a></li>
+<li><a href="#UNKNOWN" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-16"></use></svg><span>UNKNOWN</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>RocApi documentation</span></a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">

@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "9.1.9-athena-9",
+  "version": "9.1.10-athena-10",
   "description": "RocApi client Typescript library",
   "scripts": {
     "build": "npx tsc && node tasks/package.js",
