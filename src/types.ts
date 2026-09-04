@@ -30,7 +30,7 @@ export abstract class BaseAPI {
  * @property `severity` - *Event's severity*
  * @property `title` - *Title*
  * @property `data` - *Data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SecurityEvent.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SecurityEvent.html RoboccDocs} for further information
 */
 export interface SecurityEvent {
   /** Event's severity */
@@ -49,7 +49,7 @@ export interface SecurityEvent {
  * @property `connection_max_try` - *Number of max try with invalid password or API key*
  * @property `connection_timeout` - *IP Blocking Duration*
  * @property `chassis_intrusion_detection` - *Enable the chassis intrusion detection system*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Security.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Security.html RoboccDocs} for further information
 */
 export interface Security {
   /** Enable no SSL */
@@ -78,7 +78,7 @@ export interface Security {
  * @property `push_battery_reset` - *Battery in deep discharge, push battery reset*
  * @property `contact_support` - *Need to contact support*
  * @property `rearm_security` - *Vehicle need to be rearmed for security reasons*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.HumanInterventionRequired.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.HumanInterventionRequired.html RoboccDocs} for further information
 */
 export interface HumanInterventionRequired {
   /** Aggregate human intervention required */
@@ -129,7 +129,7 @@ export interface HumanInterventionRequired {
  * @property `point_us_sensor_08_h` - *LED overlayer displaying location of US sensor 08h*
  * @property `point_us_sensor_10_h` - *LED overlayer displaying location of US sensor 10h*
  * @property `point_us_sensor_11_h` - *LED overlayer displaying location of US sensor 11h*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LedCommand.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LedCommand.html RoboccDocs} for further information
 */
 export interface LedCommand {
   /** LED global animation */
@@ -183,7 +183,7 @@ export interface LedCommand {
  * @property `name` - *Name*
  * @property `description` - *Description*
  * @property `maps` - *List of maps*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Site.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Site.html RoboccDocs} for further information
 */
 export interface Site {
   /** Id */
@@ -202,7 +202,7 @@ export interface Site {
  * @property `operation_code` - *Current action operation code*
  * @property `restart_map_allowed` - *Restart map is allowed*
  * @property `vehicle_moving` - *Vehicle is moving*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.OngoingAction.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.OngoingAction.html RoboccDocs} for further information
 */
 export interface OngoingAction {
   /** Current action operation code */
@@ -220,7 +220,7 @@ export interface OngoingAction {
  * @property `name` - *Name*
  * @property `description` - *Description*
  * @property `maps` - *List of maps,*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SiteLight.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SiteLight.html RoboccDocs} for further information
 */
 export interface SiteLight {
   /** Id */
@@ -239,7 +239,7 @@ export interface SiteLight {
  * @property `id` - *id*
  * @property `name` - *Name*
  * @property `description` - *Description*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SiteRaw.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SiteRaw.html RoboccDocs} for further information
 */
 export interface SiteRaw {
   /** id */
@@ -282,7 +282,7 @@ export interface SiteRaw {
  * @property `routes` - *Routes graph*
  * @property `last_update` - *Timestamp of map's last update*
  * @property `orientation_angle` - *Map's orientation angle in trigonometric direction, reverse clockwise*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Map.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Map.html RoboccDocs} for further information
 */
 export interface Map {
   /** Id */
@@ -369,7 +369,7 @@ export interface Map {
  * @property `img_final` - *Final image in base 64*
  * @property `routes` - *Routes graph*
  * @property `orientation_angle` - *Map's orientation angle in trigonometric direction, reverse clockwise*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MapRaw.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MapRaw.html RoboccDocs} for further information
 */
 export interface MapRaw {
   /** Id */
@@ -428,7 +428,7 @@ export interface MapRaw {
  * @property `behaviour` - *General behaviour*
  * @property `uuid_preferred_charging_station` - *Uuid of preferred charging station*
  * @property `routes` - *Routes graph*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MapElements.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MapElements.html RoboccDocs} for further information
 */
 export interface MapElements {
   /** List of forbidden areas */
@@ -478,7 +478,7 @@ export interface MapElements {
  * @property `autopilots` - *List of autopilot configurations*
  * @property `routes` - *Routes graph*
  * @property `orientation_angle` - *Map's orientation angle in trigonometric direction, reverse clockwise*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MapWithoutImages.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MapWithoutImages.html RoboccDocs} for further information
 */
 export interface MapWithoutImages {
   /** Id */
@@ -537,7 +537,7 @@ export interface MapWithoutImages {
  * @property `vertices` - *Vertices*
  * @property `edges` - *Edges*
  * @property `settings` - *Settings for routes path planning*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RoutesGraph.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RoutesGraph.html RoboccDocs} for further information
 */
 export interface RoutesGraph {
   /** Vertices */
@@ -553,7 +553,7 @@ export interface RoutesGraph {
  * Routes vertex ↔️
  * @property `id` - *Vertex index*
  * @property `position` - *Vertex position*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RoutesVertex.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RoutesVertex.html RoboccDocs} for further information
 */
 export interface RoutesVertex {
   /** Vertex index */
@@ -570,7 +570,7 @@ export interface RoutesVertex {
  * @property `end_vertex_id` - *End vertex ID*
  * @property `bidirectional` - *True if edge is bidirectionnal*
  * @property `path` - *End vertex ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RoutesEdge.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RoutesEdge.html RoboccDocs} for further information
 */
 export interface RoutesEdge {
   /** Edge index */
@@ -591,7 +591,7 @@ export interface RoutesEdge {
  * @property `min_search_radius` - *distance(m) between start and goal to compute routes instead of natural path*
  * @property `max_search_radius` - *radius(m) around start or goal to find a vertex*
  * @property `forward_planning_steps` - *Number of steps (10cm) removed from routes path to smooth navigation*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RoutesSettings.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RoutesSettings.html RoboccDocs} for further information
 */
 export interface RoutesSettings {
   /** distance(m) between start and goal to compute routes instead of natural path */
@@ -609,7 +609,7 @@ export interface RoutesSettings {
  * @property `id` - *Id*
  * @property `name` - *Name*
  * @property `module_description` - *Module description*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Module.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Module.html RoboccDocs} for further information
 */
 export interface Module {
   /** Whether a module is active or not */
@@ -637,7 +637,7 @@ export interface Module {
  * @property `name` - *Module name*
  * @property `uuid` - *Module uuid*
  * @property `ports_redirection` - *Module ports redirection*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ModuleDescription.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ModuleDescription.html RoboccDocs} for further information
 */
 export interface ModuleDescription {
   /** Does the module allow the vehicle to perform itself the move to its charging station when battery reach critical threshold */
@@ -672,7 +672,7 @@ export interface ModuleDescription {
  * @property `noeme_port` - *Noeme port*
  * @property `module_port` - *Module port*
  * @property `protocol` - *Protocol*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.PortRedirection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.PortRedirection.html RoboccDocs} for further information
 */
 export interface PortRedirection {
   /** Noeme port */
@@ -694,7 +694,7 @@ export interface PortRedirection {
  * @property `weight` - *Module weight in kg*
  * @property `allow_auto_veh_to_charge` - *Module allow auto veh to charge*
  * @property `urdf` - *Module URDF*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ModuleConfiguration.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ModuleConfiguration.html RoboccDocs} for further information
 */
 export interface ModuleConfiguration {
   /** Module length in meters (Deprecated, use footprint instead) */
@@ -726,7 +726,7 @@ export interface ModuleConfiguration {
  * @property `surface` - *Mapped surface of the map*
  * @property `width` - *Map width*
  * @property `height` - *Map height*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MapLight.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MapLight.html RoboccDocs} for further information
 */
 export interface MapLight {
   /** Id */
@@ -756,7 +756,7 @@ export interface MapLight {
  * @property `description` - *Description*
  * @property `geometry` - *Geometry*
  * @property `id_map` - *Id of the map*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ForbiddenArea.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ForbiddenArea.html RoboccDocs} for further information
 */
 export interface ForbiddenArea {
   /** Id */
@@ -785,7 +785,7 @@ export interface ForbiddenArea {
  * @property `behaviour` - *Behaviour*
  * @property `color` - *Area's color*
  * @property `zindex` - *Z-index of area, the higher is upper most*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CustomArea.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CustomArea.html RoboccDocs} for further information
 */
 export interface CustomArea {
   /** Id */
@@ -819,7 +819,7 @@ export interface CustomArea {
  * @property `id_map` - *Id of the map*
  * @property `icon` - *Id of the map*
  * @property `color` - *Id of the map*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SavedPose.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SavedPose.html RoboccDocs} for further information
 */
 export interface SavedPose {
   /** Id */
@@ -850,7 +850,7 @@ export interface SavedPose {
  * @property `pose` - *Marker's position*
  * @property `id_map` - *Id of the map*
  * @property `marker` - *Marker*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Fiducial.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Fiducial.html RoboccDocs} for further information
 */
 export interface Fiducial {
   /** Id */
@@ -883,7 +883,7 @@ export interface Fiducial {
  * @property `id_map` - *Id of the map*
  * @property `marker` - *Marker*
  * @property `undock_sequence` - *Undock sequence*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ChargingStation.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ChargingStation.html RoboccDocs} for further information
 */
 export interface ChargingStation {
   /** Id */
@@ -932,7 +932,7 @@ export interface ChargingStation {
  * @property `pushing_success_tolerance` - *Distance between the robot and the docked pose from which the action is considered a success*
  * @property `motors_amps_threshold` - *Max amps allowed on motors*
  * @property `motors_amps_time_threshold` - *Length of time the max amps can be exceeded*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DockedPose.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DockedPose.html RoboccDocs} for further information
 */
 export interface DockedPose {
   /** Id */
@@ -980,7 +980,7 @@ export interface DockedPose {
  * Describe a marker with its ID and pose associated in map
  * @property `id` - *Id*
  * @property `pose` - *Pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Marker.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Marker.html RoboccDocs} for further information
 */
 export interface Marker {
   /** Id */
@@ -994,7 +994,7 @@ export interface Marker {
  * Command to teleop vehicle 🕹️
  * @property `linear_speed` - *Linear speed*
  * @property `angular_speed` - *Angular speed*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.TeleopCmd.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.TeleopCmd.html RoboccDocs} for further information
 */
 export interface TeleopCmd {
   /** Linear speed */
@@ -1009,7 +1009,7 @@ export interface TeleopCmd {
  * @property `x` - *Pose X*
  * @property `y` - *Pose Y*
  * @property `t` - *Orientation*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Pose.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Pose.html RoboccDocs} for further information
 */
 export interface Pose {
   /** Pose X */
@@ -1025,7 +1025,7 @@ export interface Pose {
  * Describe a pose in two dimensions on map x and y coordinates in meters
  * @property `x` - *Pose X*
  * @property `y` - *Pose Y*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Position.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Position.html RoboccDocs} for further information
 */
 export interface Position {
   /** Pose X */
@@ -1043,7 +1043,7 @@ export interface Position {
  * @property `capacity` - *Capacity in Ah (last full capacity)*
  * @property `power_supply_status` - *The charging status as reported*
  * @property `charge_max_error` - *Max possible error of State of charge in %*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.BatteryState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.BatteryState.html RoboccDocs} for further information
 */
 export interface BatteryState {
   /** Negative when discharging (A) */
@@ -1069,7 +1069,7 @@ export interface BatteryState {
  * @property `rbac` - *Role based access control*
  * @property `active` - *Is active*
  * @property `last_connection` - *Last connection date*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.User.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.User.html RoboccDocs} for further information
 */
 export interface User {
   /** id */
@@ -1091,7 +1091,7 @@ export interface User {
  * Describe a simple move order linear move or angular move
  * @property `distance` - *Distance*
  * @property `move_type`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MoveStep.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MoveStep.html RoboccDocs} for further information
 */
 export interface MoveStep {
   /** Distance */
@@ -1106,7 +1106,7 @@ export interface MoveStep {
  * @property `id` - *Id*
  * @property `name` - *Name*
  * @property `type` - *Element type*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DiagnosticElement.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DiagnosticElement.html RoboccDocs} for further information
 */
 export interface DiagnosticElement {
   /** Id */
@@ -1126,7 +1126,7 @@ export interface DiagnosticElement {
  * @property `error_type` - *Error*
  * @property `critical_level` - *Critical level*
  * @property `description` - *Description*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DiagnosticError.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DiagnosticError.html RoboccDocs} for further information
 */
 export interface DiagnosticError {
   /** Timestamp */
@@ -1149,7 +1149,7 @@ export interface DiagnosticError {
  * @property `id` - *Id*
  * @property `id_map` - *Id of parent map*
  * @property `sequence`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AutopilotConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AutopilotConfig.html RoboccDocs} for further information
 */
 export interface AutopilotConfig {
   /** Id */
@@ -1169,7 +1169,7 @@ export interface AutopilotConfig {
  * @property `target_tolerance` - *Distance between robot and destination to consider success*
  * @property `on_error`
  * @property `error_timeout` - *Wait time in seconds before retry or next*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AutopilotStepParamsMove.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AutopilotStepParamsMove.html RoboccDocs} for further information
 */
 export interface AutopilotStepParamsMove {
   /**  */
@@ -1192,7 +1192,7 @@ export interface AutopilotStepParamsMove {
  * @property `move`
  * @property `behaviour`
  * @property `wait` - *Duration in second*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AutopilotStepParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AutopilotStepParams.html RoboccDocs} for further information
 */
 export interface AutopilotStepParams {
   /**  */
@@ -1208,7 +1208,7 @@ export interface AutopilotStepParams {
  * Describe an autopilot step which can be a timer where the robot wait for X seconds, a move order to a map element or a behaviour step where vehicle play some sound or display some LEDs
  * @property `step_type`
  * @property `params` - *Step params*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AutopilotStep.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AutopilotStep.html RoboccDocs} for further information
 */
 export interface AutopilotStep {
   /**  */
@@ -1227,7 +1227,7 @@ export interface AutopilotStep {
  * @property `sound_volume` - *Sound volume*
  * @property `sound_loop_number` - *Number of play of the sound sample*
  * @property `sound_loop_delay` - *Delay between each sound loop, in seconds*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LedSoundAnimBehaviour.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LedSoundAnimBehaviour.html RoboccDocs} for further information
 */
 export interface LedSoundAnimBehaviour {
   /** LED animation */
@@ -1267,7 +1267,7 @@ export interface LedSoundAnimBehaviour {
  * @property `replanning_timeout` - *Time in second before replanning*
  * @property `disable_self_relocation` - *Disable vehicle's ability to automatically relocate itself during navigation*
  * @property `disable_us_sensors` - *Disable US sensors*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Areas.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Areas.html RoboccDocs} for further information
 */
 export interface Areas {
   /** ID */
@@ -1327,7 +1327,7 @@ export interface Areas {
  * @property `replanning_timeout` - *Time in seconds before replanning. Set to -1 to use default value. Otherwise, value must be between 1 and 300.*
  * @property `disable_self_relocation` - *Disable vehicle's ability to automatically relocate itself during navigation*
  * @property `disable_us_sensors` - *Disable US sensors*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Behaviour.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Behaviour.html RoboccDocs} for further information
 */
 export interface Behaviour {
   /** LED animation */
@@ -1369,7 +1369,7 @@ export interface Behaviour {
  * Docking state including docking type and docking status 🔌
  * @property `type`
  * @property `status`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DockingState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DockingState.html RoboccDocs} for further information
 */
 export interface DockingState {
   /**  */
@@ -1383,7 +1383,7 @@ export interface DockingState {
  * Volume associated with a sound scenario 🔉
  * @property `scenario` - *Scenario*
  * @property `volume` - *Volume*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SoundScenarioVolume.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SoundScenarioVolume.html RoboccDocs} for further information
 */
 export interface SoundScenarioVolume {
   /** Scenario */
@@ -1397,7 +1397,7 @@ export interface SoundScenarioVolume {
  * Sample associated with a sound scenario 🔉
  * @property `scenario` - *Scenario*
  * @property `sample` - *Sample*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SoundScenarioSample.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SoundScenarioSample.html RoboccDocs} for further information
 */
 export interface SoundScenarioSample {
   /** Scenario */
@@ -1413,7 +1413,7 @@ export interface SoundScenarioSample {
  * @property `strength` - *strength*
  * @property `secured` - *secured*
  * @property `frequency` - *frequency*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.WifiAp.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.WifiAp.html RoboccDocs} for further information
 */
 export interface WifiAp {
   /** ssid */
@@ -1438,7 +1438,7 @@ export interface WifiAp {
  * @property `dns1` - *DNS 1*
  * @property `dns2` - *DNS 2*
  * @property `wifi_ap` - *WiFi access point*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.NetworkWanState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.NetworkWanState.html RoboccDocs} for further information
 */
 export interface NetworkWanState {
   /**  */
@@ -1475,7 +1475,7 @@ export interface NetworkWanState {
  * @property `storage_total` - *Storage total*
  * @property `cpu_usage` - *CPU Usage in %*
  * @property `cpu_temp` - *CPU Temperature in °C*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SystemInfo.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SystemInfo.html RoboccDocs} for further information
 */
 export interface SystemInfo {
   /** Computer type */
@@ -1509,7 +1509,7 @@ export interface SystemInfo {
  * @property `severity` - *Severity*
  * @property `title` - *Title*
  * @property `data` - *Data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SecurityLog.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SecurityLog.html RoboccDocs} for further information
 */
 export interface SecurityLog {
   /** Date in timestamp */
@@ -1527,7 +1527,7 @@ export interface SecurityLog {
  * LoRa Equipement
  * @property `id` - *LoRa ID*
  * @property `peer_type` - *Peer type*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LoraEquipment.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LoraEquipment.html RoboccDocs} for further information
 */
 export interface LoraEquipment {
   /** LoRa ID */
@@ -1545,8 +1545,10 @@ export interface LoraEquipment {
  * @property `enable_secure_lora` - *Enable secure LoRa*
  * @property `connection_max_try` - *Number of max try on bad connection*
  * @property `connection_timeout` - *Number of minutes where connection is blocked*
- * @property `min_digits_pin` - *Minimum number of digits for the PIN code*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RocSecurity.html RoboccDocs} for further information
+ * @property `min_digits_pin` - *Minimum number of digits for the PIN code by RBAC*
+ * @property `min_password_length` - *Minimum password length by RBAC*
+ * @property `enforce_strong_password` - *Enforce string password*
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RocSecurity.html RoboccDocs} for further information
 */
 export interface RocSecurity {
   /** Enable no SSL (http and ws) */
@@ -1561,8 +1563,12 @@ export interface RocSecurity {
   connection_max_try: number
   /** Number of minutes where connection is blocked */
   connection_timeout: number
-  /** Minimum number of digits for the PIN code */
+  /** Minimum number of digits for the PIN code by RBAC */
   min_digits_pin: number[]
+  /** Minimum password length by RBAC */
+  min_password_length: number[]
+  /** Enforce string password */
+  enforce_strong_password: boolean
 }
 /** 
  * **Invalid data list by section**
@@ -1570,7 +1576,7 @@ export interface RocSecurity {
  * Invalid data list by section
  * @property `section` - *Section*
  * @property `list` - *Invalid data list*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.InvalidDataBySection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.InvalidDataBySection.html RoboccDocs} for further information
 */
 export interface InvalidDataBySection {
   /** Section */
@@ -1584,7 +1590,7 @@ export interface InvalidDataBySection {
  * Invalid data
  * @property `uuid` - *Uuid*
  * @property `details` - *Invalid data list*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.InvalidData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.InvalidData.html RoboccDocs} for further information
 */
 export interface InvalidData {
   /** Uuid */
@@ -1599,7 +1605,7 @@ export interface InvalidData {
  * @property `uuid` - *Uuid*
  * @property `sample` - *Sample name*
  * @property `volume` - *Sound's volume*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.WaitingSound.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.WaitingSound.html RoboccDocs} for further information
 */
 export interface WaitingSound {
   /** Uuid */
@@ -1616,7 +1622,7 @@ export interface WaitingSound {
  * @property `event` - *Uuid*
  * @property `sample` - *Sample name*
  * @property `volume` - *Sound's volume*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.EventSound.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.EventSound.html RoboccDocs} for further information
 */
 export interface EventSound {
   /** Uuid */
@@ -1635,7 +1641,7 @@ export interface EventSound {
  * @property `port_dest` - *Destination port*
  * @property `ip` - *IP*
  * @property `protocol` - *Protocol*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExternalPortRedirection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExternalPortRedirection.html RoboccDocs} for further information
 */
 export interface ExternalPortRedirection {
   /** Enabled */
@@ -1657,7 +1663,7 @@ export interface ExternalPortRedirection {
  * @property `is_down` - *Is down*
  * @property `moving_up` - *Moving up*
  * @property `moving_down` - *Moving down*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LiftStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LiftStatus.html RoboccDocs} for further information
 */
 export interface LiftStatus {
   /** Is up */
@@ -1675,7 +1681,7 @@ export interface LiftStatus {
  * Group of positions
  * @property `main_uuid` - *Main position uuid*
  * @property `uuids` - *List of positions uuid in group*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Group.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Group.html RoboccDocs} for further information
 */
 export interface Group {
   /** Main position uuid */
@@ -1689,7 +1695,7 @@ export interface Group {
  * ROC and vehicle software versions
  * @property `veh_version` - *Vehicle software version*
  * @property `roc_version` - *ROC software version*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SoftVersions.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SoftVersions.html RoboccDocs} for further information
 */
 export interface SoftVersions {
   /** Vehicle software version */
@@ -1704,7 +1710,7 @@ export interface SoftVersions {
  * @property `id_controller` - *Controller ID*
  * @property `index_contact` - *Index of the controller's contact*
  * @property `required_state` - *Required state*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ControllerConstraint.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ControllerConstraint.html RoboccDocs} for further information
 */
 export interface ControllerConstraint {
   /** Controller ID */
@@ -1721,7 +1727,7 @@ export interface ControllerConstraint {
  * @property `uuid` - *Destination Uuid*
  * @property `constraints` - *Controller contraints*
  * @property `message` - *Message to display*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MissionConfigDestination.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MissionConfigDestination.html RoboccDocs} for further information
 */
 export interface MissionConfigDestination {
   /** Destination Uuid */
@@ -1741,7 +1747,7 @@ export interface MissionConfigDestination {
  * @property `end_fixed` - *Last destination is fix*
  * @property `end_only_release` - *Force last step to end mission*
  * @property `allowed_modules` - *Allowed modules*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MissionConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MissionConfig.html RoboccDocs} for further information
 */
 export interface MissionConfig {
   /** Title of the mission */
@@ -1770,7 +1776,7 @@ export interface MissionConfig {
  * @property `is_virtual` - *Is a virtual button*
  * @property `is_presence` - *Is a presence button*
  * @property `need_update_keys` - *Need update keys*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ButtonConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ButtonConfig.html RoboccDocs} for further information
 */
 export interface ButtonConfig {
   /** Button LoRa ID */
@@ -1800,7 +1806,7 @@ export interface ButtonConfig {
  * @property `destination_uuids` - *Destination uuids*
  * @property `waiting_pose_uuid` - *Waiting pose uuid*
  * @property `area_uuid` - *Area uuid*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.WaitingPose.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.WaitingPose.html RoboccDocs} for further information
 */
 export interface WaitingPose {
   /** Waiting pose uuid */
@@ -1820,7 +1826,7 @@ export interface WaitingPose {
  * @property `id_recipient` - *Recipient ID*
  * @property `code` - *Code*
  * @property `data` - *Data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LoraMessage.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LoraMessage.html RoboccDocs} for further information
 */
 export interface LoraMessage {
   /** Sender ID */
@@ -1849,7 +1855,7 @@ export interface LoraMessage {
  * @property `command` - *Equipment LoRa ID*
  * @property `index_contact` - *Contact index*
  * @property `required_state` - *Required state*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CustomCommand.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CustomCommand.html RoboccDocs} for further information
 */
 export interface CustomCommand {
   /** Uuid */
@@ -1885,7 +1891,7 @@ export interface CustomCommand {
  * Controller LoRa - Contact
  * @property `name` - *Name*
  * @property `state` - *State*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ControllerLoraContact.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ControllerLoraContact.html RoboccDocs} for further information
 */
 export interface ControllerLoraContact {
   /** Name */
@@ -1903,7 +1909,7 @@ export interface ControllerLoraContact {
  * @property `response_deadline` - *Response deadline in ms*
  * @property `optimised` - *Response deadline optimised*
  * @property `need_update_keys` - *Need update keys*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ControllerLora.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ControllerLora.html RoboccDocs} for further information
 */
 export interface ControllerLora {
   /** Controller ID */
@@ -1925,7 +1931,7 @@ export interface ControllerLora {
  * Map element restriction
  * @property `uuid` - *Uuid*
  * @property `allowed_modules` - *Allowed modules*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MapElementRestriction.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MapElementRestriction.html RoboccDocs} for further information
 */
 export interface MapElementRestriction {
   /** Uuid */
@@ -1953,7 +1959,7 @@ export interface MapElementRestriction {
  * @property `lift_height` - *Lift height*
  * @property `feet_size` - *Shelf feet size*
  * @property `delay_lift_continue_up_after_contact` - *Delay lift continue up after contact*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DockedPoseConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DockedPoseConfig.html RoboccDocs} for further information
 */
 export interface DockedPoseConfig {
   /** Uuid */
@@ -1998,7 +2004,7 @@ export interface DockedPoseConfig {
  * @property `relay_num` - *Controller relay number*
  * @property `action` - *Controller LoRa ID - Back*
  * @property `is_shelf_unload` - *Automatic unload of shelf on this position*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RocMapElementConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RocMapElementConfig.html RoboccDocs} for further information
 */
 export interface RocMapElementConfig {
   /** Uuid */
@@ -2018,7 +2024,7 @@ export interface RocMapElementConfig {
  * Area configuration
  * @property `uuid` - *Uuid*
  * @property `safe_destination` - *Uuid of the safe destination*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RocAreaConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RocAreaConfig.html RoboccDocs} for further information
 */
 export interface RocAreaConfig {
   /** Uuid */
@@ -2035,7 +2041,7 @@ export interface RocAreaConfig {
  * @property `trigger` - *Contact trugger*
  * @property `id_button` - *Id button*
  * @property `uuid` - *Uuid*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ControllerLoraContactConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ControllerLoraContactConfig.html RoboccDocs} for further information
 */
 export interface ControllerLoraContactConfig {
   /** Contact type */
@@ -2055,7 +2061,7 @@ export interface ControllerLoraContactConfig {
  * Controller LoRa contacts's configuration
  * @property `id_controller` - *Controller ID*
  * @property `contacts_config` - *List of contacts's configuration*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ControllerLoraContactsConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ControllerLoraContactsConfig.html RoboccDocs} for further information
 */
 export interface ControllerLoraContactsConfig {
   /** Controller ID */
@@ -2070,7 +2076,7 @@ export interface ControllerLoraContactsConfig {
  * @property `id_module` - *Module LoRa ID*
  * @property `module_type` - *Module type*
  * @property `need_update_keys` - *Need update keys*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehConfig.html RoboccDocs} for further information
 */
 export interface VehConfig {
   /** Module LoRa ID */
@@ -2087,7 +2093,7 @@ export interface VehConfig {
  * @property `nb_hir` - *Number of HIR*
  * @property `nb_mission` - *Number of mission*
  * @property `nb_move_failed` - *Number of move failed*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehInfosStats.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehInfosStats.html RoboccDocs} for further information
 */
 export interface VehInfosStats {
   /** Number of HIR */
@@ -2110,7 +2116,7 @@ export interface VehInfosStats {
  * @property `module_type` - *Vehicle module type*
  * @property `stats`
  * @property `roc_id` - *ROC ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehInfos.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehInfos.html RoboccDocs} for further information
 */
 export interface VehInfos {
   /** Module LoRa ID */
@@ -2149,7 +2155,7 @@ export interface VehInfos {
  * @property `delay_before_sleep_mode` - *Delay before sleep mode*
  * @property `delay_between_retry_pause` - *Delay between retry on pause*
  * @property `delay_lift_continue_up_after_contact` - *Delay lift continue going up after contact*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehDelayConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehDelayConfig.html RoboccDocs} for further information
 */
 export interface VehDelayConfig {
   /** Delay auto release multidest */
@@ -2186,7 +2192,7 @@ export interface VehDelayConfig {
  * @property `id_button` - *Button LoRa ID*
  * @property `battery_percentage` - *Battery percentage*
  * @property `crate_is_present` - *Crate is present*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ButtonInfos.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ButtonInfos.html RoboccDocs} for further information
 */
 export interface ButtonInfos {
   /** Button LoRa ID */
@@ -2202,7 +2208,7 @@ export interface ButtonInfos {
  * Single item of `ManagerMissions`
  * @property `priority` - *Priority missions list*
  * @property `missions` - *Regular missions list*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ManagerMissionsItem.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ManagerMissionsItem.html RoboccDocs} for further information
 */
 export interface ManagerMissionsItem {
   /** Priority missions list */
@@ -2225,7 +2231,7 @@ export interface ManagerMissionsItem {
  * @property `steps` - *Mission's steps*
  * @property `last_id_module` - *Last module LoRa ID*
  * @property `waiting_distance` - *Waiting distance*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Mission.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Mission.html RoboccDocs} for further information
 */
 export interface Mission {
   /** Mission ID */
@@ -2261,7 +2267,7 @@ export interface Mission {
  * @property `nb_mission` - *Number of call*
  * @property `nb_mission_succeed` - *Number of call*
  * @property `nb_move_failed` - *Number of move failed*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DailyStats.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DailyStats.html RoboccDocs} for further information
 */
 export interface DailyStats {
   /** Distance in meter */
@@ -2288,7 +2294,7 @@ export interface DailyStats {
  * @property `move_start_time` - *Move start time*
  * @property `released_time` - *Release time*
  * @property `uuid` - *Uuid*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MissionStep.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MissionStep.html RoboccDocs} for further information
 */
 export interface MissionStep {
   /** Arrval time */
@@ -2314,7 +2320,7 @@ export interface MissionStep {
  * @property `message` - *Message*
  * @property `need_change_map` - *Need change map*
  * @property `id_map` - *Map ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.InstallConfigDone.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.InstallConfigDone.html RoboccDocs} for further information
 */
 export interface InstallConfigDone {
   /** Error */
@@ -2333,7 +2339,7 @@ export interface InstallConfigDone {
  * @property `default_response_deadline` - *Default response deadline*
  * @property `veh_response_deadline` - *Vehicle response deadline*
  * @property `veh_response_optimised` - *Vehicle response deadline optimised*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ResponseDeadlineConfig.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ResponseDeadlineConfig.html RoboccDocs} for further information
 */
 export interface ResponseDeadlineConfig {
   /** Default response deadline */
@@ -2356,7 +2362,7 @@ export interface ResponseDeadlineConfig {
  * @property `position` - *Position*
  * @property `battery_level` - *Battery level*
  * @property `outcome` - *Outcome*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Log.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Log.html RoboccDocs} for further information
 */
 export interface Log {
   /** Log ID */
@@ -2385,7 +2391,7 @@ export interface Log {
  * @property `by_hour` - *Data by hour*
  * @property `by_day_in_month` - *Data by hour*
  * @property `by_day_in_week` - *Data by hour*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CompleteData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CompleteData.html RoboccDocs} for further information
 */
 export interface CompleteData {
   /** Data by hour */
@@ -2413,7 +2419,7 @@ export interface CompleteData {
  * @property `HIR_details` - *HIR details*
  * @property `HIR_times` - *HIR times*
  * @property `HIR_type` - *HIR by type*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.StatsData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.StatsData.html RoboccDocs} for further information
 */
 export interface StatsData {
   /** Number of call */
@@ -2452,7 +2458,7 @@ export interface StatsData {
  * @property `missions` - *Missions in CSV format*
  * @property `logs` - *Logs in CSV format*
  * @property `daily` - *Daily stats in CSV format*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportedStats.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportedStats.html RoboccDocs} for further information
 */
 export interface ExportedStats {
   /** Missions in CSV format */
@@ -2472,7 +2478,7 @@ export interface ExportedStats {
  * @property `password` - *Password (set to update)*
  * @property `hmi_password` - *HMI Password (digits, set to update)*
  * @property `password_updated` - *Default password updated*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RocUser.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RocUser.html RoboccDocs} for further information
 */
 export interface RocUser {
   /** User ID */
@@ -2495,7 +2501,7 @@ export interface RocUser {
  * @property `start` - *Start time*
  * @property `end` - *End time*
  * @property `status` - *Status*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.TimelineStep.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.TimelineStep.html RoboccDocs} for further information
 */
 export interface TimelineStep {
   /** Start time */
@@ -2511,7 +2517,7 @@ export interface TimelineStep {
  * Vehicle timeline data
  * @property `id_module` - *Module LoRa ID*
  * @property `data` - *Timeline data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehTimelineData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehTimelineData.html RoboccDocs} for further information
 */
 export interface VehTimelineData {
   /** Module LoRa ID */
@@ -2525,7 +2531,7 @@ export interface VehTimelineData {
  * Stats call by button
  * @property `id_button` - *Button LoRa ID*
  * @property `nb` - *Number of calls*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CallByButton.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CallByButton.html RoboccDocs} for further information
 */
 export interface CallByButton {
   /** Button LoRa ID */
@@ -2539,7 +2545,7 @@ export interface CallByButton {
  * HIR by type
  * @property `type` - *Type*
  * @property `nb` - *Number of HIR*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.HirByType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.HirByType.html RoboccDocs} for further information
 */
 export interface HirByType {
   /** Type */
@@ -2553,7 +2559,7 @@ export interface HirByType {
  * Destination by uuid
  * @property `uuid` - *Uuid*
  * @property `nb` - *Number*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DestByUuid.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DestByUuid.html RoboccDocs} for further information
 */
 export interface DestByUuid {
   /** Uuid */
@@ -2567,7 +2573,7 @@ export interface DestByUuid {
  * Number by outcome
  * @property `outcome` - *Outcome*
  * @property `nb` - *Number*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.NbByOutcome.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.NbByOutcome.html RoboccDocs} for further information
 */
 export interface NbByOutcome {
   /** Outcome */
@@ -2582,7 +2588,7 @@ export interface NbByOutcome {
  * @property `min` - *Minimum*
  * @property `max` - *Maximum*
  * @property `avg` - *Average*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.StandardStats.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.StandardStats.html RoboccDocs} for further information
 */
 export interface StandardStats {
   /** Minimum */
@@ -2598,7 +2604,7 @@ export interface StandardStats {
  * Standard stats by uuid
  * @property `uuid` - *Uuid*
  * @property `stats` - *Stats*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.StandardStatsByUuid.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.StandardStatsByUuid.html RoboccDocs} for further information
 */
 export interface StandardStatsByUuid {
   /** Uuid */
@@ -2613,7 +2619,7 @@ export interface StandardStatsByUuid {
  * @property `x` - *Position X*
  * @property `y` - *Position Y*
  * @property `weight` - *Weight*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.HeatMapData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.HeatMapData.html RoboccDocs} for further information
 */
 export interface HeatMapData {
   /** Position X */
@@ -2630,7 +2636,7 @@ export interface HeatMapData {
  * @property `start` - *Start time*
  * @property `end` - *End time*
  * @property `operating` - *Operating*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SlotHours.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SlotHours.html RoboccDocs} for further information
 */
 export interface SlotHours {
   /** Start time */
@@ -2646,7 +2652,7 @@ export interface SlotHours {
  * Manager map
  * @property `uuid` - *Map uuid*
  * @property `name` - *Map name*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ManagerMap.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ManagerMap.html RoboccDocs} for further information
 */
 export interface ManagerMap {
   /** Map uuid */
@@ -2664,7 +2670,7 @@ export interface ManagerMap {
  * @property `update_pending` - *A system update is available for this device*
  * @property `update_downloaded` - *A system update is available and ready to be applied*
  * @property `update_failed` - *A system update is waiting for application*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdateStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdateStatus.html RoboccDocs} for further information
 */
 export interface UpdateStatus {
   /** Release commit id */
@@ -2690,7 +2696,7 @@ export interface UpdateStatus {
  * @property `footprint` - *Module footprint polygon*
  * @property `width` - *Module maximum width in meters if no footprint set*
  * @property `length` - *Module maximum length in meters if no footprint set*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ModuleParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ModuleParams.html RoboccDocs} for further information
 */
 export interface ModuleParams {
   /** Module maximum speed in meters / second. Set to -1 to use default value. Otherwise, value must be between 0.2 and 1.0. */
@@ -2712,7 +2718,7 @@ export interface ModuleParams {
  * Service result data of Subscribe
  * @property `event_code` - *Event code*
  * @property `data` - *Last event's data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SubscribeResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SubscribeResult.html RoboccDocs} for further information
 */
 export interface SubscribeResult {
   /** Event code */
@@ -2727,7 +2733,7 @@ export interface SubscribeResult {
  * @property `enable` - *Start follow me*
  * @property `direction` - *Direction of person to follow*
  * @property `mode` - *Follow mode*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.FollowMeParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.FollowMeParams.html RoboccDocs} for further information
 */
 export interface FollowMeParams {
   /** Start follow me */
@@ -2744,7 +2750,7 @@ export interface FollowMeParams {
  * @property `id_user` - *User ID*
  * @property `rbac` - *Role based access control*
  * @property `need_change_password` - *User must change password*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AuthSessionResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AuthSessionResult.html RoboccDocs} for further information
 */
 export interface AuthSessionResult {
   /** User ID */
@@ -2760,7 +2766,7 @@ export interface AuthSessionResult {
  * Parameters of AuthModule OpTypeEnum.service
  * @property `api_key` - *API Key*
  * @property `rbac` - *RBAC*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AuthModuleParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AuthModuleParams.html RoboccDocs} for further information
 */
 export interface AuthModuleParams {
   /** API Key */
@@ -2775,7 +2781,7 @@ export interface AuthModuleParams {
  * @property `login` - *Login*
  * @property `pwd` - *Password*
  * @property `api_key` - *API Key*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LoginParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LoginParams.html RoboccDocs} for further information
 */
 export interface LoginParams {
   /** Login */
@@ -2794,7 +2800,7 @@ export interface LoginParams {
  * @property `need_change_password` - *User must change password*
  * @property `rbac` - *Role based access control*
  * @property `token` - *Token for connexion*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.LoginResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.LoginResult.html RoboccDocs} for further information
 */
 export interface LoginResult {
   /** User id */
@@ -2814,7 +2820,7 @@ export interface LoginResult {
  * Service result data of ImportSite
  * @property `id_site` - *Id site*
  * @property `warnings` - *Warnings*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ImportSiteResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ImportSiteResult.html RoboccDocs} for further information
 */
 export interface ImportSiteResult {
   /** Id site */
@@ -2827,7 +2833,7 @@ export interface ImportSiteResult {
  *
  * Service result data of ImportSoundsConfig
  * @property `warnings` - *Warnings*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ImportSoundsConfigResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ImportSoundsConfigResult.html RoboccDocs} for further information
 */
 export interface ImportSoundsConfigResult {
   /** Warnings */
@@ -2840,7 +2846,7 @@ export interface ImportSoundsConfigResult {
  * @property `id_site` - *Id site*
  * @property `export_sounds` - *Export sound*
  * @property `add_sounds` - *Array of sounds to add to export*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportSiteParams2.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportSiteParams2.html RoboccDocs} for further information
 */
 export interface ExportSiteParams2 {
   /** Id site */
@@ -2856,7 +2862,7 @@ export interface ExportSiteParams2 {
  * Single item of `ExportSitesParams1`
  * @property `id_site` - *Id site*
  * @property `maps` - *Id map list*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportSitesParams1Item.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportSitesParams1Item.html RoboccDocs} for further information
 */
 export interface ExportSitesParams1Item {
   /** Id site */
@@ -2870,7 +2876,7 @@ export interface ExportSitesParams1Item {
  * Single item of `ExportSitesParams2Sites`
  * @property `id_site` - *Id site*
  * @property `maps` - *Id map list*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportSitesParams2SitesItem.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportSitesParams2SitesItem.html RoboccDocs} for further information
 */
 export interface ExportSitesParams2SitesItem {
   /** Id site */
@@ -2885,7 +2891,7 @@ export interface ExportSitesParams2SitesItem {
  * @property `sites`
  * @property `export_sounds` - *Export sound*
  * @property `add_sounds` - *Array of sounds to add to export*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportSitesParams2.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportSitesParams2.html RoboccDocs} for further information
 */
 export interface ExportSitesParams2 {
   /**  */
@@ -2901,7 +2907,7 @@ export interface ExportSitesParams2 {
  * Single item of `ExportSitesResult`
  * @property `id_site` - *Id site*
  * @property `file` - *File content*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportSitesResultItem.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportSitesResultItem.html RoboccDocs} for further information
 */
 export interface ExportSitesResultItem {
   /** Id site */
@@ -2916,7 +2922,7 @@ export interface ExportSitesResultItem {
  * @property `charging_station` - *Charging station to update*
  * @property `distance_approach` - *Distance between marker and approach pose*
  * @property `distance_undock` - *Distance between docked pose and undocked pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdateChargingStationConfigParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdateChargingStationConfigParams.html RoboccDocs} for further information
 */
 export interface UpdateChargingStationConfigParams {
   /** Charging station to update */
@@ -2933,7 +2939,7 @@ export interface UpdateChargingStationConfigParams {
  * @property `docked_pose` - *Docked pose to update*
  * @property `distance_approach` - *Distance between marker and approach pose*
  * @property `distance_undock` - *Distance between docked pose and undocked pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdateDockedPoseConfigParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdateDockedPoseConfigParams.html RoboccDocs} for further information
 */
 export interface UpdateDockedPoseConfigParams {
   /** Docked pose to update */
@@ -2952,7 +2958,7 @@ export interface UpdateDockedPoseConfigParams {
  * @property `password` - *Password (Leave empty or not send to not modify it)*
  * @property `rbac` - *Role based access control*
  * @property `active` - *Active*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetUserParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetUserParams.html RoboccDocs} for further information
 */
 export interface SetUserParams {
   /** id */
@@ -2972,7 +2978,7 @@ export interface SetUserParams {
  * Parameters of SetObtCbt OpTypeEnum.service
  * @property `OBT` - *Operationnal battery threshold*
  * @property `CBT` - *Critical battery threshold*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetObtCbtParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetObtCbtParams.html RoboccDocs} for further information
 */
 export interface SetObtCbtParams {
   /** Operationnal battery threshold */
@@ -2986,7 +2992,7 @@ export interface SetObtCbtParams {
  * Service result data of SetChargingStation
  * @property `id` - *Id charging station*
  * @property `uuid` - *Uuid charging station*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetChargingStationResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetChargingStationResult.html RoboccDocs} for further information
 */
 export interface SetChargingStationResult {
   /** Id charging station */
@@ -3000,7 +3006,7 @@ export interface SetChargingStationResult {
  * Service result data of SetSavedPose
  * @property `id` - *Id saved pose*
  * @property `uuid` - *Uuid saved pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetSavedPoseResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetSavedPoseResult.html RoboccDocs} for further information
 */
 export interface SetSavedPoseResult {
   /** Id saved pose */
@@ -3014,7 +3020,7 @@ export interface SetSavedPoseResult {
  * Service result data of SetDockedPose
  * @property `id` - *Id docked pose*
  * @property `uuid` - *Uuid docked pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetDockedPoseResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetDockedPoseResult.html RoboccDocs} for further information
 */
 export interface SetDockedPoseResult {
   /** Id docked pose */
@@ -3028,7 +3034,7 @@ export interface SetDockedPoseResult {
  * Service result data of SetForbiddenArea
  * @property `id` - *Id forbidden area*
  * @property `uuid` - *Uuid forbidden area*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetForbiddenAreaResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetForbiddenAreaResult.html RoboccDocs} for further information
 */
 export interface SetForbiddenAreaResult {
   /** Id forbidden area */
@@ -3042,7 +3048,7 @@ export interface SetForbiddenAreaResult {
  * Service result data of SetCustomArea
  * @property `id` - *Id custom area*
  * @property `uuid` - *Uuid custom area*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetCustomAreaResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetCustomAreaResult.html RoboccDocs} for further information
 */
 export interface SetCustomAreaResult {
   /** Id custom area */
@@ -3058,7 +3064,7 @@ export interface SetCustomAreaResult {
  * @property `y` - *Destination pose Y on map*
  * @property `t` - *Orientation on map*
  * @property `with_dynamic_obstacles` - *Whether to check pose using dynamic obstacles currently detected by vehicle optional and false by default*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CheckPoseParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CheckPoseParams.html RoboccDocs} for further information
 */
 export interface CheckPoseParams {
   /** Destination pose X on map */
@@ -3078,7 +3084,7 @@ export interface CheckPoseParams {
  * @property `y` - *Center box point Y on map*
  * @property `z` - *Center box point Z on map*
  * @property `t` - *Orientation of the box in the map*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxParamsPoint.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxParamsPoint.html RoboccDocs} for further information
 */
 export interface Check3dBoxParamsPoint {
   /** Center box point X on map */
@@ -3096,7 +3102,7 @@ export interface Check3dBoxParamsPoint {
  * `marker` parameter of a `Check3dBoxParams` type
  * @property `pose` - *Marker pose in map*
  * @property `id` - *Marker ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxParamsMarker.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxParamsMarker.html RoboccDocs} for further information
 */
 export interface Check3dBoxParamsMarker {
   /** Marker pose in map */
@@ -3114,7 +3120,7 @@ export interface Check3dBoxParamsMarker {
  * @property `height` - *Box's height*
  * @property `poses_reference`
  * @property `marker`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxParams.html RoboccDocs} for further information
 */
 export interface Check3dBoxParams {
   /** Center point of the box */
@@ -3138,7 +3144,7 @@ export interface Check3dBoxParams {
  * @property `y` - *Center box point Y on map*
  * @property `z` - *Center box point Z on map*
  * @property `t` - *Orientation of the box in the map*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxActionParamsPoint.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxActionParamsPoint.html RoboccDocs} for further information
 */
 export interface Check3dBoxActionParamsPoint {
   /** Center box point X on map */
@@ -3156,7 +3162,7 @@ export interface Check3dBoxActionParamsPoint {
  * `marker` parameter of a `Check3dBoxActionParams` type
  * @property `pose` - *Marker pose in map*
  * @property `id` - *Marker ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxActionParamsMarker.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxActionParamsMarker.html RoboccDocs} for further information
 */
 export interface Check3dBoxActionParamsMarker {
   /** Marker pose in map */
@@ -3174,7 +3180,7 @@ export interface Check3dBoxActionParamsMarker {
  * @property `height` - *Box's height*
  * @property `poses_reference`
  * @property `marker`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxActionParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxActionParams.html RoboccDocs} for further information
 */
 export interface Check3dBoxActionParams {
   /** Center point of the box */
@@ -3195,7 +3201,7 @@ export interface Check3dBoxActionParams {
  *
  * Feedback data of Check3dBoxAction
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.Check3dBoxActionFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.Check3dBoxActionFeedback.html RoboccDocs} for further information
 */
 export interface Check3dBoxActionFeedback {
   /** Current step */
@@ -3206,7 +3212,7 @@ export interface Check3dBoxActionFeedback {
  *
  * Action result data of SimResetWorld
  * @property `success` - *Action succeeded*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimResetWorldResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimResetWorldResult.html RoboccDocs} for further information
 */
 export interface SimResetWorldResult {
   /** Action succeeded */
@@ -3217,7 +3223,7 @@ export interface SimResetWorldResult {
  *
  * Feedback data of SimResetWorld
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimResetWorldFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimResetWorldFeedback.html RoboccDocs} for further information
 */
 export interface SimResetWorldFeedback {
   /** Current step */
@@ -3229,7 +3235,7 @@ export interface SimResetWorldFeedback {
  * Parameters of SimAddChargingStation OpTypeEnum.action
  * @property `pose` - *Charging station pose*
  * @property `marker` - *Marker ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddChargingStationParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddChargingStationParams.html RoboccDocs} for further information
 */
 export interface SimAddChargingStationParams {
   /** Charging station pose */
@@ -3243,7 +3249,7 @@ export interface SimAddChargingStationParams {
  * Action result data of SimAddChargingStation
  * @property `success` - *Action succeeded*
  * @property `element_name` - *The added element name*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddChargingStationResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddChargingStationResult.html RoboccDocs} for further information
 */
 export interface SimAddChargingStationResult {
   /** Action succeeded */
@@ -3257,7 +3263,7 @@ export interface SimAddChargingStationResult {
  * Parameters of SimAddFiducial OpTypeEnum.action
  * @property `pose` - *Fiducial pose*
  * @property `marker` - *Marker ID*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddFiducialParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddFiducialParams.html RoboccDocs} for further information
 */
 export interface SimAddFiducialParams {
   /** Fiducial pose */
@@ -3271,7 +3277,7 @@ export interface SimAddFiducialParams {
  * Action result data of SimAddFiducial
  * @property `success` - *Action succeeded*
  * @property `element_name` - *The added element name*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddFiducialResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddFiducialResult.html RoboccDocs} for further information
 */
 export interface SimAddFiducialResult {
   /** Action succeeded */
@@ -3289,7 +3295,7 @@ export interface SimAddFiducialResult {
  * @property `height` - *Shelf height*
  * @property `feet_height` - *Feet height*
  * @property `feet_size` - *Feet size*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddShelfParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddShelfParams.html RoboccDocs} for further information
 */
 export interface SimAddShelfParams {
   /** Shelf pose */
@@ -3311,7 +3317,7 @@ export interface SimAddShelfParams {
  * Action result data of SimAddShelf
  * @property `success` - *Action succeeded*
  * @property `shelf_name` - *The added shelf name*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddShelfResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddShelfResult.html RoboccDocs} for further information
 */
 export interface SimAddShelfResult {
   /** Action succeeded */
@@ -3326,7 +3332,7 @@ export interface SimAddShelfResult {
  * @property `pose` - *Cylinder pose*
  * @property `height` - *Cylinder height*
  * @property `radius` - *Cylinder radius*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddCylinderParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddCylinderParams.html RoboccDocs} for further information
 */
 export interface SimAddCylinderParams {
   /** Cylinder pose */
@@ -3342,7 +3348,7 @@ export interface SimAddCylinderParams {
  * Action result data of SimAddCylinder
  * @property `success` - *Action succeeded*
  * @property `cylinder_name` - *The added cylinder name*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimAddCylinderResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimAddCylinderResult.html RoboccDocs} for further information
 */
 export interface SimAddCylinderResult {
   /** Action succeeded */
@@ -3355,7 +3361,7 @@ export interface SimAddCylinderResult {
  *
  * Action result data of SimClearCylinders
  * @property `success` - *Action succeeded*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimClearCylindersResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimClearCylindersResult.html RoboccDocs} for further information
 */
 export interface SimClearCylindersResult {
   /** Action succeeded */
@@ -3366,7 +3372,7 @@ export interface SimClearCylindersResult {
  *
  * Action result data of SimClearShelves
  * @property `success` - *Action succeeded*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimClearShelvesResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimClearShelvesResult.html RoboccDocs} for further information
 */
 export interface SimClearShelvesResult {
   /** Action succeeded */
@@ -3379,7 +3385,7 @@ export interface SimClearShelvesResult {
  * @property `animation` - *Led anim*
  * @property `color` - *Hex color*
  * @property `duration` - *Duration in seconds, if set to 0, LED command will be applied continuously*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetCustomLedParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetCustomLedParams.html RoboccDocs} for further information
 */
 export interface SetCustomLedParams {
   /** Led anim */
@@ -3397,7 +3403,7 @@ export interface SetCustomLedParams {
  * @property `volume` - *Volume*
  * @property `loop_number` - *Number of play of the sound sample*
  * @property `loop_delay` - *Delay between each sound loop, in seconds*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetCustomSoundParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetCustomSoundParams.html RoboccDocs} for further information
 */
 export interface SetCustomSoundParams {
   /** Sound sample */
@@ -3414,7 +3420,7 @@ export interface SetCustomSoundParams {
  *
  * Feedback data of StopNavigation
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.StopNavigationFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.StopNavigationFeedback.html RoboccDocs} for further information
 */
 export interface StopNavigationFeedback {
   /** Current step */
@@ -3433,7 +3439,7 @@ export interface StopNavigationFeedback {
  * @property `error_config` - *Error config*
  * @property `error_hardware` - *Error hardware*
  * @property `error_connection` - *Error connection*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SimSetDiffDriveStateParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SimSetDiffDriveStateParams.html RoboccDocs} for further information
 */
 export interface SimSetDiffDriveStateParams {
   /** Freewheel operated */
@@ -3465,7 +3471,7 @@ export interface SimSetDiffDriveStateParams {
  * @property `footprint` - *Module footprint polygon*
  * @property `width` - *Module maximum width in meters if no footprint set*
  * @property `length` - *Module maximum length in meters if no footprint set*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetModuleParamsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetModuleParamsParams.html RoboccDocs} for further information
 */
 export interface SetModuleParamsParams {
   /** Module maximum speed in meters / second. Set to -1 to use default value. Otherwise, value must be between 0.2 and 1.0. */
@@ -3488,7 +3494,7 @@ export interface SetModuleParamsParams {
  * @property `distance` - *Minimum distance the vehicle must travel in the allowed time*
  * @property `rotation` - *Minimum rotation that the vehicle must make in the allowed time*
  * @property `allowed_time` - *Allowed time in seconds*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToPoseParamsProgressChecker.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToPoseParamsProgressChecker.html RoboccDocs} for further information
 */
 export interface VehToPoseParamsProgressChecker {
   /** Minimum distance the vehicle must travel in the allowed time */
@@ -3507,7 +3513,7 @@ export interface VehToPoseParamsProgressChecker {
  * @property `progress_checker` - *Check that the vehicle moves a minimum for a given time (distance or rotation), fails otherwise.*
  * @property `override_battery_threshold` - *Override battery safety*
  * @property `ignore_routes` - *Ignore routes*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToPoseParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToPoseParams.html RoboccDocs} for further information
 */
 export interface VehToPoseParams {
   /** Destination */
@@ -3533,7 +3539,7 @@ export interface VehToPoseParams {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToPoseFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToPoseFeedback.html RoboccDocs} for further information
 */
 export interface VehToPoseFeedback {
   /** Current step */
@@ -3561,7 +3567,7 @@ export interface VehToPoseFeedback {
  * @property `direction` - *Default FRONT_OR_BACK*
  * @property `override_battery_threshold` - *Override battery safety*
  * @property `ignore_routes` - *Ignore routes*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToChargingStationParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToChargingStationParams.html RoboccDocs} for further information
 */
 export interface VehToChargingStationParams {
   /** Charging station uuid, -1 for preferred charging station */
@@ -3585,7 +3591,7 @@ export interface VehToChargingStationParams {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToChargingStationFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToChargingStationFeedback.html RoboccDocs} for further information
 */
 export interface VehToChargingStationFeedback {
   /** Current step */
@@ -3613,7 +3619,7 @@ export interface VehToChargingStationFeedback {
  * @property `direction` - *Default FRONT_OR_BACK*
  * @property `override_battery_threshold` - *Override battery safety*
  * @property `ignore_routes` - *Ignore routes*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToChargingStationApproachParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToChargingStationApproachParams.html RoboccDocs} for further information
 */
 export interface VehToChargingStationApproachParams {
   /** Charging station uuid, -1 for preferred charging station */
@@ -3637,7 +3643,7 @@ export interface VehToChargingStationApproachParams {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToChargingStationApproachFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToChargingStationApproachFeedback.html RoboccDocs} for further information
 */
 export interface VehToChargingStationApproachFeedback {
   /** Current step */
@@ -3664,7 +3670,7 @@ export interface VehToChargingStationApproachFeedback {
  * @property `shelf_width` - *Shelf width*
  * @property `shelf_length` - *Shelf length*
  * @property `shelf_feet_size` - *Shelf feet size*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToDockedPoseParamsShelfParameters.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToDockedPoseParamsShelfParameters.html RoboccDocs} for further information
 */
 export interface VehToDockedPoseParamsShelfParameters {
   /** Shelf width */
@@ -3683,7 +3689,7 @@ export interface VehToDockedPoseParamsShelfParameters {
  * @property `override_battery_threshold` - *Override battery safety*
  * @property `ignore_routes` - *Ignore routes*
  * @property `shelf_parameters` - *Shelf parameters*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToDockedPoseParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToDockedPoseParams.html RoboccDocs} for further information
 */
 export interface VehToDockedPoseParams {
   /** Docked pose uuid */
@@ -3709,7 +3715,7 @@ export interface VehToDockedPoseParams {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToDockedPoseFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToDockedPoseFeedback.html RoboccDocs} for further information
 */
 export interface VehToDockedPoseFeedback {
   /** Current step */
@@ -3737,7 +3743,7 @@ export interface VehToDockedPoseFeedback {
  * @property `direction` - *Default FRONT_OR_BACK*
  * @property `override_battery_threshold` - *Override battery safety*
  * @property `ignore_routes` - *Ignore routes*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToDockedPoseApproachParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToDockedPoseApproachParams.html RoboccDocs} for further information
 */
 export interface VehToDockedPoseApproachParams {
   /** Docked pose uuid */
@@ -3761,7 +3767,7 @@ export interface VehToDockedPoseApproachParams {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToDockedPoseApproachFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToDockedPoseApproachFeedback.html RoboccDocs} for further information
 */
 export interface VehToDockedPoseApproachFeedback {
   /** Current step */
@@ -3788,7 +3794,7 @@ export interface VehToDockedPoseApproachFeedback {
  * @property `succeed_only_when_stopped` - *If true, the vehicle will attempt to get as close as possible to its destination. If false, the vehicle will stop as soon as it is close to the destination*
  * @property `xy_goal_tolerance` - *Distance tolerance in meter*
  * @property `yaw_goal_tolerance` - *Angle tolerance in radian*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToSavedPoseParamsSuccessParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToSavedPoseParamsSuccessParams.html RoboccDocs} for further information
 */
 export interface VehToSavedPoseParamsSuccessParams {
   /** If true, the vehicle will attempt to get as close as possible to its destination. If false, the vehicle will stop as soon as it is close to the destination */
@@ -3807,7 +3813,7 @@ export interface VehToSavedPoseParamsSuccessParams {
  * @property `override_battery_threshold` - *Override battery safety*
  * @property `ignore_routes` - *Ignore routes*
  * @property `success_params` - *Defined when action succeed*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToSavedPoseParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToSavedPoseParams.html RoboccDocs} for further information
 */
 export interface VehToSavedPoseParams {
   /** Saved pose uuid */
@@ -3833,7 +3839,7 @@ export interface VehToSavedPoseParams {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToSavedPoseFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToSavedPoseFeedback.html RoboccDocs} for further information
 */
 export interface VehToSavedPoseFeedback {
   /** Current step */
@@ -3867,7 +3873,7 @@ export interface VehToSavedPoseFeedback {
  * @property `angle_tolerance` - *Goal checker angle tolerance in rad*
  * @property `max_vel` - *Max velocity used when executing segment in m/s*
  * @property `timeout` - *Timeout of the segment progress checker in seconds*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToSegmentParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToSegmentParams.html RoboccDocs} for further information
 */
 export interface VehToSegmentParams {
   /** Start pose */
@@ -3902,7 +3908,7 @@ export interface VehToSegmentParams {
  * @property `distance_full` - *Length of the current path*
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToSegmentFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToSegmentFeedback.html RoboccDocs} for further information
 */
 export interface VehToSegmentFeedback {
   /** Current step */
@@ -3927,7 +3933,7 @@ export interface VehToSegmentFeedback {
  * @property `goal` - *New vehicle pose on map*
  * @property `linear_accuracy` - *Linear accuracy in meters*
  * @property `angular_accuracy` - *Angular accuracy in rad*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetVehiclePoseParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetVehiclePoseParams.html RoboccDocs} for further information
 */
 export interface SetVehiclePoseParams {
   /** New vehicle pose on map */
@@ -3942,7 +3948,7 @@ export interface SetVehiclePoseParams {
  *
  * Feedback data of SetVehiclePose
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetVehiclePoseFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetVehiclePoseFeedback.html RoboccDocs} for further information
 */
 export interface SetVehiclePoseFeedback {
   /** Current step */
@@ -3954,7 +3960,7 @@ export interface SetVehiclePoseFeedback {
  * Feedback data of SetMap
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetMapFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetMapFeedback.html RoboccDocs} for further information
 */
 export interface SetMapFeedback {
   /** Current step */
@@ -3968,7 +3974,7 @@ export interface SetMapFeedback {
  * Feedback data of SetActiveMap
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetActiveMapFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetActiveMapFeedback.html RoboccDocs} for further information
 */
 export interface SetActiveMapFeedback {
   /** Current step */
@@ -3981,7 +3987,7 @@ export interface SetActiveMapFeedback {
  *
  * Feedback data of GetMarkers
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetMarkersFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetMarkersFeedback.html RoboccDocs} for further information
 */
 export interface GetMarkersFeedback {
   /** Current step */
@@ -3993,7 +3999,7 @@ export interface GetMarkersFeedback {
  * Parameters of InstallModule OpTypeEnum.action
  * @property `api_key` - *API key*
  * @property `crypted_module_file` - *Crypted module file*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.InstallModuleParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.InstallModuleParams.html RoboccDocs} for further information
 */
 export interface InstallModuleParams {
   /** API key */
@@ -4007,7 +4013,7 @@ export interface InstallModuleParams {
  * Feedback data of InstallModule
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.InstallModuleFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.InstallModuleFeedback.html RoboccDocs} for further information
 */
 export interface InstallModuleFeedback {
   /** Current step */
@@ -4021,7 +4027,7 @@ export interface InstallModuleFeedback {
  * Feedback data of DisableModule
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DisableModuleFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DisableModuleFeedback.html RoboccDocs} for further information
 */
 export interface DisableModuleFeedback {
   /** Current step */
@@ -4034,7 +4040,7 @@ export interface DisableModuleFeedback {
  *
  * Feedback data of Recovery
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.RecoveryFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.RecoveryFeedback.html RoboccDocs} for further information
 */
 export interface RecoveryFeedback {
   /** Current step */
@@ -4046,7 +4052,7 @@ export interface RecoveryFeedback {
  * Feedback data of ResetDatabase
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ResetDatabaseFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ResetDatabaseFeedback.html RoboccDocs} for further information
 */
 export interface ResetDatabaseFeedback {
   /** Current step */
@@ -4062,7 +4068,7 @@ export interface ResetDatabaseFeedback {
  * @property `start` - *Start pose, if not set, use vehicle pose*
  * @property `planner_tolerance` - *Planner distance tolerance*
  * @property `direction` - *Default FRONT*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetPathParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetPathParams.html RoboccDocs} for further information
 */
 export interface GetPathParams {
   /** Destination */
@@ -4080,7 +4086,7 @@ export interface GetPathParams {
  * Action result data of GetPath
  * @property `path` - *Path*
  * @property `distance` - *Distance*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetPathResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetPathResult.html RoboccDocs} for further information
 */
 export interface GetPathResult {
   /** Path */
@@ -4093,7 +4099,7 @@ export interface GetPathResult {
  *
  * Feedback data of GetPath
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetPathFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetPathFeedback.html RoboccDocs} for further information
 */
 export interface GetPathFeedback {
   /** Current step */
@@ -4105,7 +4111,7 @@ export interface GetPathFeedback {
  * Parameters of MappingStart OpTypeEnum.action
  * @property `id_site` - *id site to add new map*
  * @property `map_name` - *Name of new map*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MappingStartParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MappingStartParams.html RoboccDocs} for further information
 */
 export interface MappingStartParams {
   /** id site to add new map */
@@ -4118,7 +4124,7 @@ export interface MappingStartParams {
  *
  * Feedback data of MappingStart
  * @property `current_step` - *Current step*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MappingStartFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MappingStartFeedback.html RoboccDocs} for further information
 */
 export interface MappingStartFeedback {
   /** Current step */
@@ -4130,7 +4136,7 @@ export interface MappingStartFeedback {
  * Action result data of MappingStop
  * @property `id_map` - *id of new map*
  * @property `map_not_optimized` - *True if the map final optimization failed*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MappingStopResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MappingStopResult.html RoboccDocs} for further information
 */
 export interface MappingStopResult {
   /** id of new map */
@@ -4144,7 +4150,7 @@ export interface MappingStopResult {
  * Feedback data of MappingStop
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MappingStopFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MappingStopFeedback.html RoboccDocs} for further information
 */
 export interface MappingStopFeedback {
   /** Current step */
@@ -4158,7 +4164,7 @@ export interface MappingStopFeedback {
  * Parameters of EraseActiveMap OpTypeEnum.action
  * @property `clear_before` - *Start by clear erase layer*
  * @property `polygons` - *List of polygons*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.EraseActiveMapParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.EraseActiveMapParams.html RoboccDocs} for further information
 */
 export interface EraseActiveMapParams {
   /** Start by clear erase layer */
@@ -4172,7 +4178,7 @@ export interface EraseActiveMapParams {
  * Feedback data of EraseActiveMap
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.EraseActiveMapFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.EraseActiveMapFeedback.html RoboccDocs} for further information
 */
 export interface EraseActiveMapFeedback {
   /** Current step */
@@ -4186,7 +4192,7 @@ export interface EraseActiveMapFeedback {
  * Feedback data of ReloadMap
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ReloadMapFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ReloadMapFeedback.html RoboccDocs} for further information
 */
 export interface ReloadMapFeedback {
   /** Current step */
@@ -4200,7 +4206,7 @@ export interface ReloadMapFeedback {
  * Parameters of MergeMaps OpTypeEnum.action
  * @property `id_map_with_data` - *ID map of map with data*
  * @property `id_map_to_merge` - *ID map of map to add data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MergeMapsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MergeMapsParams.html RoboccDocs} for further information
 */
 export interface MergeMapsParams {
   /** ID map of map with data */
@@ -4214,7 +4220,7 @@ export interface MergeMapsParams {
  * Feedback data of MergeMaps
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MergeMapsFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MergeMapsFeedback.html RoboccDocs} for further information
 */
 export interface MergeMapsFeedback {
   /** Current step */
@@ -4236,7 +4242,7 @@ export interface MergeMapsFeedback {
  * @property `wifi_ssid` - *Wifi ssid*
  * @property `wifi_psk` - *Wifi password*
  * @property `wifi_hidden` - *Wifi is hidden*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.NetworkWanConfigParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.NetworkWanConfigParams.html RoboccDocs} for further information
 */
 export interface NetworkWanConfigParams {
   /**  */
@@ -4269,7 +4275,7 @@ export interface NetworkWanConfigParams {
  * @property `dest_port` - *Destination port*
  * @property `protocol` - *Network protocol*
  * @property `enable` - *Save and use after restart vehicle pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.NetworkRedirectPortParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.NetworkRedirectPortParams.html RoboccDocs} for further information
 */
 export interface NetworkRedirectPortParams {
   /** Destination IP */
@@ -4289,7 +4295,7 @@ export interface NetworkRedirectPortParams {
  * Parameters of SystemRestart OpTypeEnum.service
  * @property `stage`
  * @property `save_pose` - *Save and use after restart vehicle pose*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SystemRestartParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SystemRestartParams.html RoboccDocs} for further information
 */
 export interface SystemRestartParams {
   /**  */
@@ -4303,7 +4309,7 @@ export interface SystemRestartParams {
  * Parameters of GenerateForbiddenAreas OpTypeEnum.action
  * @property `confidence` - *Threshold above which an area is classified as forbidden([0-100], higher confidence = fewer forbidden areas)*
  * @property `simplification` - *Simplification value for ai generated forbidden areas ([0-100], higher simplification = fewer vertices)*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GenerateForbiddenAreasParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GenerateForbiddenAreasParams.html RoboccDocs} for further information
 */
 export interface GenerateForbiddenAreasParams {
   /** Threshold above which an area is classified as forbidden([0-100], higher confidence = fewer forbidden areas) */
@@ -4318,7 +4324,7 @@ export interface GenerateForbiddenAreasParams {
  * @property `width` - *Shelf width*
  * @property `length` - *Shelf length*
  * @property `feet_size` - *Shelf feet size*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetShelvesParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetShelvesParams.html RoboccDocs} for further information
 */
 export interface GetShelvesParams {
   /** Shelf width */
@@ -4334,7 +4340,7 @@ export interface GetShelvesParams {
  * Parameters of AddSound OpTypeEnum.action
  * @property `filename` - *Filename with extension*
  * @property `data` - *Base64 encoded file content*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AddSoundParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AddSoundParams.html RoboccDocs} for further information
 */
 export interface AddSoundParams {
   /** Filename with extension */
@@ -4348,7 +4354,7 @@ export interface AddSoundParams {
  * Feedback data of AddSound
  * @property `current_step` - *Current step*
  * @property `current_step_code`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AddSoundFeedback.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AddSoundFeedback.html RoboccDocs} for further information
 */
 export interface AddSoundFeedback {
   /** Current step */
@@ -4365,7 +4371,7 @@ export interface AddSoundFeedback {
  * @property `mission` - *Mission configuration*
  * @property `is_virtual` - *Is a virtual button*
  * @property `is_presence` - *Is a presence button*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AddButtonParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AddButtonParams.html RoboccDocs} for further information
 */
 export interface AddButtonParams {
   /** Button LoRa ID */
@@ -4390,7 +4396,7 @@ export interface AddButtonParams {
  * @property `port_dest` - *Destination port*
  * @property `ip` - *IP*
  * @property `protocol` - *Protocol*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdatePortRedirectionParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdatePortRedirectionParams.html RoboccDocs} for further information
 */
 export interface UpdatePortRedirectionParams {
   /** Source port to update */
@@ -4414,7 +4420,7 @@ export interface UpdatePortRedirectionParams {
  * Parameters of DeletePortRedirection OpTypeEnum.service
  * @property `port_src` - *Source port to delete*
  * @property `protocol` - *Protocol to delete*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.DeletePortRedirectionParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.DeletePortRedirectionParams.html RoboccDocs} for further information
 */
 export interface DeletePortRedirectionParams {
   /** Source port to delete */
@@ -4429,7 +4435,7 @@ export interface DeletePortRedirectionParams {
  * @property `id_controller` - *Controller id*
  * @property `index_contact` - *Contact index*
  * @property `config` - *Contact configuration*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ControllerLoraSetContactConfigParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ControllerLoraSetContactConfigParams.html RoboccDocs} for further information
 */
 export interface ControllerLoraSetContactConfigParams {
   /** Controller id */
@@ -4445,7 +4451,7 @@ export interface ControllerLoraSetContactConfigParams {
  * Parameters of NextStepMissionWithMessage OpTypeEnum.service
  * @property `uuid` - *Uuid of next step*
  * @property `message` - *Message to display*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.NextStepMissionWithMessageParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.NextStepMissionWithMessageParams.html RoboccDocs} for further information
 */
 export interface NextStepMissionWithMessageParams {
   /** Uuid of next step */
@@ -4460,7 +4466,7 @@ export interface NextStepMissionWithMessageParams {
  * @property `id_user` - *User ID*
  * @property `rbac` - *Role based access control*
  * @property `need_change_password` - *User must change password*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CheckHmiPasswordResult.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CheckHmiPasswordResult.html RoboccDocs} for further information
 */
 export interface CheckHmiPasswordResult {
   /** User ID */
@@ -4476,7 +4482,7 @@ export interface CheckHmiPasswordResult {
  * Parameters of SetMissionPriority OpTypeEnum.service
  * @property `id_mission` - *ID mission*
  * @property `priority` - *Ordered list*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetMissionPriorityParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetMissionPriorityParams.html RoboccDocs} for further information
 */
 export interface SetMissionPriorityParams {
   /** ID mission */
@@ -4491,7 +4497,7 @@ export interface SetMissionPriorityParams {
  * @property `uuids` - *Uuid of steps*
  * @property `ordered` - *Ordered list*
  * @property `end_fixed` - *Last step is fix*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetMultidestinationParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetMultidestinationParams.html RoboccDocs} for further information
 */
 export interface SetMultidestinationParams {
   /** Uuid of steps */
@@ -4507,7 +4513,7 @@ export interface SetMultidestinationParams {
  * Single item of `SetMultidestinationWithMessagesParamsUuids`
  * @property `uuid` - *Uuid of step*
  * @property `message` - *Message to display*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetMultidestinationWithMessagesParamsUuidsItem.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetMultidestinationWithMessagesParamsUuidsItem.html RoboccDocs} for further information
 */
 export interface SetMultidestinationWithMessagesParamsUuidsItem {
   /** Uuid of step */
@@ -4523,7 +4529,7 @@ export interface SetMultidestinationWithMessagesParamsUuidsItem {
  * @property `ordered` - *Ordered list*
  * @property `end_fixed` - *Last step is fix*
  * @property `message` - *Global message*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetMultidestinationWithMessagesParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetMultidestinationWithMessagesParams.html RoboccDocs} for further information
 */
 export interface SetMultidestinationWithMessagesParams {
   /** Uuid of steps */
@@ -4542,7 +4548,7 @@ export interface SetMultidestinationWithMessagesParams {
  * @property `uuid_map` - *Map uuid*
  * @property `from` - *From date in timestamp*
  * @property `to` - *To date in timestamp*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetStatsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetStatsParams.html RoboccDocs} for further information
 */
 export interface GetStatsParams {
   /** Map uuid */
@@ -4558,7 +4564,7 @@ export interface GetStatsParams {
  * Parameters of GetLightStats OpTypeEnum.service
  * @property `from` - *Start time*
  * @property `to` - *End time*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetLightStatsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetLightStatsParams.html RoboccDocs} for further information
 */
 export interface GetLightStatsParams {
   /** Start time */
@@ -4573,7 +4579,7 @@ export interface GetLightStatsParams {
  * @property `uuid_map` - *Map uuid*
  * @property `from` - *Start time*
  * @property `to` - *End time*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportStatsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportStatsParams.html RoboccDocs} for further information
 */
 export interface ExportStatsParams {
   /** Map uuid */
@@ -4590,7 +4596,7 @@ export interface ExportStatsParams {
  * @property `ids_module` - *Destination Uuid*
  * @property `from` - *Start time*
  * @property `to` - *End time*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetVehsTimelineParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetVehsTimelineParams.html RoboccDocs} for further information
 */
 export interface GetVehsTimelineParams {
   /** Destination Uuid */
@@ -4608,7 +4614,7 @@ export interface GetVehsTimelineParams {
  * @property `password` - *Password*
  * @property `hmi_password` - *HMI Password (digits)*
  * @property `rbac` - *Role based access control*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.AddRocUserParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.AddRocUserParams.html RoboccDocs} for further information
 */
 export interface AddRocUserParams {
   /** Login */
@@ -4630,7 +4636,7 @@ export interface AddRocUserParams {
  * @property `hmi_password` - *HMI Password (digits)*
  * @property `password_updated` - *Default password is updated*
  * @property `rbac` - *Role based access control*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdateRocUserParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdateRocUserParams.html RoboccDocs} for further information
 */
 export interface UpdateRocUserParams {
   /** ID User */
@@ -4652,7 +4658,7 @@ export interface UpdateRocUserParams {
  * Parameters of UpdateActiveCredentials OpTypeEnum.service
  * @property `password` - *Password*
  * @property `hmi_password` - *HMI Password (digits)*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdateActiveCredentialsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdateActiveCredentialsParams.html RoboccDocs} for further information
 */
 export interface UpdateActiveCredentialsParams {
   /** Password */
@@ -4668,7 +4674,7 @@ export interface UpdateActiveCredentialsParams {
  * @property `modules` - *Modules id LoRa restrictions*
  * @property `priority` - *Priority of the mission*
  * @property `specific_data` - *Mission specific data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.CreateMissionParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.CreateMissionParams.html RoboccDocs} for further information
 */
 export interface CreateMissionParams {
   /** Mission details */
@@ -4688,7 +4694,7 @@ export interface CreateMissionParams {
  * @property `next_steps` - *Mission details*
  * @property `auto_release` - *Auto release the robot to start move immediatly*
  * @property `specific_data` - *Specific data*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExtendMissionParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExtendMissionParams.html RoboccDocs} for further information
 */
 export interface ExtendMissionParams {
   /** Mission ID */
@@ -4706,7 +4712,7 @@ export interface ExtendMissionParams {
  * Parameters of StartButtonMission OpTypeEnum.service
  * @property `id_button` - *Button ID*
  * @property `modules` - *Modules id LoRa restrictions*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.StartButtonMissionParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.StartButtonMissionParams.html RoboccDocs} for further information
 */
 export interface StartButtonMissionParams {
   /** Button ID */
@@ -4720,7 +4726,7 @@ export interface StartButtonMissionParams {
  * Parameters of GetSecurityLogging OpTypeEnum.service
  * @property `from` - *From date in timestamp*
  * @property `to` - *To date in timestamp*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.GetSecurityLoggingParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.GetSecurityLoggingParams.html RoboccDocs} for further information
 */
 export interface GetSecurityLoggingParams {
   /** From date in timestamp */
@@ -4734,7 +4740,7 @@ export interface GetSecurityLoggingParams {
  * Parameters of ExportSecurityLogging OpTypeEnum.service
  * @property `from` - *Start time*
  * @property `to` - *End time*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.ExportSecurityLoggingParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.ExportSecurityLoggingParams.html RoboccDocs} for further information
 */
 export interface ExportSecurityLoggingParams {
   /** Start time */
@@ -4748,7 +4754,7 @@ export interface ExportSecurityLoggingParams {
  * Parameters of SetUseSyncButtons OpTypeEnum.service
  * @property `use` - *Use sync buttons*
  * @property `wait_time` - *Wait time*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SetUseSyncButtonsParams.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SetUseSyncButtonsParams.html RoboccDocs} for further information
 */
 export interface SetUseSyncButtonsParams {
   /** Use sync buttons */
@@ -4762,7 +4768,7 @@ export interface SetUseSyncButtonsParams {
  * Data sent along with the event FollowMeStatus
  * @property `status`
  * @property `mode`
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.FollowMeStatusEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.FollowMeStatusEventData.html RoboccDocs} for further information
 */
 export interface FollowMeStatusEventData {
   /**  */
@@ -4778,7 +4784,7 @@ export interface FollowMeStatusEventData {
  * @property `volume` - *Volume*
  * @property `loop_number` - *Number of play of the sound sample*
  * @property `loop_delay` - *Delay between each sound loop, in seconds*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SoundCommandEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SoundCommandEventData.html RoboccDocs} for further information
 */
 export interface SoundCommandEventData {
   /** Sound sample */
@@ -4798,7 +4804,7 @@ export interface SoundCommandEventData {
  * @property `move_back` - *Move back*
  * @property `move_left` - *Move left*
  * @property `move_right` - *Move right*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehicleDirectionEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehicleDirectionEventData.html RoboccDocs} for further information
 */
 export interface VehicleDirectionEventData {
   /** Move front */
@@ -4816,7 +4822,7 @@ export interface VehicleDirectionEventData {
  * Data sent along with the event MappingError
  * @property `outcome` - *Outcome*
  * @property `message` - *Message*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.MappingErrorEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.MappingErrorEventData.html RoboccDocs} for further information
 */
 export interface MappingErrorEventData {
   /** Outcome */
@@ -4831,7 +4837,7 @@ export interface MappingErrorEventData {
  * @property `diagnostic_error` - *Diagnostic error*
  * @property `diagnostic_critical_level` - *Diagnostic critical level*
  * @property `error_array` - *Erros*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.SafetyDiagnosticEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.SafetyDiagnosticEventData.html RoboccDocs} for further information
 */
 export interface SafetyDiagnosticEventData {
   /** Diagnostic error */
@@ -4847,7 +4853,7 @@ export interface SafetyDiagnosticEventData {
  * Data sent along with the event Velocity
  * @property `linear` - *Linear speed*
  * @property `angular` - *Angular speed*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VelocityEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VelocityEventData.html RoboccDocs} for further information
 */
 export interface VelocityEventData {
   /** Linear speed */
@@ -4867,7 +4873,7 @@ export interface VelocityEventData {
  * @property `estimated_time_remaining` - *Estimated time remaining in seconds*
  * @property `navigation_time` - *Navigation time in seconds*
  * @property `number_of_recoveries` - *Number of recoveries*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.VehToFeedbackEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.VehToFeedbackEventData.html RoboccDocs} for further information
 */
 export interface VehToFeedbackEventData {
   /** Current step */
@@ -4897,7 +4903,7 @@ export interface VehToFeedbackEventData {
  * @property `update_pending` - *A system update is available for this device*
  * @property `update_downloaded` - *A system update is available and ready to be applied*
  * @property `update_failed` - *A system update is waiting for application*
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/interfaces/types.UpdateStatusEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/interfaces/types.UpdateStatusEventData.html RoboccDocs} for further information
 */
 export interface UpdateStatusEventData {
   /** Release commit id */
@@ -4962,7 +4968,7 @@ export type OperatingHours = SlotHours[][];
  * @member `SUPERVISION` - SUPERVISION
  * @member `CONFIGURATION` - CONFIGURATION
  * @member `ADMINISTRATION` - ADMINISTRATION
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.Rbac.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.Rbac.html RoboccDocs} for further information
 */
 export enum Rbac {
   /** NOT_AUTH */
@@ -4984,7 +4990,7 @@ export enum Rbac {
  * @member `OK` - OK
  * @member `CHASSIS_INTRUSION` - Chassis intrusion
  * @member `CORRUPTION` - Corruption
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ChassisIntrusionStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ChassisIntrusionStatus.html RoboccDocs} for further information
 */
 export enum ChassisIntrusionStatus {
   /** Unknown */
@@ -5003,7 +5009,7 @@ export enum ChassisIntrusionStatus {
  * @member `INFO` - INFO
  * @member `WARNING` - WARNING
  * @member `ERROR` - ERROR
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.SecuritySeverity.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.SecuritySeverity.html RoboccDocs} for further information
 */
 export enum SecuritySeverity {
   /** INFO */
@@ -5019,7 +5025,7 @@ export enum SecuritySeverity {
  * List network protocol
  * @member `UDP` - UDP
  * @member `TCP` - TCP
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.NetworkProtocol.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.NetworkProtocol.html RoboccDocs} for further information
 */
 export enum NetworkProtocol {
   /** UDP */
@@ -5036,7 +5042,7 @@ export enum NetworkProtocol {
  * @member `DISCHARGING` - Discharging
  * @member `NOT_CHARGING` - Not used
  * @member `FULL` - Full
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.PowerSupplyStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.PowerSupplyStatus.html RoboccDocs} for further information
 */
 export enum PowerSupplyStatus {
   /** Unknown, no data received from battery */
@@ -5056,7 +5062,7 @@ export enum PowerSupplyStatus {
  * `move_type` parameter of a `MoveStep` type
  * @member `LINEAR` - Linear distance in meters
  * @member `ANGULAR` - Angular distance in radians
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.MoveStepMoveType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.MoveStepMoveType.html RoboccDocs} for further information
 */
 export enum MoveStepMoveType {
   /** Linear distance in meters */
@@ -5076,7 +5082,7 @@ export enum MoveStepMoveType {
  * @member `US_SENSOR_TYPE` - Sonar element
  * @member `BATTERY_TYPE` - Battery element
  * @member `ROS_NODE_TYPE` - Software ROS node
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DiagnosticElementType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DiagnosticElementType.html RoboccDocs} for further information
 */
 export enum DiagnosticElementType {
   /** Unknown element type */
@@ -5108,7 +5114,7 @@ export enum DiagnosticElementType {
  * @member `CONNECTION_ERROR` - Connection error on element, element might be disconnected
  * @member `NODE_CRASH_ERROR` - Node crash error on element can occur only on SOFTWARE_MODULE element
  * @member `UNAPPLIED_CONFIG_ERROR` - Configuration is not correctly applied on some elements
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DiagnosticElementError.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DiagnosticElementError.html RoboccDocs} for further information
 */
 export enum DiagnosticElementError {
   /** Unknown error on element */
@@ -5137,7 +5143,7 @@ export enum DiagnosticElementError {
  * @member `WARN_CRITICAL` - Error should be seen as warning
  * @member `ERROR_CRITICAL` - Error should be seen as critical
  * @member `FATAL_CRITICAL` - Error should be seen as fatal
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DiagnosticCriticalLevel.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DiagnosticCriticalLevel.html RoboccDocs} for further information
 */
 export enum DiagnosticCriticalLevel {
   /** Unknown criticality */
@@ -5159,7 +5165,7 @@ export enum DiagnosticCriticalLevel {
  * @member `MOVE` - Step is a move order
  * @member `WAIT` - Step is a pause for X seconds order
  * @member `BEHAVIOUR` - Step is a behaviour order to toggle on or off sound and LED on veh
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.AutopilotStepType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.AutopilotStepType.html RoboccDocs} for further information
 */
 export enum AutopilotStepType {
   /** Step type is not set */
@@ -5178,7 +5184,7 @@ export enum AutopilotStepType {
  * @member `CHARGING_STATION` - Step move is aiming a charging station element
  * @member `SAVED_POSE` - Step move is aiming a saved pose element
  * @member `DOCKED_POSE` - Step move is aiming a docked pose element
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.AutopilotTargetType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.AutopilotTargetType.html RoboccDocs} for further information
 */
 export enum AutopilotTargetType {
   /** Step move is aiming a charging station element */
@@ -5194,7 +5200,7 @@ export enum AutopilotTargetType {
  * List all on error options
  * @member `NEXT_STEP` - On error, proceed next step
  * @member `RETRY` - On error, retry
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.AutopilotOnError.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.AutopilotOnError.html RoboccDocs} for further information
 */
 export enum AutopilotOnError {
   /** On error, proceed next step */
@@ -5210,7 +5216,7 @@ export enum AutopilotOnError {
  * @member `FRONT` - The vehicle must be oriented in the same way as the goal and forward
  * @member `BACK` - The vehicle must be oriented in the same way as the goal and backward
  * @member `NO_DIRECTION` - The vehicle has no constraint on orientation
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.Direction.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.Direction.html RoboccDocs} for further information
 */
 export enum Direction {
   /** The vehicle must be oriented in the same way as the goal, regardless the condition of the front or rear of the vehicle */
@@ -5229,7 +5235,7 @@ export enum Direction {
  * @member `NOT_SET` - Param not set, use parent or default value
  * @member `ON` - On
  * @member `OFF` - Off
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.OnOff.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.OnOff.html RoboccDocs} for further information
 */
 export enum OnOff {
   /** Param not set, use parent or default value */
@@ -5246,7 +5252,7 @@ export enum OnOff {
  * @member `FRONT_OR_BACK` - The vehicle must be oriented in the same way as the goal, regardless the condition of the front or rear of the vehicle
  * @member `FRONT` - The vehicle must be oriented in the same way as the goal and forward
  * @member `BACK` - The vehicle must be oriented in the same way as the goal and backward
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DirectionStrict.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DirectionStrict.html RoboccDocs} for further information
 */
 export enum DirectionStrict {
   /** The vehicle must be oriented in the same way as the goal, regardless the condition of the front or rear of the vehicle */
@@ -5263,7 +5269,7 @@ export enum DirectionStrict {
  * @member `MODE_FREE` - Free move
  * @member `MODE_ASSISTED` - The vehicle follow walls
  * @member `MODE_GUIDED` - The vehicle can't go on forbidden area
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.FollowMode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.FollowMode.html RoboccDocs} for further information
 */
 export enum FollowMode {
   /** Free move */
@@ -5287,7 +5293,7 @@ export enum FollowMode {
  * @member `DOCK` - Docking to goal
  * @member `SEGMENT` - Currently following segment
  * @member `FINISHED` - Move order finished
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.VehToDockedStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.VehToDockedStepCode.html RoboccDocs} for further information
 */
 export enum VehToDockedStepCode {
   /** Undefined */
@@ -5320,7 +5326,7 @@ export enum VehToDockedStepCode {
  * @member `DOCKING` - Vehicle is currently docking
  * @member `UNDOCKING` - Vehicle is currently undocking
  * @member `UNDOCKED` - Vehicle is currently undocked
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DockingStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DockingStatus.html RoboccDocs} for further information
 */
 export enum DockingStatus {
   /** Unknown docking status */
@@ -5343,7 +5349,7 @@ export enum DockingStatus {
  * @member `FOLLOWING` - Vehicle is currently following a target
  * @member `TARGET_LOST` - Vehicle as lost its target
  * @member `RESETED` - Vehicle is waiting for target
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.FollowMeStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.FollowMeStatus.html RoboccDocs} for further information
 */
 export enum FollowMeStatus {
   /** Unknown follow me status */
@@ -5364,7 +5370,7 @@ export enum FollowMeStatus {
  * @member `CHARGING_STATION` - CHARGING_STATION
  * @member `DOCKED_POSE` - DOCKED_POSE
  * @member `SHELF_PICKING` - SHELF_PICKING
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DockingType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DockingType.html RoboccDocs} for further information
 */
 export enum DockingType {
   /** CHARGING_STATION */
@@ -5388,7 +5394,7 @@ export enum DockingType {
  * @member `DOCK` - Dock if needed
  * @member `SEGMENT` - Currently following segment
  * @member `FINISHED` - Move order finished
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.VehToStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.VehToStepCode.html RoboccDocs} for further information
 */
 export enum VehToStepCode {
   /** Undefined */
@@ -5442,7 +5448,7 @@ export enum VehToStepCode {
  * @member `MOVE_STOP` - MOVE_STOP
  * @member `FADE_1_LED` - FADE_1_LED
  * @member `FADE_2_LEDS` - FADE_2_LEDS
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.LedAnim.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.LedAnim.html RoboccDocs} for further information
 */
 export enum LedAnim {
   /** Auto animation used to modify color but still use the animation vehicle should use */
@@ -5507,7 +5513,7 @@ export enum LedAnim {
  * @member `CORNER_BLINK` - Corners are currently in blink animation
  * @member `CORNER_FADE` - Corners are currently in fade animation
  * @member `CORNER_CAR_MODE` - Corners are currently in car mode
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.LedCornerAnim.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.LedCornerAnim.html RoboccDocs} for further information
 */
 export enum LedCornerAnim {
   /** No corner animation set */
@@ -5527,7 +5533,7 @@ export enum LedCornerAnim {
  * List all pose reference
  * @member `MAP` - Pose reference is map
  * @member `VEHICLE` - Pose reference is vehicle
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.PoseReference.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.PoseReference.html RoboccDocs} for further information
 */
 export enum PoseReference {
   /** Pose reference is map */
@@ -5541,7 +5547,7 @@ export enum PoseReference {
  * List all network type available on vehicle 🌐
  * @member `ETHERNET` - Ethernet connection
  * @member `WIFI` - Wi-Fi connection
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.NetworkType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.NetworkType.html RoboccDocs} for further information
 */
 export enum NetworkType {
   /** Ethernet connection */
@@ -5558,7 +5564,7 @@ export enum NetworkType {
  * @member `CONNECTED` - Network is connected
  * @member `CONNECTING` - Network is connecting
  * @member `DISABLED` - Network is disabled
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.NetworkStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.NetworkStatus.html RoboccDocs} for further information
 */
 export enum NetworkStatus {
   /** Unknown network state */
@@ -5581,7 +5587,7 @@ export enum NetworkStatus {
  * @member `CONNECTED` - Network is connected
  * @member `CONNECTING` - Network is connecting
  * @member `CONNECTED_NOINTERNET` - Network is connected without internet connection
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.NetworkGlobalStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.NetworkGlobalStatus.html RoboccDocs} for further information
 */
 export enum NetworkGlobalStatus {
   /** Unknown network global state */
@@ -5606,7 +5612,7 @@ export enum NetworkGlobalStatus {
  * @member `ALERT` - Alert sound
  * @member `REVERSE` - Truck reverse sound
  * @member `HELP` - Help sound
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.SoundSample.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.SoundSample.html RoboccDocs} for further information
 */
 export enum SoundSample {
   /** No sample set */
@@ -5639,7 +5645,7 @@ export enum SoundSample {
  * @member `IDLE` - Sound played when veh is IDLE, anytime vehicle do nothing
  * @member `SAFETY_DISABLED` - Sound played when veh has its safety disabled
  * @member `SAFETY_ALERT` - Sound played when there is a safety alert on vehicle
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.SoundScenario.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.SoundScenario.html RoboccDocs} for further information
 */
 export enum SoundScenario {
   /** Sound played at vehicle initialization at each boot */
@@ -5682,7 +5688,7 @@ export enum SoundScenario {
  * @member `US_SENSOR_10_H` - Vehicle stopped because of an obstacle detected by the US sensor 10h
  * @member `US_SENSOR_11_H` - Vehicle stopped because of an obstacle detected by the US sensor 11h
  * @member `NAVIGATION` - Vehicle stopped because of a navigation algorithm
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.StopSource.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.StopSource.html RoboccDocs} for further information
 */
 export enum StopSource {
   /** Stop source is unknown */
@@ -5719,7 +5725,7 @@ export enum StopSource {
  * @member `COMPUTER_UNKNOWN` - Unknown computer
  * @member `COMPUTER_NUC13` - NUC 13
  * @member `COMPUTER_LATTEPANDA` - LattePanda
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ComputerType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ComputerType.html RoboccDocs} for further information
 */
 export enum ComputerType {
   /** Unknown computer */
@@ -5737,7 +5743,7 @@ export enum ComputerType {
  * @member `MCU_TEENSY` - Pico
  * @member `MCU_PICO` - Pico
  * @member `MCU_LEONARDO` - Leonardo
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.McuType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.McuType.html RoboccDocs} for further information
 */
 export enum McuType {
   /** Unknown MCU */
@@ -5756,7 +5762,7 @@ export enum McuType {
  * @member `MOTOR_UNKNOWN` - Unknown motor
  * @member `MOTOR_100` - Motor 100kg
  * @member `MOTOR_200` - Motor 200kg
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.MotorType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.MotorType.html RoboccDocs} for further information
 */
 export enum MotorType {
   /** Unknown motor */
@@ -5774,7 +5780,7 @@ export enum MotorType {
  * @member `STOPPED` - Navigation is stopped
  * @member `STARTING` - Navigation is starting
  * @member `STARTED` - Navigation is started
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.NavigationState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.NavigationState.html RoboccDocs} for further information
 */
 export enum NavigationState {
   /** Unknown navigation state (start or stop might have failed) */
@@ -5792,7 +5798,7 @@ export enum NavigationState {
  * Language
  * @member `EN` - EN
  * @member `FR` - FR
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.Language.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.Language.html RoboccDocs} for further information
 */
 export enum Language {
   /** EN */
@@ -5815,7 +5821,7 @@ export enum Language {
  * @member `SOUNDS` - SOUNDS
  * @member `VEH_SIZE` - VEH_SIZE
  * @member `AREA_CONFIGS` - AREA_CONFIGS
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.InvalidDataSection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.InvalidDataSection.html RoboccDocs} for further information
 */
 export enum InvalidDataSection {
   /** BUTTONS */
@@ -5850,7 +5856,7 @@ export enum InvalidDataSection {
  * @member `ROC` - ROC
  * @member `BUTTON` - BUTTON
  * @member `CONTROLLER` - CONTROLLER
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.PeerType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.PeerType.html RoboccDocs} for further information
 */
 export enum PeerType {
   /** NONE */
@@ -5871,7 +5877,7 @@ export enum PeerType {
  * @member `ON_PAUSE` - ON_PAUSE
  * @member `RETRY_MOVE` - RETRY_MOVE
  * @member `ROC_L_BAD_LIFT_POSITION` - ROC_L_BAD_LIFT_POSITION
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.RocEvent.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.RocEvent.html RoboccDocs} for further information
 */
 export enum RocEvent {
   /** ON_PAUSE */
@@ -5887,7 +5893,7 @@ export enum RocEvent {
  * Contact state
  * @member `OFF` - OFF
  * @member `ON` - ON
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ContactState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ContactState.html RoboccDocs} for further information
 */
 export enum ContactState {
   /** OFF */
@@ -5904,7 +5910,7 @@ export enum ContactState {
  * @member `UNLOAD` - UNLOAD
  * @member `PICKING` - PICKING
  * @member `SHELF` - SHELF
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DockedPoseStationType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DockedPoseStationType.html RoboccDocs} for further information
 */
 export enum DockedPoseStationType {
   /** NONE */
@@ -5929,7 +5935,7 @@ export enum DockedPoseStationType {
  * @member `ACTION_RELAY2_ON` - ACTION_RELAY2_ON
  * @member `ACTION_RELAY2_OFF` - ACTION_RELAY2_OFF
  * @member `ACTION_RELAY2_PULSE` - ACTION_RELAY2_PULSE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.LoraControllerCommand.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.LoraControllerCommand.html RoboccDocs} for further information
 */
 export enum LoraControllerCommand {
   /** UNDEFINED */
@@ -5957,7 +5963,7 @@ export enum LoraControllerCommand {
  * @member `AVAILABILITY` - AVAILABILITY
  * @member `RELEASE` - RELEASE
  * @member `EMERGENCY` - EMERGENCY
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ContactType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ContactType.html RoboccDocs} for further information
 */
 export enum ContactType {
   /** NONE */
@@ -5979,7 +5985,7 @@ export enum ContactType {
  * Contact NO/NC
  * @member `NO` - NO
  * @member `NC` - NC
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ContactNonc.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ContactNonc.html RoboccDocs} for further information
 */
 export enum ContactNonc {
   /** NO */
@@ -5993,7 +5999,7 @@ export enum ContactNonc {
  * Contact trigger
  * @member `ON_PULSE` - ON_PULSE
  * @member `ON_HIGH` - ON_HIGH
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ContactTrigger.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ContactTrigger.html RoboccDocs} for further information
 */
 export enum ContactTrigger {
   /** ON_PULSE */
@@ -6007,7 +6013,7 @@ export enum ContactTrigger {
  * Relay action
  * @member `ON_OFF` - ON_OFF
  * @member `PULSE` - PULSE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.RelayAction.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.RelayAction.html RoboccDocs} for further information
 */
 export enum RelayAction {
   /** ON_OFF */
@@ -6080,7 +6086,7 @@ export enum RelayAction {
  * @member `STATUS_MISSION` - STATUS_MISSION
  * @member `STATUS_CANCEL_FAILED` - STATUS_CANCEL_FAILED
  * @member `STATUS_MOVE_FAILED_FS` - STATUS_MOVE_FAILED_FS
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.VehStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.VehStatus.html RoboccDocs} for further information
 */
 export enum VehStatus {
   /** STATUS_FREE */
@@ -6215,7 +6221,7 @@ export enum VehStatus {
  * @member `ROC_EP` - ROC_EP
  * @member `ROC_P` - ROC_P
  * @member `OTHER` - OTHER
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ModuleType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ModuleType.html RoboccDocs} for further information
 */
 export enum ModuleType {
   /** NOT_SET */
@@ -6237,7 +6243,7 @@ export enum ModuleType {
  * @member `FRONT` - FRONT
  * @member `BACK` - BACK
  * @member `NO_DIRECTION` - NO_DIRECTION
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.VehDirection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.VehDirection.html RoboccDocs} for further information
 */
 export enum VehDirection {
   /** FRONT_OR_BACK */
@@ -6256,7 +6262,7 @@ export enum VehDirection {
  * @member `CHARGING_STATION` - CHARGING_STATION
  * @member `SAVED_POSE` - SAVED_POSE
  * @member `DOCKED_POSE` - DOCKED_POSE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.MapElementType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.MapElementType.html RoboccDocs} for further information
 */
 export enum MapElementType {
   /** CHARGING_STATION */
@@ -6273,7 +6279,7 @@ export enum MapElementType {
  * @member `NONE` - NONE
  * @member `USER` - USER
  * @member `MODULE` - MODULE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.AuthenticatedType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.AuthenticatedType.html RoboccDocs} for further information
 */
 export enum AuthenticatedType {
   /** NONE */
@@ -6290,7 +6296,7 @@ export enum AuthenticatedType {
  * @member `INFO` - INFO
  * @member `WARNING` - WARNING
  * @member `ERROR` - ERROR
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.LogSeverity.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.LogSeverity.html RoboccDocs} for further information
 */
 export enum LogSeverity {
   /** INFO */
@@ -6307,7 +6313,7 @@ export enum LogSeverity {
  * @member `APP` - APP
  * @member `MISSION` - MISSION
  * @member `VEHICLE` - VEHICLE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.LogType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.LogType.html RoboccDocs} for further information
 */
 export enum LogType {
   /** APP */
@@ -6326,7 +6332,7 @@ export enum LogType {
  * @member `DOWNLOADING` - Device is downloading new system update
  * @member `INSTALLING` - Device is installing new system update
  * @member `IDLE` - No new system update
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.UpdateStatusStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.UpdateStatusStatus.html RoboccDocs} for further information
 */
 export enum UpdateStatusStatus {
   /** Device is stopping to install update */
@@ -6348,7 +6354,7 @@ export enum UpdateStatusStatus {
  * @member `UPDATE_DATABASE` - Step updating database
  * @member `UPDATE_MAPS` - Step updating maps
  * @member `RELOAD_MAPS` - Step reloading maps
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.SetMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.SetMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum SetMapFeedbackCurrentStepCode {
   /** Step undefined */
@@ -6370,7 +6376,7 @@ export enum SetMapFeedbackCurrentStepCode {
  * @member `RELOAD_MAPS` - Reloading database
  * @member `RECOVERY` - Perform recovery
  * @member `STOP_NAVIGATION` - Stop navigation due to error on recovery step
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.SetActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.SetActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum SetActiveMapFeedbackCurrentStepCode {
   /** Undefined */
@@ -6392,7 +6398,7 @@ export enum SetActiveMapFeedbackCurrentStepCode {
  * `current_step_code` parameter of a `InstallModuleFeedback` type
  * @member `UPDATE_DATABASE` - Update database
  * @member `ACTIVATE_MODULE` - Activate module
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.InstallModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.InstallModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum InstallModuleFeedbackCurrentStepCode {
   /** Update database */
@@ -6406,7 +6412,7 @@ export enum InstallModuleFeedbackCurrentStepCode {
  * `current_step_code` parameter of a `DisableModuleFeedback` type
  * @member `UPDATE_DATABASE` - Update module
  * @member `ACTIVATE_MODULE` - Desactivate module
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.DisableModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.DisableModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum DisableModuleFeedbackCurrentStepCode {
   /** Update module */
@@ -6421,7 +6427,7 @@ export enum DisableModuleFeedbackCurrentStepCode {
  * @member `RESET_DATABASE` - Undefined
  * @member `SET_ACTIVE_MODULE` - Stop mapping process
  * @member `SET_ACTIVE_MAP` - Save map in database
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ResetDatabaseFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ResetDatabaseFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum ResetDatabaseFeedbackCurrentStepCode {
   /** Undefined */
@@ -6440,7 +6446,7 @@ export enum ResetDatabaseFeedbackCurrentStepCode {
  * @member `SAVE_MAP` - Save map in database
  * @member `SET_ACTIVE_MAP` - Set map as active
  * @member `START_NAVIGATION` - Start navigation on new map
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.MappingStopFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.MappingStopFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum MappingStopFeedbackCurrentStepCode {
   /** Undefined */
@@ -6461,7 +6467,7 @@ export enum MappingStopFeedbackCurrentStepCode {
  * @member `GET_DATA` - Get erasers data
  * @member `GENERATE_MAPS` - Generate maps with erase layer
  * @member `SAVE_MAP` - Save map in database
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.EraseActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.EraseActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum EraseActiveMapFeedbackCurrentStepCode {
   /** Get erasers data */
@@ -6479,7 +6485,7 @@ export enum EraseActiveMapFeedbackCurrentStepCode {
  * @member `GET_DATA` - Get data for reloading map
  * @member `UPDATE_MAPS` - Update maps
  * @member `RELOAD_MAPS` - Reload maps
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.ReloadMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.ReloadMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum ReloadMapFeedbackCurrentStepCode {
   /** Undefined */
@@ -6499,7 +6505,7 @@ export enum ReloadMapFeedbackCurrentStepCode {
  * @member `CALCULATE_TRANSFORMATION` - Calculate transformation
  * @member `TRANSFORM_DATA` - Transform data
  * @member `SAVE_MAP` - Save map
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.MergeMapsFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.MergeMapsFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 export enum MergeMapsFeedbackCurrentStepCode {
   /** Get data from db */
@@ -6518,7 +6524,7 @@ export enum MergeMapsFeedbackCurrentStepCode {
  * @member `SOFT_RESTART` - Restart software
  * @member `HARD_RESTART` - Restart docker
  * @member `REBOOT` - Restart PC
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.SystemRestartParamsStage.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.SystemRestartParamsStage.html RoboccDocs} for further information
 */
 export enum SystemRestartParamsStage {
   /** Restart software */
@@ -6534,7 +6540,7 @@ export enum SystemRestartParamsStage {
  * `outcome` parameter of a `MappingErrorEventData` type
  * @member `NO_ERROR` - No mapping in progress, or no error happened on current mapping
  * @member `ERROR` - An error happened on current mapping
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.MappingErrorEventDataOutcome.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.MappingErrorEventDataOutcome.html RoboccDocs} for further information
 */
 export enum MappingErrorEventDataOutcome {
   /** No mapping in progress, or no error happened on current mapping */
@@ -6550,7 +6556,7 @@ export enum MappingErrorEventDataOutcome {
  * @member `SUCCESS` - Autopilot step finished successfully
  * @member `FAILURE` - Autopilot step finished with failure
  * @member `CANCELED` - Autopilot step has been canceled
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.AutopilotStepResultEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.AutopilotStepResultEventData.html RoboccDocs} for further information
 */
 export enum AutopilotStepResultEventData {
   /** Undefined autopilot step result */
@@ -6573,7 +6579,7 @@ export enum AutopilotStepResultEventData {
  * @member `PAUSED_CHARGING` - Autopilot is paused due to critical battery level reached and vehicle has gone off to recharge itself
  * @member `PAUSED_HIR` - Autopilot is paused due to human intervention required
  * @member `PAUSED_PROHIBITED_MOVE` - Autopilot is paused due to module prohibit move orders
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.AutopilotStatusEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.AutopilotStatusEventData.html RoboccDocs} for further information
 */
 export enum AutopilotStatusEventData {
   /** Autopilot not set for this map */
@@ -6600,7 +6606,7 @@ export enum AutopilotStatusEventData {
  * @member `DOWNLOADING` - Device is downloading new system update
  * @member `INSTALLING` - Device is installing new system update
  * @member `IDLE` - No new system update
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.11-athena-11/enums/types.UpdateStatusEventDataStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.1.12-athena-12/enums/types.UpdateStatusEventDataStatus.html RoboccDocs} for further information
 */
 export enum UpdateStatusEventDataStatus {
   /** Device is stopping to install update */
