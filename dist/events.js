@@ -104,12 +104,23 @@ var TopicEventCode;
       *
       * Sound command played by the vehicle, with sample ID, volume and loop count 🔉
       
-      * @data {@link SoundCommandEventData}
+      * @data {@link SoundCommand}
       * @category Sound
       * @group Vehicle
       
     */
     TopicEventCode[TopicEventCode["SoundCommand"] = 104] = "SoundCommand";
+    /**
+      * **Sound scenarios' configurations**
+      *
+      * List of all sound scenarios' configurations (sample and max volume) 🔉
+      
+      * @data {@link SoundScenarioConfiguration}[]
+      * @category Sound
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["SoundScenariosConfigurations"] = 174] = "SoundScenariosConfigurations";
     /**
       * **External speaker**
       *
@@ -562,27 +573,27 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["FlashMcuRequested"] = 127] = "FlashMcuRequested";
     /**
-      * **Lidar points in robot frame**
+      * **Lidar points in vehicle frame**
       *
-      * Lidar points in robot frame
+      * Lidar points in vehicle frame, with coordinates in centimeters
       
-      * @data {@link Position}[]
+      * @data {@link Point3dCm}[]
       * @category Vehicle state
       * @group Vehicle
       
     */
-    TopicEventCode[TopicEventCode["LidarFromRobot"] = 133] = "LidarFromRobot";
+    TopicEventCode[TopicEventCode["LidarPointsInVehFrame"] = 133] = "LidarPointsInVehFrame";
     /**
-      * **Lidar points in map**
+      * **Lidar points in map frame**
       *
-      * Lidar points in map
+      * Lidar points in map frame, with coordinates in centimeters
       
-      * @data {@link Position}[]
+      * @data {@link Point3dCm}[]
       * @category Vehicle state
       * @group Vehicle
       
     */
-    TopicEventCode[TopicEventCode["LidarInMap"] = 134] = "LidarInMap";
+    TopicEventCode[TopicEventCode["LidarPointsInMapFrame"] = 134] = "LidarPointsInMapFrame";
     /**
       * **Lidar markers in map**
       *
@@ -671,6 +682,28 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["SecurityEvent"] = 167] = "SecurityEvent";
+    /**
+      * **3D sensors points in map frame**
+      *
+      * 3D sensors points in map frame, with coordinates in centimeters
+      
+      * @data {@link Point3dCm}[]
+      * @category Vehicle state
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["Sensors3dPoints"] = 168] = "Sensors3dPoints";
+    /**
+      * **US sensors ranges in ranges**
+      *
+      * US sensors ranges, in this order {01_h, 02_h, 04_h, 05_h, 07_h, 08_h, 10_h, 11_h}, in centimeters
+      
+      * @data {@link Range}[]
+      * @category Vehicle state
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["UsSensorsRanges"] = 173] = "UsSensorsRanges";
     /**
       * **Connected to vehicle**
       *
@@ -1464,17 +1497,6 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["MaxButtonIdSearch"] = 7071] = "MaxButtonIdSearch";
     /**
-      * **Default Wait Release Sound**
-      *
-      * Default Wait Release Sound
-      
-      * @data {@link string}
-      * @category Configuration
-      * @group Vehicle
-      
-    */
-    TopicEventCode[TopicEventCode["DefaultWaitReleaseSound"] = 7072] = "DefaultWaitReleaseSound";
-    /**
       * **Port redirection**
       *
       * Port redirection
@@ -1887,6 +1909,12 @@ var ResultEventCode;
     */
     ResultEventCode[ResultEventCode["SimAddShelfResult"] = 157] = "SimAddShelfResult";
     /**
+      * **Add picking result**
+      *
+      * Result of add picking operation
+    */
+    ResultEventCode[ResultEventCode["SimAddPickingResult"] = 170] = "SimAddPickingResult";
+    /**
       * **Clear cylinders result**
       *
       * Result of clear cylinders operation
@@ -1898,6 +1926,12 @@ var ResultEventCode;
       * Result of clear shelves operation
     */
     ResultEventCode[ResultEventCode["SimClearShelvesResult"] = 159] = "SimClearShelvesResult";
+    /**
+      * **Clear pickings result**
+      *
+      * Result of clear pickings operation
+    */
+    ResultEventCode[ResultEventCode["SimClearPickingsResult"] = 172] = "SimClearPickingsResult";
     /**
       * **Reset sim world result**
       *
@@ -2119,6 +2153,12 @@ var FeedbackEventCode;
     */
     FeedbackEventCode[FeedbackEventCode["SimAddShelfFeedback"] = 156] = "SimAddShelfFeedback";
     /**
+      * **Add picking feedback**
+      *
+      * Feedback on add picking operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimAddPickingFeedback"] = 169] = "SimAddPickingFeedback";
+    /**
       * **Clear cylinders feedback**
       *
       * Feedback on clear cylinders operation
@@ -2130,6 +2170,12 @@ var FeedbackEventCode;
       * Feedback on clear shelves operation
     */
     FeedbackEventCode[FeedbackEventCode["SimClearShelvesFeedback"] = 158] = "SimClearShelvesFeedback";
+    /**
+      * **Clear pickings feedback**
+      *
+      * Feedback on clear pickings operation
+    */
+    FeedbackEventCode[FeedbackEventCode["SimClearPickingsFeedback"] = 171] = "SimClearPickingsFeedback";
     /**
       * **Reset sim world feedback**
       *
@@ -2155,6 +2201,7 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.LedCommand]: [],
     [TopicEventCode.SoundScenario]: [],
     [TopicEventCode.SoundCommand]: [],
+    [TopicEventCode.SoundScenariosConfigurations]: [],
     [TopicEventCode.SoundExternalSpeaker]: [],
     [TopicEventCode.VehicleDirection]: [],
     [TopicEventCode.Freewheel]: [],
@@ -2196,8 +2243,8 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.AutomaticUpdates]: [],
     [TopicEventCode.FlashRoboteqRequested]: [],
     [TopicEventCode.FlashMcuRequested]: [],
-    [TopicEventCode.LidarFromRobot]: [],
-    [TopicEventCode.LidarInMap]: [],
+    [TopicEventCode.LidarPointsInVehFrame]: [],
+    [TopicEventCode.LidarPointsInMapFrame]: [],
     [TopicEventCode.LidarMarkers]: [],
     [TopicEventCode.StopSources]: [],
     [TopicEventCode.SystemInfo]: [],
@@ -2206,6 +2253,8 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.BlockedIp]: [],
     [TopicEventCode.SoundSamples]: [],
     [TopicEventCode.SecurityEvent]: [],
+    [TopicEventCode.Sensors3dPoints]: [],
+    [TopicEventCode.UsSensorsRanges]: [],
     [TopicEventCode.ConnectedToVeh]: [],
     [TopicEventCode.IsVeh]: [],
     [TopicEventCode.IsManager]: [],
@@ -2278,7 +2327,6 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.InPauseTitle]: [],
     [TopicEventCode.FollowMeAllowed]: [],
     [TopicEventCode.MaxButtonIdSearch]: [],
-    [TopicEventCode.DefaultWaitReleaseSound]: [],
     [TopicEventCode.PortRedirections]: [],
     [TopicEventCode.LiftError]: [],
     [TopicEventCode.InvalidDataList]: [],
@@ -2336,8 +2384,10 @@ const initEventResultCallbacks = () => ({
     [ResultEventCode.SimAddFiducialResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SimAddCylinderResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SimAddShelfResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimAddPickingResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SimClearCylindersResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SimClearShelvesResult]: { resolve: undefined, reject: undefined },
+    [ResultEventCode.SimClearPickingsResult]: { resolve: undefined, reject: undefined },
     [ResultEventCode.SimResetWorldResult]: { resolve: undefined, reject: undefined },
 });
 exports.initEventResultCallbacks = initEventResultCallbacks;
@@ -2378,8 +2428,10 @@ const initEventFeedbackCallbacks = () => ({
     [FeedbackEventCode.SimAddFiducialFeedback]: undefined,
     [FeedbackEventCode.SimAddCylinderFeedback]: undefined,
     [FeedbackEventCode.SimAddShelfFeedback]: undefined,
+    [FeedbackEventCode.SimAddPickingFeedback]: undefined,
     [FeedbackEventCode.SimClearCylindersFeedback]: undefined,
     [FeedbackEventCode.SimClearShelvesFeedback]: undefined,
+    [FeedbackEventCode.SimClearPickingsFeedback]: undefined,
     [FeedbackEventCode.SimResetWorldFeedback]: undefined,
 });
 exports.initEventFeedbackCallbacks = initEventFeedbackCallbacks;

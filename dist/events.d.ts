@@ -1,7 +1,7 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { SecurityEvent, Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, BatteryState, AutopilotStep, Areas, DockingState, NetworkWanState, SystemInfo, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, RocAreaConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthSessionResult, FollowMeStatusEventData, SoundCommandEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
-import { Path, AutopilotSequence, ManagerMissions, OperatingHours } from "./types";
+import { SecurityEvent, Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, Point3dCm, BatteryState, AutopilotStep, Areas, DockingState, SoundCommand, SoundScenarioConfiguration, NetworkWanState, SystemInfo, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, RocAreaConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthSessionResult, FollowMeStatusEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { Path, Range, AutopilotSequence, ManagerMissions, OperatingHours } from "./types";
 import { ChassisIntrusionStatus, NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, NavigationState, Language, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
 export declare enum TopicEventCode {
     AuthOK = -7,
@@ -104,12 +104,23 @@ export declare enum TopicEventCode {
       *
       * Sound command played by the vehicle, with sample ID, volume and loop count 🔉
       
-      * @data {@link SoundCommandEventData}
+      * @data {@link SoundCommand}
       * @category Sound
       * @group Vehicle
       
     */
     SoundCommand = 104,
+    /**
+      * **Sound scenarios' configurations**
+      *
+      * List of all sound scenarios' configurations (sample and max volume) 🔉
+      
+      * @data {@link SoundScenarioConfiguration}[]
+      * @category Sound
+      * @group Vehicle
+      
+    */
+    SoundScenariosConfigurations = 174,
     /**
       * **External speaker**
       *
@@ -562,27 +573,27 @@ export declare enum TopicEventCode {
     */
     FlashMcuRequested = 127,
     /**
-      * **Lidar points in robot frame**
+      * **Lidar points in vehicle frame**
       *
-      * Lidar points in robot frame
+      * Lidar points in vehicle frame, with coordinates in centimeters
       
-      * @data {@link Position}[]
+      * @data {@link Point3dCm}[]
       * @category Vehicle state
       * @group Vehicle
       
     */
-    LidarFromRobot = 133,
+    LidarPointsInVehFrame = 133,
     /**
-      * **Lidar points in map**
+      * **Lidar points in map frame**
       *
-      * Lidar points in map
+      * Lidar points in map frame, with coordinates in centimeters
       
-      * @data {@link Position}[]
+      * @data {@link Point3dCm}[]
       * @category Vehicle state
       * @group Vehicle
       
     */
-    LidarInMap = 134,
+    LidarPointsInMapFrame = 134,
     /**
       * **Lidar markers in map**
       *
@@ -671,6 +682,28 @@ export declare enum TopicEventCode {
       
     */
     SecurityEvent = 167,
+    /**
+      * **3D sensors points in map frame**
+      *
+      * 3D sensors points in map frame, with coordinates in centimeters
+      
+      * @data {@link Point3dCm}[]
+      * @category Vehicle state
+      * @group Vehicle
+      
+    */
+    Sensors3dPoints = 168,
+    /**
+      * **US sensors ranges in ranges**
+      *
+      * US sensors ranges, in this order {01_h, 02_h, 04_h, 05_h, 07_h, 08_h, 10_h, 11_h}, in centimeters
+      
+      * @data {@link Range}[]
+      * @category Vehicle state
+      * @group Vehicle
+      
+    */
+    UsSensorsRanges = 173,
     /**
       * **Connected to vehicle**
       *
@@ -1464,17 +1497,6 @@ export declare enum TopicEventCode {
     */
     MaxButtonIdSearch = 7071,
     /**
-      * **Default Wait Release Sound**
-      *
-      * Default Wait Release Sound
-      
-      * @data {@link string}
-      * @category Configuration
-      * @group Vehicle
-      
-    */
-    DefaultWaitReleaseSound = 7072,
-    /**
       * **Port redirection**
       *
       * Port redirection
@@ -1886,6 +1908,12 @@ export declare enum ResultEventCode {
     */
     SimAddShelfResult = 157,
     /**
+      * **Add picking result**
+      *
+      * Result of add picking operation
+    */
+    SimAddPickingResult = 170,
+    /**
       * **Clear cylinders result**
       *
       * Result of clear cylinders operation
@@ -1897,6 +1925,12 @@ export declare enum ResultEventCode {
       * Result of clear shelves operation
     */
     SimClearShelvesResult = 159,
+    /**
+      * **Clear pickings result**
+      *
+      * Result of clear pickings operation
+    */
+    SimClearPickingsResult = 172,
     /**
       * **Reset sim world result**
       *
@@ -2117,6 +2151,12 @@ export declare enum FeedbackEventCode {
     */
     SimAddShelfFeedback = 156,
     /**
+      * **Add picking feedback**
+      *
+      * Feedback on add picking operation
+    */
+    SimAddPickingFeedback = 169,
+    /**
       * **Clear cylinders feedback**
       *
       * Feedback on clear cylinders operation
@@ -2128,6 +2168,12 @@ export declare enum FeedbackEventCode {
       * Feedback on clear shelves operation
     */
     SimClearShelvesFeedback = 158,
+    /**
+      * **Clear pickings feedback**
+      *
+      * Feedback on clear pickings operation
+    */
+    SimClearPickingsFeedback = 171,
     /**
       * **Reset sim world feedback**
       *
@@ -2165,6 +2211,7 @@ export declare const initEventTopicCallbacks: () => {
     102: never[];
     103: never[];
     104: never[];
+    174: never[];
     136: never[];
     46: never[];
     45: never[];
@@ -2216,6 +2263,8 @@ export declare const initEventTopicCallbacks: () => {
     146: never[];
     149: never[];
     167: never[];
+    168: never[];
+    173: never[];
     7000: never[];
     7001: never[];
     7002: never[];
@@ -2288,7 +2337,6 @@ export declare const initEventTopicCallbacks: () => {
     7069: never[];
     7070: never[];
     7071: never[];
-    7072: never[];
     7073: never[];
     7075: never[];
     7077: never[];
@@ -2450,11 +2498,19 @@ export declare const initEventResultCallbacks: () => {
         resolve: undefined;
         reject: undefined;
     };
+    170: {
+        resolve: undefined;
+        reject: undefined;
+    };
     161: {
         resolve: undefined;
         reject: undefined;
     };
     159: {
+        resolve: undefined;
+        reject: undefined;
+    };
+    172: {
         resolve: undefined;
         reject: undefined;
     };
@@ -2500,8 +2556,10 @@ export declare const initEventFeedbackCallbacks: () => {
     164: undefined;
     154: undefined;
     156: undefined;
+    169: undefined;
     160: undefined;
     158: undefined;
+    171: undefined;
     152: undefined;
 };
 /** @internal */
@@ -2521,7 +2579,8 @@ export type EventDataType = {
     [TopicEventCode.NavigationState]: DeepRequired<NavigationState>;
     [TopicEventCode.LedCommand]: DeepRequired<LedCommand>;
     [TopicEventCode.SoundScenario]: DeepRequired<SoundScenario>;
-    [TopicEventCode.SoundCommand]: DeepRequired<SoundCommandEventData>;
+    [TopicEventCode.SoundCommand]: DeepRequired<SoundCommand>;
+    [TopicEventCode.SoundScenariosConfigurations]: DeepRequired<SoundScenarioConfiguration[]>;
     [TopicEventCode.SoundExternalSpeaker]: DeepRequired<boolean>;
     [TopicEventCode.VehicleDirection]: DeepRequired<VehicleDirectionEventData>;
     [TopicEventCode.Freewheel]: DeepRequired<boolean>;
@@ -2563,8 +2622,8 @@ export type EventDataType = {
     [TopicEventCode.AutomaticUpdates]: DeepRequired<boolean>;
     [TopicEventCode.FlashRoboteqRequested]: DeepRequired<boolean>;
     [TopicEventCode.FlashMcuRequested]: DeepRequired<boolean>;
-    [TopicEventCode.LidarFromRobot]: DeepRequired<Position[]>;
-    [TopicEventCode.LidarInMap]: DeepRequired<Position[]>;
+    [TopicEventCode.LidarPointsInVehFrame]: DeepRequired<Point3dCm[]>;
+    [TopicEventCode.LidarPointsInMapFrame]: DeepRequired<Point3dCm[]>;
     [TopicEventCode.LidarMarkers]: DeepRequired<Marker[]>;
     [TopicEventCode.StopSources]: DeepRequired<StopSource[]>;
     [TopicEventCode.SystemInfo]: DeepRequired<SystemInfo>;
@@ -2573,6 +2632,8 @@ export type EventDataType = {
     [TopicEventCode.BlockedIp]: DeepRequired<string>;
     [TopicEventCode.SoundSamples]: DeepRequired<string[]>;
     [TopicEventCode.SecurityEvent]: DeepRequired<SecurityEvent>;
+    [TopicEventCode.Sensors3dPoints]: DeepRequired<Point3dCm[]>;
+    [TopicEventCode.UsSensorsRanges]: DeepRequired<Range[]>;
     [TopicEventCode.ConnectedToVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsManager]: DeepRequired<boolean>;
@@ -2645,7 +2706,6 @@ export type EventDataType = {
     [TopicEventCode.InPauseTitle]: DeepRequired<string>;
     [TopicEventCode.FollowMeAllowed]: DeepRequired<boolean>;
     [TopicEventCode.MaxButtonIdSearch]: DeepRequired<number>;
-    [TopicEventCode.DefaultWaitReleaseSound]: DeepRequired<string>;
     [TopicEventCode.PortRedirections]: DeepRequired<ExternalPortRedirection[]>;
     [TopicEventCode.LiftError]: DeepRequired<boolean>;
     [TopicEventCode.InvalidDataList]: DeepRequired<InvalidDataBySection[]>;
