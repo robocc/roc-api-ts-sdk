@@ -522,7 +522,7 @@ var TopicEventCode;
       *
       * Feedback on current move order to an element
       
-      * @data {@link VehToFeedbackEventData}
+      * @data {@link VehToFeedback}
       * @category Navigation
       * @group Navigation
       
@@ -705,6 +705,50 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["UsSensorsRanges"] = 173] = "UsSensorsRanges";
     /**
+      * **Active id site**
+      *
+      * Active id site
+      
+      * @data {@link number}
+      * @category Map management
+      * @group Map
+      
+    */
+    TopicEventCode[TopicEventCode["ActiveSiteId"] = 176] = "ActiveSiteId";
+    /**
+      * **Active id map**
+      *
+      * Active id map
+      
+      * @data {@link number}
+      * @category Map management
+      * @group Map
+      
+    */
+    TopicEventCode[TopicEventCode["ActiveMapId"] = 177] = "ActiveMapId";
+    /**
+      * **Map updated**
+      *
+      * Triggered when a map is updated, boolean returns the information that map images have changed 🗺
+      
+      * @data {@link MapSiteUpdated}
+      * @category Map management
+      * @group Map
+      
+    */
+    TopicEventCode[TopicEventCode["MapUpdated"] = 178] = "MapUpdated";
+    /**
+      * **Site updated**
+      *
+      * Triggered when a site is updated, id_map is filled if a map have changed, boolean returns the information that map images have changed 🗺
+      
+      * @data {@link MapSiteUpdated}
+      * @category Map management
+      * @group Map
+      
+    */
+    TopicEventCode[TopicEventCode["SiteUpdated"] = 175] = "SiteUpdated";
+    /**
       * **Connected to vehicle**
       *
       * Triggered when app is connected to vehicle API
@@ -771,16 +815,16 @@ var TopicEventCode;
     */
     TopicEventCode[TopicEventCode["IdModule"] = 7006] = "IdModule";
     /**
-      * **Map**
+      * **Maps**
       *
-      * Map
+      * Maps
       
-      * @data {@link Map}
+      * @data {@link Map}[]
       * @category Configuration
       * @group ROC
       
     */
-    TopicEventCode[TopicEventCode["Map"] = 7007] = "Map";
+    TopicEventCode[TopicEventCode["Maps"] = 7007] = "Maps";
     /**
       * **LoRa SP**
       *
@@ -1694,6 +1738,39 @@ var TopicEventCode;
       
     */
     TopicEventCode[TopicEventCode["ChargeWithCrateAllowed"] = 7097] = "ChargeWithCrateAllowed";
+    /**
+      * **Maps / Floors**
+      *
+      * Floors configuration
+      
+      * @data {@link MapFloor}[]
+      * @category Configuration
+      * @group Map
+      
+    */
+    TopicEventCode[TopicEventCode["MapFloors"] = 7098] = "MapFloors";
+    /**
+      * **Vortexes configuration**
+      *
+      * Vortexes configuration
+      
+      * @data {@link VortexConfig}[]
+      * @category Configuration
+      * @group Map
+      
+    */
+    TopicEventCode[TopicEventCode["VortexConfigs"] = 7099] = "VortexConfigs";
+    /**
+      * **Vortex failed, retrying**
+      *
+      * Vortex failed, retrying
+      
+      * @data {@link VortexFailedRetryingEventData}
+      * @category Mission
+      * @group Vehicle
+      
+    */
+    TopicEventCode[TopicEventCode["VortexFailedRetrying"] = 7100] = "VortexFailedRetrying";
 })(TopicEventCode || (exports.TopicEventCode = TopicEventCode = {}));
 /** @internal */
 var ResultEventCode;
@@ -2255,13 +2332,17 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.SecurityEvent]: [],
     [TopicEventCode.Sensors3dPoints]: [],
     [TopicEventCode.UsSensorsRanges]: [],
+    [TopicEventCode.ActiveSiteId]: [],
+    [TopicEventCode.ActiveMapId]: [],
+    [TopicEventCode.MapUpdated]: [],
+    [TopicEventCode.SiteUpdated]: [],
     [TopicEventCode.ConnectedToVeh]: [],
     [TopicEventCode.IsVeh]: [],
     [TopicEventCode.IsManager]: [],
     [TopicEventCode.ButtonsConfig]: [],
     [TopicEventCode.VehsConfig]: [],
     [TopicEventCode.IdModule]: [],
-    [TopicEventCode.Map]: [],
+    [TopicEventCode.Maps]: [],
     [TopicEventCode.LoraSp]: [],
     [TopicEventCode.MissionLog]: [],
     [TopicEventCode.ListsUpdated]: [],
@@ -2345,6 +2426,9 @@ const initEventTopicCallbacks = () => ({
     [TopicEventCode.UseSyncButtons]: [],
     [TopicEventCode.SyncButtonsWaitTime]: [],
     [TopicEventCode.ChargeWithCrateAllowed]: [],
+    [TopicEventCode.MapFloors]: [],
+    [TopicEventCode.VortexConfigs]: [],
+    [TopicEventCode.VortexFailedRetrying]: [],
 });
 exports.initEventTopicCallbacks = initEventTopicCallbacks;
 /** @internal */

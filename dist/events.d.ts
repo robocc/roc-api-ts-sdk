@@ -1,8 +1,8 @@
 import { ActionOperationResponseMsg } from "./actions";
 import { DeepRequired } from "./types";
-import { SecurityEvent, Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, Point3dCm, BatteryState, AutopilotStep, Areas, DockingState, SoundCommand, SoundScenarioConfiguration, NetworkWanState, SystemInfo, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, RocAreaConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthSessionResult, FollowMeStatusEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, VehToFeedbackEventData, UpdateStatusEventData } from "./types";
+import { VehToFeedback, MapSiteUpdated, SecurityEvent, Security, HumanInterventionRequired, LedCommand, OngoingAction, Map, Module, ModuleConfiguration, Marker, Pose, Position, Point3dCm, BatteryState, AutopilotStep, Areas, DockingState, SoundCommand, SoundScenarioConfiguration, NetworkWanState, SystemInfo, MapFloor, VortexConfig, LoraEquipment, RocSecurity, InvalidDataBySection, WaitingSound, EventSound, ExternalPortRedirection, LiftStatus, Group, SoftVersions, ButtonConfig, WaitingPose, LoraMessage, CustomCommand, ControllerLora, MapElementRestriction, DockedPoseConfig, RocMapElementConfig, RocAreaConfig, ControllerLoraContactsConfig, VehConfig, VehInfos, VehDelayConfig, ButtonInfos, DailyStats, InstallConfigDone, ResponseDeadlineConfig, UpdateStatus, ModuleParams, AuthSessionResult, FollowMeStatusEventData, VehicleDirectionEventData, MappingErrorEventData, SafetyDiagnosticEventData, VelocityEventData, UpdateStatusEventData } from "./types";
 import { Path, Range, AutopilotSequence, ManagerMissions, OperatingHours } from "./types";
-import { ChassisIntrusionStatus, NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, NavigationState, Language, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData } from "./types";
+import { ChassisIntrusionStatus, NetworkStatus, NetworkGlobalStatus, SoundScenario, StopSource, NavigationState, Language, ModuleType, VehDirection, AutopilotStepResultEventData, AutopilotStatusEventData, VortexFailedRetryingEventData } from "./types";
 export declare enum TopicEventCode {
     AuthOK = -7,
     AuthError = -6,
@@ -522,7 +522,7 @@ export declare enum TopicEventCode {
       *
       * Feedback on current move order to an element
       
-      * @data {@link VehToFeedbackEventData}
+      * @data {@link VehToFeedback}
       * @category Navigation
       * @group Navigation
       
@@ -705,6 +705,50 @@ export declare enum TopicEventCode {
     */
     UsSensorsRanges = 173,
     /**
+      * **Active id site**
+      *
+      * Active id site
+      
+      * @data {@link number}
+      * @category Map management
+      * @group Map
+      
+    */
+    ActiveSiteId = 176,
+    /**
+      * **Active id map**
+      *
+      * Active id map
+      
+      * @data {@link number}
+      * @category Map management
+      * @group Map
+      
+    */
+    ActiveMapId = 177,
+    /**
+      * **Map updated**
+      *
+      * Triggered when a map is updated, boolean returns the information that map images have changed 🗺
+      
+      * @data {@link MapSiteUpdated}
+      * @category Map management
+      * @group Map
+      
+    */
+    MapUpdated = 178,
+    /**
+      * **Site updated**
+      *
+      * Triggered when a site is updated, id_map is filled if a map have changed, boolean returns the information that map images have changed 🗺
+      
+      * @data {@link MapSiteUpdated}
+      * @category Map management
+      * @group Map
+      
+    */
+    SiteUpdated = 175,
+    /**
       * **Connected to vehicle**
       *
       * Triggered when app is connected to vehicle API
@@ -771,16 +815,16 @@ export declare enum TopicEventCode {
     */
     IdModule = 7006,
     /**
-      * **Map**
+      * **Maps**
       *
-      * Map
+      * Maps
       
-      * @data {@link Map}
+      * @data {@link Map}[]
       * @category Configuration
       * @group ROC
       
     */
-    Map = 7007,
+    Maps = 7007,
     /**
       * **LoRa SP**
       *
@@ -1693,7 +1737,40 @@ export declare enum TopicEventCode {
       * @group Vehicle
       
     */
-    ChargeWithCrateAllowed = 7097
+    ChargeWithCrateAllowed = 7097,
+    /**
+      * **Maps / Floors**
+      *
+      * Floors configuration
+      
+      * @data {@link MapFloor}[]
+      * @category Configuration
+      * @group Map
+      
+    */
+    MapFloors = 7098,
+    /**
+      * **Vortexes configuration**
+      *
+      * Vortexes configuration
+      
+      * @data {@link VortexConfig}[]
+      * @category Configuration
+      * @group Map
+      
+    */
+    VortexConfigs = 7099,
+    /**
+      * **Vortex failed, retrying**
+      *
+      * Vortex failed, retrying
+      
+      * @data {@link VortexFailedRetryingEventData}
+      * @category Mission
+      * @group Vehicle
+      
+    */
+    VortexFailedRetrying = 7100
 }
 /** @internal */
 export declare enum ResultEventCode {
@@ -2265,6 +2342,10 @@ export declare const initEventTopicCallbacks: () => {
     167: never[];
     168: never[];
     173: never[];
+    176: never[];
+    177: never[];
+    178: never[];
+    175: never[];
     7000: never[];
     7001: never[];
     7002: never[];
@@ -2355,6 +2436,9 @@ export declare const initEventTopicCallbacks: () => {
     7095: never[];
     7096: never[];
     7097: never[];
+    7098: never[];
+    7099: never[];
+    7100: never[];
 };
 /** @internal */
 export declare const initEventResultCallbacks: () => {
@@ -2617,7 +2701,7 @@ export type EventDataType = {
     [TopicEventCode.RoutesGraphObstacles]: DeepRequired<Position[]>;
     [TopicEventCode.Sleeping]: DeepRequired<boolean>;
     [TopicEventCode.Hibernate]: DeepRequired<boolean>;
-    [TopicEventCode.VehToFeedback]: DeepRequired<VehToFeedbackEventData>;
+    [TopicEventCode.VehToFeedback]: DeepRequired<VehToFeedback>;
     [TopicEventCode.UpdateStatus]: DeepRequired<UpdateStatusEventData>;
     [TopicEventCode.AutomaticUpdates]: DeepRequired<boolean>;
     [TopicEventCode.FlashRoboteqRequested]: DeepRequired<boolean>;
@@ -2634,13 +2718,17 @@ export type EventDataType = {
     [TopicEventCode.SecurityEvent]: DeepRequired<SecurityEvent>;
     [TopicEventCode.Sensors3dPoints]: DeepRequired<Point3dCm[]>;
     [TopicEventCode.UsSensorsRanges]: DeepRequired<Range[]>;
+    [TopicEventCode.ActiveSiteId]: DeepRequired<number>;
+    [TopicEventCode.ActiveMapId]: DeepRequired<number>;
+    [TopicEventCode.MapUpdated]: DeepRequired<MapSiteUpdated>;
+    [TopicEventCode.SiteUpdated]: DeepRequired<MapSiteUpdated>;
     [TopicEventCode.ConnectedToVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsVeh]: DeepRequired<boolean>;
     [TopicEventCode.IsManager]: DeepRequired<boolean>;
     [TopicEventCode.ButtonsConfig]: DeepRequired<ButtonConfig[]>;
     [TopicEventCode.VehsConfig]: DeepRequired<VehConfig[]>;
     [TopicEventCode.IdModule]: DeepRequired<number>;
-    [TopicEventCode.Map]: DeepRequired<Map>;
+    [TopicEventCode.Maps]: DeepRequired<Map[]>;
     [TopicEventCode.LoraSp]: DeepRequired<number>;
     [TopicEventCode.MissionLog]: DeepRequired<string>;
     [TopicEventCode.ListsUpdated]: DeepRequired<ManagerMissions>;
@@ -2724,4 +2812,7 @@ export type EventDataType = {
     [TopicEventCode.UseSyncButtons]: DeepRequired<boolean>;
     [TopicEventCode.SyncButtonsWaitTime]: DeepRequired<number>;
     [TopicEventCode.ChargeWithCrateAllowed]: DeepRequired<boolean>;
+    [TopicEventCode.MapFloors]: DeepRequired<MapFloor[]>;
+    [TopicEventCode.VortexConfigs]: DeepRequired<VortexConfig[]>;
+    [TopicEventCode.VortexFailedRetrying]: DeepRequired<VortexFailedRetryingEventData>;
 };

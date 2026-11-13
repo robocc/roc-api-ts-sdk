@@ -513,7 +513,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link boolean}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
     */
     Check3dBoxAction(check_pose_data, feedback_cb) {
         return this.callAction(ActionOperationCode.Check3dBoxAction, check_pose_data, feedback_cb);
@@ -529,7 +529,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimResetWorldResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimResetWorld RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimResetWorld RoboccDocs} for further information
     */
     SimResetWorld(feedback_cb) {
         return this.callAction(ActionOperationCode.SimResetWorld, null, feedback_cb);
@@ -545,7 +545,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimAddChargingStationResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimAddChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimAddChargingStation RoboccDocs} for further information
     */
     SimAddChargingStation(d, feedback_cb) {
         return this.callAction(ActionOperationCode.SimAddChargingStation, d, feedback_cb);
@@ -561,7 +561,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimAddFiducialResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimAddFiducial RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimAddFiducial RoboccDocs} for further information
     */
     SimAddFiducial(d, feedback_cb) {
         return this.callAction(ActionOperationCode.SimAddFiducial, d, feedback_cb);
@@ -577,7 +577,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimAddShelfResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
     */
     SimAddShelf(sim_add_shelf_params, feedback_cb) {
         return this.callAction(ActionOperationCode.SimAddShelf, sim_add_shelf_params, feedback_cb);
@@ -593,7 +593,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimAddPickingResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimAddPicking RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimAddPicking RoboccDocs} for further information
     */
     SimAddPicking(d, feedback_cb) {
         return this.callAction(ActionOperationCode.SimAddPicking, d, feedback_cb);
@@ -609,7 +609,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimAddCylinderResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimAddCylinder RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimAddCylinder RoboccDocs} for further information
     */
     SimAddCylinder(sim_add_cylinder_params, feedback_cb) {
         return this.callAction(ActionOperationCode.SimAddCylinder, sim_add_cylinder_params, feedback_cb);
@@ -625,7 +625,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimClearCylindersResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimClearCylinders RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimClearCylinders RoboccDocs} for further information
     */
     SimClearCylinders(feedback_cb) {
         return this.callAction(ActionOperationCode.SimClearCylinders, null, feedback_cb);
@@ -641,7 +641,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimClearShelvesResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimClearShelves RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimClearShelves RoboccDocs} for further information
     */
     SimClearShelves(feedback_cb) {
         return this.callAction(ActionOperationCode.SimClearShelves, null, feedback_cb);
@@ -657,7 +657,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link SimClearPickingsResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SimClearPickings RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SimClearPickings RoboccDocs} for further information
     */
     SimClearPickings(feedback_cb) {
         return this.callAction(ActionOperationCode.SimClearPickings, null, feedback_cb);
@@ -673,7 +673,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#StopNavigation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#StopNavigation RoboccDocs} for further information
     */
     StopNavigation(feedback_cb) {
         return this.callAction(ActionOperationCode.StopNavigation, null, feedback_cb);
@@ -689,7 +689,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
     */
     VehToPose(veh_to_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToPose, veh_to_pose_params, feedback_cb);
@@ -705,7 +705,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
     */
     VehToChargingStation(veh_to_charging_station_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToChargingStation, veh_to_charging_station_params, feedback_cb);
@@ -721,7 +721,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
     */
     VehToChargingStationApproach(veh_to_charging_station_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToChargingStationApproach, veh_to_charging_station_params, feedback_cb);
@@ -737,7 +737,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
     */
     VehToDockedPose(veh_to_docked_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToDockedPose, veh_to_docked_pose_params, feedback_cb);
@@ -753,7 +753,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
     */
     VehToDockedPoseApproach(veh_to_docked_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToDockedPoseApproach, veh_to_docked_pose_params, feedback_cb);
@@ -769,7 +769,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
     */
     VehToSavedPose(veh_to_saved_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToSavedPose, veh_to_saved_pose_params, feedback_cb);
@@ -785,7 +785,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
     */
     VehToSegment(veh_to_segment_params, feedback_cb) {
         return this.callAction(ActionOperationCode.VehToSegment, veh_to_segment_params, feedback_cb);
@@ -801,7 +801,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
     */
     SetVehiclePose(set_vehicle_pose_params, feedback_cb) {
         return this.callAction(ActionOperationCode.SetVehiclePose, set_vehicle_pose_params, feedback_cb);
@@ -817,7 +817,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link number}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
     */
     SetMap(map, feedback_cb) {
         return this.callAction(ActionOperationCode.SetMap, map, feedback_cb);
@@ -833,7 +833,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
     */
     SetActiveMap(map_id, feedback_cb) {
         return this.callAction(ActionOperationCode.SetActiveMap, map_id, feedback_cb);
@@ -849,7 +849,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
     */
     Undock(override_battery_safety, feedback_cb) {
         return this.callAction(ActionOperationCode.Undock, override_battery_safety, feedback_cb);
@@ -865,7 +865,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
     */
     UndockFromShelf(d, feedback_cb) {
         return this.callAction(ActionOperationCode.UndockFromShelf, d, feedback_cb);
@@ -881,7 +881,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link Marker}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
     */
     GetMarkers(pose_reference, feedback_cb) {
         return this.callAction(ActionOperationCode.GetMarkers, pose_reference, feedback_cb);
@@ -897,7 +897,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
     */
     InstallModule(module_data, feedback_cb) {
         return this.callAction(ActionOperationCode.InstallModule, module_data, feedback_cb);
@@ -913,7 +913,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
     */
     DisableModule(feedback_cb) {
         return this.callAction(ActionOperationCode.DisableModule, null, feedback_cb);
@@ -929,7 +929,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
     */
     Recovery(feedback_cb) {
         return this.callAction(ActionOperationCode.Recovery, null, feedback_cb);
@@ -945,7 +945,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
     */
     ResetDatabase(feedback_cb) {
         return this.callAction(ActionOperationCode.ResetDatabase, null, feedback_cb);
@@ -961,7 +961,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link GetPathResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
     */
     GetPath(get_path_params, feedback_cb) {
         return this.callAction(ActionOperationCode.GetPath, get_path_params, feedback_cb);
@@ -977,7 +977,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
     */
     MappingStart(mapping_params, feedback_cb) {
         return this.callAction(ActionOperationCode.MappingStart, mapping_params, feedback_cb);
@@ -993,7 +993,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link MappingStopResult}>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
     */
     MappingStop(save_map, feedback_cb) {
         return this.callAction(ActionOperationCode.MappingStop, save_map, feedback_cb);
@@ -1009,7 +1009,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
     */
     EraseActiveMap(erase_params, feedback_cb) {
         return this.callAction(ActionOperationCode.EraseActiveMap, erase_params, feedback_cb);
@@ -1025,7 +1025,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
     */
     ReloadMap(feedback_cb) {
         return this.callAction(ActionOperationCode.ReloadMap, null, feedback_cb);
@@ -1041,7 +1041,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
     */
     MergeMaps(d, feedback_cb) {
         return this.callAction(ActionOperationCode.MergeMaps, d, feedback_cb);
@@ -1057,7 +1057,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
     */
     NetworkWanConfig(wan_config, feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkWanConfig, wan_config, feedback_cb);
@@ -1073,7 +1073,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
     */
     NetworkWanEnable(enable, feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkWanEnable, enable, feedback_cb);
@@ -1089,7 +1089,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
     */
     NetworkHotspotEnable(enable, feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkHotspotEnable, enable, feedback_cb);
@@ -1105,7 +1105,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link WifiAp}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
     */
     NetworkWanScanAps(feedback_cb) {
         return this.callAction(ActionOperationCode.NetworkWanScanAps, null, feedback_cb);
@@ -1121,7 +1121,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     * @data Promise<{@link ForbiddenArea}[]>
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
     */
     GenerateForbiddenAreas(d, feedback_cb) {
         return this.callAction(ActionOperationCode.GenerateForbiddenAreas, d, feedback_cb);
@@ -1137,7 +1137,7 @@ class ActionsMixin extends types_1.BaseAPI {
     * @param feedback_cb - Feedback callback of action
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/classes/RocApi.RocApi.html#AddSound RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/classes/RocApi.RocApi.html#AddSound RoboccDocs} for further information
     */
     AddSound(add_sound_params, feedback_cb) {
         return this.callAction(ActionOperationCode.AddSound, add_sound_params, feedback_cb);

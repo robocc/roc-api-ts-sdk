@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModuleType = exports.VehStatus = exports.RelayAction = exports.ContactTrigger = exports.ContactNonc = exports.ContactType = exports.LoraControllerCommand = exports.DockedPoseStationType = exports.ContactState = exports.EventSoundEvent = exports.PeerType = exports.InvalidDataSection = exports.Language = exports.NavigationState = exports.MotorType = exports.McuType = exports.ComputerType = exports.StopSource = exports.SoundScenario = exports.SoundSample = exports.NetworkGlobalStatus = exports.NetworkStatus = exports.NetworkType = exports.MobileAccessTech = exports.MobileState = exports.PoseReference = exports.LedCornerAnim = exports.LedAnim = exports.VehToStepCode = exports.DockingType = exports.FollowMeStatus = exports.DockingStatus = exports.VehToDockedStepCode = exports.FollowMode = exports.DirectionStrict = exports.OnOff = exports.Direction = exports.AutopilotOnError = exports.AutopilotTargetType = exports.AutopilotStepType = exports.DiagnosticCriticalLevel = exports.DiagnosticElementError = exports.DiagnosticElementType = exports.MoveStepMoveType = exports.PowerSupplyStatus = exports.NetworkProtocol = exports.SecuritySeverity = exports.ChassisIntrusionStatus = exports.Rbac = exports.BaseAPI = void 0;
-exports.UpdateStatusEventDataStatus = exports.AutopilotStatusEventData = exports.AutopilotStepResultEventData = exports.MappingErrorEventDataOutcome = exports.SystemRestartParamsStage = exports.MergeMapsFeedbackCurrentStepCode = exports.ReloadMapFeedbackCurrentStepCode = exports.EraseActiveMapFeedbackCurrentStepCode = exports.MappingStopFeedbackCurrentStepCode = exports.ResetDatabaseFeedbackCurrentStepCode = exports.DisableModuleFeedbackCurrentStepCode = exports.InstallModuleFeedbackCurrentStepCode = exports.SetActiveMapFeedbackCurrentStepCode = exports.SetMapFeedbackCurrentStepCode = exports.UpdateStatusStatus = exports.LogType = exports.LogSeverity = exports.AuthenticatedType = exports.MapElementType = exports.VehDirection = void 0;
+exports.RelayIndex = exports.RelayCommand = exports.RelayAction = exports.ContactTrigger = exports.ContactNonc = exports.ContactType = exports.DockedPoseStationType = exports.ContactState = exports.EventSoundEvent = exports.PeerType = exports.InvalidDataSection = exports.Language = exports.NavigationState = exports.MotorType = exports.McuType = exports.ComputerType = exports.StopSource = exports.SoundScenario = exports.SoundSample = exports.NetworkGlobalStatus = exports.NetworkStatus = exports.NetworkType = exports.MobileAccessTech = exports.MobileState = exports.PoseReference = exports.LedCornerAnim = exports.LedAnim = exports.VehToStepCode = exports.AddSoundStepCode = exports.DockingType = exports.FollowMeStatus = exports.DockingStatus = exports.FollowMode = exports.DirectionStrict = exports.OnOff = exports.Direction = exports.AutopilotOnError = exports.AutopilotTargetType = exports.AutopilotStepType = exports.DiagnosticCriticalLevel = exports.DiagnosticElementError = exports.DiagnosticElementType = exports.MoveStepMoveType = exports.PowerSupplyStatus = exports.NetworkProtocol = exports.SecuritySeverity = exports.ChassisIntrusionStatus = exports.VehToResult = exports.Rbac = exports.BaseAPI = void 0;
+exports.VortexFailedRetryingEventData = exports.UpdateStatusEventDataStatus = exports.AutopilotStatusEventData = exports.AutopilotStepResultEventData = exports.MappingErrorEventDataOutcome = exports.SystemRestartParamsStage = exports.MergeMapsFeedbackCurrentStepCode = exports.ReloadMapFeedbackCurrentStepCode = exports.EraseActiveMapFeedbackCurrentStepCode = exports.MappingStopFeedbackCurrentStepCode = exports.ResetDatabaseFeedbackCurrentStepCode = exports.DisableModuleFeedbackCurrentStepCode = exports.InstallModuleFeedbackCurrentStepCode = exports.SetActiveMapFeedbackCurrentStepCode = exports.SetMapFeedbackCurrentStepCode = exports.UpdateStatusStatus = exports.LogType = exports.LogSeverity = exports.AuthenticatedType = exports.MapElementType = exports.VehDirection = exports.ModuleType = exports.VehStatus = void 0;
 /** @internal */
 class BaseAPI {
 }
@@ -17,7 +17,7 @@ exports.BaseAPI = BaseAPI;
  * @member `SUPERVISION` - SUPERVISION
  * @member `CONFIGURATION` - CONFIGURATION
  * @member `ADMINISTRATION` - ADMINISTRATION
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.Rbac.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.Rbac.html RoboccDocs} for further information
 */
 var Rbac;
 (function (Rbac) {
@@ -33,6 +33,105 @@ var Rbac;
     Rbac[Rbac["ADMINISTRATION"] = 4] = "ADMINISTRATION";
 })(Rbac || (exports.Rbac = Rbac = {}));
 /**
+ * **Enum of veh to result**
+ *
+ * List all veh to result
+ * @member `UNKNOWN_OUTCOME` - UNKNOWN_OUTCOME
+ * @member `SUCCESS` - SUCCESS
+ * @member `FAILURE` - FAILURE
+ * @member `CANCELED` - CANCELED
+ * @member `RECOVERY_FAILED` - RECOVERY_FAILED
+ * @member `LOW_BATTERY` - LOW_BATTERY
+ * @member `PROHIBITED_MOVEMENT` - PROHIBITED_MOVEMENT
+ * @member `NAV_NOT_STARTED` - NAV_NOT_STARTED
+ * @member `HIR_STOPPED` - HIR_STOPPED
+ * @member `GOTO_FAILURE` - GOTO_FAILURE
+ * @member `INVALID_START` - INVALID_START
+ * @member `INVALID_GOAL` - INVALID_GOAL
+ * @member `NO_VALID_PATH` - NO_VALID_PATH
+ * @member `OBSTACLE` - OBSTACLE
+ * @member `INVALID_SEGMENT` - INVALID_SEGMENT
+ * @member `DOCK_FAILURE` - DOCK_FAILURE
+ * @member `DOCK_SERVOING_FAILURE` - DOCK_SERVOING_FAILURE
+ * @member `DOCK_TIMEOUT` - DOCK_TIMEOUT
+ * @member `UNDOCK_FAILURE` - UNDOCK_FAILURE
+ * @member `SIMPLE_MOVE_FAILURE` - SIMPLE_MOVE_FAILURE
+ * @member `SIMPLE_MOVE_TIMEOUT` - SIMPLE_MOVE_TIMEOUT
+ * @member `ALREADY_DOCKED` - ALREADY_DOCKED
+ * @member `ALREADY_UNDOCKED` - ALREADY_UNDOCKED
+ * @member `NOT_UNDOCKED` - NOT_UNDOCKED
+ * @member `NOT_DOCKED` - NOT_DOCKED
+ * @member `NOT_DOCKABLE` - NOT_DOCKABLE
+ * @member `NOT_CHARGING` - NOT_CHARGING
+ * @member `MARKER_NOT_DETECTED` - MARKER_NOT_DETECTED
+ * @member `DOCK_TARGET_LOST` - DOCK_TARGET_LOST
+ * @member `INVALID_CHECK_BOX` - INVALID_CHECK_BOX
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.VehToResult.html RoboccDocs} for further information
+*/
+var VehToResult;
+(function (VehToResult) {
+    /** UNKNOWN_OUTCOME */
+    VehToResult[VehToResult["UNKNOWN_OUTCOME"] = 0] = "UNKNOWN_OUTCOME";
+    /** SUCCESS */
+    VehToResult[VehToResult["SUCCESS"] = 1] = "SUCCESS";
+    /** FAILURE */
+    VehToResult[VehToResult["FAILURE"] = 2] = "FAILURE";
+    /** CANCELED */
+    VehToResult[VehToResult["CANCELED"] = 3] = "CANCELED";
+    /** RECOVERY_FAILED */
+    VehToResult[VehToResult["RECOVERY_FAILED"] = 4] = "RECOVERY_FAILED";
+    /** LOW_BATTERY */
+    VehToResult[VehToResult["LOW_BATTERY"] = 100] = "LOW_BATTERY";
+    /** PROHIBITED_MOVEMENT */
+    VehToResult[VehToResult["PROHIBITED_MOVEMENT"] = 101] = "PROHIBITED_MOVEMENT";
+    /** NAV_NOT_STARTED */
+    VehToResult[VehToResult["NAV_NOT_STARTED"] = 102] = "NAV_NOT_STARTED";
+    /** HIR_STOPPED */
+    VehToResult[VehToResult["HIR_STOPPED"] = 103] = "HIR_STOPPED";
+    /** GOTO_FAILURE */
+    VehToResult[VehToResult["GOTO_FAILURE"] = 200] = "GOTO_FAILURE";
+    /** INVALID_START */
+    VehToResult[VehToResult["INVALID_START"] = 201] = "INVALID_START";
+    /** INVALID_GOAL */
+    VehToResult[VehToResult["INVALID_GOAL"] = 202] = "INVALID_GOAL";
+    /** NO_VALID_PATH */
+    VehToResult[VehToResult["NO_VALID_PATH"] = 203] = "NO_VALID_PATH";
+    /** OBSTACLE */
+    VehToResult[VehToResult["OBSTACLE"] = 204] = "OBSTACLE";
+    /** INVALID_SEGMENT */
+    VehToResult[VehToResult["INVALID_SEGMENT"] = 205] = "INVALID_SEGMENT";
+    /** DOCK_FAILURE */
+    VehToResult[VehToResult["DOCK_FAILURE"] = 300] = "DOCK_FAILURE";
+    /** DOCK_SERVOING_FAILURE */
+    VehToResult[VehToResult["DOCK_SERVOING_FAILURE"] = 301] = "DOCK_SERVOING_FAILURE";
+    /** DOCK_TIMEOUT */
+    VehToResult[VehToResult["DOCK_TIMEOUT"] = 302] = "DOCK_TIMEOUT";
+    /** UNDOCK_FAILURE */
+    VehToResult[VehToResult["UNDOCK_FAILURE"] = 303] = "UNDOCK_FAILURE";
+    /** SIMPLE_MOVE_FAILURE */
+    VehToResult[VehToResult["SIMPLE_MOVE_FAILURE"] = 304] = "SIMPLE_MOVE_FAILURE";
+    /** SIMPLE_MOVE_TIMEOUT */
+    VehToResult[VehToResult["SIMPLE_MOVE_TIMEOUT"] = 305] = "SIMPLE_MOVE_TIMEOUT";
+    /** ALREADY_DOCKED */
+    VehToResult[VehToResult["ALREADY_DOCKED"] = 306] = "ALREADY_DOCKED";
+    /** ALREADY_UNDOCKED */
+    VehToResult[VehToResult["ALREADY_UNDOCKED"] = 307] = "ALREADY_UNDOCKED";
+    /** NOT_UNDOCKED */
+    VehToResult[VehToResult["NOT_UNDOCKED"] = 308] = "NOT_UNDOCKED";
+    /** NOT_DOCKED */
+    VehToResult[VehToResult["NOT_DOCKED"] = 309] = "NOT_DOCKED";
+    /** NOT_DOCKABLE */
+    VehToResult[VehToResult["NOT_DOCKABLE"] = 310] = "NOT_DOCKABLE";
+    /** NOT_CHARGING */
+    VehToResult[VehToResult["NOT_CHARGING"] = 311] = "NOT_CHARGING";
+    /** MARKER_NOT_DETECTED */
+    VehToResult[VehToResult["MARKER_NOT_DETECTED"] = 312] = "MARKER_NOT_DETECTED";
+    /** DOCK_TARGET_LOST */
+    VehToResult[VehToResult["DOCK_TARGET_LOST"] = 313] = "DOCK_TARGET_LOST";
+    /** INVALID_CHECK_BOX */
+    VehToResult[VehToResult["INVALID_CHECK_BOX"] = 314] = "INVALID_CHECK_BOX";
+})(VehToResult || (exports.VehToResult = VehToResult = {}));
+/**
  * **Chassis intrusion status**
  *
  * Chassis intrusion status
@@ -40,7 +139,7 @@ var Rbac;
  * @member `OK` - OK
  * @member `CHASSIS_INTRUSION` - Chassis intrusion
  * @member `CORRUPTION` - Corruption
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ChassisIntrusionStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ChassisIntrusionStatus.html RoboccDocs} for further information
 */
 var ChassisIntrusionStatus;
 (function (ChassisIntrusionStatus) {
@@ -60,7 +159,7 @@ var ChassisIntrusionStatus;
  * @member `INFO` - INFO
  * @member `WARNING` - WARNING
  * @member `ERROR` - ERROR
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.SecuritySeverity.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.SecuritySeverity.html RoboccDocs} for further information
 */
 var SecuritySeverity;
 (function (SecuritySeverity) {
@@ -77,7 +176,7 @@ var SecuritySeverity;
  * List network protocol
  * @member `UDP` - UDP
  * @member `TCP` - TCP
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.NetworkProtocol.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.NetworkProtocol.html RoboccDocs} for further information
 */
 var NetworkProtocol;
 (function (NetworkProtocol) {
@@ -95,7 +194,7 @@ var NetworkProtocol;
  * @member `DISCHARGING` - Discharging
  * @member `NOT_CHARGING` - Not used
  * @member `FULL` - Full
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.PowerSupplyStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.PowerSupplyStatus.html RoboccDocs} for further information
 */
 var PowerSupplyStatus;
 (function (PowerSupplyStatus) {
@@ -116,7 +215,7 @@ var PowerSupplyStatus;
  * `move_type` parameter of a `MoveStep` type
  * @member `LINEAR` - Linear distance in meters
  * @member `ANGULAR` - Angular distance in radians
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MoveStepMoveType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MoveStepMoveType.html RoboccDocs} for further information
 */
 var MoveStepMoveType;
 (function (MoveStepMoveType) {
@@ -137,7 +236,7 @@ var MoveStepMoveType;
  * @member `US_SENSOR_TYPE` - Sonar element
  * @member `BATTERY_TYPE` - Battery element
  * @member `ROS_NODE_TYPE` - Software ROS node
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DiagnosticElementType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DiagnosticElementType.html RoboccDocs} for further information
 */
 var DiagnosticElementType;
 (function (DiagnosticElementType) {
@@ -170,7 +269,7 @@ var DiagnosticElementType;
  * @member `CONNECTION_ERROR` - Connection error on element, element might be disconnected
  * @member `NODE_CRASH_ERROR` - Node crash error on element can occur only on SOFTWARE_MODULE element
  * @member `UNAPPLIED_CONFIG_ERROR` - Configuration is not correctly applied on some elements
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DiagnosticElementError.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DiagnosticElementError.html RoboccDocs} for further information
 */
 var DiagnosticElementError;
 (function (DiagnosticElementError) {
@@ -200,7 +299,7 @@ var DiagnosticElementError;
  * @member `WARN_CRITICAL` - Error should be seen as warning
  * @member `ERROR_CRITICAL` - Error should be seen as critical
  * @member `FATAL_CRITICAL` - Error should be seen as fatal
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DiagnosticCriticalLevel.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DiagnosticCriticalLevel.html RoboccDocs} for further information
 */
 var DiagnosticCriticalLevel;
 (function (DiagnosticCriticalLevel) {
@@ -223,7 +322,7 @@ var DiagnosticCriticalLevel;
  * @member `MOVE` - Step is a move order
  * @member `WAIT` - Step is a pause for X seconds order
  * @member `BEHAVIOUR` - Step is a behaviour order to toggle on or off sound and LED on veh
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.AutopilotStepType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AutopilotStepType.html RoboccDocs} for further information
 */
 var AutopilotStepType;
 (function (AutopilotStepType) {
@@ -243,7 +342,7 @@ var AutopilotStepType;
  * @member `CHARGING_STATION` - Step move is aiming a charging station element
  * @member `SAVED_POSE` - Step move is aiming a saved pose element
  * @member `DOCKED_POSE` - Step move is aiming a docked pose element
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.AutopilotTargetType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AutopilotTargetType.html RoboccDocs} for further information
 */
 var AutopilotTargetType;
 (function (AutopilotTargetType) {
@@ -260,7 +359,7 @@ var AutopilotTargetType;
  * List all on error options
  * @member `NEXT_STEP` - On error, proceed next step
  * @member `RETRY` - On error, retry
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.AutopilotOnError.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AutopilotOnError.html RoboccDocs} for further information
 */
 var AutopilotOnError;
 (function (AutopilotOnError) {
@@ -277,7 +376,7 @@ var AutopilotOnError;
  * @member `FRONT` - The vehicle must be oriented in the same way as the goal and forward
  * @member `BACK` - The vehicle must be oriented in the same way as the goal and backward
  * @member `NO_DIRECTION` - The vehicle has no constraint on orientation
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.Direction.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.Direction.html RoboccDocs} for further information
 */
 var Direction;
 (function (Direction) {
@@ -297,7 +396,7 @@ var Direction;
  * @member `NOT_SET` - Param not set, use parent or default value
  * @member `ON` - On
  * @member `OFF` - Off
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.OnOff.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.OnOff.html RoboccDocs} for further information
 */
 var OnOff;
 (function (OnOff) {
@@ -315,7 +414,7 @@ var OnOff;
  * @member `FRONT_OR_BACK` - The vehicle must be oriented in the same way as the goal, regardless the condition of the front or rear of the vehicle
  * @member `FRONT` - The vehicle must be oriented in the same way as the goal and forward
  * @member `BACK` - The vehicle must be oriented in the same way as the goal and backward
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DirectionStrict.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DirectionStrict.html RoboccDocs} for further information
 */
 var DirectionStrict;
 (function (DirectionStrict) {
@@ -333,7 +432,7 @@ var DirectionStrict;
  * @member `MODE_FREE` - Free move
  * @member `MODE_ASSISTED` - The vehicle follow walls
  * @member `MODE_GUIDED` - The vehicle can't go on forbidden area
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.FollowMode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.FollowMode.html RoboccDocs} for further information
 */
 var FollowMode;
 (function (FollowMode) {
@@ -345,45 +444,6 @@ var FollowMode;
     FollowMode[FollowMode["MODE_GUIDED"] = 2] = "MODE_GUIDED";
 })(FollowMode || (exports.FollowMode = FollowMode = {}));
 /**
- * **Enum Veh to docked step code**
- *
- * List all steps through which move order to docked pose or charging station will pass
- * @member `UNDEFINED` - Undefined
- * @member `GET_DATA` - Get data before starting go to
- * @member `INIT_GOAL` - Retrieve goal of move order
- * @member `GET_PATH` - Calculate the path to goal
- * @member `UNDOCK` - Undock if needed
- * @member `FOLLOW_PATH` - Currently following path
- * @member `GET_NEW_PATH` - Recalculating a path due to obstacle
- * @member `DOCK` - Docking to goal
- * @member `SEGMENT` - Currently following segment
- * @member `FINISHED` - Move order finished
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.VehToDockedStepCode.html RoboccDocs} for further information
-*/
-var VehToDockedStepCode;
-(function (VehToDockedStepCode) {
-    /** Undefined */
-    VehToDockedStepCode[VehToDockedStepCode["UNDEFINED"] = 0] = "UNDEFINED";
-    /** Get data before starting go to */
-    VehToDockedStepCode[VehToDockedStepCode["GET_DATA"] = 1] = "GET_DATA";
-    /** Retrieve goal of move order */
-    VehToDockedStepCode[VehToDockedStepCode["INIT_GOAL"] = 2] = "INIT_GOAL";
-    /** Calculate the path to goal */
-    VehToDockedStepCode[VehToDockedStepCode["GET_PATH"] = 3] = "GET_PATH";
-    /** Undock if needed */
-    VehToDockedStepCode[VehToDockedStepCode["UNDOCK"] = 4] = "UNDOCK";
-    /** Currently following path */
-    VehToDockedStepCode[VehToDockedStepCode["FOLLOW_PATH"] = 5] = "FOLLOW_PATH";
-    /** Recalculating a path due to obstacle */
-    VehToDockedStepCode[VehToDockedStepCode["GET_NEW_PATH"] = 6] = "GET_NEW_PATH";
-    /** Docking to goal */
-    VehToDockedStepCode[VehToDockedStepCode["DOCK"] = 7] = "DOCK";
-    /** Currently following segment */
-    VehToDockedStepCode[VehToDockedStepCode["SEGMENT"] = 8] = "SEGMENT";
-    /** Move order finished */
-    VehToDockedStepCode[VehToDockedStepCode["FINISHED"] = 100] = "FINISHED";
-})(VehToDockedStepCode || (exports.VehToDockedStepCode = VehToDockedStepCode = {}));
-/**
  * **Enum docking status**
  *
  * List all docking status the vehicle can be 🔌
@@ -392,7 +452,7 @@ var VehToDockedStepCode;
  * @member `DOCKING` - Vehicle is currently docking
  * @member `UNDOCKING` - Vehicle is currently undocking
  * @member `UNDOCKED` - Vehicle is currently undocked
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DockingStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DockingStatus.html RoboccDocs} for further information
 */
 var DockingStatus;
 (function (DockingStatus) {
@@ -416,7 +476,7 @@ var DockingStatus;
  * @member `FOLLOWING` - Vehicle is currently following a target
  * @member `TARGET_LOST` - Vehicle as lost its target
  * @member `RESETED` - Vehicle is waiting for target
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.FollowMeStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.FollowMeStatus.html RoboccDocs} for further information
 */
 var FollowMeStatus;
 (function (FollowMeStatus) {
@@ -438,7 +498,7 @@ var FollowMeStatus;
  * @member `CHARGING_STATION` - CHARGING_STATION
  * @member `DOCKED_POSE` - DOCKED_POSE
  * @member `SHELF_PICKING` - SHELF_PICKING
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DockingType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DockingType.html RoboccDocs} for further information
 */
 var DockingType;
 (function (DockingType) {
@@ -449,6 +509,27 @@ var DockingType;
     /** SHELF_PICKING */
     DockingType[DockingType["SHELF_PICKING"] = 2] = "SHELF_PICKING";
 })(DockingType || (exports.DockingType = DockingType = {}));
+/**
+ * **Enum Add sound step code**
+ *
+ * List all steps for add sound
+ * @member `NORMALIZE_SOUND` - Normalize the sound
+ * @member `ENCODE_SOUND` - Encode the sound
+ * @member `GET_SOUND_DURATION` - Get the sound duration
+ * @member `SAVE_SOUND` - Save th esound
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AddSoundStepCode.html RoboccDocs} for further information
+*/
+var AddSoundStepCode;
+(function (AddSoundStepCode) {
+    /** Normalize the sound */
+    AddSoundStepCode[AddSoundStepCode["NORMALIZE_SOUND"] = 0] = "NORMALIZE_SOUND";
+    /** Encode the sound */
+    AddSoundStepCode[AddSoundStepCode["ENCODE_SOUND"] = 1] = "ENCODE_SOUND";
+    /** Get the sound duration */
+    AddSoundStepCode[AddSoundStepCode["GET_SOUND_DURATION"] = 2] = "GET_SOUND_DURATION";
+    /** Save th esound */
+    AddSoundStepCode[AddSoundStepCode["SAVE_SOUND"] = 3] = "SAVE_SOUND";
+})(AddSoundStepCode || (exports.AddSoundStepCode = AddSoundStepCode = {}));
 /**
  * **Enum Veh to step code**
  *
@@ -462,8 +543,15 @@ var DockingType;
  * @member `GET_NEW_PATH` - Recalculating a path due to obstacle
  * @member `DOCK` - Dock if needed
  * @member `SEGMENT` - Currently following segment
+ * @member `FAILURE` - Failure
+ * @member `GO_TO_VORTEX` - Currently going to vortex point
+ * @member `WAIT_FOR_VORTEX_STEP` - Waiting for the next step in the vortex process
+ * @member `GO_THROUGH_VORTEX` - Currently going to next vortex point
+ * @member `VORTEX_SWITCHING_MAP` - Currently switching to next vortex map
+ * @member `VORTEX_SWITCH_MAP_RELOCATE` - Relocating after switch map
+ * @member `VORTEX_RELOCATE` - Relocating after vortex transfert
  * @member `FINISHED` - Move order finished
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.VehToStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.VehToStepCode.html RoboccDocs} for further information
 */
 var VehToStepCode;
 (function (VehToStepCode) {
@@ -485,6 +573,20 @@ var VehToStepCode;
     VehToStepCode[VehToStepCode["DOCK"] = 7] = "DOCK";
     /** Currently following segment */
     VehToStepCode[VehToStepCode["SEGMENT"] = 8] = "SEGMENT";
+    /** Failure */
+    VehToStepCode[VehToStepCode["FAILURE"] = 9] = "FAILURE";
+    /** Currently going to vortex point */
+    VehToStepCode[VehToStepCode["GO_TO_VORTEX"] = 10] = "GO_TO_VORTEX";
+    /** Waiting for the next step in the vortex process */
+    VehToStepCode[VehToStepCode["WAIT_FOR_VORTEX_STEP"] = 11] = "WAIT_FOR_VORTEX_STEP";
+    /** Currently going to next vortex point */
+    VehToStepCode[VehToStepCode["GO_THROUGH_VORTEX"] = 12] = "GO_THROUGH_VORTEX";
+    /** Currently switching to next vortex map */
+    VehToStepCode[VehToStepCode["VORTEX_SWITCHING_MAP"] = 13] = "VORTEX_SWITCHING_MAP";
+    /** Relocating after switch map */
+    VehToStepCode[VehToStepCode["VORTEX_SWITCH_MAP_RELOCATE"] = 14] = "VORTEX_SWITCH_MAP_RELOCATE";
+    /** Relocating after vortex transfert */
+    VehToStepCode[VehToStepCode["VORTEX_RELOCATE"] = 15] = "VORTEX_RELOCATE";
     /** Move order finished */
     VehToStepCode[VehToStepCode["FINISHED"] = 100] = "FINISHED";
 })(VehToStepCode || (exports.VehToStepCode = VehToStepCode = {}));
@@ -518,7 +620,7 @@ var VehToStepCode;
  * @member `MOVE_STOP` - MOVE_STOP
  * @member `FADE_1_LED` - FADE_1_LED
  * @member `FADE_2_LEDS` - FADE_2_LEDS
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.LedAnim.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.LedAnim.html RoboccDocs} for further information
 */
 var LedAnim;
 (function (LedAnim) {
@@ -584,7 +686,7 @@ var LedAnim;
  * @member `CORNER_BLINK` - Corners are currently in blink animation
  * @member `CORNER_FADE` - Corners are currently in fade animation
  * @member `CORNER_CAR_MODE` - Corners are currently in car mode
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.LedCornerAnim.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.LedCornerAnim.html RoboccDocs} for further information
 */
 var LedCornerAnim;
 (function (LedCornerAnim) {
@@ -605,7 +707,7 @@ var LedCornerAnim;
  * List all pose reference
  * @member `MAP` - Pose reference is map
  * @member `VEHICLE` - Pose reference is vehicle
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.PoseReference.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.PoseReference.html RoboccDocs} for further information
 */
 var PoseReference;
 (function (PoseReference) {
@@ -631,7 +733,7 @@ var PoseReference;
  * @member `STATE_DISCONNECTING` - State Disconnecting
  * @member `STATE_CONNECTING` - State Connecting
  * @member `STATE_CONNECTED` - State Connected
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MobileState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MobileState.html RoboccDocs} for further information
 */
 var MobileState;
 (function (MobileState) {
@@ -673,7 +775,7 @@ var MobileState;
  * @member `ACCESS_TECH_LTE` - Long Term Evolution (4G)
  * @member `ACCESS_TECH_NR5G` - New radio (5G)
  * @member `ACCESS_TECH_OTHER` - Other
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MobileAccessTech.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MobileAccessTech.html RoboccDocs} for further information
 */
 var MobileAccessTech;
 (function (MobileAccessTech) {
@@ -699,7 +801,7 @@ var MobileAccessTech;
  * @member `ETHERNET` - Ethernet connection
  * @member `WIFI` - Wi-Fi connection
  * @member `MOBILE` - Mobile connection (4G/5G)
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.NetworkType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.NetworkType.html RoboccDocs} for further information
 */
 var NetworkType;
 (function (NetworkType) {
@@ -719,7 +821,7 @@ var NetworkType;
  * @member `CONNECTED` - Network is connected
  * @member `CONNECTING` - Network is connecting
  * @member `DISABLED` - Network is disabled
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.NetworkStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.NetworkStatus.html RoboccDocs} for further information
 */
 var NetworkStatus;
 (function (NetworkStatus) {
@@ -743,7 +845,7 @@ var NetworkStatus;
  * @member `CONNECTED` - Network is connected
  * @member `CONNECTING` - Network is connecting
  * @member `CONNECTED_NOINTERNET` - Network is connected without internet connection
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.NetworkGlobalStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.NetworkGlobalStatus.html RoboccDocs} for further information
 */
 var NetworkGlobalStatus;
 (function (NetworkGlobalStatus) {
@@ -769,7 +871,7 @@ var NetworkGlobalStatus;
  * @member `ALERT` - Alert sound
  * @member `REVERSE` - Truck reverse sound
  * @member `HELP` - Help sound
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.SoundSample.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.SoundSample.html RoboccDocs} for further information
 */
 var SoundSample;
 (function (SoundSample) {
@@ -803,7 +905,7 @@ var SoundSample;
  * @member `IDLE` - Sound played when veh is IDLE, anytime vehicle do nothing
  * @member `SAFETY_DISABLED` - Sound played when veh has its safety disabled
  * @member `SAFETY_ALERT` - Sound played when there is a safety alert on vehicle
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.SoundScenario.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.SoundScenario.html RoboccDocs} for further information
 */
 var SoundScenario;
 (function (SoundScenario) {
@@ -847,7 +949,7 @@ var SoundScenario;
  * @member `US_SENSOR_10_H` - Vehicle stopped because of an obstacle detected by the US sensor 10h
  * @member `US_SENSOR_11_H` - Vehicle stopped because of an obstacle detected by the US sensor 11h
  * @member `NAVIGATION` - Vehicle stopped because of a navigation algorithm
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.StopSource.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.StopSource.html RoboccDocs} for further information
 */
 var StopSource;
 (function (StopSource) {
@@ -885,7 +987,7 @@ var StopSource;
  * @member `COMPUTER_UNKNOWN` - Unknown computer
  * @member `COMPUTER_NUC13` - NUC 13
  * @member `COMPUTER_LATTEPANDA` - LattePanda
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ComputerType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ComputerType.html RoboccDocs} for further information
 */
 var ComputerType;
 (function (ComputerType) {
@@ -904,7 +1006,7 @@ var ComputerType;
  * @member `MCU_TEENSY` - Pico
  * @member `MCU_PICO` - Pico
  * @member `MCU_LEONARDO` - Leonardo
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.McuType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.McuType.html RoboccDocs} for further information
 */
 var McuType;
 (function (McuType) {
@@ -924,7 +1026,7 @@ var McuType;
  * @member `MOTOR_UNKNOWN` - Unknown motor
  * @member `MOTOR_100` - Motor 100kg
  * @member `MOTOR_200` - Motor 200kg
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MotorType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MotorType.html RoboccDocs} for further information
 */
 var MotorType;
 (function (MotorType) {
@@ -943,7 +1045,7 @@ var MotorType;
  * @member `STOPPED` - Navigation is stopped
  * @member `STARTING` - Navigation is starting
  * @member `STARTED` - Navigation is started
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.NavigationState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.NavigationState.html RoboccDocs} for further information
 */
 var NavigationState;
 (function (NavigationState) {
@@ -962,7 +1064,7 @@ var NavigationState;
  * Language
  * @member `EN` - EN
  * @member `FR` - FR
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.Language.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.Language.html RoboccDocs} for further information
 */
 var Language;
 (function (Language) {
@@ -986,7 +1088,7 @@ var Language;
  * @member `SOUNDS` - SOUNDS
  * @member `VEH_SIZE` - VEH_SIZE
  * @member `AREA_CONFIGS` - AREA_CONFIGS
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.InvalidDataSection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.InvalidDataSection.html RoboccDocs} for further information
 */
 var InvalidDataSection;
 (function (InvalidDataSection) {
@@ -1022,7 +1124,7 @@ var InvalidDataSection;
  * @member `ROC` - ROC
  * @member `BUTTON` - BUTTON
  * @member `CONTROLLER` - CONTROLLER
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.PeerType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.PeerType.html RoboccDocs} for further information
 */
 var PeerType;
 (function (PeerType) {
@@ -1045,7 +1147,7 @@ var PeerType;
  * @member `ON_PAUSE` - ON_PAUSE
  * @member `WAIT_RELEASE` - WAIT_RELEASE
  * @member `RETRY_MOVE` - RETRY_MOVE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.EventSoundEvent.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.EventSoundEvent.html RoboccDocs} for further information
 */
 var EventSoundEvent;
 (function (EventSoundEvent) {
@@ -1064,7 +1166,7 @@ var EventSoundEvent;
  * Contact state
  * @member `OFF` - OFF
  * @member `ON` - ON
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ContactState.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ContactState.html RoboccDocs} for further information
 */
 var ContactState;
 (function (ContactState) {
@@ -1082,7 +1184,7 @@ var ContactState;
  * @member `UNLOAD` - UNLOAD
  * @member `PICKING` - PICKING
  * @member `SHELF` - SHELF
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DockedPoseStationType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DockedPoseStationType.html RoboccDocs} for further information
 */
 var DockedPoseStationType;
 (function (DockedPoseStationType) {
@@ -1098,36 +1200,6 @@ var DockedPoseStationType;
     DockedPoseStationType[DockedPoseStationType["SHELF"] = 4] = "SHELF";
 })(DockedPoseStationType || (exports.DockedPoseStationType = DockedPoseStationType = {}));
 /**
- * **LoRa Controller Command**
- *
- * Command for LoRa Controller
- * @member `UNDEFINED` - UNDEFINED
- * @member `ACTION_RELAY1_ON` - ACTION_RELAY1_ON
- * @member `ACTION_RELAY1_OFF` - ACTION_RELAY1_OFF
- * @member `ACTION_RELAY1_PULSE` - ACTION_RELAY1_PULSE
- * @member `ACTION_RELAY2_ON` - ACTION_RELAY2_ON
- * @member `ACTION_RELAY2_OFF` - ACTION_RELAY2_OFF
- * @member `ACTION_RELAY2_PULSE` - ACTION_RELAY2_PULSE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.LoraControllerCommand.html RoboccDocs} for further information
-*/
-var LoraControllerCommand;
-(function (LoraControllerCommand) {
-    /** UNDEFINED */
-    LoraControllerCommand[LoraControllerCommand["UNDEFINED"] = 0] = "UNDEFINED";
-    /** ACTION_RELAY1_ON */
-    LoraControllerCommand[LoraControllerCommand["ACTION_RELAY1_ON"] = 54] = "ACTION_RELAY1_ON";
-    /** ACTION_RELAY1_OFF */
-    LoraControllerCommand[LoraControllerCommand["ACTION_RELAY1_OFF"] = 55] = "ACTION_RELAY1_OFF";
-    /** ACTION_RELAY1_PULSE */
-    LoraControllerCommand[LoraControllerCommand["ACTION_RELAY1_PULSE"] = 56] = "ACTION_RELAY1_PULSE";
-    /** ACTION_RELAY2_ON */
-    LoraControllerCommand[LoraControllerCommand["ACTION_RELAY2_ON"] = 57] = "ACTION_RELAY2_ON";
-    /** ACTION_RELAY2_OFF */
-    LoraControllerCommand[LoraControllerCommand["ACTION_RELAY2_OFF"] = 58] = "ACTION_RELAY2_OFF";
-    /** ACTION_RELAY2_PULSE */
-    LoraControllerCommand[LoraControllerCommand["ACTION_RELAY2_PULSE"] = 59] = "ACTION_RELAY2_PULSE";
-})(LoraControllerCommand || (exports.LoraControllerCommand = LoraControllerCommand = {}));
-/**
  * **Contact type**
  *
  * Contact type
@@ -1137,7 +1209,7 @@ var LoraControllerCommand;
  * @member `AVAILABILITY` - AVAILABILITY
  * @member `RELEASE` - RELEASE
  * @member `EMERGENCY` - EMERGENCY
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ContactType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ContactType.html RoboccDocs} for further information
 */
 var ContactType;
 (function (ContactType) {
@@ -1160,7 +1232,7 @@ var ContactType;
  * Contact NO/NC
  * @member `NO` - NO
  * @member `NC` - NC
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ContactNonc.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ContactNonc.html RoboccDocs} for further information
 */
 var ContactNonc;
 (function (ContactNonc) {
@@ -1175,7 +1247,7 @@ var ContactNonc;
  * Contact trigger
  * @member `ON_PULSE` - ON_PULSE
  * @member `ON_HIGH` - ON_HIGH
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ContactTrigger.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ContactTrigger.html RoboccDocs} for further information
 */
 var ContactTrigger;
 (function (ContactTrigger) {
@@ -1190,7 +1262,7 @@ var ContactTrigger;
  * Relay action
  * @member `ON_OFF` - ON_OFF
  * @member `PULSE` - PULSE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.RelayAction.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.RelayAction.html RoboccDocs} for further information
 */
 var RelayAction;
 (function (RelayAction) {
@@ -1199,6 +1271,66 @@ var RelayAction;
     /** PULSE */
     RelayAction[RelayAction["PULSE"] = 1] = "PULSE";
 })(RelayAction || (exports.RelayAction = RelayAction = {}));
+/**
+ * **Relay command**
+ *
+ * Relay command
+ * @member `RELAY_UNDEFINED` - RELAY_UNDEFINED
+ * @member `RELAY_CMD_ON` - RELAY_CMD_ON
+ * @member `RELAY_CMD_OFF` - RELAY_CMD_OFF
+ * @member `RELAY_CMD_PULSE` - RELAY_CMD_PULSE
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.RelayCommand.html RoboccDocs} for further information
+*/
+var RelayCommand;
+(function (RelayCommand) {
+    /** RELAY_UNDEFINED */
+    RelayCommand[RelayCommand["RELAY_UNDEFINED"] = 0] = "RELAY_UNDEFINED";
+    /** RELAY_CMD_ON */
+    RelayCommand[RelayCommand["RELAY_CMD_ON"] = 1] = "RELAY_CMD_ON";
+    /** RELAY_CMD_OFF */
+    RelayCommand[RelayCommand["RELAY_CMD_OFF"] = 2] = "RELAY_CMD_OFF";
+    /** RELAY_CMD_PULSE */
+    RelayCommand[RelayCommand["RELAY_CMD_PULSE"] = 3] = "RELAY_CMD_PULSE";
+})(RelayCommand || (exports.RelayCommand = RelayCommand = {}));
+/**
+ * **Relay index**
+ *
+ * Relay index
+ * @member `NOT_SET` - NOT_SET
+ * @member `RELAY_1` - RELAY_1
+ * @member `RELAY_2` - RELAY_2
+ * @member `RELAY_3` - RELAY_3
+ * @member `RELAY_4` - RELAY_4
+ * @member `RELAY_5` - RELAY_5
+ * @member `RELAY_6` - RELAY_6
+ * @member `RELAY_GREEN` - RELAY_GREEN
+ * @member `RELAY_ORANGE` - RELAY_ORANGE
+ * @member `RELAY_RED` - RELAY_RED
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.RelayIndex.html RoboccDocs} for further information
+*/
+var RelayIndex;
+(function (RelayIndex) {
+    /** NOT_SET */
+    RelayIndex[RelayIndex["NOT_SET"] = 0] = "NOT_SET";
+    /** RELAY_1 */
+    RelayIndex[RelayIndex["RELAY_1"] = 1] = "RELAY_1";
+    /** RELAY_2 */
+    RelayIndex[RelayIndex["RELAY_2"] = 2] = "RELAY_2";
+    /** RELAY_3 */
+    RelayIndex[RelayIndex["RELAY_3"] = 3] = "RELAY_3";
+    /** RELAY_4 */
+    RelayIndex[RelayIndex["RELAY_4"] = 4] = "RELAY_4";
+    /** RELAY_5 */
+    RelayIndex[RelayIndex["RELAY_5"] = 5] = "RELAY_5";
+    /** RELAY_6 */
+    RelayIndex[RelayIndex["RELAY_6"] = 6] = "RELAY_6";
+    /** RELAY_GREEN */
+    RelayIndex[RelayIndex["RELAY_GREEN"] = 7] = "RELAY_GREEN";
+    /** RELAY_ORANGE */
+    RelayIndex[RelayIndex["RELAY_ORANGE"] = 8] = "RELAY_ORANGE";
+    /** RELAY_RED */
+    RelayIndex[RelayIndex["RELAY_RED"] = 9] = "RELAY_RED";
+})(RelayIndex || (exports.RelayIndex = RelayIndex = {}));
 /**
  * **Vehicle status**
  *
@@ -1264,7 +1396,15 @@ var RelayAction;
  * @member `STATUS_MISSION` - STATUS_MISSION
  * @member `STATUS_CANCEL_FAILED` - STATUS_CANCEL_FAILED
  * @member `STATUS_MOVE_FAILED_FS` - STATUS_MOVE_FAILED_FS
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.VehStatus.html RoboccDocs} for further information
+ * @member `ACTION_ELEVATOR_NEW_CALL` - ACTION_ELEVATOR_NEW_CALL
+ * @member `ACTION_ELEVATOR_MOVE` - ACTION_ELEVATOR_MOVE
+ * @member `ACTION_ELEVATOR_CANCEL` - ACTION_ELEVATOR_CANCEL
+ * @member `ACTION_ELEVATOR_END` - ACTION_ELEVATOR_END
+ * @member `STATUS_ELEVATOR` - STATUS_ELEVATOR
+ * @member `ACTION_RELAY` - ACTION_RELAY
+ * @member `STATUS_IN_ELEVATOR` - STATUS_IN_ELEVATOR
+ * @member `STATUS_OCCUPIED` - STATUS_OCCUPIED
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.VehStatus.html RoboccDocs} for further information
 */
 var VehStatus;
 (function (VehStatus) {
@@ -1390,6 +1530,22 @@ var VehStatus;
     VehStatus[VehStatus["STATUS_CANCEL_FAILED"] = 105] = "STATUS_CANCEL_FAILED";
     /** STATUS_MOVE_FAILED_FS */
     VehStatus[VehStatus["STATUS_MOVE_FAILED_FS"] = 106] = "STATUS_MOVE_FAILED_FS";
+    /** ACTION_ELEVATOR_NEW_CALL */
+    VehStatus[VehStatus["ACTION_ELEVATOR_NEW_CALL"] = 107] = "ACTION_ELEVATOR_NEW_CALL";
+    /** ACTION_ELEVATOR_MOVE */
+    VehStatus[VehStatus["ACTION_ELEVATOR_MOVE"] = 108] = "ACTION_ELEVATOR_MOVE";
+    /** ACTION_ELEVATOR_CANCEL */
+    VehStatus[VehStatus["ACTION_ELEVATOR_CANCEL"] = 109] = "ACTION_ELEVATOR_CANCEL";
+    /** ACTION_ELEVATOR_END */
+    VehStatus[VehStatus["ACTION_ELEVATOR_END"] = 110] = "ACTION_ELEVATOR_END";
+    /** STATUS_ELEVATOR */
+    VehStatus[VehStatus["STATUS_ELEVATOR"] = 111] = "STATUS_ELEVATOR";
+    /** ACTION_RELAY */
+    VehStatus[VehStatus["ACTION_RELAY"] = 112] = "ACTION_RELAY";
+    /** STATUS_IN_ELEVATOR */
+    VehStatus[VehStatus["STATUS_IN_ELEVATOR"] = 113] = "STATUS_IN_ELEVATOR";
+    /** STATUS_OCCUPIED */
+    VehStatus[VehStatus["STATUS_OCCUPIED"] = 114] = "STATUS_OCCUPIED";
 })(VehStatus || (exports.VehStatus = VehStatus = {}));
 /**
  * **Module type**
@@ -1400,7 +1556,7 @@ var VehStatus;
  * @member `ROC_EP` - ROC_EP
  * @member `ROC_P` - ROC_P
  * @member `OTHER` - OTHER
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ModuleType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ModuleType.html RoboccDocs} for further information
 */
 var ModuleType;
 (function (ModuleType) {
@@ -1423,7 +1579,7 @@ var ModuleType;
  * @member `FRONT` - FRONT
  * @member `BACK` - BACK
  * @member `NO_DIRECTION` - NO_DIRECTION
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.VehDirection.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.VehDirection.html RoboccDocs} for further information
 */
 var VehDirection;
 (function (VehDirection) {
@@ -1443,7 +1599,7 @@ var VehDirection;
  * @member `CHARGING_STATION` - CHARGING_STATION
  * @member `SAVED_POSE` - SAVED_POSE
  * @member `DOCKED_POSE` - DOCKED_POSE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MapElementType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MapElementType.html RoboccDocs} for further information
 */
 var MapElementType;
 (function (MapElementType) {
@@ -1461,7 +1617,7 @@ var MapElementType;
  * @member `NONE` - NONE
  * @member `USER` - USER
  * @member `MODULE` - MODULE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.AuthenticatedType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AuthenticatedType.html RoboccDocs} for further information
 */
 var AuthenticatedType;
 (function (AuthenticatedType) {
@@ -1479,7 +1635,7 @@ var AuthenticatedType;
  * @member `INFO` - INFO
  * @member `WARNING` - WARNING
  * @member `ERROR` - ERROR
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.LogSeverity.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.LogSeverity.html RoboccDocs} for further information
 */
 var LogSeverity;
 (function (LogSeverity) {
@@ -1497,7 +1653,7 @@ var LogSeverity;
  * @member `APP` - APP
  * @member `MISSION` - MISSION
  * @member `VEHICLE` - VEHICLE
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.LogType.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.LogType.html RoboccDocs} for further information
 */
 var LogType;
 (function (LogType) {
@@ -1517,7 +1673,7 @@ var LogType;
  * @member `DOWNLOADING` - Device is downloading new system update
  * @member `INSTALLING` - Device is installing new system update
  * @member `IDLE` - No new system update
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.UpdateStatusStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.UpdateStatusStatus.html RoboccDocs} for further information
 */
 var UpdateStatusStatus;
 (function (UpdateStatusStatus) {
@@ -1540,7 +1696,7 @@ var UpdateStatusStatus;
  * @member `UPDATE_DATABASE` - Step updating database
  * @member `UPDATE_MAPS` - Step updating maps
  * @member `RELOAD_MAPS` - Step reloading maps
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.SetMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.SetMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var SetMapFeedbackCurrentStepCode;
 (function (SetMapFeedbackCurrentStepCode) {
@@ -1563,7 +1719,7 @@ var SetMapFeedbackCurrentStepCode;
  * @member `RELOAD_MAPS` - Reloading database
  * @member `RECOVERY` - Perform recovery
  * @member `STOP_NAVIGATION` - Stop navigation due to error on recovery step
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.SetActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.SetActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var SetActiveMapFeedbackCurrentStepCode;
 (function (SetActiveMapFeedbackCurrentStepCode) {
@@ -1586,7 +1742,7 @@ var SetActiveMapFeedbackCurrentStepCode;
  * `current_step_code` parameter of a `InstallModuleFeedback` type
  * @member `UPDATE_DATABASE` - Update database
  * @member `ACTIVATE_MODULE` - Activate module
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.InstallModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.InstallModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var InstallModuleFeedbackCurrentStepCode;
 (function (InstallModuleFeedbackCurrentStepCode) {
@@ -1601,7 +1757,7 @@ var InstallModuleFeedbackCurrentStepCode;
  * `current_step_code` parameter of a `DisableModuleFeedback` type
  * @member `UPDATE_DATABASE` - Update module
  * @member `ACTIVATE_MODULE` - Desactivate module
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.DisableModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.DisableModuleFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var DisableModuleFeedbackCurrentStepCode;
 (function (DisableModuleFeedbackCurrentStepCode) {
@@ -1617,7 +1773,7 @@ var DisableModuleFeedbackCurrentStepCode;
  * @member `RESET_DATABASE` - Undefined
  * @member `SET_ACTIVE_MODULE` - Stop mapping process
  * @member `SET_ACTIVE_MAP` - Save map in database
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ResetDatabaseFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ResetDatabaseFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var ResetDatabaseFeedbackCurrentStepCode;
 (function (ResetDatabaseFeedbackCurrentStepCode) {
@@ -1637,7 +1793,7 @@ var ResetDatabaseFeedbackCurrentStepCode;
  * @member `SAVE_MAP` - Save map in database
  * @member `SET_ACTIVE_MAP` - Set map as active
  * @member `START_NAVIGATION` - Start navigation on new map
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MappingStopFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MappingStopFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var MappingStopFeedbackCurrentStepCode;
 (function (MappingStopFeedbackCurrentStepCode) {
@@ -1659,7 +1815,7 @@ var MappingStopFeedbackCurrentStepCode;
  * @member `GET_DATA` - Get erasers data
  * @member `GENERATE_MAPS` - Generate maps with erase layer
  * @member `SAVE_MAP` - Save map in database
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.EraseActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.EraseActiveMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var EraseActiveMapFeedbackCurrentStepCode;
 (function (EraseActiveMapFeedbackCurrentStepCode) {
@@ -1678,7 +1834,7 @@ var EraseActiveMapFeedbackCurrentStepCode;
  * @member `GET_DATA` - Get data for reloading map
  * @member `UPDATE_MAPS` - Update maps
  * @member `RELOAD_MAPS` - Reload maps
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.ReloadMapFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.ReloadMapFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var ReloadMapFeedbackCurrentStepCode;
 (function (ReloadMapFeedbackCurrentStepCode) {
@@ -1699,7 +1855,7 @@ var ReloadMapFeedbackCurrentStepCode;
  * @member `CALCULATE_TRANSFORMATION` - Calculate transformation
  * @member `TRANSFORM_DATA` - Transform data
  * @member `SAVE_MAP` - Save map
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MergeMapsFeedbackCurrentStepCode.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MergeMapsFeedbackCurrentStepCode.html RoboccDocs} for further information
 */
 var MergeMapsFeedbackCurrentStepCode;
 (function (MergeMapsFeedbackCurrentStepCode) {
@@ -1719,7 +1875,7 @@ var MergeMapsFeedbackCurrentStepCode;
  * @member `SOFT_RESTART` - Restart software
  * @member `HARD_RESTART` - Restart docker
  * @member `REBOOT` - Restart PC
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.SystemRestartParamsStage.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.SystemRestartParamsStage.html RoboccDocs} for further information
 */
 var SystemRestartParamsStage;
 (function (SystemRestartParamsStage) {
@@ -1736,7 +1892,7 @@ var SystemRestartParamsStage;
  * `outcome` parameter of a `MappingErrorEventData` type
  * @member `NO_ERROR` - No mapping in progress, or no error happened on current mapping
  * @member `ERROR` - An error happened on current mapping
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.MappingErrorEventDataOutcome.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.MappingErrorEventDataOutcome.html RoboccDocs} for further information
 */
 var MappingErrorEventDataOutcome;
 (function (MappingErrorEventDataOutcome) {
@@ -1753,7 +1909,7 @@ var MappingErrorEventDataOutcome;
  * @member `SUCCESS` - Autopilot step finished successfully
  * @member `FAILURE` - Autopilot step finished with failure
  * @member `CANCELED` - Autopilot step has been canceled
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.AutopilotStepResultEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AutopilotStepResultEventData.html RoboccDocs} for further information
 */
 var AutopilotStepResultEventData;
 (function (AutopilotStepResultEventData) {
@@ -1777,7 +1933,7 @@ var AutopilotStepResultEventData;
  * @member `PAUSED_CHARGING` - Autopilot is paused due to critical battery level reached and vehicle has gone off to recharge itself
  * @member `PAUSED_HIR` - Autopilot is paused due to human intervention required
  * @member `PAUSED_PROHIBITED_MOVE` - Autopilot is paused due to module prohibit move orders
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.AutopilotStatusEventData.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.AutopilotStatusEventData.html RoboccDocs} for further information
 */
 var AutopilotStatusEventData;
 (function (AutopilotStatusEventData) {
@@ -1805,7 +1961,7 @@ var AutopilotStatusEventData;
  * @member `DOWNLOADING` - Device is downloading new system update
  * @member `INSTALLING` - Device is installing new system update
  * @member `IDLE` - No new system update
- * @see {@link https://docs.robocc.com/roc-api-ts/9.1.16-athena-16/enums/types.UpdateStatusEventDataStatus.html RoboccDocs} for further information
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.UpdateStatusEventDataStatus.html RoboccDocs} for further information
 */
 var UpdateStatusEventDataStatus;
 (function (UpdateStatusEventDataStatus) {
@@ -1820,3 +1976,36 @@ var UpdateStatusEventDataStatus;
     /** No new system update */
     UpdateStatusEventDataStatus["IDLE"] = "Idle";
 })(UpdateStatusEventDataStatus || (exports.UpdateStatusEventDataStatus = UpdateStatusEventDataStatus = {}));
+/**
+ * **VortexFailedRetrying event data**
+ *
+ * Data sent along with the event VortexFailedRetrying
+ * @member `UNDEFINED` - UNDEFINED
+ * @member `GOTO_ELEVATOR` - GOTO_ELEVATOR
+ * @member `WAIT_OUT_ELEVATOR` - WAIT_OUT_ELEVATOR
+ * @member `MOVE_INTO_ELEVATOR` - MOVE_INTO_ELEVATOR
+ * @member `WAIT_VEH_PROCESS_IN_ELEVATOR` - WAIT_VEH_PROCESS_IN_ELEVATOR
+ * @member `WAIT_IN_ELEVATOR` - WAIT_IN_ELEVATOR
+ * @member `GOTO_OUT` - GOTO_OUT
+ * @member `RELOCATE` - RELOCATE
+ * @see {@link https://docs.robocc.com/roc-api-ts/9.2.1-bia-1/enums/types.VortexFailedRetryingEventData.html RoboccDocs} for further information
+*/
+var VortexFailedRetryingEventData;
+(function (VortexFailedRetryingEventData) {
+    /** UNDEFINED */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["UNDEFINED"] = 0] = "UNDEFINED";
+    /** GOTO_ELEVATOR */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["GOTO_ELEVATOR"] = 1] = "GOTO_ELEVATOR";
+    /** WAIT_OUT_ELEVATOR */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["WAIT_OUT_ELEVATOR"] = 2] = "WAIT_OUT_ELEVATOR";
+    /** MOVE_INTO_ELEVATOR */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["MOVE_INTO_ELEVATOR"] = 3] = "MOVE_INTO_ELEVATOR";
+    /** WAIT_VEH_PROCESS_IN_ELEVATOR */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["WAIT_VEH_PROCESS_IN_ELEVATOR"] = 4] = "WAIT_VEH_PROCESS_IN_ELEVATOR";
+    /** WAIT_IN_ELEVATOR */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["WAIT_IN_ELEVATOR"] = 5] = "WAIT_IN_ELEVATOR";
+    /** GOTO_OUT */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["GOTO_OUT"] = 6] = "GOTO_OUT";
+    /** RELOCATE */
+    VortexFailedRetryingEventData[VortexFailedRetryingEventData["RELOCATE"] = 7] = "RELOCATE";
+})(VortexFailedRetryingEventData || (exports.VortexFailedRetryingEventData = VortexFailedRetryingEventData = {}));
