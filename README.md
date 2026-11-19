@@ -30,4 +30,4 @@ Replace `host` option to connect to remote API via device IP (usually on port 85
 
 ## Documentation
 
-You can find documentation at https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/
+You can find documentation at https://docs.robocc.com/roc-api-ts/9.2.4-bia-4/
