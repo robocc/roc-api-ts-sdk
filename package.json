@@ -1,6 +1,6 @@
 {
   "name": "@robocc/roc-api",
-  "version": "9.2.2-bia-2",
+  "version": "9.2.3-bia-3",
   "description": "RocApi client Typescript library",
   "scripts": {
     "build": "npx tsc && node tasks/package.js",

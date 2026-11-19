@@ -675,7 +675,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link boolean}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#Check3dBoxAction RoboccDocs} for further information
     */
     Check3dBoxAction(check_pose_data: Check3dBoxActionParams,feedback_cb?: EventCallback<Check3dBoxActionFeedback>) { 
       return this.callAction(ActionOperationCode.Check3dBoxAction, 
@@ -693,7 +693,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimResetWorldResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimResetWorld RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimResetWorld RoboccDocs} for further information
     */
     SimResetWorld(feedback_cb?: EventCallback<SimResetWorldFeedback>) { 
       return this.callAction(ActionOperationCode.SimResetWorld, 
@@ -711,7 +711,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimAddChargingStationResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimAddChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimAddChargingStation RoboccDocs} for further information
     */
     SimAddChargingStation(d: SimAddChargingStationParams,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimAddChargingStation, 
@@ -729,7 +729,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimAddFiducialResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimAddFiducial RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimAddFiducial RoboccDocs} for further information
     */
     SimAddFiducial(d: SimAddFiducialParams,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimAddFiducial, 
@@ -747,7 +747,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimAddShelfResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimAddShelf RoboccDocs} for further information
     */
     SimAddShelf(sim_add_shelf_params: SimAddShelfParams,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimAddShelf, 
@@ -765,7 +765,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimAddPickingResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimAddPicking RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimAddPicking RoboccDocs} for further information
     */
     SimAddPicking(d: Pose,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimAddPicking, 
@@ -783,7 +783,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimAddCylinderResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimAddCylinder RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimAddCylinder RoboccDocs} for further information
     */
     SimAddCylinder(sim_add_cylinder_params: SimAddCylinderParams,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimAddCylinder, 
@@ -801,7 +801,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimClearCylindersResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimClearCylinders RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimClearCylinders RoboccDocs} for further information
     */
     SimClearCylinders(feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimClearCylinders, 
@@ -819,7 +819,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimClearShelvesResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimClearShelves RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimClearShelves RoboccDocs} for further information
     */
     SimClearShelves(feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimClearShelves, 
@@ -837,7 +837,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link SimClearPickingsResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SimClearPickings RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SimClearPickings RoboccDocs} for further information
     */
     SimClearPickings(feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.SimClearPickings, 
@@ -855,7 +855,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#StopNavigation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#StopNavigation RoboccDocs} for further information
     */
     StopNavigation(feedback_cb?: EventCallback<StopNavigationFeedback>) { 
       return this.callAction(ActionOperationCode.StopNavigation, 
@@ -873,7 +873,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToPose RoboccDocs} for further information
     */
     VehToPose(veh_to_pose_params: VehToPoseParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToPose, 
@@ -891,7 +891,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToChargingStation RoboccDocs} for further information
     */
     VehToChargingStation(veh_to_charging_station_params: VehToChargingStationParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToChargingStation, 
@@ -909,7 +909,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToChargingStationApproach RoboccDocs} for further information
     */
     VehToChargingStationApproach(veh_to_charging_station_params: VehToChargingStationApproachParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToChargingStationApproach, 
@@ -927,7 +927,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToDockedPose RoboccDocs} for further information
     */
     VehToDockedPose(veh_to_docked_pose_params: VehToDockedPoseParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToDockedPose, 
@@ -945,7 +945,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToDockedPoseApproach RoboccDocs} for further information
     */
     VehToDockedPoseApproach(veh_to_docked_pose_params: VehToDockedPoseApproachParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToDockedPoseApproach, 
@@ -963,7 +963,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToSavedPose RoboccDocs} for further information
     */
     VehToSavedPose(veh_to_saved_pose_params: VehToSavedPoseParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToSavedPose, 
@@ -981,7 +981,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#VehToSegment RoboccDocs} for further information
     */
     VehToSegment(veh_to_segment_params: VehToSegmentParams,feedback_cb?: EventCallback<VehToFeedback>) { 
       return this.callAction(ActionOperationCode.VehToSegment, 
@@ -999,7 +999,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SetVehiclePose RoboccDocs} for further information
     */
     SetVehiclePose(set_vehicle_pose_params: SetVehiclePoseParams,feedback_cb?: EventCallback<SetVehiclePoseFeedback>) { 
       return this.callAction(ActionOperationCode.SetVehiclePose, 
@@ -1017,7 +1017,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link number}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SetMap RoboccDocs} for further information
     */
     SetMap(map: Map,feedback_cb?: EventCallback<SetMapFeedback>) { 
       return this.callAction(ActionOperationCode.SetMap, 
@@ -1035,7 +1035,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#SetActiveMap RoboccDocs} for further information
     */
     SetActiveMap(map_id: number,feedback_cb?: EventCallback<SetActiveMapFeedback>) { 
       return this.callAction(ActionOperationCode.SetActiveMap, 
@@ -1053,7 +1053,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#Undock RoboccDocs} for further information
     */
     Undock(override_battery_safety?: boolean,feedback_cb?: EventCallback<string>) { 
       return this.callAction(ActionOperationCode.Undock, 
@@ -1071,7 +1071,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#UndockFromShelf RoboccDocs} for further information
     */
     UndockFromShelf(d?: number,feedback_cb?: EventCallback<string>) { 
       return this.callAction(ActionOperationCode.UndockFromShelf, 
@@ -1089,7 +1089,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link Marker}[]> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#GetMarkers RoboccDocs} for further information
     */
     GetMarkers(pose_reference: PoseReference,feedback_cb?: EventCallback<GetMarkersFeedback>) { 
       return this.callAction(ActionOperationCode.GetMarkers, 
@@ -1107,7 +1107,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#InstallModule RoboccDocs} for further information
     */
     InstallModule(module_data: InstallModuleParams,feedback_cb?: EventCallback<InstallModuleFeedback>) { 
       return this.callAction(ActionOperationCode.InstallModule, 
@@ -1125,7 +1125,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#DisableModule RoboccDocs} for further information
     */
     DisableModule(feedback_cb?: EventCallback<DisableModuleFeedback>) { 
       return this.callAction(ActionOperationCode.DisableModule, 
@@ -1143,7 +1143,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#Recovery RoboccDocs} for further information
     */
     Recovery(feedback_cb?: EventCallback<RecoveryFeedback>) { 
       return this.callAction(ActionOperationCode.Recovery, 
@@ -1161,7 +1161,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#ResetDatabase RoboccDocs} for further information
     */
     ResetDatabase(feedback_cb?: EventCallback<ResetDatabaseFeedback>) { 
       return this.callAction(ActionOperationCode.ResetDatabase, 
@@ -1179,7 +1179,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link GetPathResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#GetPath RoboccDocs} for further information
     */
     GetPath(get_path_params: GetPathParams,feedback_cb?: EventCallback<GetPathFeedback>) { 
       return this.callAction(ActionOperationCode.GetPath, 
@@ -1197,7 +1197,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#MappingStart RoboccDocs} for further information
     */
     MappingStart(mapping_params: MappingStartParams,feedback_cb?: EventCallback<MappingStartFeedback>) { 
       return this.callAction(ActionOperationCode.MappingStart, 
@@ -1215,7 +1215,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link MappingStopResult}> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#MappingStop RoboccDocs} for further information
     */
     MappingStop(save_map: boolean,feedback_cb?: EventCallback<MappingStopFeedback>) { 
       return this.callAction(ActionOperationCode.MappingStop, 
@@ -1233,7 +1233,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#EraseActiveMap RoboccDocs} for further information
     */
     EraseActiveMap(erase_params: EraseActiveMapParams,feedback_cb?: EventCallback<EraseActiveMapFeedback>) { 
       return this.callAction(ActionOperationCode.EraseActiveMap, 
@@ -1251,7 +1251,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#ReloadMap RoboccDocs} for further information
     */
     ReloadMap(feedback_cb?: EventCallback<ReloadMapFeedback>) { 
       return this.callAction(ActionOperationCode.ReloadMap, 
@@ -1269,7 +1269,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#MergeMaps RoboccDocs} for further information
     */
     MergeMaps(d: MergeMapsParams,feedback_cb?: EventCallback<MergeMapsFeedback>) { 
       return this.callAction(ActionOperationCode.MergeMaps, 
@@ -1287,7 +1287,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#NetworkWanConfig RoboccDocs} for further information
     */
     NetworkWanConfig(wan_config: NetworkWanConfigAction,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.NetworkWanConfig, 
@@ -1305,7 +1305,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#NetworkWanEnable RoboccDocs} for further information
     */
     NetworkWanEnable(enable: boolean,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.NetworkWanEnable, 
@@ -1323,7 +1323,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#NetworkHotspotEnable RoboccDocs} for further information
     */
     NetworkHotspotEnable(enable: boolean,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.NetworkHotspotEnable, 
@@ -1341,7 +1341,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link WifiAp}[]> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#NetworkWanScanAps RoboccDocs} for further information
     */
     NetworkWanScanAps(feedback_cb?: EventCallback<WifiAp[]>) { 
       return this.callAction(ActionOperationCode.NetworkWanScanAps, 
@@ -1359,7 +1359,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     * @data Promise<{@link ForbiddenArea}[]> 
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#GenerateForbiddenAreas RoboccDocs} for further information
     */
     GenerateForbiddenAreas(d: GenerateForbiddenAreasParams,feedback_cb?: EventCallback<null>) { 
       return this.callAction(ActionOperationCode.GenerateForbiddenAreas, 
@@ -1377,7 +1377,7 @@ export abstract class ActionsMixin extends BaseAPI {
     * @param feedback_cb - Feedback callback of action  
     
     
-    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.2-bia-2/classes/RocApi.RocApi.html#AddSound RoboccDocs} for further information
+    * @see {@link https://docs.robocc.com/roc-api-ts/9.2.3-bia-3/classes/RocApi.RocApi.html#AddSound RoboccDocs} for further information
     */
     AddSound(add_sound_params: AddSoundParams,feedback_cb?: EventCallback<AddSoundFeedback>) { 
       return this.callAction(ActionOperationCode.AddSound, 
